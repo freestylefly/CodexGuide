@@ -2,7 +2,7 @@
   <img src="./assets/banner.svg" alt="CodexGuide" width="920" />
 </p>
 
-<h3 align="center">Codex 从入门到精通 · 面向中文开发者的系统化开源教程知识库</h3>
+<h3 align="center">面向全球初学者、创作者、开发者与团队的 Codex 实践指南</h3>
 
 <p align="center">
   <a href="https://codexguide.ai/"><img src="https://img.shields.io/badge/Docs-codexguide.ai-0f766e?style=flat-square" alt="Docs"></a>
@@ -31,36 +31,37 @@
   <a href="./docs/community/roadmap.md">共建路线图</a>
 </p>
 
-> 从第一次安装，到真实项目交付；把 Codex 用成可靠的工程搭档。  
-> 如果这个项目帮你节省了摸索时间，欢迎点亮 Star，让更多中文开发者看到它。
+> 从第一次上手，到把 Codex 接入真实工作流；帮助不同背景的人用 Codex 完成开发、创作、研究、自动化与团队协作。
+> 如果这个项目帮你节省了摸索时间，欢迎点亮 Star，让更多人看到它。
 
 ## 项目愿景
 
-Codex 正在从命令行工具演进为一套覆盖 CLI、Web/Cloud、IDE extension 和桌面 App 的编码代理工作流。
+Codex 正在从编码代理工具演进为一套覆盖 CLI、Web/Cloud、IDE extension 和桌面 App 的 AI 工作流能力。
 
-CodexGuide 致力于建设一份面向真实工程流程的中文知识库：结构清晰、长期维护、持续共建，并能沉淀为团队可复用的 Codex 实践资产。
+CodexGuide 致力于成为面向全球初学者、创作者、开发者与团队的 Codex 实践知识库，帮助个人和团队把 Codex 从一个 AI 工具，变成可复用、可验证、可协作的工作流能力。
 
-- 系统化：从安装、登录、提示词、`AGENTS.md` 到沙盒、审批、团队协作。
-- 工程化：围绕修 bug、补测试、代码审查、重构、CI 排障和文档沉淀组织内容。
+- 易上手：照顾第一次使用 Codex 的初学者，也保留进阶用户需要的细节。
+- 跨场景：覆盖开发、创作、研究、知识管理、自动化和团队协作。
 - 可复现：教程尽量给出命令、输入、预期结果、失败原因和验证方式。
 - 官方优先：关键事实链接到 OpenAI 官方资料，并标注最后核对日期。
-- 社区共建：欢迎贡献真实案例、排障经验、团队模板和中文最佳实践。
+- 社区共建：欢迎贡献真实案例、排障经验、团队模板和跨语言实践。
 
 ## 快速入口
 
 | 模块 | 你会获得什么 |
 | --- | --- |
 | [学习路线](./docs/guide/00-overview.md) | 从入门、进阶到团队化的阅读顺序 |
-| [入口地图](./docs/platform/index.md) | CLI、Desktop App、Cloud/Web、IDE、ChatGPT 的选择方法 |
-| [安装与登录](./docs/guide/01-installation.md) | Codex CLI 安装、更新、登录和第一次进入项目 |
-| [第一次改代码](./docs/guide/02-first-run.md) | 选择低风险任务，并完成一次可验证修改 |
-| [提示词与任务说明](./docs/guide/03-prompting.md) | 写出更稳定、更可控的 Codex 任务 |
-| [真实工程工作流](./docs/guide/04-workflows.md) | 修 bug、补测试、重构、代码审查和文档生成 |
+| [入口地图](./docs/platform/index.md) | CLI、桌面 App、Cloud/Web、IDE、ChatGPT 的选择方法 |
+| [桌面 App 下载与安装](./docs/guide/01-app-installation.md) | Codex 桌面 App 下载、安装、登录和基础准备 |
+| [手机端协同桌面任务](./docs/guide/04-mobile-control-desktop.md) | 用 ChatGPT 手机 App 中的 Codex 入口跟进桌面任务 |
+| [第一次使用 Codex](./docs/guide/05-app-first-task.md) | 选择低风险任务，并完成一次可验证修改 |
+| [CLI 安装与登录](./docs/guide/11-cli-installation.md) | 在本地终端安装 Codex CLI 并完成登录 |
+| [第一次让 Codex 改代码](./docs/guide/12-cli-first-run.md) | 用 CLI 进入真实仓库，完成一次可检查的代码任务 |
 | [配置与扩展](./docs/configuration/index.md) | CLI 选项、config.toml、MCP、Skills、Subagents、安全审批 |
 | [实践方法](./docs/practice/index.md) | 任务设计、非开发工作流和团队实践 |
-| [AGENTS.md](./docs/guide/05-agents-md.md) | 给 Codex 编写项目级规则和协作边界 |
-| [沙盒与审批](./docs/guide/06-sandbox-approvals.md) | 文件、命令、网络、凭据和生产资源的安全边界 |
-| [Cloud、IDE 与 App](./docs/guide/07-cloud-ide-app.md) | 不同 Codex 使用入口的适用场景 |
+| [AGENTS.md](./docs/guide/14-agents-md.md) | 给 Codex 编写项目级规则和协作边界 |
+| [沙盒与审批](./docs/guide/15-sandbox-approvals.md) | 文件、命令、网络、凭据和生产资源的安全边界 |
+| [Cloud、IDE 与桌面 App](./docs/guide/16-cloud-ide-app.md) | 不同 Codex 使用入口的适用场景 |
 | [实战案例库](./docs/recipes/index.md) | 可复制到真实项目的任务模板和复盘结构 |
 | [官方资料索引](./docs/reference/index.md) | OpenAI 官方资料、GitHub 仓库和关键链接 |
 
@@ -68,7 +69,7 @@ CodexGuide 致力于建设一份面向真实工程流程的中文知识库：结
 
 ```text
 CodexGuide
-├─ guide       # 从入门到团队化的系统教程
+├─ guide       # 从入门到团队化的实践指南
 ├─ platform    # CLI、App、Cloud、IDE、ChatGPT 入口地图
 ├─ configuration # CLI 选项、config.toml、MCP、Skills、安全审批
 ├─ practice    # 任务设计、非开发工作流、团队实践
@@ -143,4 +144,4 @@ pnpm build
 
 ## 声明
 
-本项目是社区维护的 Codex 中文知识库，并非 OpenAI 官方项目。涉及功能、计划、价格、可用性和安全策略等时间敏感信息时，请以 OpenAI 官方资料为准。
+本项目是社区维护的 Codex 实践知识库，并非 OpenAI 官方项目。涉及功能、计划、价格、可用性和安全策略等时间敏感信息时，请以 OpenAI 官方资料为准。

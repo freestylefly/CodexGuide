@@ -3,7 +3,7 @@
 Codex 能读代码、改文件、运行命令，也可能接触凭据、内部系统和生产资源。真正适合长期使用的 Codex 工作流，一定要把权限边界写清楚。
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-05-04。本文参考 [Codex security](https://developers.openai.com/codex/agent-approvals-security)、[sandbox 文档](https://github.com/openai/codex/blob/main/docs/sandbox.md)、[exec policy 文档](https://github.com/openai/codex/blob/main/docs/execpolicy.md) 与 [Codex 文档入口](https://developers.openai.com/codex/)。
+官方资料最后核对日期：2026-05-27。本文参考 [Codex security](https://developers.openai.com/codex/agent-approvals-security)、[sandbox 文档](https://github.com/openai/codex/blob/main/docs/sandbox.md)、[exec policy 文档](https://github.com/openai/codex/blob/main/docs/execpolicy.md) 与 [Codex 文档入口](https://developers.openai.com/codex/)。
 :::
 
 ![Codex 安全分层](/images/codex-safety-layers.svg)

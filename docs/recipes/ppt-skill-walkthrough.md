@@ -3,7 +3,7 @@
 这个案例演示一个对新手很有帮助的流程：如何让 Codex 协助安装一个开源 Skill，并在安装完成后立即调用它完成任务。
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-05-10。本文关于 Skill 机制参考 [Codex Skills](https://developers.openai.com/codex/skills)。案例中使用的 PPT Skill 来自社区仓库：[guizang-ppt-skill](https://github.com/op7418/guizang-ppt-skill)。第三方 Skill 的安装方式、依赖要求和输出格式请以原仓库说明为准。
+官方资料最后核对日期：2026-05-27。本文关于 Skill 机制参考 [Codex Skills](https://developers.openai.com/codex/skills)。案例中使用的 PPT Skill 来自社区仓库：[guizang-ppt-skill](https://github.com/op7418/guizang-ppt-skill)。第三方 Skill 的安装方式、依赖要求和输出格式请以原仓库说明为准。
 :::
 
 ## 适用场景

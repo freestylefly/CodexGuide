@@ -3,7 +3,7 @@
 `config.toml` 用来保存 Codex CLI 的本地默认行为。你可以把它理解为“个人驾驶舱”：模型、审批、沙盒、profiles、MCP 服务等偏好都可以在这里集中管理。
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-05-04。本文参考 [Codex config basic](https://developers.openai.com/codex/config-basic)、[Codex config advanced](https://developers.openai.com/codex/config-advanced)、[Codex config reference](https://developers.openai.com/codex/config-reference) 与 [openai/codex config docs](https://github.com/openai/codex/blob/main/docs/config.md)。
+官方资料最后核对日期：2026-05-27。本文参考 [Codex config basic](https://developers.openai.com/codex/config-basic)、[Codex config advanced](https://developers.openai.com/codex/config-advanced)、[Codex config reference](https://developers.openai.com/codex/config-reference) 与 [openai/codex config docs](https://github.com/openai/codex/blob/main/docs/config.md)。
 :::
 
 ## 配置文件放在哪里

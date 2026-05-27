@@ -3,7 +3,7 @@
 当你已经能稳定完成单次任务，下一步就是把 Codex 变成可扩展的工作系统：用 MCP 连接工具和数据源，用 Skills 固化流程，用 Subagents 拆分复杂工作。
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-05-04。本文参考 [Codex Skills](https://developers.openai.com/codex/skills)、[Codex 文档入口](https://developers.openai.com/codex/)、[openai/codex skills docs](https://github.com/openai/codex/blob/main/docs/skills.md) 与官方 MCP、Plugins、Subagents 相关页面。
+官方资料最后核对日期：2026-05-27。本文参考 [Codex Skills](https://developers.openai.com/codex/skills)、[Codex 文档入口](https://developers.openai.com/codex/)、[openai/codex skills docs](https://github.com/openai/codex/blob/main/docs/skills.md) 与官方 MCP、Plugins、Subagents 相关页面。
 :::
 
 ## 三个概念

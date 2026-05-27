@@ -1,5 +1,6 @@
 node_modules
 .DS_Store
+.obsidian/
 dist
 .vitepress/cache
 .vitepress/dist

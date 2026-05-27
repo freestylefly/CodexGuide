@@ -3,7 +3,7 @@
 这一节介绍 Codex 里的 `Skills` 和 `Plugins`。不同版本的 App 或工作区里，入口位置和展示方式可能会调整，但核心区别相对稳定：`Skill` 更像可复用的工作流程说明，`Plugin` 更像把一组能力打包后分发和安装的方式。
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-05-10。本文参考 [Codex Skills](https://developers.openai.com/codex/skills) 与 [Using Codex with your ChatGPT plan](https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan)。如果你的界面与本文截图不完全一致，请优先以当前客户端和工作区可用功能为准。
+官方资料最后核对日期：2026-05-27。本文参考 [Codex Skills](https://developers.openai.com/codex/skills) 与 [Using Codex with your ChatGPT plan](https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan)。如果你的界面与本文截图不完全一致，请优先以当前客户端和工作区可用功能为准。
 :::
 
 如果你在 App 中看到了和技能、插件相关的入口，可以结合下面的概念来理解它们：

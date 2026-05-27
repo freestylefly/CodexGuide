@@ -3,7 +3,7 @@
 这一节介绍 Codex 中的 `Automation`。如果说 Skill 更关注“怎么做”，那么 Automation 更关注“什么时候自动去做”。
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-05-10。本文参考 [Using Codex with your ChatGPT plan](https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan) 与 [Codex use cases](https://developers.openai.com/codex/use-cases/)。不同客户端、工作区套餐和权限设置下，自动化入口和可选项可能会有所不同。
+官方资料最后核对日期：2026-05-27。本文参考 [Using Codex with your ChatGPT plan](https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan) 与 [Codex use cases](https://developers.openai.com/codex/use-cases/)。不同客户端、工作区套餐和权限设置下，自动化入口和可选项可能会有所不同。
 :::
 
 当一个工作流已经足够稳定、而且会重复发生时，就可以考虑把它交给 Automation，在后台按计划触发，而不是每次都手动发起。

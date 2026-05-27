@@ -3,7 +3,7 @@
 第一次实战不要选择“重构整个项目”。选择一个小、可验证、失败也容易回滚的任务，先建立你和 Codex 的协作节奏。
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-05-04。本文参考 [Codex CLI features](https://developers.openai.com/codex/cli/features)、[openai/codex getting started](https://github.com/openai/codex/blob/main/docs/getting-started.md)、[AGENTS.md guide](https://developers.openai.com/codex/guides/agents-md) 与 [Codex security](https://developers.openai.com/codex/agent-approvals-security)。
+官方资料最后核对日期：2026-05-27。本文参考 [Codex CLI features](https://developers.openai.com/codex/cli/features)、[openai/codex getting started](https://github.com/openai/codex/blob/main/docs/getting-started.md)、[AGENTS.md guide](https://developers.openai.com/codex/guides/agents-md) 与 [Codex security](https://developers.openai.com/codex/agent-approvals-security)。
 :::
 
 ## 选择第一个任务

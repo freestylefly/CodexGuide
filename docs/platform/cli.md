@@ -3,7 +3,7 @@
 CLI 是最适合建立 Codex 基本功的入口。它贴近本地仓库、终端命令和测试输出，能让你清楚看到 Codex 如何阅读上下文、修改文件、运行验证并解释结果。
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-05-04。本文参考 [Codex CLI features](https://developers.openai.com/codex/cli/features)、[openai/codex](https://github.com/openai/codex)、[CLI install](https://github.com/openai/codex/blob/main/docs/install.md)、[getting started](https://github.com/openai/codex/blob/main/docs/getting-started.md)、[exec](https://github.com/openai/codex/blob/main/docs/exec.md) 与 [slash commands](https://github.com/openai/codex/blob/main/docs/slash_commands.md)。
+官方资料最后核对日期：2026-05-27。本文参考 [Codex CLI features](https://developers.openai.com/codex/cli/features)、[openai/codex](https://github.com/openai/codex)、[CLI install](https://github.com/openai/codex/blob/main/docs/install.md)、[getting started](https://github.com/openai/codex/blob/main/docs/getting-started.md)、[exec](https://github.com/openai/codex/blob/main/docs/exec.md) 与 [slash commands](https://github.com/openai/codex/blob/main/docs/slash_commands.md)。
 :::
 
 ## CLI 能做什么

@@ -3,7 +3,7 @@
 Cloud / Web 入口适合处理耗时更长、需要后台运行或需要与 GitHub 协作的任务。它把 Codex 任务放进可管理的云端环境，适合团队分派、长任务跟踪和 PR 工作流。
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-05-04。本文参考 [Codex cloud docs](https://platform.openai.com/docs/codex)、[Codex 文档入口](https://developers.openai.com/codex/)、[Codex in ChatGPT Help Center](https://help.openai.com/en/articles/11369540-codex-in-chatgpt) 与 [Introducing Codex](https://openai.com/index/introducing-codex/)。
+官方资料最后核对日期：2026-05-27。本文参考 [Codex cloud docs](https://platform.openai.com/docs/codex)、[Codex 文档入口](https://developers.openai.com/codex/)、[Codex in ChatGPT Help Center](https://help.openai.com/en/articles/11369540-codex-in-chatgpt) 与 [Introducing Codex](https://openai.com/index/introducing-codex/)。
 :::
 
 ## Cloud 适合什么

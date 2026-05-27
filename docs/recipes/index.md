@@ -16,7 +16,7 @@
 
 | 编号 | 案例 | 核心场景 | 推荐入口 | 验证重点 |
 | --- | --- | --- | --- | --- |
-| 01 | [Codex × PPT Skill：一句话生成演示文稿](./ppt-skill-walkthrough.md) | 用 Skill 生成 PPT 初稿 | Desktop App / Skills | 结构、视觉一致性、导出效果 |
+| 01 | [Codex × PPT Skill：一句话生成演示文稿](./ppt-skill-walkthrough.md) | 用 Skill 生成 PPT 初稿 | 桌面 App / Skills | 结构、视觉一致性、导出效果 |
 | 02 | [Codex × Draw.io MCP：AI 自动绘制架构图](./drawio-mcp.md) | 通过 MCP 生成架构图 | App / MCP | 图形层级、节点关系、可编辑性 |
 | 03 | [Codex × Playwright MCP：让 AI 操控浏览器](./playwright-mcp.md) | 用 Playwright 驱动浏览器操作 | App / MCP | 点击路径、页面状态、截图结果 |
 | 04 | [Codex × HyperFrames：用代码生成动画视频](./hyperframes-animation.md) | 生成可视化动画视频 | App / CLI | 动画脚本、渲染结果、素材路径 |

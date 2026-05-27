@@ -3,7 +3,7 @@
 Codex Cloud 是一种不依赖本地环境的使用方式。你不需要在自己电脑上打开 App 或 CLI，直接在浏览器里连接 GitHub 仓库，让 Codex 在云端完成任务。
 
 ::: tip
-CLI 的使用方式见**第二部分：CLI 入门**，IDE 插件见**第三部分：IDE 插件安装**，App 的使用见**第一部分：App 入门**。
+CLI 的使用方式见 [CLI 安装与登录](./11-cli-installation.md)，IDE 插件见 [在 VS Code 中使用 Codex](./13-ide-vscode.md)，桌面 App 的使用见 [Codex 桌面 App 下载与安装](./01-app-installation.md)。
 :::
 
 ---
@@ -47,11 +47,11 @@ Cloud 模式直接在 GitHub 仓库中运行，需要先完成授权。你可以
 
 ---
 
-## 与 App 模式的区别
+## 与桌面 App 模式的区别
 
-| | Codex App | Codex Cloud |
+| | Codex 桌面 App | Codex Cloud |
 |---|---|---|
 | 运行环境 | 本地电脑 | 云端（GitHub 环境） |
-| 是否需要安装 | 需要下载 App | 不需要，浏览器直接访问 |
+| 是否需要安装 | 需要下载电脑端客户端 | 不需要，浏览器直接访问 |
 | 适合任务 | 本地代码、插件、自动化 | 远程仓库分析、PR 生成 |
 | 并行任务 | 支持 | 支持 |

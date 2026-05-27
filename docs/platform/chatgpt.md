@@ -3,7 +3,7 @@
 ChatGPT 中的 Codex 适合从对话里分派仓库任务、查看任务状态、理解代码库和推动团队协作。具体功能会受到账号计划、组织策略、所在地区和产品更新影响。
 
 ::: tip 官方边界
-计划可用性、消息限额、连接方式和具体入口请以 [Codex in ChatGPT Help Center](https://help.openai.com/en/articles/11369540-codex-in-chatgpt) 为准。本文最后核对日期：2026-05-04。
+计划可用性、消息限额、连接方式和具体入口请以 [Codex in ChatGPT Help Center](https://help.openai.com/en/articles/11369540-codex-in-chatgpt) 为准。本文最后核对日期：2026-05-27。
 :::
 
 ## 适用场景

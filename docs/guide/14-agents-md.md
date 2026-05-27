@@ -7,7 +7,7 @@
 `AGENTS.md` 是给 Codex 这类编码代理看的项目说明文件。它可以描述项目结构、开发命令、测试要求、代码风格和协作边界。
 
 ::: tip 最后核对
-`AGENTS.md` 机制请以 [Codex AGENTS.md 官方文档](https://developers.openai.com/codex/guides/agents-md) 和 [openai/codex GitHub repository](https://github.com/openai/codex) 为准。最后核对日期：2026-05-04。
+`AGENTS.md` 机制请以 [Codex AGENTS.md 官方文档](https://developers.openai.com/codex/guides/agents-md) 和 [openai/codex GitHub repository](https://github.com/openai/codex) 为准。最后核对日期：2026-05-27。
 :::
 
 ## 为什么需要 AGENTS.md
@@ -41,7 +41,7 @@
 
 如果想要全局生效，有以下两种方式：
 1. 在系统的全局 Codex 文件夹里面找到 agents.md。
-2. 在 Codex App 里面打开设置，找到“个性化”，在其中填写“自定义指令”。这里面设置的就是全局的 agents.md 文件。
+2. 在 Codex 桌面 App 里面打开设置，找到“个性化”，在其中填写“自定义指令”。这里面设置的就是全局的 agents.md 文件。
 
 设置全局文件后，对于所有的项目都会生效。所以它们的作用域和作用范围是不一样的，这一点大家需要了解一下。
 

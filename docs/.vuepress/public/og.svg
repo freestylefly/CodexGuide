@@ -5,6 +5,6 @@
   <path d="M116 155H166V169H116V155Z" fill="#BFDBFE"/>
   <path d="M116 184H178V198H116V184Z" fill="#DDD6FE"/>
   <text x="84" y="312" fill="#F9FAFB" font-family="Arial, sans-serif" font-size="92" font-weight="700">CodexGuide</text>
-  <text x="88" y="392" fill="#CBD5E1" font-family="Arial, sans-serif" font-size="34">Codex 从入门到精通 · 中文开源教程知识库</text>
+  <text x="88" y="392" fill="#CBD5E1" font-family="Arial, sans-serif" font-size="32">Codex 实践指南 · 初学者 / 创作者 / 开发者 / 团队</text>
   <text x="88" y="476" fill="#5EEAD4" font-family="Arial, sans-serif" font-size="28">CLI · Cloud · IDE · App · AGENTS.md · Workflows</text>
 </svg>

@@ -2,22 +2,23 @@
 
 本页整理 Codex 相关官方资料。涉及价格、计划、模型、可用地区、功能开关、账号权限等时间敏感信息时，请优先打开原文确认。
 
-最后核对日期：2026-05-04。
+最后核对日期：2026-05-27。
 
 ## OpenAI 官方
 
 - [Codex 产品页](https://openai.com/codex/)：Codex 的产品定位、使用界面和团队能力概览。
 - [Codex in ChatGPT Help Center](https://help.openai.com/en/articles/11369540-codex-in-chatgpt)：计划可用性、入口和常见问题。
 - [OpenAI Codex CLI Getting Started](https://help.openai.com/en/articles/11096431-openai-codex-cli-getting-started)：CLI 入门、安装和基础能力。
-- [Codex 文档入口](https://developers.openai.com/codex/)：Codex App、CLI、Cloud、配置、安全、Skills、MCP 等官方文档入口。
+- [Codex 文档入口](https://developers.openai.com/codex/)：Codex 桌面 App、CLI、Cloud、配置、安全、Skills、MCP 等官方文档入口。
 - [Codex cloud docs](https://platform.openai.com/docs/codex)：云端任务、GitHub 连接和仓库工作流入口。
 - [Introducing Codex](https://openai.com/index/introducing-codex/)：Codex 发布背景和云端软件工程代理介绍。
-- [Introducing the Codex app](https://openai.com/index/introducing-the-codex-app/)：Codex App 相关介绍。
+- [Introducing the Codex app](https://openai.com/index/introducing-the-codex-app/)：Codex 桌面 App 相关介绍。
+- [Work with Codex from anywhere](https://openai.com/index/work-with-codex-from-anywhere/)：ChatGPT 手机 App 中的 Codex 入口、跨设备连接和可用性说明。
 - [Unrolling the Codex agent loop](https://openai.com/index/unrolling-the-codex-agent-loop/)：Codex agent loop 背后的工作方式介绍。
 
 ## 官方文档重点页面
 
-- [Codex App docs](https://developers.openai.com/codex/app)：Desktop App 功能入口，包含本地项目、Review、Automations、Worktrees、Local Environments、In-app Browser、Computer Use 等主题。
+- [Codex App docs（桌面端）](https://developers.openai.com/codex/app)：桌面 App 功能入口，包含本地项目、Review、Automations、Worktrees、Local Environments、In-app Browser、Computer Use 等主题。
 - [Codex CLI features](https://developers.openai.com/codex/cli/features)：CLI 交互模式、非交互模式、功能概览。
 - [AGENTS.md](https://developers.openai.com/codex/guides/agents-md)：项目规则文件的官方说明。
 - [Codex security](https://developers.openai.com/codex/agent-approvals-security)：沙盒、审批和安全边界。

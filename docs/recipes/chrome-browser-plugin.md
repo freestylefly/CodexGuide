@@ -3,7 +3,7 @@
 这个案例介绍如何让 Codex 借助浏览器相关能力完成网页操作任务，比如打开页面、搜索内容、点击结果和返回链接。
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-05-10。本文参考 [Using Codex with your ChatGPT plan](https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan) 与 [Codex use cases](https://developers.openai.com/codex/explore/)。具体插件名称、安装流程和入口位置可能会随客户端版本或工作区配置变化。
+官方资料最后核对日期：2026-05-27。本文参考 [Using Codex with your ChatGPT plan](https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan) 与 [Codex use cases](https://developers.openai.com/codex/explore/)。具体插件名称、安装流程和入口位置可能会随客户端版本或工作区配置变化。
 :::
 
 ## 适用场景
@@ -26,7 +26,7 @@
 
 如果你的客户端提供了 Chrome 相关插件或浏览器能力，常见流程通常类似这样：
 
-1. 在 Codex App 中找到对应的浏览器能力并启用。
+1. 在 Codex 桌面 App 中找到对应的浏览器能力并启用。
 2. 按引导完成浏览器侧的插件安装或连接配置。
 3. 回到任务中，明确描述目标网页、搜索词和预期输出。
 

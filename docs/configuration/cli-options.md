@@ -3,7 +3,7 @@
 CLI 是 Codex 最适合练基本功的入口。本页按官方教程的逻辑，把交互模式、非交互模式、会话恢复、Slash Commands 和常用启动参数整理成中文实操版。
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-05-04。本文参考 [Codex CLI features](https://developers.openai.com/codex/cli/features)、[Codex CLI 官方仓库](https://github.com/openai/codex)、[CLI getting started](https://github.com/openai/codex/blob/main/docs/getting-started.md)、[exec 文档](https://github.com/openai/codex/blob/main/docs/exec.md) 与 [slash commands 文档](https://github.com/openai/codex/blob/main/docs/slash_commands.md)。
+官方资料最后核对日期：2026-05-27。本文参考 [Codex CLI features](https://developers.openai.com/codex/cli/features)、[Codex CLI 官方仓库](https://github.com/openai/codex)、[CLI getting started](https://github.com/openai/codex/blob/main/docs/getting-started.md)、[exec 文档](https://github.com/openai/codex/blob/main/docs/exec.md) 与 [slash commands 文档](https://github.com/openai/codex/blob/main/docs/slash_commands.md)。
 :::
 
 ## 三种使用姿势

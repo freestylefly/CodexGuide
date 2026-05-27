@@ -54,7 +54,7 @@
   </g>
 
   <text x="188" y="284" fill="url(#title)" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, PingFang SC, Microsoft YaHei, sans-serif" font-size="104" font-weight="800" letter-spacing="0">CodexGuide</text>
-  <text x="193" y="348" fill="#CBD5E1" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, PingFang SC, Microsoft YaHei, sans-serif" font-size="34" font-weight="500" letter-spacing="0">Codex 从入门到精通 · 中文开源教程知识库</text>
+  <text x="193" y="348" fill="#CBD5E1" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, PingFang SC, Microsoft YaHei, sans-serif" font-size="32" font-weight="500" letter-spacing="0">Codex 实践指南 · 初学者 / 创作者 / 开发者 / 团队</text>
 
   <g font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="22" fill="#E2E8F0">
     <rect x="190" y="405" width="112" height="42" rx="21" fill="#0F766E" fill-opacity="0.22" stroke="#2DD4BF" stroke-opacity="0.42"/>

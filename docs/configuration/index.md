@@ -3,7 +3,7 @@
 Codex 的学习曲线有两个阶段：先会用，再会配置。会用解决单次任务，会配置能把 Codex 变成稳定的个人工作台和团队协作工具。
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-05-04。本文参考 [Codex 文档入口](https://developers.openai.com/codex/)、[Codex CLI features](https://developers.openai.com/codex/cli/features)、[基础配置](https://developers.openai.com/codex/config-basic)、[AGENTS.md](https://developers.openai.com/codex/guides/agents-md)、[Codex Skills](https://developers.openai.com/codex/skills) 与 [Codex security](https://developers.openai.com/codex/agent-approvals-security)。
+官方资料最后核对日期：2026-05-27。本文参考 [Codex 文档入口](https://developers.openai.com/codex/)、[Codex CLI features](https://developers.openai.com/codex/cli/features)、[基础配置](https://developers.openai.com/codex/config-basic)、[AGENTS.md](https://developers.openai.com/codex/guides/agents-md)、[Codex Skills](https://developers.openai.com/codex/skills) 与 [Codex security](https://developers.openai.com/codex/agent-approvals-security)。
 :::
 
 ![Codex 配置地图](/images/codex-config-map.svg)

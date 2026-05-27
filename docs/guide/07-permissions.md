@@ -3,7 +3,7 @@
 这一节介绍 Codex 中常见的权限与审批模式。不同入口的界面文案可能会略有差异，但核心问题始终是一样的：Codex 能不能自动改文件、能不能自动执行命令、哪些操作需要你确认。
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-05-10。本文参考 [OpenAI Codex CLI – Getting Started](https://help.openai.com/en/articles/11096431-openai-codex-cli-getting-started) 与 [Using Codex with your ChatGPT plan](https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan)。具体名称、入口和可用选项请以你当前使用的客户端界面为准。
+官方资料最后核对日期：2026-05-27。本文参考 [OpenAI Codex CLI – Getting Started](https://help.openai.com/en/articles/11096431-openai-codex-cli-getting-started) 与 [Using Codex with your ChatGPT plan](https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan)。具体名称、入口和可用选项请以你当前使用的客户端界面为准。
 :::
 
 ![image-20260511153154873](../images/image-20260511153154873.png)

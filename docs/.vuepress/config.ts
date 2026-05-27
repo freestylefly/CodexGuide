@@ -8,7 +8,7 @@ export default defineUserConfig({
   dest: "docs/.vuepress/dist",
   lang: "zh-CN",
   title: "CodexGuide",
-  description: "Codex 从入门到精通，面向中文开发者的 Codex 系统化开源教程知识库。",
+  description: "面向全球初学者、创作者、开发者与团队的 Codex 实践指南。",
 
   head: [
     ["meta", { name: "robots", content: "all" }],
@@ -18,7 +18,7 @@ export default defineUserConfig({
       {
         name: "keywords",
         content:
-          "CodexGuide,Codex,OpenAI Codex,Codex CLI,AGENTS.md,AI 编程,AI Agent,代码助手,中文教程",
+          "CodexGuide,Codex,OpenAI Codex,Codex CLI,AGENTS.md,AI 编程,AI Agent,工作流,实践指南,Codex guide",
       },
     ],
     ["meta", { property: "og:site_name", content: "CodexGuide" }],
@@ -30,7 +30,7 @@ export default defineUserConfig({
       "meta",
       {
         property: "og:description",
-        content: "Codex 从入门到精通，面向中文开发者的 Codex 系统化开源教程知识库。",
+        content: "面向全球初学者、创作者、开发者与团队的 Codex 实践指南。",
       },
     ],
     ["meta", { property: "og:image", content: "https://codexguide.ai/og.svg" }],

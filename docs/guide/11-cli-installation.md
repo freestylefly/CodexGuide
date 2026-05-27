@@ -3,7 +3,7 @@
 本页先覆盖 Codex CLI 的安装与登录。桌面端、ChatGPT、Cloud 和 IDE 入口会在 [入口地图](/platform/) 中分别展开。
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-05-04。CLI 系统要求与安装方式参考 [openai/codex 官方仓库](https://github.com/openai/codex)、[CLI install 文档](https://github.com/openai/codex/blob/main/docs/install.md) 和 [Codex CLI Help Center](https://help.openai.com/en/articles/11096431-openai-codex-cli-getting-started)。
+官方资料最后核对日期：2026-05-27。CLI 系统要求与安装方式参考 [openai/codex 官方仓库](https://github.com/openai/codex)、[CLI install 文档](https://github.com/openai/codex/blob/main/docs/install.md) 和 [Codex CLI Help Center](https://help.openai.com/en/articles/11096431-openai-codex-cli-getting-started)。
 :::
 
 ## 安装前检查
@@ -90,4 +90,4 @@ codex
 | Windows 运行异常 | 未使用 WSL2 或 shell 环境不完整 | 按官方建议使用 Windows 11 + WSL2 |
 | 仓库命令跑不起来 | 项目依赖未安装或本地环境缺失 | 先安装项目依赖，再让 Codex 读取测试配置 |
 
-完成后继续：[第一次让 Codex 改代码](./11-cli-first-run.md)。
+完成后继续：[第一次让 Codex 改代码](./12-cli-first-run.md)。

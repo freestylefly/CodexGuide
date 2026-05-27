@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="520" viewBox="0 0 1100 520" role="img" aria-labelledby="title desc">
+  <title id="title">Codex 桌面 App 设置入口速查</title>
+  <desc id="desc">把 Codex 桌面 App 设置分成基础体验、执行边界和扩展能力三组。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset="0.54" stop-color="#eefcf9"/>
+      <stop offset="1" stop-color="#f8fbff"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-12%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#0f172a" flood-opacity=".10"/>
+    </filter>
+  </defs>
+  <rect width="1100" height="520" rx="28" fill="url(#bg)"/>
+  <g transform="translate(48 42)">
+    <text x="0" y="0" dominant-baseline="hanging" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="34" font-weight="750" fill="#172033">设置先分三层看</text>
+    <text x="0" y="52" dominant-baseline="hanging" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="18" fill="#64748b">先把体验调顺，再设安全边界，最后按任务接入外部工具。</text>
+  </g>
+  <g transform="translate(48 142)" filter="url(#shadow)">
+    <rect width="310" height="300" rx="18" fill="#ffffff"/>
+    <circle cx="38" cy="42" r="15" fill="#14b8a6"/>
+    <text x="66" y="31" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="24" font-weight="750" fill="#172033">基础体验</text>
+    <text x="28" y="78" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="16" fill="#64748b">让界面、语气和默认行为适合你。</text>
+    <g font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="18" font-weight="650" fill="#0f766e">
+      <rect x="28" y="118" width="118" height="38" rx="19" fill="#ccfbf1"/>
+      <text x="58" y="143">常规</text>
+      <rect x="160" y="118" width="118" height="38" rx="19" fill="#ccfbf1"/>
+      <text x="190" y="143">外观</text>
+      <rect x="28" y="172" width="118" height="38" rx="19" fill="#ccfbf1"/>
+      <text x="48" y="197">个性化</text>
+      <rect x="160" y="172" width="118" height="38" rx="19" fill="#ccfbf1"/>
+      <text x="190" y="197">归档</text>
+    </g>
+    <text x="28" y="244" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="15" fill="#475569">新手建议：先保持默认，只改外观、</text>
+    <text x="28" y="268" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="15" fill="#475569">通知和个性化语气。</text>
+  </g>
+  <g transform="translate(395 142)" filter="url(#shadow)">
+    <rect width="310" height="300" rx="18" fill="#ffffff"/>
+    <circle cx="38" cy="42" r="15" fill="#2563eb"/>
+    <text x="66" y="31" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="24" font-weight="750" fill="#172033">执行边界</text>
+    <text x="28" y="78" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="16" fill="#64748b">决定 Codex 能改哪里、跑什么、怎么并行。</text>
+    <g font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="18" font-weight="650" fill="#1d4ed8">
+      <rect x="28" y="118" width="118" height="38" rx="19" fill="#dbeafe"/>
+      <text x="58" y="143">配置</text>
+      <rect x="160" y="118" width="118" height="38" rx="19" fill="#dbeafe"/>
+      <text x="200" y="143">Git</text>
+      <rect x="28" y="172" width="118" height="38" rx="19" fill="#dbeafe"/>
+      <text x="58" y="197">环境</text>
+      <rect x="160" y="172" width="118" height="38" rx="19" fill="#dbeafe"/>
+      <text x="190" y="197">工作树</text>
+      <rect x="28" y="226" width="118" height="38" rx="19" fill="#dbeafe"/>
+      <text x="48" y="251">使用情况</text>
+    </g>
+  </g>
+  <g transform="translate(742 142)" filter="url(#shadow)">
+    <rect width="310" height="300" rx="18" fill="#ffffff"/>
+    <circle cx="38" cy="42" r="15" fill="#d97706"/>
+    <text x="66" y="31" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="24" font-weight="750" fill="#172033">扩展能力</text>
+    <text x="28" y="78" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="16" fill="#64748b">让 Codex 连接工具、浏览器和桌面应用。</text>
+    <g font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="18" font-weight="650" fill="#b45309">
+      <rect x="28" y="118" width="118" height="38" rx="19" fill="#fef3c7"/>
+      <text x="50" y="143">MCP</text>
+      <rect x="160" y="118" width="118" height="38" rx="19" fill="#fef3c7"/>
+      <text x="198" y="143">钩子</text>
+      <rect x="28" y="172" width="118" height="38" rx="19" fill="#fef3c7"/>
+      <text x="58" y="197">浏览器</text>
+      <rect x="160" y="172" width="118" height="38" rx="19" fill="#fef3c7"/>
+      <text x="180" y="197">电脑操控</text>
+    </g>
+    <text x="28" y="244" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="15" fill="#475569">先开最小权限；涉及账号、文件和</text>
+    <text x="28" y="268" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="15" fill="#475569">浏览器操作时逐次审批。</text>
+  </g>
+</svg>
