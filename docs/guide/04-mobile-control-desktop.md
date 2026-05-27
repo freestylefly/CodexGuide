@@ -11,16 +11,16 @@
 你需要更新你的 ChatGPT APP 到最新版本，然后选择连接你电脑里面的 Codex。
 
 
-![ios app](https://cdn.canghecode.com/blog/HIUgGh9bAAAV86a.jpg)
+![ChatGPT 手机 App 中的 Codex 入口](../images/mobile-codex-ios-app.jpg)
 
 连接桌面 Codex APP：
 
-![](https://cdn.canghecode.com/blog/HIUgGiCbkAAq0qS.jpg)
+![手机端连接桌面 Codex App](../images/mobile-codex-connect-desktop.jpg)
 
 
 在 ChatGPT 中打开 Codex，就可以直接使用了。
 
-![](https://cdn.canghecode.com/blog/94eab4feddfa4656ca83fe97c077d2a2.jpg)
+![在 ChatGPT 手机 App 中打开 Codex](../images/mobile-codex-chatgpt-entry.jpg)
 
 
 ## 它能做什么

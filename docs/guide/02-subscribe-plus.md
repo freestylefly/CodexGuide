@@ -28,7 +28,7 @@
 
 >可以试试：https://hero-sms.com
 
-![](https://cdn.canghecode.com/blog/20260527115149.png)
+![Hero SMS 注册验证码平台示例](../images/subscribe-hero-sms.png)
 
 
 ## 方法一：苹果礼品卡（最稳定，推荐优先尝试）
@@ -50,11 +50,11 @@
 4. 购买成功后复制兑换码，打开 App Store，点击头像 → 「兑换礼品卡或代码」，粘贴充值
 5. 打开 ChatGPT App，登录账号，进入设置订阅 Plus，选择 Apple ID 余额支付
 
-![](https://cdn.canghecode.com/blog/HGmlfFYbAAIKCqb.jpg)
+![支付宝购买苹果礼品卡示例](../images/subscribe-apple-gift-card.jpg)
 
 给Apple id充值礼品卡：
 
-![](https://cdn.canghecode.com/blog/HGmlfxJbAAQwiLx.jpg)
+![Apple ID 兑换礼品卡示例](../images/subscribe-apple-id-redeem.jpg)
 
 ::: tip
 如果支付宝购买偶尔不稳定，可以通过代理访问苹果官网直接购买礼品卡，一次性多充值几个月额度，后续续订不需要重复操作。
