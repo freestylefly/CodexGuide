@@ -1,10 +1,10 @@
 ---
-description: "Codex 实战案例库，收录 PPT、Draw.io、Playwright、Obsidian、飞书、Figma、Notion、CI 和远程排障案例。"
+description: "Codex 实战案例库，收录 PPT、Draw.io、Playwright、Obsidian、临床文献综述、飞书、Figma、Notion、CI 和远程排障案例。"
 ---
 
 # 实战案例库
 
-这里收集可复现、可改写、可迁移到真实工作流里的 Codex 使用案例。当前版本已收录 13 个案例，覆盖 Skill、MCP、浏览器自动化、知识库、设计稿、团队协作、远程排障和 CI 自动修复。
+这里收集可复现、可改写、可迁移到真实工作流里的 Codex 使用案例。当前版本已收录 14 个案例，覆盖 Skill、MCP、浏览器自动化、知识库、临床文献综述、设计稿、团队协作、远程排障和 CI 自动修复。
 
 ## 当前案例概览
 
@@ -12,11 +12,12 @@ description: "Codex 实战案例库，收录 PPT、Draw.io、Playwright、Obsidi
 | --- | --- | --- |
 | 内容生产与表达 | PPT Skill、Draw.io MCP、HyperFrames | 把一句话需求转成演示文稿、架构图和动画视频 |
 | 知识库与个人工作台 | Obsidian、LLM Wiki、Notion MCP | 在笔记、Wiki、知识空间中组织资料和生成内容 |
+| 医学科研与证据整理 | 临床文献综述 | 把研究问题拆成 PICO、证据表、局限性和安全边界 |
 | 浏览器与前端自动化 | Playwright MCP、Chrome 浏览器插件 | 让 Codex 操作网页、检查页面、执行浏览器任务 |
 | 设计与协作平台 | Figma MCP、飞书 CLI | 读取设计稿、处理飞书数据、连接团队工具 |
 | 发布与工程运维 | DKFile、云服务器远程修 Bug、GitHub Actions CI 修复 | 从本地/远程环境到自动修复流程的完整闭环 |
 
-## 13 个案例清单
+## 14 个案例清单
 
 | 编号 | 案例 | 核心场景 | 推荐入口 | 验证重点 |
 | --- | --- | --- | --- | --- |
@@ -33,6 +34,7 @@ description: "Codex 实战案例库，收录 PPT、Draw.io、Playwright、Obsidi
 | 11 | [Codex × 云服务器：远程定位并修复 Bug](./remote-bug-fix.md) | 在远程容器里排查 Python 报错 | CLI / Remote | 连接方式、复现命令、修复验证 |
 | 12 | [Codex × Chrome：让 AI 直接控制浏览器](./chrome-browser-plugin.md) | 通过浏览器插件执行网页任务 | Browser Plugin | 页面可见状态、动作确认、安全边界 |
 | 13 | [Codex × GitHub Actions：CI 失败自动修复](./github-actions-ci-fix.md) | CI 失败后自动触发 Codex 修复并开 PR | GitHub Actions | 权限配置、失败提交、测试通过、PR 内容 |
+| 14 | [Codex × 临床文献综述：把医学问题整理成可复核证据表](./clinical-literature-review.md) | 整理临床科研问题和文献证据 | App / CLI / Obsidian | PICO、证据来源、局限性、医疗安全边界 |
 
 ## 怎么选择先看哪个
 
@@ -41,6 +43,7 @@ description: "Codex 实战案例库，收录 PPT、Draw.io、Playwright、Obsidi
 - 想快速看到效果：先看 [PPT Skill](./ppt-skill-walkthrough.md)、[Draw.io MCP](./drawio-mcp.md)、[DKFile](./dkfile-deploy-codex.md)。
 - 想学习 MCP：先看 [Playwright MCP](./playwright-mcp.md)、[Figma MCP](./figma-mcp-codex.md)、[Notion MCP](./notion-mcp-codex.md)。
 - 想把 Codex 放进知识工作流：先看 [Obsidian](./obsidian-codex.md)、[LLM Wiki](./llm-wiki-codex.md)、[飞书 CLI](./feishu-cli-codex.md)。
+- 想做医学科研资料整理：先看 [临床文献综述](./clinical-literature-review.md)，重点学习如何把事实、推断和安全边界分开。
 - 想做工程自动化：先看 [云服务器远程修 Bug](./remote-bug-fix.md)、[GitHub Actions CI 自动修复](./github-actions-ci-fix.md)。
 - 想理解浏览器控制能力：先看 [Playwright MCP](./playwright-mcp.md) 和 [Chrome 浏览器插件](./chrome-browser-plugin.md)。
 
@@ -48,7 +51,7 @@ description: "Codex 实战案例库，收录 PPT、Draw.io、Playwright、Obsidi
 
 | 状态 | 案例 | 说明 |
 | --- | --- | --- |
-| 已形成完整流程 | PPT Skill、Playwright MCP、Obsidian、飞书 CLI、远程修 Bug、GitHub Actions CI 修复 | 有明确安装、使用步骤或完整操作链路 |
+| 已形成完整流程 | PPT Skill、Playwright MCP、Obsidian、飞书 CLI、临床文献综述、远程修 Bug、GitHub Actions CI 修复 | 有明确安装、使用步骤或完整操作链路 |
 | 偏工具接入教程 | Draw.io MCP、Figma MCP、Notion MCP、DKFile、Chrome 浏览器插件 | 重点在接入方式、典型任务和安全边界 |
 | 偏场景展示 | HyperFrames、LLM Wiki | 重点展示 Codex 与创作/知识库场景的组合方式 |
 

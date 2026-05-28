@@ -35,7 +35,7 @@ features:
     details: 说明如何用手机端发起 Codex 任务，并把进展接回桌面端工作流。
   - title: 真实案例库
     icon: lightbulb
-    details: 收录 13 个可迁移案例，覆盖内容生产、知识库、浏览器、CI 与远程排障。
+    details: 收录 14 个可迁移案例，覆盖内容生产、知识库、临床文献综述、浏览器、CI 与远程排障。
   - title: 团队沉淀
     icon: people
     details: 提供 AGENTS.md、任务模板、复盘结构和团队推广方法。
@@ -58,8 +58,8 @@ CodexGuide 不是一份命令速查表，而是一份围绕真实工作流组织
     <span>从桌面 App、CLI、IDE 到 Cloud，按阶段建立完整使用习惯。</span>
   </a>
   <a class="home-metric-card" href="/recipes/" data-tone="blue">
-    <strong>13 个实战案例</strong>
-    <span>把 Codex 放进 PPT、Draw.io、Playwright、Obsidian、飞书、CI 等真实场景。</span>
+    <strong>14 个实战案例</strong>
+    <span>把 Codex 放进 PPT、Draw.io、Playwright、Obsidian、临床文献综述、飞书、CI 等真实场景。</span>
   </a>
   <a class="home-metric-card" href="/configuration/" data-tone="amber">
     <strong>4 类配置主题</strong>
@@ -170,6 +170,10 @@ Codex 的能力会出现在 App、CLI、Cloud、IDE、ChatGPT 和集成生态里
   <a class="home-case-card" href="/recipes/obsidian-codex.html">
     <strong>连接 Obsidian 知识库</strong>
     <span>在本地笔记中生成内容、配图和可追踪引用。</span>
+  </a>
+  <a class="home-case-card" href="/recipes/clinical-literature-review.html">
+    <strong>整理临床文献证据表</strong>
+    <span>把医学问题拆成 PICO、证据来源、局限性和安全边界。</span>
   </a>
   <a class="home-case-card" href="/recipes/github-actions-ci-fix.html">
     <strong>CI 失败自动修复</strong>

@@ -76,7 +76,7 @@ CodexGuide 想做的不是命令速查表，而是一份面向真实任务的实
 | 入口地图 | 解释桌面 App、CLI、Cloud、IDE、ChatGPT 和集成生态该怎么选 |
 | 配置专题 | 覆盖 CLI 选项、`config.toml`、MCP、Skills、Subagents、安全审批 |
 | 工作流方法 | 任务设计、验证方式、非开发工作流、团队 playbook |
-| 实战案例 | PPT、Draw.io、浏览器、Obsidian、飞书、Figma、Notion、CI 修复等场景 |
+| 实战案例 | PPT、Draw.io、浏览器、Obsidian、临床文献综述、飞书、Figma、Notion、CI 修复等场景 |
 | 官方资料索引 | 汇总 OpenAI 官方资料、GitHub 仓库和关键事实来源 |
 
 ## 推荐阅读路径

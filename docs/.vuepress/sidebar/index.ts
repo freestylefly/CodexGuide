@@ -78,6 +78,7 @@ export default sidebar({
         { text: "11 Codex × 云服务器：远程定位并修复 Bug", link: "remote-bug-fix.md" },
         { text: "12 Codex × Chrome：让 AI 直接控制浏览器", link: "chrome-browser-plugin.md" },
         { text: "13 Codex × GitHub Actions：CI 失败自动修复", link: "github-actions-ci-fix.md" },
+        { text: "14 Codex × 临床文献综述：把医学问题整理成证据表", link: "clinical-literature-review.md" },
         { text: "参考来源与致谢", link: "credits.md" },
       ],
     },
