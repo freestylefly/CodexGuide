@@ -1,5 +1,7 @@
 ---
 description: "Codex CLI 安装与登录教程，覆盖 Node 环境、安装命令、版本检查、登录流程和首次运行准备。"
+redirectFrom:
+  - /guide/11-cli-installation.html
 ---
 
 # 安装与登录
@@ -94,4 +96,4 @@ codex
 | Windows 运行异常 | 未使用 WSL2 或 shell 环境不完整 | 按官方建议使用 Windows 11 + WSL2 |
 | 仓库命令跑不起来 | 项目依赖未安装或本地环境缺失 | 先安装项目依赖，再让 Codex 读取测试配置 |
 
-完成后继续：[第一次让 Codex 改代码](./12-cli-first-run.md)。
+完成后继续：[第一次让 Codex 改代码](./13-cli-first-run.md)。

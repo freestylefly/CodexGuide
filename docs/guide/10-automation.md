@@ -1,5 +1,7 @@
 ---
 description: "Codex 自动化指南，说明定时任务、提醒、监控、后续跟进和适合自动化处理的工作场景，沉淀重复检查流程。"
+redirectFrom:
+  - /guide/09-automation.html
 ---
 
 # 自动化

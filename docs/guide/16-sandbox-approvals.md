@@ -1,5 +1,7 @@
 ---
 description: "Codex 沙盒、审批与安全边界指南，解释只读、写入、网络、危险命令和人工确认策略，适合高风险任务前检查。"
+redirectFrom:
+  - /guide/15-sandbox-approvals.html
 ---
 
 # 沙盒、审批与安全边界

@@ -85,7 +85,7 @@ CodexGuide 不是一份命令速查表，而是一份围绕真实工作流组织
     <span>安装电脑端客户端，了解界面，完成第一个低风险任务。</span>
     <em>适合初学者、产品、运营、技术写作者</em>
   </a>
-  <a class="home-path-card" href="/guide/11-cli-installation.html" data-step="02">
+  <a class="home-path-card" href="/guide/12-cli-installation.html" data-step="02">
     <strong>开发者本地提效</strong>
     <span>在 CLI 中读项目、改代码、跑测试，形成可验证的工程闭环。</span>
     <em>适合前端、后端、全栈、开源维护者</em>
@@ -110,7 +110,7 @@ Codex 的能力会出现在 App、CLI、Cloud、IDE、ChatGPT 和集成生态里
 <div class="home-link-row">
   <a href="/platform/">查看入口地图</a>
   <a href="/guide/03-app-overview.html">了解桌面 App</a>
-  <a href="/guide/13-ide-vscode.html">VS Code 使用方式</a>
+  <a href="/guide/14-ide-vscode.html">VS Code 使用方式</a>
 </div>
 
 </div>
@@ -130,11 +130,11 @@ Codex 的能力会出现在 App、CLI、Cloud、IDE、ChatGPT 和集成生态里
     <strong>说明</strong>
     <span>写清目标、范围、禁止事项、上下文和期望输出。</span>
   </a>
-  <a href="/guide/06-task-execution.html" class="home-loop-item" data-tone="blue">
+  <a href="/guide/07-task-execution.html" class="home-loop-item" data-tone="blue">
     <strong>执行</strong>
     <span>理解 Codex 如何读文件、运行命令、小步修改和汇报状态。</span>
   </a>
-  <a href="/guide/15-sandbox-approvals.html" class="home-loop-item" data-tone="rose">
+  <a href="/guide/16-sandbox-approvals.html" class="home-loop-item" data-tone="rose">
     <strong>控制</strong>
     <span>设置沙盒、审批、网络和凭据边界，让任务可控。</span>
   </a>
@@ -194,10 +194,10 @@ Codex 的能力会出现在 App、CLI、Cloud、IDE、ChatGPT 和集成生态里
 当 Codex 进入团队项目，真正重要的是边界、复现和共识。教程会把每次任务拆成可检查的输入与输出，帮助你减少“看起来完成了，但没人敢合并”的尴尬时刻。
 
 <ul class="home-check-list">
-  <li>用 <a href="/guide/14-agents-md.html">AGENTS.md</a> 写清项目命令、代码风格和禁止事项。</li>
-  <li>用 <a href="/guide/15-sandbox-approvals.html">沙盒与审批</a> 管理文件、网络、凭据和高风险命令。</li>
+  <li>用 <a href="/guide/15-agents-md.html">AGENTS.md</a> 写清项目命令、代码风格和禁止事项。</li>
+  <li>用 <a href="/guide/16-sandbox-approvals.html">沙盒与审批</a> 管理文件、网络、凭据和高风险命令。</li>
   <li>用 <a href="/practice/team-playbook.html">团队 playbook</a> 统一任务模板、复盘结构和案例沉淀。</li>
-  <li>用 <a href="/guide/17-troubleshooting.html">排障手册</a> 快速定位登录、权限、依赖和执行异常。</li>
+  <li>用 <a href="/guide/18-troubleshooting.html">排障手册</a> 快速定位登录、权限、依赖和执行异常。</li>
 </ul>
 
 </div>

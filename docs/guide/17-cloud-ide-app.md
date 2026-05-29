@@ -1,5 +1,7 @@
 ---
 description: "Codex Cloud 使用指南，说明云端任务、仓库连接、长任务、PR 工作流和与本地 App、IDE 的差异。"
+redirectFrom:
+  - /guide/16-cloud-ide-app.html
 ---
 
 # Codex Cloud：使用云端模式
@@ -7,7 +9,7 @@ description: "Codex Cloud 使用指南，说明云端任务、仓库连接、长
 Codex Cloud 是一种不依赖本地环境的使用方式。你不需要在自己电脑上打开 App 或 CLI，直接在浏览器里连接 GitHub 仓库，让 Codex 在云端完成任务。
 
 ::: tip
-CLI 的使用方式见 [CLI 安装与登录](./11-cli-installation.md)，IDE 插件见 [在 VS Code 中使用 Codex](./13-ide-vscode.md)，桌面 App 的使用见 [Codex 桌面 App 下载与安装](./01-app-installation.md)。
+CLI 的使用方式见 [CLI 安装与登录](./12-cli-installation.md)，IDE 插件见 [在 VS Code 中使用 Codex](./14-ide-vscode.md)，桌面 App 的使用见 [Codex 桌面 App 下载与安装](./01-app-installation.md)。
 :::
 
 ---

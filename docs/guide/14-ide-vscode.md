@@ -1,5 +1,7 @@
 ---
 description: "在 VS Code 中使用 Codex 的教程，介绍插件入口、文件上下文、局部修改、解释代码和编辑器内协作方式。"
+redirectFrom:
+  - /guide/13-ide-vscode.html
 ---
 
 # 在 VS Code 中使用 Codex

@@ -1,5 +1,7 @@
 ---
 description: "AGENTS.md 项目规则指南，说明如何写入项目命令、代码风格、禁用事项、验证方式和团队约定，让 Codex 更懂仓库。"
+redirectFrom:
+  - /guide/14-agents-md.html
 ---
 
 # AGENTS.md 项目规则

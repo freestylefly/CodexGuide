@@ -97,4 +97,4 @@ OpenAI 官方文章说明，Codex 手机端能力正在 iOS 和 Android 的 Chat
 
 一句话：**手机端 Codex 更像“随身工作台”，Codex Cloud 更像“云端执行环境”。**
 
-下一步：[用 Codex 完成第一个任务](./05-app-first-task.md)
+下一步：[连接第三方 API](./05-third-party-api.md)

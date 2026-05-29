@@ -1,5 +1,7 @@
 ---
 description: "Codex Skills 和 Plugins 入门说明，介绍技能、插件、MCP 能力的关系，以及适合沉淀的工作流类型。"
+redirectFrom:
+  - /guide/08-skills-plugins.html
 ---
 
 # Skills 和 Plugins

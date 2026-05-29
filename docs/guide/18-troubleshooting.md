@@ -1,5 +1,7 @@
 ---
 description: "Codex 排障手册，汇总登录、安装、权限、依赖、命令失败和任务执行异常的定位与恢复路径，帮助快速继续工作。"
+redirectFrom:
+  - /guide/17-troubleshooting.html
 ---
 
 # 排障手册

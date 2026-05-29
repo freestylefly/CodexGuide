@@ -1,5 +1,7 @@
 ---
 description: "Codex 权限管理指南，说明文件访问、命令审批、网络权限、敏感数据和高风险操作的控制方式，适合任务前核对。"
+redirectFrom:
+  - /guide/07-permissions.html
 ---
 
 # 权限管理
