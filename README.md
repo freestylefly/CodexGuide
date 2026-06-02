@@ -14,6 +14,10 @@
 </p>
 
 <p align="center">
+  简体中文
+  ·
+  <a href="./README_en.md">English</a>
+  ·
   <a href="https://codexguide.ai/">在线阅读</a>
   ·
   <a href="./docs/guide/00-overview.md">学习路线</a>
@@ -67,6 +71,15 @@ CodexGuide 想做的不是命令速查表，而是一份面向真实任务的实
 - **内容创作者与知识工作者**：把 Codex 用在写作、PPT、资料整理、知识库、浏览器和工作流自动化里。
 - **团队负责人和工具建设者**：建立团队规则、任务模板、权限边界、复盘结构和可迁移案例库。
 - **正在选入口的人**：对比桌面 App、CLI、Cloud、IDE、ChatGPT 手机端和插件生态的适用场景。
+
+## ❤️ 赞助商
+
+> [想出现在这里？](https://raw.githubusercontent.com/freestylefly/wesight/main/public/readme/community/wechat-personal.jpg) 添加微信时请备注你的产品名和项目赞助说明。
+
+| 赞助商 | 介绍 |
+| ------ | ---- |
+| <a href="https://pptoken.cc/"><img src="https://raw.githubusercontent.com/freestylefly/wesight/main/public/readme/sponsors/pptoken.png" alt="PPToken" width="240"></a> | 项目赞助。PPToken 提供 ChatGPT、Claude、Gemini 等主流 AI 模型 API 中转与密钥分发服务，支持低延迟、高可用、按量计费与订阅套餐灵活选择。 |
+| <a href="https://ciyuan.today/"><img src="https://raw.githubusercontent.com/freestylefly/wesight/main/public/readme/sponsors/ciyuan-api.jpg" alt="词元 API" width="240"></a> | 项目赞助。词元 API 致力于成为开发者的一站式 AI 接口平台，提供稳定、低延迟、高可用的大模型 API 服务，让 AI 应用开发更简单。 |
 
 ## 你会在这里看到什么
 
