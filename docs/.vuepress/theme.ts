@@ -47,12 +47,16 @@ export default hopeTheme({
     component: true,
     gfm: true,
     mark: true,
+    imgLazyload: true,
     tasklist: true,
     tabs: true,
   },
 
   plugins: {
     copyCode: true,
+    icon: {
+      assets: "/vendor/iconify-icon/index.js",
+    },
     copyright: {
       author: "CodexGuide(codexguide.ai)",
       license: "MIT",

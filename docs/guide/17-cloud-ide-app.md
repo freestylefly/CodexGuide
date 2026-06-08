@@ -29,7 +29,7 @@ CLI 的使用方式见 [CLI 安装与登录](./12-cli-installation.md)，IDE 插
 
 访问：[https://chatgpt.com/codex/cloud](https://chatgpt.com/codex/cloud)
 
-![image-20260513124118871](../images/image-20260513124118871.png)
+![image-20260513124118871](../images/image-20260513124118871.webp)
 
 连接成功后会跳转到任务页面：
 
@@ -39,7 +39,7 @@ CLI 的使用方式见 [CLI 安装与登录](./12-cli-installation.md)，IDE 插
 
 Cloud 模式直接在 GitHub 仓库中运行，需要先完成授权。你可以授权全部仓库，也可以只选择特定仓库：
 
-![image-20260513124426627](../images/image-20260513124426627.png)
+![image-20260513124426627](../images/image-20260513124426627.webp)
 
 ### 第 3 步：下达指令，查看任务进度
 
@@ -49,7 +49,7 @@ Cloud 模式直接在 GitHub 仓库中运行，需要先完成授权。你可以
 
 点击任务可以查看每一步的执行过程和中间状态。任务完成后也可以查看最终回答和产出内容：
 
-![image-20260513124727322](../images/image-20260513124727322.png)
+![image-20260513124727322](../images/image-20260513124727322.webp)
 
 ---
 

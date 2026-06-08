@@ -20,6 +20,7 @@
     "@vuepress/bundler-vite": "2.0.0-rc.28",
     "@vuepress/plugin-feed": "2.0.0-rc.128",
     "@vuepress/plugin-slimsearch": "2.0.0-rc.128",
+    "iconify-icon": "2.3.0",
     "sass-embedded": "^1.97.2",
     "vue": "^3.5.26",
     "vuepress": "2.0.0-rc.28",

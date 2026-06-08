@@ -24,7 +24,7 @@ codex mcp add playwright npx @playwright/mcp@latest
 
 **验证安装是否成功：** 进入 Codex，使用 `/mcp` 命令列出当前已经安装的 MCP 服务列表。
 
-![image-20260512213808094](../images/image-20260512213808094.png)
+![image-20260512213808094](../images/image-20260512213808094.webp)
 
 ![image-20260512203344081](../images/image-20260512203344081.png)
 
@@ -44,7 +44,7 @@ codex mcp add playwright npx @playwright/mcp@latest
 请打开浏览器，到百度搜索"什么是 MCP"，选择两篇优质内容阅读，并整理成一个 markdown 文件保存在当前目录。
 ```
 
-![image-20260512214110692](../images/image-20260512214110692.png)
+![image-20260512214110692](../images/image-20260512214110692.webp)
 
 在执行过程中，需要我们放开一些权限，让它去调用相关工具。比如：
 
@@ -58,15 +58,15 @@ codex mcp add playwright npx @playwright/mcp@latest
 
 在执行过程中，你确实会发现它打开了浏览器，并且搜索了相关内容，还打开了两篇文章，这些都是可以看到的。
 
-![image-20260512214220568](../images/image-20260512214220568.png)
+![image-20260512214220568](../images/image-20260512214220568.webp)
 
 最终它会把得到的结果总结输出给我们，然后**写入到本地的 Markdown 文件**里。
 
-![image-20260512214325242](../images/image-20260512214325242.png)
+![image-20260512214325242](../images/image-20260512214325242.webp)
 
 Codex 根据搜索到的两篇文章的内容进行总结，给我们进行相关的阐述说明。
 
-![image-20260512214406959](../images/image-20260512214406959.png)
+![image-20260512214406959](../images/image-20260512214406959.webp)
 
 ---
 

@@ -43,11 +43,11 @@ if (total >= 100) {
 
 代码推到 GitHub 后，CI 自动跑测试，大约一分钟后失败。
 
-![image-20260514160127487](../images/image-20260514160127487.png)
+![image-20260514160127487](../images/image-20260514160127487.webp)
 
 点进去看报错：
 
-![image-20260514160207520](../images/image-20260514160207520.png)
+![image-20260514160207520](../images/image-20260514160207520.webp)
 
 测试期望拿到 100，实际拿到 140。错误直接指向了折扣计算的问题，非常明确。
 
@@ -131,7 +131,7 @@ jobs:
 
 CI 失败后，配置好的 Codex 工作流自动触发。它做了三件事：读取仓库代码、运行测试套件、定位问题并修改。
 
-![image-20260514160256044](../images/image-20260514160256044.png)
+![image-20260514160256044](../images/image-20260514160256044.webp)
 
 整个过程大约一分钟。
 
@@ -151,7 +151,7 @@ Error: GitHub Actions is not permitted to create or approve pull requests.
 
 GitHub 仓库默认不允许 Actions 创建 PR，需要在 Settings 里手动开启。
 
-![image-20260514160312600](../images/image-20260514160312600.png)
+![image-20260514160312600](../images/image-20260514160312600.webp)
 
 开启后重新触发，正常。
 

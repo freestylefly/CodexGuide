@@ -105,7 +105,7 @@ codex app-server (WebSockets)
   healthz: http://0.0.0.0:9001/healthz
 ```
 
-![image-20260512173352946](../images/image-20260512173352946.png)
+![image-20260512173352946](../images/image-20260512173352946.webp)
 
 > ⚠️ 注意：不要加 `--ws-auth` 参数。通过 SSH 隧道连接时，安全性由 SSH 本身保证，不需要额外的 WebSocket 认证。
 
@@ -158,7 +158,7 @@ model:     gpt-5.5   /model to change
 directory: /workspace/docker-health-demo
 ```
 
-![image-20260512173621671](../images/image-20260512173621671.png)
+![image-20260512173621671](../images/image-20260512173621671.webp)
 
 到这里，远程连接就成功了。你本地的 Codex 已经"站在"远程服务器的项目目录里了。
 
@@ -170,7 +170,7 @@ directory: /workspace/docker-health-demo
 find and fix the bug in container_health.py, then run pytest to verify
 ```
 
-![image-20260512174918396](../images/image-20260512174918396.png)
+![image-20260512174918396](../images/image-20260512174918396.webp)
 
 Codex 会自动完成以下步骤：
 
