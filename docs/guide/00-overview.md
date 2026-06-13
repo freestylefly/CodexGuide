@@ -9,14 +9,7 @@ description: "Codex 学习路线，从入口认知、任务闭环、工程化验
 官方资料最后核对日期：2026-06-12。核心来源包括 [OpenAI Codex 产品页](https://openai.com/codex/)、[Codex 文档入口](https://developers.openai.com/codex/)、[Codex CLI 官方仓库](https://github.com/openai/codex) 与 [Codex Help Center](https://help.openai.com/en/articles/11369540-codex-in-chatgpt)。
 :::
 
-
-OpenAI 官方将 Codex 称为帮助用户编写、审查和交付代码的 AI agent。你可以先把它理解成一个会读项目、写代码、解释陌生代码、审查改动、排查问题，并在你允许的情况下执行开发任务的助手。
-
-不过，Codex 的用法不只限于写代码。它可以读取文件、整理资料、在获得权限后运行命令；如果当前环境启用了联网或浏览器工具，也可以辅助查资料。换句话说，它也可以用于很多日常工作和生活场景，比如撰写文稿、整理账单、梳理资料、头脑风暴。
-
-本文先介绍 Codex 的几种使用入口，再按照不同读者的需求推荐学习路线。
-
-![Codex 使用入口地图](/images/codex-surfaces.svg)
+![Codex 使用入口地图](/images/codex-surfaces.svg?v=20260611)
 
 ## Codex 的产品形态
 

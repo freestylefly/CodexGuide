@@ -6,7 +6,7 @@ description: "Codex 入口地图，比较 CLI、桌面 App、Cloud、IDE、ChatG
 
 CodexGuide 把 Codex 看成一组入口协同的工作系统。学习时不要只盯着某一个界面；真正影响效率的是：你把什么任务放在哪个入口里处理。
 
-![Codex 使用入口地图](/images/codex-surfaces.svg)
+![Codex 使用入口地图](/images/codex-surfaces.svg?v=20260611)
 
 ::: tip 最后核对
 官方资料最后核对日期：2026-05-27。参考 [OpenAI Codex 产品页](https://openai.com/codex/)、[Codex 文档入口](https://developers.openai.com/codex/)、[Codex CLI 官方仓库](https://github.com/openai/codex) 与 [Codex in ChatGPT Help Center](https://help.openai.com/en/articles/11369540-codex-in-chatgpt)。

@@ -1,1 +1,36 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" fill="none" viewBox="0 0 1280 720"><rect width="1280" height="720" fill="#0F172A" rx="36"/><text x="90" y="112" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="44" font-weight="700">Codex 高质量任务闭环</text><text x="90" y="152" fill="#CBD5E1" font-family="Arial, sans-serif" font-size="22">把一次任务拆成可观察、可验证、可复盘的工程循环。</text><g font-family="Arial, sans-serif" font-size="22"><circle cx="260" cy="360" r="92" fill="#0F766E" fill-opacity=".24" stroke="#2DD4BF" stroke-width="3"/><text x="220" y="354" fill="#F8FAFC" font-weight="700">说明</text><text x="197" y="389" fill="#CBD5E1" font-size="18">目标 / 范围 / 约束</text><circle cx="520" cy="248" r="92" fill="#2563EB" fill-opacity=".22" stroke="#60A5FA" stroke-width="3"/><text x="480" y="242" fill="#F8FAFC" font-weight="700">探索</text><text x="456" y="277" fill="#CBD5E1" font-size="18">读仓库 / 找入口</text><circle cx="800" cy="248" r="92" fill="#7C3AED" fill-opacity=".2" stroke="#A78BFA" stroke-width="3"/><text x="760" y="242" fill="#F8FAFC" font-weight="700">实施</text><text x="736" y="277" fill="#CBD5E1" font-size="18">小步修改 / 控制 diff</text><circle cx="1020" cy="360" r="92" fill="#F59E0B" fill-opacity=".18" stroke="#FBBF24" stroke-width="3"/><text x="980" y="354" fill="#F8FAFC" font-weight="700">验证</text><text x="952" y="389" fill="#CBD5E1" font-size="18">测试 / 运行 / 检查</text><circle cx="640" cy="512" r="92" fill="#020617" stroke="#475569" stroke-width="3"/><text x="600" y="506" fill="#F8FAFC" font-weight="700">复盘</text><text x="565" y="541" fill="#CBD5E1" font-size="18">原因 / 改动 / 风险</text></g><path stroke="#94A3B8" stroke-linecap="round" stroke-width="4" d="M352 342C398 299 431 279 431 279"/><path stroke="#94A3B8" stroke-linecap="round" stroke-width="4" d="M612 248H708"/><path stroke="#94A3B8" stroke-linecap="round" stroke-width="4" d="M891 277C935 300 954 326 954 326"/><path stroke="#94A3B8" stroke-linecap="round" stroke-width="4" d="M952 422C875 485 757 512 732 515"/><path stroke="#94A3B8" stroke-linecap="round" stroke-width="4" d="M548 514C431 501 338 440 315 421"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" fill="none" viewBox="0 0 1280 720">
+  <rect width="1280" height="720" fill="#0F172A" rx="36"/>
+
+  <text x="90" y="112" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="44" font-weight="700">Codex 高质量任务闭环</text>
+  <text x="90" y="154" fill="#CBD5E1" font-family="Arial, sans-serif" font-size="22">把一次任务拆成可观察、可验证、可复盘的工程循环。</text>
+
+  <g stroke="#94A3B8" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" opacity=".9">
+    <path d="M380 330C420 294 457 276 494 276"/>
+    <path d="M646 276H718"/>
+    <path d="M870 290C912 312 941 344 957 382"/>
+    <path d="M960 448C874 526 746 560 641 560"/>
+    <path d="M529 560C440 550 356 512 296 448"/>
+  </g>
+
+  <g font-family="Arial, sans-serif" text-anchor="middle">
+    <rect width="250" height="126" x="135" y="286" fill="#0F766E" fill-opacity=".24" stroke="#2DD4BF" stroke-width="3" rx="28"/>
+    <text x="260" y="342" fill="#F8FAFC" font-size="24" font-weight="700">说明</text>
+    <text x="260" y="378" fill="#CBD5E1" font-size="19">目标 / 范围 / 约束</text>
+
+    <rect width="250" height="126" x="400" y="214" fill="#2563EB" fill-opacity=".22" stroke="#60A5FA" stroke-width="3" rx="28"/>
+    <text x="525" y="270" fill="#F8FAFC" font-size="24" font-weight="700">探索</text>
+    <text x="525" y="306" fill="#CBD5E1" font-size="19">读仓库 / 找入口</text>
+
+    <rect width="250" height="126" x="715" y="214" fill="#7C3AED" fill-opacity=".2" stroke="#A78BFA" stroke-width="3" rx="28"/>
+    <text x="840" y="270" fill="#F8FAFC" font-size="24" font-weight="700">实施</text>
+    <text x="840" y="306" fill="#CBD5E1" font-size="19">小步修改 / 控制 diff</text>
+
+    <rect width="250" height="126" x="895" y="394" fill="#F59E0B" fill-opacity=".18" stroke="#FBBF24" stroke-width="3" rx="28"/>
+    <text x="1020" y="450" fill="#F8FAFC" font-size="24" font-weight="700">验证</text>
+    <text x="1020" y="486" fill="#CBD5E1" font-size="19">测试 / 运行 / 检查</text>
+
+    <rect width="250" height="126" x="515" y="494" fill="#020617" stroke="#475569" stroke-width="3" rx="28"/>
+    <text x="640" y="550" fill="#F8FAFC" font-size="24" font-weight="700">复盘</text>
+    <text x="640" y="586" fill="#CBD5E1" font-size="19">原因 / 改动 / 风险</text>
+  </g>
+</svg>

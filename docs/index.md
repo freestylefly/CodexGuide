@@ -151,7 +151,7 @@ Codex 的能力会出现在 App、CLI、Cloud、IDE、ChatGPT 和集成生态里
 
 </div>
 
-<img class="home-visual" src="/images/codex-surfaces.svg" alt="Codex 使用入口地图" loading="lazy" />
+<img class="home-visual" src="/images/codex-surfaces.svg?v=20260611" alt="Codex 使用入口地图" loading="lazy" />
 
 </section>
 
@@ -184,7 +184,7 @@ Codex 的能力会出现在 App、CLI、Cloud、IDE、ChatGPT 和集成生态里
   </a>
 </div>
 
-<img class="home-wide-visual" src="/images/codex-workflow-loop.svg" alt="Codex 高质量任务闭环" loading="lazy" />
+<img class="home-wide-visual" src="/images/codex-workflow-loop.svg?v=20260611-2" alt="Codex 高质量任务闭环" loading="lazy" />
 
 </section>
 

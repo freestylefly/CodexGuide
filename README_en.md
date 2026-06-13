@@ -143,8 +143,8 @@ CodexGuide
 
 Requirements:
 
-- Node.js 18 or newer
-- pnpm
+- Node.js 22.12+ and lower than 25
+- pnpm 10.33.0
 
 ```bash
 pnpm install

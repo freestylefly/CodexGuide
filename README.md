@@ -159,8 +159,8 @@ CodexGuide
 
 环境要求：
 
-- Node.js 18+ 或更新版本
-- pnpm
+- Node.js 22.12+，且低于 25
+- pnpm 10.33.0
 
 ```bash
 pnpm install
