@@ -58,6 +58,67 @@ redirectFrom:
 - 检查当前账号计划和组织策略。
 - 查看官方 Help Center 的 Codex 相关文章。
 
+## Desktop 一直显示 Reconnecting
+
+`Reconnecting` 不是一个具体根因。它可能是主连接、会话恢复、WebSocket / SSE 流、代理协议、MCP worker 或服务端临时问题。不要一开始就重装 Codex、覆盖 `config.toml`，或者直接换账号。
+
+::: tip 最后核对
+官方资料和 GitHub issue 最后核对日期：2026-06-14。本文参考 OpenAI [Codex app troubleshooting](https://developers.openai.com/codex/app/troubleshooting)、[Environment variables](https://developers.openai.com/codex/environment-variables)、[Use Codex with Amazon Bedrock](https://developers.openai.com/codex/amazon-bedrock)、[Model Context Protocol](https://developers.openai.com/codex/mcp)，以及社区排障库 [Desktop Reconnecting / Proxy Triage](https://github.com/toby-bridges/community-codex-windows-troubleshooting/blob/main/DESKTOP-RECONNECTING-PROXY-GUIDE.md)。
+:::
+
+先按三层判断：
+
+| 层级 | 现象 | 先做什么 |
+| --- | --- | --- |
+| 主连接 | 新线程也一直 `Reconnecting` | 验证 Codex 进程能不能走到正确代理 |
+| 会话流 | 偶发 `stream disconnected before completion` | 看是否是旧会话、WebSocket/SSE 或服务端连接问题 |
+| 工具 worker | 主界面恢复，但 MCP、Browser、node_repl 仍失败 | 再查 `config.toml` 里的 MCP 环境变量 |
+
+如果你使用 macOS 代理：
+
+```bash
+scutil --proxy
+launchctl getenv HTTP_PROXY
+launchctl getenv HTTPS_PROXY
+curl -sS --max-time 10 -x "http://127.0.0.1:<PORT>" "https://api.ipify.org?format=json"
+```
+
+端口和协议都验证通过后，再把最小代理变量放进 `~/.codex/.env`，然后完全退出并重新打开 Codex Desktop：
+
+```bash
+export HTTP_PROXY="http://127.0.0.1:<PORT>"
+export HTTPS_PROXY="http://127.0.0.1:<PORT>"
+export ALL_PROXY="http://127.0.0.1:<PORT>"
+export NO_PROXY="localhost,127.0.0.1,::1,*.local"
+```
+
+如果你使用 Windows 或 WSL：
+
+- Windows 原生 Desktop 优先检查 Windows 用户环境变量。
+- WSL 模式不要只写 `~/.bashrc`，因为 Desktop 启动 WSL 进程时不一定经过 login shell。
+- 修改环境变量后完全重启 Codex。
+
+```powershell
+[Environment]::SetEnvironmentVariable("HTTP_PROXY", "http://127.0.0.1:<PORT>", "User")
+[Environment]::SetEnvironmentVariable("HTTPS_PROXY", "http://127.0.0.1:<PORT>", "User")
+```
+
+如果主界面已经恢复，但 MCP 或 node_repl 仍然断，再检查 MCP server 是否需要单独配置环境变量：
+
+```toml
+[mcp_servers.node_repl.env]
+HTTP_PROXY = "http://127.0.0.1:<PORT>"
+HTTPS_PROXY = "http://127.0.0.1:<PORT>"
+NO_PROXY = "localhost,127.0.0.1,::1,*.local"
+```
+
+日志位置：
+
+- macOS app logs：`~/Library/Logs/com.openai.codex/YYYY/MM/DD`
+- 会话记录：`$CODEX_HOME/sessions`，默认 `~/.codex/sessions`
+
+发 issue 或群里求助时，只贴脱敏后的错误字符串、时间点、Codex 版本、平台和网络拓扑。不要公开完整日志、邮箱、account id、conversation id、session id、真实出口 IP、本机路径、私有仓库名或 token。
+
 ## Windows 桌面 App / CLI 专项排障
 
 如果问题发生在 Windows 桌面 App、Microsoft Store / winget 安装、Windows sandbox、Worktree、Browser / Computer Use 插件、WSL 混合路径或 PowerShell 环境，可以参考社区维护的 Windows 专项排障库：

@@ -20,6 +20,25 @@ description: "Codex config.toml 配置指南，说明模型、沙盒、审批、
 
 项目长期规则建议写到仓库内的 `AGENTS.md`，个人偏好放到本机 `config.toml`。这样团队成员能共享项目规则，又能保留自己的 CLI 使用习惯。
 
+## `.env` 和 `config.toml` 不要混用
+
+`config.toml` 保存 Codex 的持久配置，例如模型、沙盒、审批、profiles 和 MCP server。`~/.codex/.env` 更适合放 Desktop app 或 IDE extension 启动时需要读取的环境变量，例如 provider 需要的区域变量，或排障时临时验证过的代理变量。
+
+OpenAI [Amazon Bedrock provider 文档](https://developers.openai.com/codex/amazon-bedrock)提醒：Desktop app 和 VS Code extension 可能不会继承当前 shell 里的环境变量；如果这些入口需要某些变量，可以把值放进 `~/.codex/.env`，然后重启 app 或 extension。
+
+写入前先确认两件事：
+
+- 变量确实是当前入口需要的，不要把所有 shell 变量都复制进去。
+- 文件里可能包含 secret，截图、发 issue 或提交仓库前必须脱敏。
+
+例如代理排障时，不要先猜端口。先用系统代理设置和 `curl -x` 确认端口可用，再写：
+
+```bash
+export HTTP_PROXY="http://127.0.0.1:<PORT>"
+export HTTPS_PROXY="http://127.0.0.1:<PORT>"
+export NO_PROXY="localhost,127.0.0.1,::1,*.local"
+```
+
 ::: info 截图占位
 请补充本机 `~/.codex/config.toml` 文件位置截图，注意遮挡敏感路径和 token。建议文件：`docs/.vuepress/public/screenshots/config/02-config-location.png`。
 :::
@@ -231,6 +250,7 @@ codex-provider restore <backup-dir>
 | Codex 权限超出预期 | 检查 `sandbox_mode` 和 `approval_policy` |
 | 某个命令一直被拒绝 | 检查沙盒限制、网络权限和组织策略 |
 | MCP 无法连接 | 检查服务命令、环境变量、端口、认证方式 |
+| Desktop 不继承代理变量 | 先验证真实代理端口和协议，再把最小变量放进 `~/.codex/.env` 并重启 |
 | 切换 provider 后旧会话不可见 | 先判断是否是 Desktop 最近 50 条显示限制，再检查 provider metadata 是否需要同步 |
 | 团队成员行为不一致 | 把项目共同规则写进 `AGENTS.md` |
 
@@ -239,4 +259,6 @@ codex-provider restore <backup-dir>
 - [Config basic](https://developers.openai.com/codex/config-basic)
 - [Config advanced](https://developers.openai.com/codex/config-advanced)
 - [Config reference](https://developers.openai.com/codex/config-reference)
+- [Environment variables](https://developers.openai.com/codex/environment-variables)
+- [Use Codex with Amazon Bedrock](https://developers.openai.com/codex/amazon-bedrock)
 - [openai/codex config docs](https://github.com/openai/codex/blob/main/docs/config.md)
