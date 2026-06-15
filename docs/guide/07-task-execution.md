@@ -44,6 +44,8 @@ redirectFrom:
 
 # 2.如何并行
 
+![Codex 任务并行示例](../images/codex-task-parallel-example.png)
+
 实际上就是一个项目（Project）里面，我们同时去执行多个任务。
 
 这个时候，我们只需要在左侧边栏点击“新建对话”就可以了。这样的话，它的几个任务就会并行执行，互不干扰。
