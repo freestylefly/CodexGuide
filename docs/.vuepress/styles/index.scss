@@ -277,6 +277,53 @@
   transform: translateX(-50%);
 }
 
+.vp-dropdown-wrapper:has(> .vp-dropdown-title[aria-label="赞助商导航"]) {
+  .vp-dropdown-title .vp-icon {
+    color: #f59e0b;
+  }
+
+  .vp-dropdown {
+    inset-inline-start: 50%;
+    inset-inline-end: auto;
+    width: min(20rem, calc(100vw - 2rem));
+    padding: 0.55rem;
+    transform: translateX(-50%) scale(0.96);
+    transform-origin: top center;
+  }
+
+  .vp-dropdown-item a {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.45rem;
+    min-height: 4.75rem;
+    padding: 0.75rem;
+    border: 1px solid var(--vp-c-border);
+    border-radius: 8px;
+    background: var(--vp-c-bg);
+    color: var(--vp-c-text);
+    font-weight: 700;
+  }
+
+  .vp-dropdown-item a::before {
+    content: "";
+    display: block;
+    aspect-ratio: 2172 / 724;
+    width: 100%;
+    border-radius: 6px;
+    background: url("/images/sponsors/unity2-ai.jpg") center / contain no-repeat;
+  }
+
+  .vp-dropdown-item a:hover {
+    border-color: var(--vp-c-accent);
+    background: var(--vp-c-bg-soft);
+  }
+}
+
+.vp-dropdown-wrapper:has(> .vp-dropdown-title[aria-label="赞助商导航"]):hover .vp-dropdown,
+.vp-dropdown-wrapper.open:has(> .vp-dropdown-title[aria-label="赞助商导航"]) .vp-dropdown {
+  transform: translateX(-50%);
+}
+
 @media (max-width: 900px) {
   .vp-nav-item:last-child .vp-dropdown {
     inset-inline-start: auto;
@@ -303,6 +350,22 @@
 
   .vp-nav-screen-menu-item {
     display: none;
+  }
+}
+
+.navbar-links-item:has(> .vp-nav-screen-menu-title[aria-label="赞助商导航"]) {
+  .vp-nav-screen-menu-link {
+    min-height: 4.5rem;
+  }
+
+  .vp-nav-screen-menu-link::before {
+    content: "";
+    display: block;
+    aspect-ratio: 2172 / 724;
+    width: min(100%, 18rem);
+    margin-bottom: 0.45rem;
+    border-radius: 6px;
+    background: url("/images/sponsors/unity2-ai.jpg") center / contain no-repeat;
   }
 }
 

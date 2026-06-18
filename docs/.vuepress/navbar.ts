@@ -62,6 +62,10 @@ const communityItems = [
   { text: "关注苍何公众号，回复 codex交流群 进入群交流", icon: "message", link: "/community/roadmap.md" },
 ];
 
+const sponsorItems = [
+  { text: "Unity2.ai", icon: "star", link: "https://unity2.ai/register?source=canghe" },
+];
+
 export default navbar([
   { text: "首页", icon: "home", link: "/" },
   { text: "学习路线", icon: "map", link: "/guide/00-overview.md" },
@@ -100,6 +104,7 @@ export default navbar([
       { text: "教程", icon: "book", link: "/guide/01-app-installation.md" },
       { text: "实战案例", icon: "lightbulb", link: "/recipes/" },
       { text: "交流群", icon: "message", link: "/community/roadmap.md" },
+      { text: "赞助商", icon: "star", link: "https://unity2.ai/register?source=canghe" },
     ],
   },
   {
@@ -107,5 +112,11 @@ export default navbar([
     icon: "message",
     ariaLabel: "交流群",
     children: communityItems,
+  },
+  {
+    text: "赞助商",
+    icon: "star",
+    ariaLabel: "赞助商导航",
+    children: sponsorItems,
   },
 ]);
