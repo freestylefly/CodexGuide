@@ -70,6 +70,12 @@ const sponsorItems = [
 export default navbar([
   { text: "首页", icon: "home", link: "/" },
   { text: "学习路线", icon: "map", link: "/guide/00-overview.md" },
+  {
+    text: "实战案例",
+    icon: "lightbulb",
+    ariaLabel: "实战案例导航",
+    children: recipeItems,
+  },
   { text: "入口地图", icon: "layout", link: "/platform/" },
   {
     text: "配置",
@@ -90,12 +96,6 @@ export default navbar([
     children: guideItems,
   },
   {
-    text: "实战案例",
-    icon: "lightbulb",
-    ariaLabel: "实战案例导航",
-    children: recipeItems,
-  },
-  {
     text: "更多",
     icon: "more",
     ariaLabel: "更多导航",
@@ -103,7 +103,6 @@ export default navbar([
       { text: "配置", icon: "gear", link: "/configuration/" },
       { text: "资源", icon: "box", link: "/reference/" },
       { text: "教程", icon: "book", link: "/guide/01-app-installation.md" },
-      { text: "实战案例", icon: "lightbulb", link: "/recipes/" },
       { text: "交流群", icon: "message", link: "/community/roadmap.md" },
       { text: "赞助商", icon: "star", link: "https://unity2.ai/register?source=canghe" },
     ],
