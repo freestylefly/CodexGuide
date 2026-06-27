@@ -6,7 +6,7 @@ description: "Codex 实践方法总览，整理任务设计、非开发工作流
 
 Codex 的学习重点不只在命令和界面。更关键的是把任务设计、上下文管理、安全边界和验证闭环训练成习惯。
 
-![Codex 高质量任务闭环](/images/codex-workflow-loop.svg?v=20260611-2)
+![Codex 高质量任务闭环](https://cdn.canghecode.com/codexguide/docs/.vuepress/public/images/codex-workflow-loop.svg?v=20260611-2)
 
 ## 方法地图
 

@@ -9,7 +9,7 @@ description: "Codex 学习路线，从入口认知、任务闭环、工程化验
 官方资料最后核对日期：2026-06-12。核心来源包括 [OpenAI Codex 产品页](https://openai.com/codex/)、[Codex 文档入口](https://developers.openai.com/codex/)、[Codex CLI 官方仓库](https://github.com/openai/codex) 与 [Codex Help Center](https://help.openai.com/en/articles/11369540-codex-in-chatgpt)。
 :::
 
-![Codex 使用入口地图](/images/codex-surfaces.svg?v=20260611)
+![Codex 使用入口地图](https://cdn.canghecode.com/codexguide/docs/.vuepress/public/images/codex-surfaces.svg?v=20260611)
 
 ## Codex 的产品形态
 
@@ -30,10 +30,11 @@ Codex 有桌面 App、命令行、编辑器插件和网页几种形态。
 2. 按需了解 [订阅 ChatGPT Plus](./02-subscribe-plus.md)，确认账号能不能用 Codex。OpenAI Help Center 说明 Codex 包含在符合条件的 ChatGPT 计划中，包括 Free 档；具体用量限制因计划而异。
 3. 阅读 [了解 Codex 基本组成](./03-app-overview.md)，知道项目、对话、设置大概在哪里。
 4. 跟着 [用 Codex 完成第一个任务](./06-app-first-task.md)，选一件小任务开始练手。
-5. 如果你常用手机，可以再看 [手机端如何跟进桌面任务](./04-mobile-control-desktop.md)。
-6. 如果你需要第三方 API，再看 [连接第三方 API](./05-third-party-api.md)。
+5. 阅读 [理解费用](./07-understanding-costs.md)，分清 ChatGPT 计划额度、API token 和缓存机制。
+6. 如果你常用手机，可以再看 [手机端如何跟进桌面任务](./04-mobile-control-desktop.md)。
+7. 如果你需要第三方 API，再看 [连接第三方 API](./05-third-party-api.md)。
 
-第一轮目标：装好 Codex，能跟它正常交流，让它读一个你指定的文件夹。之后结合真实需求，试着完成一个小任务。
+第一轮目标：装好 Codex，能跟它正常交流，让它读一个你指定的文件夹，知道大概哪些操作会消耗额度或 token。之后结合真实需求，试着完成一个小任务。
 
 ## 使用 Codex 开发
 
@@ -42,11 +43,12 @@ Codex 有桌面 App、命令行、编辑器插件和网页几种形态。
 推荐顺序：
 
 1. 先看 [入口地图](/platform/)，知道 CLI、桌面 App、Cloud 和 IDE 分别适合什么。
-2. 阅读 [CLI 安装与登录](./12-cli-installation.md)，确认命令能正常运行。
-3. 跟着 [第一次让 Codex 改代码](./13-cli-first-run.md)，从文档、测试或一个小 bug 开始。
-4. 阅读 [任务执行机制](./07-task-execution.md)，理解它会读哪些文件、运行哪些命令、怎么汇报结果。
-5. 了解 [AGENTS.md](./15-agents-md.md)，把项目规则写给 Codex 看。
-6. 阅读 [沙盒与审批](./16-sandbox-approvals.md)，知道哪些操作需要先确认。
+2. 阅读 [CLI 安装与登录](./13-cli-installation.md)，确认命令能正常运行。
+3. 跟着 [第一次让 Codex 改代码](./14-cli-first-run.md)，从文档、测试或一个小 bug 开始。
+4. 阅读 [任务执行机制](./08-task-execution.md)，理解它会读哪些文件、运行哪些命令、怎么汇报结果。
+5. 了解 [AGENTS.md](./16-agents-md.md)，把项目规则写给 Codex 看。
+6. 阅读 [沙盒与审批](./17-sandbox-approvals.md)，知道哪些操作需要先确认。
+7. 阅读 [自动线程管理](./18-thread-management.md)，学会继续、分叉、移交和整理任务。
 
 在开发过程中，你会碰到许多专有名词，这里先记住几个词就够了：
 - **仓库（repository / repo）**：  
@@ -87,4 +89,4 @@ Codex 有桌面 App、命令行、编辑器插件和网页几种形态。
 - 还没安装？：从 [桌面 App 下载与安装](./01-app-installation.md) 开始。
 - 已经装好了：直接做 [第一个任务](./06-app-first-task.md)。
 - 想先知道不同入口怎么选：看 [入口地图](/platform/)。
-- 准备改真实项目：看 [CLI 安装与登录](./12-cli-installation.md)。
+- 准备改真实项目：看 [CLI 安装与登录](./13-cli-installation.md)。

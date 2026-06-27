@@ -28,7 +28,7 @@ description: "Codex 与 DKFile 发布案例，说明如何用 AI 生成网页、
 
 注册完成后，用 AI 设计好 HTML 页面，点击右下角的"**上传文件**"：
 
-![dkfile-upload-home](../images/dkfile-upload-home.png)
+![dkfile-upload-home](https://cdn.canghecode.com/codexguide/docs/images/dkfile-upload-home.png)
 
 操作流程：
 
@@ -36,7 +36,7 @@ description: "Codex 与 DKFile 发布案例，说明如何用 AI 生成网页、
 2. 点击"上传"，系统自动完成托管
 3. 上传完成后**直接获得公网访问链接**，即可分享给任何人
 
-![dkfile-upload-dropzone](../images/dkfile-upload-dropzone.png)
+![dkfile-upload-dropzone](https://cdn.canghecode.com/codexguide/docs/images/dkfile-upload-dropzone.png)
 
 ---
 
@@ -56,7 +56,7 @@ DKFile 提供了 API 文档，整体流程是：
 
 首先让 Codex 阅读 API 文档，它会告诉你需要准备什么（主要是你的 **API Key**）：
 
-![dkfile-help-tools-section](../images/dkfile-help-tools-section.png)
+![dkfile-help-tools-section](https://cdn.canghecode.com/codexguide/docs/images/dkfile-help-tools-section.png)
 
 点击 DKFile 后台的"API 对接文档"，按照说明创建自己的 API Key（不懂直接问 Codex，它会引导你）。
 
@@ -69,7 +69,7 @@ DKFile 提供了 API 文档，整体流程是：
 
 Codex 会自动完成设计、调用 API 上传，最后告诉你文件位置和**可直接访问的公网链接**：
 
-![dkfile-codex-task-result](../images/dkfile-codex-task-result.png)
+![dkfile-codex-task-result](https://cdn.canghecode.com/codexguide/docs/images/dkfile-codex-task-result.png)
 
 ---
 

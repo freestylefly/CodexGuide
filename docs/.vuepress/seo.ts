@@ -3,7 +3,7 @@ export const siteUrl = "https://codexguide.ai";
 export const siteDescription =
   "CodexGuide 是面向中文用户的 OpenAI Codex 教程，系统整理 Codex 桌面 App、CLI、IDE、Cloud、配置、Skills、AGENTS.md 和实战案例。";
 
-export const siteOgImage = `${siteUrl}/og.svg`;
+export const siteOgImage = `https://cdn.canghecode.com/codexguide/docs/.vuepress/public/og.svg`;
 
 export const toCleanPath = (path: string): string => {
   const [pathname, suffix = ""] = path.split(/(?=[?#])/u);
@@ -56,31 +56,35 @@ export const pageDescriptions: Record<string, string> = {
     "Codex 连接第三方 API 的入门说明，比较手动配置、Codex++、CCX 与 CC Switch 三种接入方式，并提示密钥和账单风险。",
   "/guide/06-app-first-task.html":
     "用 Codex 完成第一个任务的入门教程，带你选择工作目录、输入任务、查看结果并完成基础验证，形成操作习惯。",
-  "/guide/07-task-execution.html":
+  "/guide/07-understanding-costs.html":
+    "Codex 费用与 Token 入门说明，解释 ChatGPT 计划额度、API token 计费、输入输出 token、缓存 token 和 prompt caching 的省钱方式。",
+  "/guide/08-task-execution.html":
     "Codex 任务顺序执行与并行说明，帮助理解读文件、运行命令、修改文件、验证结果和汇报进度的机制，便于复核。",
-  "/guide/08-permissions.html":
+  "/guide/09-permissions.html":
     "Codex 权限管理指南，说明文件访问、命令审批、网络权限、敏感数据和高风险操作的控制方式，适合任务前核对。",
-  "/guide/09-skills-plugins.html":
+  "/guide/10-skills-plugins.html":
     "Codex Skills 和 Plugins 入门说明，介绍技能、插件、MCP 能力的关系，以及适合沉淀的工作流类型。",
-  "/guide/10-automation.html":
+  "/guide/11-automation.html":
     "Codex 自动化指南，说明定时任务、提醒、监控、后续跟进和适合自动化处理的工作场景，沉淀重复检查流程。",
-  "/guide/11-desktop-pet.html":
+  "/guide/12-desktop-pet.html":
     "Codex 桌面形象设置教程，记录桌面展示效果、素材准备、配置步骤和适合个性化工作台的用法，便于识别任务状态。",
-  "/guide/12-cli-installation.html":
+  "/guide/13-cli-installation.html":
     "Codex CLI 安装教程，覆盖 Node 环境、安装命令、版本检查、登录流程和第一次运行 OpenAI Codex CLI 的准备。",
-  "/guide/13-cli-first-run.html":
+  "/guide/14-cli-first-run.html":
     "第一次让 Codex CLI 改代码的教程，说明如何选择低风险任务、让 Codex 读仓库、修改文件并运行验证。",
-  "/guide/14-ide-vscode.html":
+  "/guide/15-ide-vscode.html":
     "在 VS Code 中使用 Codex 的教程，介绍插件入口、文件上下文、局部修改、解释代码和编辑器内协作方式。",
-  "/guide/15-agents-md.html":
+  "/guide/16-agents-md.html":
     "AGENTS.md 项目规则指南，说明如何写入项目命令、代码风格、禁用事项、验证方式、团队约定和本地私有规则，让 Codex 更懂仓库。",
-  "/guide/16-sandbox-approvals.html":
+  "/guide/17-sandbox-approvals.html":
     "Codex 沙盒、审批与安全边界指南，解释只读、写入、网络、危险命令和人工确认策略，适合高风险任务前检查。",
-  "/guide/17-cloud-ide-app.html":
+  "/guide/18-thread-management.html":
+    "Codex 线程管理指南，说明 thread、resume、fork、worktree、handoff 和 subagent 的区别，帮助继续、分叉、迁移和整理任务。",
+  "/guide/19-cloud-ide-app.html":
     "Codex Cloud 使用指南，说明云端任务、仓库连接、长任务、PR 工作流和与本地 App、IDE 的差异。",
-  "/guide/18-hooks.html":
+  "/guide/20-hooks.html":
     "Codex Hooks 入门说明，介绍 Hooks 的作用、配置位置、事件类型、信任机制和安全建议。",
-  "/guide/19-troubleshooting.html":
+  "/guide/21-troubleshooting.html":
     "Codex 排障手册，汇总登录、安装、权限、依赖、命令失败和任务执行异常的定位与恢复路径，帮助快速继续工作。",
   "/platform/":
     "Codex 使用教程入口地图，比较 CLI、桌面 App、Cloud、IDE、ChatGPT 和集成生态，帮助选择合适工作入口。",

@@ -4,8 +4,6 @@ const configurationItems = [
   { text: "配置总览", icon: "map", link: "/configuration/" },
   { text: "CLI 选项与命令", icon: "terminal", link: "/configuration/cli-options.md" },
   { text: "config.toml", icon: "config", link: "/configuration/config-file.md" },
-  { text: "MCP、Skills 与 Subagents", icon: "plugin", link: "/configuration/mcp-skills-subagents.md" },
-  { text: "安全与审批", icon: "safe", link: "/configuration/security-admin.md" },
 ];
 
 const resourceItems = [
@@ -22,19 +20,21 @@ const guideItems = [
   { text: "04 手机端协同桌面任务", icon: "mobile", link: "/guide/04-mobile-control-desktop.md" },
   { text: "05 连接第三方 API", icon: "link", link: "/guide/05-third-party-api.md" },
   { text: "06 用 Codex 完成第一个任务", icon: "code", link: "/guide/06-app-first-task.md" },
-  { text: "07 任务顺序执行与并行", icon: "list", link: "/guide/07-task-execution.md" },
-  { text: "08 权限管理", icon: "safe", link: "/guide/08-permissions.md" },
-  { text: "09 技能与插件", icon: "plugin", link: "/guide/09-skills-plugins.md" },
-  { text: "10 自动化", icon: "time", link: "/guide/10-automation.md" },
-  { text: "11 桌面宠物", icon: "cat", link: "/guide/11-desktop-pet.md" },
-  { text: "12 CLI 安装与登录", icon: "download", link: "/guide/12-cli-installation.md" },
-  { text: "13 第一次让 Codex 改代码", icon: "edit", link: "/guide/13-cli-first-run.md" },
-  { text: "14 在 VS Code 中使用 Codex", icon: "code", link: "/guide/14-ide-vscode.md" },
-  { text: "15 AGENTS.md", icon: "file", link: "/guide/15-agents-md.md" },
-  { text: "16 沙盒与审批", icon: "lock", link: "/guide/16-sandbox-approvals.md" },
-  { text: "17 Codex Cloud：使用云端模式", icon: "cloud", link: "/guide/17-cloud-ide-app.md" },
-  { text: "18 Hooks", icon: "tool", link: "/guide/18-hooks.md" },
-  { text: "19 排障手册", icon: "debug", link: "/guide/19-troubleshooting.md" },
+  { text: "07 理解费用", icon: "coins", link: "/guide/07-understanding-costs.md" },
+  { text: "08 任务顺序执行与并行", icon: "list", link: "/guide/08-task-execution.md" },
+  { text: "09 权限管理", icon: "safe", link: "/guide/09-permissions.md" },
+  { text: "10 技能与插件", icon: "plugin", link: "/guide/10-skills-plugins.md" },
+  { text: "11 自动化", icon: "time", link: "/guide/11-automation.md" },
+  { text: "12 桌面宠物", icon: "cat", link: "/guide/12-desktop-pet.md" },
+  { text: "13 CLI 安装与登录", icon: "download", link: "/guide/13-cli-installation.md" },
+  { text: "14 第一次让 Codex 改代码", icon: "edit", link: "/guide/14-cli-first-run.md" },
+  { text: "15 在 VS Code 中使用 Codex", icon: "code", link: "/guide/15-ide-vscode.md" },
+  { text: "16 AGENTS.md", icon: "file", link: "/guide/16-agents-md.md" },
+  { text: "17 沙盒与审批", icon: "lock", link: "/guide/17-sandbox-approvals.md" },
+  { text: "18 自动线程管理", icon: "branch", link: "/guide/18-thread-management.md" },
+  { text: "19 Codex Cloud：使用云端模式", icon: "cloud", link: "/guide/19-cloud-ide-app.md" },
+  { text: "20 Hooks", icon: "tool", link: "/guide/20-hooks.md" },
+  { text: "21 排障手册", icon: "debug", link: "/guide/21-troubleshooting.md" },
 ];
 
 const recipeItems = [

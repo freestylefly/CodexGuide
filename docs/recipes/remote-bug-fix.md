@@ -65,7 +65,7 @@ python3 container_health.py
 KeyError: 'status'
 ```
 
-![remote-bug-fix-keyerror-traceback](../images/remote-bug-fix-keyerror-traceback.png)
+![remote-bug-fix-keyerror-traceback](https://cdn.canghecode.com/codexguide/docs/images/remote-bug-fix-keyerror-traceback.png)
 
 跑测试也一样挂：
 
@@ -105,7 +105,7 @@ codex app-server (WebSockets)
   healthz: http://0.0.0.0:9001/healthz
 ```
 
-![remote-bug-fix-package-install-error](../images/remote-bug-fix-package-install-error.png)
+![remote-bug-fix-package-install-error](https://cdn.canghecode.com/codexguide/docs/images/remote-bug-fix-package-install-error.png)
 
 > ⚠️ 注意：不要加 `--ws-auth` 参数。通过 SSH 隧道连接时，安全性由 SSH 本身保证，不需要额外的 WebSocket 认证。
 
@@ -127,7 +127,7 @@ curl -i http://127.0.0.1:9001/healthz
 
 返回 `HTTP/1.1 200 OK` 就说明隧道没问题。
 
-![remote-bug-fix-healthcheck-curl-success](../images/remote-bug-fix-healthcheck-curl-success.png)
+![remote-bug-fix-healthcheck-curl-success](https://cdn.canghecode.com/codexguide/docs/images/remote-bug-fix-healthcheck-curl-success.png)
 
 ### 第 3 步：本地登录 Codex（仅首次需要）
 
@@ -158,7 +158,7 @@ model:     gpt-5.5   /model to change
 directory: /workspace/docker-health-demo
 ```
 
-![remote-bug-fix-codex-login-check](../images/remote-bug-fix-codex-login-check.png)
+![remote-bug-fix-codex-login-check](https://cdn.canghecode.com/codexguide/docs/images/remote-bug-fix-codex-login-check.png)
 
 到这里，远程连接就成功了。你本地的 Codex 已经"站在"远程服务器的项目目录里了。
 
@@ -170,7 +170,7 @@ directory: /workspace/docker-health-demo
 find and fix the bug in container_health.py, then run pytest to verify
 ```
 
-![remote-bug-fix-remote-session-start](../images/remote-bug-fix-remote-session-start.png)
+![remote-bug-fix-remote-session-start](https://cdn.canghecode.com/codexguide/docs/images/remote-bug-fix-remote-session-start.png)
 
 Codex 会自动完成以下步骤：
 
@@ -201,7 +201,7 @@ pytest -q
 1 passed in 0.00s
 ```
 
-![remote-bug-fix-tests-pass](../images/remote-bug-fix-tests-pass.png)
+![remote-bug-fix-tests-pass](https://cdn.canghecode.com/codexguide/docs/images/remote-bug-fix-tests-pass.png)
 
 Done。一个远程 Bug 修复的完整闭环。
 

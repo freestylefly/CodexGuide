@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/banner.svg" alt="CodexGuide" width="920" />
+  <img src="https://cdn.canghecode.com/codexguide/assets/banner.svg" alt="CodexGuide" width="920" />
 </p>
 
 <h3 align="center">面向全球初学者、创作者、开发者与团队的 Codex 实践指南</h3>
@@ -44,7 +44,7 @@
 
 <p align="center">
   <a href="https://codexguide.ai/">
-    <img src="./assets/homepage-preview.png" alt="CodexGuide 网站首页预览" width="920" />
+    <img src="https://cdn.canghecode.com/codexguide/assets/homepage-preview.png" alt="CodexGuide 网站首页预览" width="920" />
   </a>
 </p>
 
@@ -78,7 +78,7 @@ CodexGuide 想做的不是命令速查表，而是一份面向真实任务的实
 
 | 赞助商 | 介绍 |
 | ------ | ---- |
-| <a href="https://getgpt.pro/i/codexguide"><img src="./assets/sponsors/getgpt-pro.jpg" alt="GetGPT Pro" width="240"></a> | GetGPT Pro 提供 ChatGPT、Claude 等 AI 订阅开通与充值服务，支持自助下单、快速到账与售后支持。 |
+| <a href="https://getgpt.pro/i/codexguide"><img src="https://cdn.canghecode.com/codexguide/assets/sponsors/getgpt-pro.jpg" alt="GetGPT Pro" width="240"></a> | GetGPT Pro 提供 ChatGPT、Claude 等 AI 订阅开通与充值服务，支持自助下单、快速到账与售后支持。 |
 | <a href="https://pptoken.cc/"><img src="https://raw.githubusercontent.com/freestylefly/wesight/main/public/readme/sponsors/pptoken.png" alt="PPToken" width="240"></a> | 项目赞助。PPToken 提供 ChatGPT、Claude、Gemini 等主流 AI 模型 API 中转与密钥分发服务，支持低延迟、高可用、按量计费与订阅套餐灵活选择。 |
 | <a href="https://ciyuan.today/"><img src="https://raw.githubusercontent.com/freestylefly/wesight/main/public/readme/sponsors/ciyuan-api.jpg" alt="词元 API" width="240"></a> | 项目赞助。词元 API 致力于成为开发者的一站式 AI 接口平台，提供稳定、低延迟、高可用的大模型 API 服务，让 AI 应用开发更简单。 |
 
@@ -88,7 +88,7 @@ CodexGuide 想做的不是命令速查表，而是一份面向真实任务的实
 | --- | --- |
 | 入门路线 | 从安装、登录、订阅、设置、手机协同、API 连接到第一个低风险任务 |
 | 入口地图 | 解释桌面 App、CLI、Cloud、IDE、ChatGPT 和集成生态该怎么选 |
-| 配置专题 | 覆盖 CLI 选项、`config.toml`、MCP、Skills、Subagents、安全审批 |
+| 配置专题 | 覆盖 CLI 选项、`config.toml` 和项目规则配置 |
 | 工作流方法 | 任务设计、验证方式、非开发工作流、团队 playbook |
 | 实战案例 | PPT、Draw.io、浏览器、Obsidian、临床文献综述、飞书、Figma、Notion、CI 修复等场景 |
 | 官方资料索引 | 汇总 OpenAI 官方资料、GitHub 仓库和关键事实来源 |
@@ -101,11 +101,11 @@ CodexGuide 想做的不是命令速查表，而是一份面向真实任务的实
 
 ### 2. 想用 Codex 改真实项目
 
-从 [CLI 安装与登录](./docs/guide/12-cli-installation.md) 开始，接着看 [第一次让 Codex 改代码](./docs/guide/13-cli-first-run.md)、[AGENTS.md](./docs/guide/15-agents-md.md)、[沙盒与审批](./docs/guide/16-sandbox-approvals.md)。
+从 [CLI 安装与登录](./docs/guide/13-cli-installation.md) 开始，接着看 [第一次让 Codex 改代码](./docs/guide/14-cli-first-run.md)、[AGENTS.md](./docs/guide/16-agents-md.md)、[沙盒与审批](./docs/guide/17-sandbox-approvals.md)。
 
 ### 3. 想把 Codex 放进团队
 
-先看 [团队 playbook](./docs/practice/team-playbook.md)，再补齐 [配置与扩展](./docs/configuration/index.md)、[安全管理](./docs/configuration/security-admin.md)、[排障手册](./docs/guide/18-troubleshooting.md) 和 [实战案例库](./docs/recipes/index.md)。
+先看 [团队 playbook](./docs/practice/team-playbook.md)，再补齐 [配置与扩展](./docs/configuration/index.md)、[沙盒与审批](./docs/guide/17-sandbox-approvals.md)、[排障手册](./docs/guide/21-troubleshooting.md) 和 [实战案例库](./docs/recipes/index.md)。
 
 ## 快速入口
 
@@ -117,13 +117,14 @@ CodexGuide 想做的不是命令速查表，而是一份面向真实任务的实
 | [手机端协同桌面任务](./docs/guide/04-mobile-control-desktop.md) | 用 ChatGPT 手机 App 中的 Codex 入口跟进桌面任务 |
 | [连接第三方 API](./docs/guide/05-third-party-api.md) | 比较手动配置、Codex++、CCX 与 CC Switch 三种接入方式 |
 | [第一次使用 Codex](./docs/guide/06-app-first-task.md) | 选择低风险任务，并完成一次可验证修改 |
-| [CLI 安装与登录](./docs/guide/12-cli-installation.md) | 在本地终端安装 Codex CLI 并完成登录 |
-| [第一次让 Codex 改代码](./docs/guide/13-cli-first-run.md) | 用 CLI 进入真实仓库，完成一次可检查的代码任务 |
-| [配置与扩展](./docs/configuration/index.md) | CLI 选项、config.toml、MCP、Skills、Subagents、安全审批 |
+| [CLI 安装与登录](./docs/guide/13-cli-installation.md) | 在本地终端安装 Codex CLI 并完成登录 |
+| [第一次让 Codex 改代码](./docs/guide/14-cli-first-run.md) | 用 CLI 进入真实仓库，完成一次可检查的代码任务 |
+| [配置与扩展](./docs/configuration/index.md) | CLI 选项、config.toml 和项目规则配置 |
 | [实践方法](./docs/practice/index.md) | 任务设计、非开发工作流和团队实践 |
-| [AGENTS.md](./docs/guide/15-agents-md.md) | 给 Codex 编写项目级规则和协作边界 |
-| [沙盒与审批](./docs/guide/16-sandbox-approvals.md) | 文件、命令、网络、凭据和生产资源的安全边界 |
-| [Cloud、IDE 与桌面 App](./docs/guide/17-cloud-ide-app.md) | 不同 Codex 使用入口的适用场景 |
+| [AGENTS.md](./docs/guide/16-agents-md.md) | 给 Codex 编写项目级规则和协作边界 |
+| [沙盒与审批](./docs/guide/17-sandbox-approvals.md) | 文件、命令、网络、凭据和生产资源的安全边界 |
+| [自动线程管理](./docs/guide/18-thread-management.md) | 继续、分叉、移交和整理 Codex 任务 |
+| [Cloud、IDE 与桌面 App](./docs/guide/19-cloud-ide-app.md) | 不同 Codex 使用入口的适用场景 |
 | [实战案例库](./docs/recipes/index.md) | 可复制到真实项目的任务模板和复盘结构 |
 | [官方资料索引](./docs/reference/index.md) | OpenAI 官方资料、GitHub 仓库和关键链接 |
 
@@ -133,7 +134,7 @@ CodexGuide 想做的不是命令速查表，而是一份面向真实任务的实
 CodexGuide
 ├─ guide         # 从入门到团队化的实践指南
 ├─ platform      # CLI、App、Cloud、IDE、ChatGPT 入口地图
-├─ configuration # CLI 选项、config.toml、MCP、Skills、安全审批
+├─ configuration # CLI 选项、config.toml 和项目规则配置
 ├─ practice      # 任务设计、非开发工作流、团队实践
 ├─ recipes       # 可复用的真实工程案例
 ├─ reference     # 官方资料索引与事实来源
@@ -192,7 +193,7 @@ pnpm build
 微信搜索 **苍何** 或扫描下方二维码关注公众号。关注后回复 **codex交流群**，即可进入群交流。
 
 <p align="center">
-  <img src="./assets/wechat-codex-group.png" alt="关注苍何公众号后回复 codex交流群 进入群交流" width="820" />
+  <img src="https://cdn.canghecode.com/codexguide/assets/wechat-codex-group.png" alt="关注苍何公众号后回复 codex交流群 进入群交流" width="820" />
 </p>
 
 ## 事实来源

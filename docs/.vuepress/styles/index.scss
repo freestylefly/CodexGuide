@@ -269,7 +269,7 @@
     aspect-ratio: 980 / 405;
     width: 100%;
     border-radius: 8px;
-    background: url("/images/wechat-codex-group.png") center / cover no-repeat;
+    background: url("https://cdn.canghecode.com/codexguide/docs/.vuepress/public/images/wechat-codex-group.png") center / cover no-repeat;
   }
 
   .vp-dropdown-item {
@@ -302,7 +302,7 @@
     width: min(100%, 28rem);
     border: 1px solid var(--vp-c-border);
     border-radius: 8px;
-    background: url("/images/wechat-codex-group.png") center / cover no-repeat;
+    background: url("https://cdn.canghecode.com/codexguide/docs/.vuepress/public/images/wechat-codex-group.png") center / cover no-repeat;
     box-shadow: 0 8px 24px var(--vp-c-shadow);
   }
 
@@ -345,7 +345,7 @@
 
 .vp-project-home .vp-hero-info-wrapper::before {
   z-index: -2;
-  background-image: url("/images/home-hero-background.webp");
+  background-image: url("https://cdn.canghecode.com/codexguide/docs/.vuepress/public/images/home-hero-background.webp");
   background-position: center 42%;
   background-size: cover;
   opacity: 0.34;

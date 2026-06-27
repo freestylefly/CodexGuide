@@ -5,7 +5,7 @@ description: "近期 Codex 更新中文摘要，依据 OpenAI 官方 Codex chang
 # 近期Codex更新
 
 :::: tip 最后核对
-官方资料最后核对日期：2026-06-19。本文依据 [OpenAI Codex changelog](https://developers.openai.com/codex/changelog) 整理，仅提供中文摘要和阅读索引；功能开放范围、账号计划、地区限制、模型可用性与版本号，请以官方原文为准。
+官方资料最后核对日期：2026-06-27。本文依据 [OpenAI Codex changelog](https://developers.openai.com/codex/changelog) 整理，仅提供中文摘要和阅读索引；功能开放范围、账号计划、地区限制、模型可用性与版本号，请以官方原文为准。
 ::::
 
 本页用于快速了解 Codex 近期变化，涵盖桌面 App、移动端、CLI、模型、插件、权限与远程控制等内容。为保持阅读清晰，本文自 2025 年起整理，并不逐项搬运官方 GitHub PR 清单。
@@ -35,11 +35,49 @@ description: "近期 Codex 更新中文摘要，依据 OpenAI 官方 Codex chang
 
 <article class="codex-update-entry">
 
+<p class="codex-update-date">2026-06-25</p>
+
+### Codex Remote 一般可用
+
+Codex Remote 进入一般可用阶段。用户可以从 ChatGPT mobile app 启动或继续连接在 Mac / Windows host 上的 Codex 工作，查看进度，并在手机上审批操作。
+
+Remote Control 改为每台 iOS / Android 设备与每台 host 之间的已认证一对一 QR pairing。官方建议连接前更新 ChatGPT mobile app 与 Codex App；2026-06-08 之后使用过的连接会继续保持配对，更早且不活跃的连接需要重新配对。
+
+本次还新增 DigitalOcean plugin，可让 Codex 创建 DigitalOcean Droplet、配置 SSH 访问，并把它连接到 Codex App 作为 remote workspace。远程连接的设置与排障请继续参考官方 [Remote connections](https://developers.openai.com/codex/remote-connections) 页面。
+
+</article>
+
+<article class="codex-update-entry">
+
+<p class="codex-update-date">2026-06-22</p>
+
+### ChatGPT for iOS <span class="codex-update-version">1.2026.167</span>
+
+iOS 端新增 per-host personality settings，可在不同 host 上选择 Friendly 或 Pragmatic 风格；goal 现在可直接在 composer 中编辑，forked conversation 也会显示返回原 thread 的链接。
+
+本次还改进了 side chat、composer 自动补全、subagent / task / worktree 创建进度、workspace 文件搜索、code review 草稿、steering 与 host setup / recovery。修复项覆盖长 thread 加载、Face ID 解锁、停止响应、折叠区域以及深色模式 host 指示器等体验细节。
+
+</article>
+
+<article class="codex-update-entry">
+
+<p class="codex-update-date">2026-06-22</p>
+
+### Codex CLI <span class="codex-update-version">0.142.0</span>
+
+CLI 的 `/usage` 可显示并兑换 earned usage-limit reset credits，包含确认、重试和可用状态刷新。`/plugins` 将 remote plugins 分成 OpenAI Curated、Workspace、Shared with me，并可在合适的 turn 中推荐和安装相关插件。新增 configurable rollout token budgets，可跨 agent threads 跟踪预算、提醒剩余额度，并在耗尽时中止 turn。
+
+本次还加入 indexed web-search mode，用 server-approved URLs 限制直接页面访问；app-server clients 可配置 multi-agent delegation；Codex 也能接收 UTC 定时提醒并查询当前时间。修复重点包括 Linux TUI 挂起恢复、exec-server / stdio MCP 断线恢复、跨系统 remote environment 的路径 / shell / `AGENTS.md` / sandbox 行为、插件加载安装，以及 goal-first threads 的持久化和搜索。
+
+</article>
+
+<article class="codex-update-entry">
+
 <p class="codex-update-date">2026-06-18</p>
 
 ### Codex app <span class="codex-update-version">26.616</span>
 
-桌面端新增 Record & Replay，可在 macOS 上把用户演示过的流程转成可复用 skill；初始开放范围不含 EEA、UK 和 Switzerland，并要求用户或管理员启用 Computer Use。Automations 运行历史新增批量操作，可一键将运行记录标为已读，或归档符合条件的运行记录。
+桌面端新增 Record & Replay，可在 macOS 上把用户演示过的流程转成可复用 skill；初始开放范围不含 EEA、UK 和 Switzerland，并要求用户或管理员启用 Computer Use。Automations 运行历史新增批量操作，可一键将运行记录标为已读，或归档符合条件的运行记录。Thread handoff 也进入桌面端，可把 thread 移交到已连接 host 上匹配的项目继续处理，必要时也可由 Codex 协调移交。
 
 本次更新还加入用于管理 SSH connections 的 deep links，并改进 Browser Use：当草稿浏览器会话转移到服务器时，visible-tab routing 与 annotations 会继续保留。官方同时标注包含其他性能改进和问题修复。
 

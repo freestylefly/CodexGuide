@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/banner.svg" alt="CodexGuide" width="920" />
+  <img src="https://cdn.canghecode.com/codexguide/assets/banner.svg" alt="CodexGuide" width="920" />
 </p>
 
 <h3 align="center">A practical Codex guide for global beginners, creators, developers, and teams</h3>
@@ -44,7 +44,7 @@
 
 <p align="center">
   <a href="https://codexguide.ai/">
-    <img src="./assets/homepage-preview.png" alt="CodexGuide website homepage preview" width="920" />
+    <img src="https://cdn.canghecode.com/codexguide/assets/homepage-preview.png" alt="CodexGuide website homepage preview" width="920" />
   </a>
 </p>
 
@@ -78,7 +78,7 @@ The guide is mainly written in Chinese today, but its audience is broader than C
 
 | Sponsor | Description |
 | ------- | ----------- |
-| <a href="https://getgpt.pro/i/codexguide"><img src="./assets/sponsors/getgpt-pro.jpg" alt="GetGPT Pro" width="240"></a> | GetGPT Pro provides AI subscription activation and top-up services for ChatGPT, Claude, and other tools, with self-service ordering, fast delivery, and after-sales support. |
+| <a href="https://getgpt.pro/i/codexguide"><img src="https://cdn.canghecode.com/codexguide/assets/sponsors/getgpt-pro.jpg" alt="GetGPT Pro" width="240"></a> | GetGPT Pro provides AI subscription activation and top-up services for ChatGPT, Claude, and other tools, with self-service ordering, fast delivery, and after-sales support. |
 | <a href="https://pptoken.cc/"><img src="https://raw.githubusercontent.com/freestylefly/wesight/main/public/readme/sponsors/pptoken.png" alt="PPToken" width="240"></a> | Project sponsor. PPToken provides API relay and key distribution for ChatGPT, Claude, Gemini and other mainstream AI models, with low latency, high availability, pay-as-you-go billing, and flexible subscription plans. |
 | <a href="https://ciyuan.today/"><img src="https://raw.githubusercontent.com/freestylefly/wesight/main/public/readme/sponsors/ciyuan-api.jpg" alt="Ciyuan API" width="240"></a> | Project sponsor. Ciyuan API aims to become a one-stop AI interface platform for developers, providing stable, low-latency, and highly available large model API services to make AI application development simpler. |
 
@@ -88,7 +88,7 @@ The guide is mainly written in Chinese today, but its audience is broader than C
 | --- | --- |
 | Learning path | Installation, login, subscription, settings, mobile collaboration, and the first low-risk task |
 | Entry map | How to choose between Desktop App, CLI, Cloud, IDE, ChatGPT, and integrations |
-| Configuration | CLI options, `config.toml`, MCP, Skills, Subagents, and safety approvals |
+| Configuration | CLI options, `config.toml`, and project rule configuration |
 | Workflow practice | Task design, verification, non-development workflows, and team playbooks |
 | Recipes | PPT, Draw.io, browser, Obsidian, Feishu, Figma, Notion, CI fixes, and more |
 | Official references | OpenAI source material, GitHub repositories, and key fact links |
@@ -97,15 +97,15 @@ The guide is mainly written in Chinese today, but its audience is broader than C
 
 ### 1. First Time With Codex
 
-Read the [Learning Path](./docs/guide/00-overview.md), then continue with [Desktop App Download And Installation](./docs/guide/01-app-installation.md), [Plus / Pro Subscription](./docs/guide/02-subscribe-plus.md), [Desktop App Overview](./docs/guide/03-app-overview.md), and [First Task](./docs/guide/05-app-first-task.md).
+Read the [Learning Path](./docs/guide/00-overview.md), then continue with [Desktop App Download And Installation](./docs/guide/01-app-installation.md), [Plus / Pro Subscription](./docs/guide/02-subscribe-plus.md), [Desktop App Overview](./docs/guide/03-app-overview.md), and [First Task](./docs/guide/06-app-first-task.md).
 
 ### 2. Use Codex In A Real Project
 
-Start from [CLI Installation And Login](./docs/guide/11-cli-installation.md), then read [First Local Code Task](./docs/guide/12-cli-first-run.md), [AGENTS.md](./docs/guide/14-agents-md.md), and [Sandbox And Approvals](./docs/guide/15-sandbox-approvals.md).
+Start from [CLI Installation And Login](./docs/guide/13-cli-installation.md), then read [First Local Code Task](./docs/guide/14-cli-first-run.md), [AGENTS.md](./docs/guide/16-agents-md.md), and [Sandbox And Approvals](./docs/guide/17-sandbox-approvals.md).
 
 ### 3. Bring Codex Into A Team
 
-Start with the [Team Playbook](./docs/practice/team-playbook.md), then add [Configuration And Extensions](./docs/configuration/index.md), [Security Administration](./docs/configuration/security-admin.md), [Troubleshooting](./docs/guide/17-troubleshooting.md), and the [Recipe Library](./docs/recipes/index.md).
+Start with the [Team Playbook](./docs/practice/team-playbook.md), then add [Configuration And Extensions](./docs/configuration/index.md), [Sandbox And Approvals](./docs/guide/17-sandbox-approvals.md), [Troubleshooting](./docs/guide/21-troubleshooting.md), and the [Recipe Library](./docs/recipes/index.md).
 
 ## Quick Links
 
@@ -115,14 +115,14 @@ Start with the [Team Playbook](./docs/practice/team-playbook.md), then add [Conf
 | [Entry Map](./docs/platform/index.md) | Choosing between CLI, Desktop App, Cloud/Web, IDE, and ChatGPT |
 | [Desktop App Download And Installation](./docs/guide/01-app-installation.md) | Downloading, installing, logging in, and preparing Codex Desktop App |
 | [Mobile Collaboration](./docs/guide/04-mobile-control-desktop.md) | Following desktop tasks from the Codex entry in the ChatGPT mobile app |
-| [First Codex Task](./docs/guide/05-app-first-task.md) | Picking a low-risk task and completing a verifiable change |
-| [CLI Installation And Login](./docs/guide/11-cli-installation.md) | Installing Codex CLI locally and signing in |
-| [First Local Code Task](./docs/guide/12-cli-first-run.md) | Running Codex CLI in a real repository |
-| [Configuration And Extensions](./docs/configuration/index.md) | CLI options, config.toml, MCP, Skills, Subagents, and safety approvals |
+| [First Codex Task](./docs/guide/06-app-first-task.md) | Picking a low-risk task and completing a verifiable change |
+| [CLI Installation And Login](./docs/guide/13-cli-installation.md) | Installing Codex CLI locally and signing in |
+| [First Local Code Task](./docs/guide/14-cli-first-run.md) | Running Codex CLI in a real repository |
+| [Configuration And Extensions](./docs/configuration/index.md) | CLI options, config.toml, and project rule configuration |
 | [Practice](./docs/practice/index.md) | Task design, non-development workflows, and team practice |
-| [AGENTS.md](./docs/guide/14-agents-md.md) | Writing project-level rules and collaboration boundaries for Codex |
-| [Sandbox And Approvals](./docs/guide/15-sandbox-approvals.md) | Safety boundaries for files, commands, network, credentials, and production resources |
-| [Cloud, IDE, And Desktop App](./docs/guide/16-cloud-ide-app.md) | Matching Codex entry points to work scenarios |
+| [AGENTS.md](./docs/guide/16-agents-md.md) | Writing project-level rules and collaboration boundaries for Codex |
+| [Sandbox And Approvals](./docs/guide/17-sandbox-approvals.md) | Safety boundaries for files, commands, network, credentials, and production resources |
+| [Cloud, IDE, And Desktop App](./docs/guide/19-cloud-ide-app.md) | Matching Codex entry points to work scenarios |
 | [Recipes](./docs/recipes/index.md) | Reusable task templates and retrospectives for real projects |
 | [Official References](./docs/reference/index.md) | OpenAI source material, GitHub repositories, and key links |
 
@@ -132,7 +132,7 @@ Start with the [Team Playbook](./docs/practice/team-playbook.md), then add [Conf
 CodexGuide
 ├─ guide         # Practical guides from beginner use to team adoption
 ├─ platform      # CLI, App, Cloud, IDE, and ChatGPT entry map
-├─ configuration # CLI options, config.toml, MCP, Skills, safety approvals
+├─ configuration # CLI options, config.toml, and project rule configuration
 ├─ practice      # Task design, non-development workflows, team practice
 ├─ recipes       # Reusable real-world examples
 ├─ reference     # Official references and fact sources
@@ -176,7 +176,7 @@ The development server starts the VuePress documentation site. The production si
 Search **苍何** on WeChat or scan the QR code below. Reply with **codex交流群** to join the community group.
 
 <p align="center">
-  <img src="./assets/wechat-codex-group.png" alt="Follow Canghe on WeChat and reply codex交流群 to join the community" width="820" />
+  <img src="https://cdn.canghecode.com/codexguide/assets/wechat-codex-group.png" alt="Follow Canghe on WeChat and reply codex交流群 to join the community" width="820" />
 </p>
 
 ## Sources

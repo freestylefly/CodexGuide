@@ -15,17 +15,17 @@ Codex 现在支持 Android 和 iOS 手机。在手机上发消息，就能操作
 把 ChatGPT App 更新到最新版，然后选择连接电脑上的 Codex。
 
 
-![ChatGPT 手机 App 中的 Codex 入口](../images/mobile-codex-ios-app.jpg)
+![ChatGPT 手机 App 中的 Codex 入口](https://cdn.canghecode.com/codexguide/docs/images/mobile-codex-ios-app-watermarked-small.jpg)
 
 
 连接桌面 Codex APP：
 
-![手机端连接桌面 Codex App](../images/mobile-codex-connect-desktop.jpg)
+![手机端连接桌面 Codex App](https://cdn.canghecode.com/codexguide/docs/images/mobile-codex-connect-desktop-watermarked-small.jpg)
 
 
 在 ChatGPT 里打开 Codex 就能用。
 
-![在 ChatGPT 手机 App 中打开 Codex](../images/mobile-codex-chatgpt-entry.jpg)
+![在 ChatGPT 手机 App 中打开 Codex](https://cdn.canghecode.com/codexguide/docs/images/mobile-codex-chatgpt-entry-watermarked-small.jpg)
 
 
 ## 它能做什么

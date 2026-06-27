@@ -1,4 +1,6 @@
 node_modules
+.pnpm-store/
+.tmp/
 .DS_Store
 .obsidian/
 dist

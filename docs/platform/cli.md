@@ -149,7 +149,7 @@ CLI 入门后，建议继续读：
 
 - [CLI 选项与命令](/configuration/cli-options.md)
 - [配置文件 config.toml](/configuration/config-file.md)
-- [安全、审批与管理](/configuration/security-admin.md)
+- [沙盒与审批](/guide/17-sandbox-approvals.md)
 
 ## 实践判断
 
