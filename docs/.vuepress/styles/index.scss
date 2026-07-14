@@ -303,7 +303,7 @@
   transform: none;
 }
 
-.vp-dropdown-wrapper:has(> .vp-dropdown-title[aria-label="交流群二维码"]) {
+.vp-dropdown-wrapper:has(> .vp-dropdown-title[aria-label="付费交流群"]) {
   .vp-dropdown-title {
     border-radius: 6px;
     padding-inline: 0.45rem;
@@ -331,16 +331,21 @@
     aspect-ratio: 1 / 1;
     width: 100%;
     border-radius: 8px;
-    background: #fff url("/images/wechat-codex-group.png") center / contain no-repeat;
+    background: #fff url("/images/codexguide-paid-community-entry.svg") center / contain no-repeat;
   }
 
   .vp-dropdown-item {
-    display: none;
+    margin-top: 0.4rem;
+  }
+
+  .vp-dropdown-item .route-link {
+    justify-content: center;
+    text-align: center;
   }
 }
 
-.vp-dropdown-wrapper:has(> .vp-dropdown-title[aria-label="交流群二维码"]):hover .vp-dropdown,
-.vp-dropdown-wrapper.open:has(> .vp-dropdown-title[aria-label="交流群二维码"]) .vp-dropdown {
+.vp-dropdown-wrapper:has(> .vp-dropdown-title[aria-label="付费交流群"]):hover .vp-dropdown,
+.vp-dropdown-wrapper.open:has(> .vp-dropdown-title[aria-label="付费交流群"]) .vp-dropdown {
   transform: translateX(-50%);
 }
 
@@ -352,7 +357,7 @@
   }
 }
 
-.navbar-links-item:has(> .vp-nav-screen-menu-title[aria-label="交流群二维码"]) {
+.navbar-links-item:has(> .vp-nav-screen-menu-title[aria-label="付费交流群"]) {
   .vp-nav-screen-menu {
     margin-top: 0.75rem;
   }
@@ -365,12 +370,12 @@
     margin-bottom: 0.75rem;
     border: 1px solid var(--vp-c-border);
     border-radius: 8px;
-    background: #fff url("/images/wechat-codex-group.png") center / contain no-repeat;
+    background: #fff url("/images/codexguide-paid-community-entry.svg") center / contain no-repeat;
     box-shadow: 0 8px 24px var(--vp-c-shadow);
   }
 
   .vp-nav-screen-menu-item {
-    display: none;
+    margin-top: 0.35rem;
   }
 }
 

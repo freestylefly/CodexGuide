@@ -8,19 +8,30 @@
     "node": ">=22 <25"
   },
   "scripts": {
+    "admin:hash-password": "node scripts/hash-admin-password.mjs",
     "dev": "vuepress dev docs --host 0.0.0.0",
     "build": "vuepress build docs",
     "clean": "rm -rf docs/.vuepress/.cache docs/.vuepress/.temp docs/.vuepress/dist",
-    "preview": "vuepress dev docs --host 0.0.0.0"
+    "community:generate-entry-qr": "node scripts/generate-community-entry-qr.mjs",
+    "db:migrate": "node scripts/migrate-paid-community.mjs",
+    "preview": "vuepress dev docs --host 0.0.0.0",
+    "test": "vitest run",
+    "typecheck": "tsc -p tsconfig.server.json --noEmit"
   },
   "dependencies": {
+    "@neondatabase/serverless": "^1.1.0",
     "@vercel/analytics": "^2.0.1"
   },
   "devDependencies": {
+    "@types/node": "^26.1.1",
+    "@types/qrcode": "^1.5.6",
     "@vuepress/bundler-vite": "2.0.0-rc.28",
     "@vuepress/plugin-feed": "2.0.0-rc.128",
     "@vuepress/plugin-slimsearch": "2.0.0-rc.128",
+    "qrcode": "^1.5.4",
     "sass-embedded": "^1.97.2",
+    "typescript": "5.9.3",
+    "vitest": "^4.1.10",
     "vue": "^3.5.26",
     "vuepress": "2.0.0-rc.28",
     "vuepress-theme-hope": "2.0.0-rc.106"

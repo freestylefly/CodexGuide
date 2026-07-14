@@ -14,6 +14,7 @@ docs/.vuepress/dist
 *.log
 .env
 .env.*
+!.env.example
 .vercel
 
 .claudian/

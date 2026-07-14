@@ -55,7 +55,7 @@ const communityItems = [
 ];
 
 const wechatItems = [
-  { text: "交流群", icon: "message", link: "/community/roadmap.md" },
+  { text: "打开付费入群页", icon: "message", link: "/community/join.md" },
 ];
 
 export default navbar([
@@ -109,9 +109,9 @@ export default navbar([
     children: communityItems,
   },
   {
-    text: "交流群",
+    text: "付费交流群",
     icon: "message",
-    ariaLabel: "交流群二维码",
+    ariaLabel: "付费交流群",
     children: wechatItems,
   },
 ]);

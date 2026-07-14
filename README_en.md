@@ -169,10 +169,12 @@ The development server starts the VuePress documentation site. The production si
 
 ## Community
 
-Search **苍何** on WeChat or scan the QR code below. Reply with **codex交流群** to join the community group.
+The CodexGuide WeChat community has a one-time CNY 9.9 entry fee. The small threshold helps reduce spam and supports ongoing content and community maintenance. Scan the QR code or open the [paid community page](https://codexguide.ai/community/join) in WeChat to review the boundaries and pay.
 
 <p align="center">
-  <img src="https://cdn.canghecode.com/codexguide/assets/wechat-codex-group.png" alt="Follow Canghe on WeChat and reply codex交流群 to join the community" width="820" />
+  <a href="https://codexguide.ai/community/join">
+    <img src="./docs/.vuepress/public/images/codexguide-paid-community-entry.svg" alt="Open the CodexGuide paid WeChat community introduction and payment page" width="360" />
+  </a>
 </p>
 
 ## Sources

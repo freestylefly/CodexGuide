@@ -1,6 +1,9 @@
 import { inject } from "@vercel/analytics";
 import { defineClientConfig } from "vuepress/client";
 
+import PaidCommunity from "./components/PaidCommunity.vue";
+import PaidCommunityAdmin from "./components/PaidCommunityAdmin.vue";
+
 const analyticsHosts = new Set(["codexguide.ai", "www.codexguide.ai"]);
 
 const navbarDropdownLinks: Record<string, string> = {
@@ -9,6 +12,7 @@ const navbarDropdownLinks: Record<string, string> = {
   实战案例导航: "/recipes/",
   参考手册导航: "/manual/",
   社区共建: "/community/roadmap.html",
+  付费交流群: "/community/join.html",
 };
 
 const legacySectionPaths: Record<string, string> = {
@@ -43,7 +47,10 @@ if (typeof window !== "undefined") {
 }
 
 export default defineClientConfig({
-  enhance: () => {
+  enhance: ({ app }) => {
+    app.component("PaidCommunity", PaidCommunity);
+    app.component("PaidCommunityAdmin", PaidCommunityAdmin);
+
     if (typeof window !== "undefined") {
       document.addEventListener("click", (event) => {
         if (event.detail === 0) return;
