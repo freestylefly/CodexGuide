@@ -3,7 +3,7 @@ import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { viteBundler } from "@vuepress/bundler-vite";
 import { defineUserConfig } from "vuepress";
 
-import { getPageDescription, siteDescription, toSiteUrl } from "./seo.js";
+import { getPageDescription, siteDescription, siteUrl, toSiteUrl } from "./seo.js";
 import theme from "./theme.js";
 
 const rewriteSitemapCleanUrlsPlugin = {
@@ -14,8 +14,10 @@ const rewriteSitemapCleanUrlsPlugin = {
     if (!existsSync(sitemapPath)) return;
 
     const sitemap = readFileSync(sitemapPath, "utf-8");
+    const escapedSiteUrl = siteUrl.replace(/[.*+?^${}()|[\]\\]/gu, "\\$&");
+    const locationPattern = new RegExp(`<loc>(${escapedSiteUrl}[^<]*)<\\/loc>`, "gu");
     const cleanedSitemap = sitemap.replace(
-      /<loc>(https:\/\/codexguide\.ai[^<]*)<\/loc>/gu,
+      locationPattern,
       (_, url: string) => {
         const { pathname, search, hash } = new URL(url);
 

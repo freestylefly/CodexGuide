@@ -1,6 +1,10 @@
 import { inject } from "@vercel/analytics";
 import { defineClientConfig } from "vuepress/client";
 
+import PaidCommunity from "./components/PaidCommunity.vue";
+import PaidCommunityAdmin from "./components/PaidCommunityAdmin.vue";
+import PaidCommunityResult from "./components/PaidCommunityResult.vue";
+
 const analyticsHosts = new Set(["codexguide.ai", "www.codexguide.ai"]);
 
 const navbarDropdownLinks: Record<string, string> = {
@@ -43,7 +47,11 @@ if (typeof window !== "undefined") {
 }
 
 export default defineClientConfig({
-  enhance: () => {
+  enhance: ({ app }) => {
+    app.component("PaidCommunity", PaidCommunity);
+    app.component("PaidCommunityAdmin", PaidCommunityAdmin);
+    app.component("PaidCommunityResult", PaidCommunityResult);
+
     if (typeof window !== "undefined") {
       document.addEventListener("click", (event) => {
         if (event.detail === 0) return;
