@@ -25,7 +25,7 @@ export const getDatabaseUrl = (): string => required("DATABASE_URL");
 
 export const getSiteUrl = (): string => {
   const url = new URL(
-    process.env.PUBLIC_SITE_URL?.trim() || "https://codexguide.canghecode.com",
+    process.env.PUBLIC_SITE_URL?.trim() || "https://codexguide.ai",
   );
 
   if (url.protocol !== "https:" && process.env.NODE_ENV === "production") {

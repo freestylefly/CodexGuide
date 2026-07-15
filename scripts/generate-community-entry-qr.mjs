@@ -6,7 +6,7 @@ const output = fileURLToPath(
   new URL("../docs/.vuepress/public/images/codexguide-paid-community-entry.svg", import.meta.url),
 );
 const siteUrl = new URL(
-  process.env.PUBLIC_SITE_URL?.trim() || "https://codexguide.canghecode.com",
+  process.env.PUBLIC_SITE_URL?.trim() || "https://codexguide.ai",
 );
 
 if (siteUrl.protocol !== "https:") {

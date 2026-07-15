@@ -26,7 +26,7 @@ describe("community status endpoint", () => {
 
   it("exposes only the Alipay session bootstrap to unauthenticated users", async () => {
     const response = await handler.fetch(
-      new Request("https://codexguide.canghecode.com/api/community/status"),
+      new Request("https://codexguide.ai/api/community/status"),
     );
     const body = await response.json();
 
@@ -43,7 +43,7 @@ describe("community status endpoint", () => {
     );
 
     const response = await handler.fetch(
-      new Request("https://codexguide.canghecode.com/api/community/status", {
+      new Request("https://codexguide.ai/api/community/status", {
         headers: { Cookie: cookies() },
       }),
     );

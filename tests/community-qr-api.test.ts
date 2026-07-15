@@ -21,7 +21,7 @@ const requestWithSession = (): Request => {
 const requestWithBothSessions = (): Request => {
   const alipay = alipaySessionCookie("a".repeat(64)).split(";")[0];
   const wechat = communitySessionCookie("openid", "b".repeat(64)).split(";")[0];
-  return new Request("https://codexguide.canghecode.com/api/community/qr", {
+  return new Request("https://codexguide.ai/api/community/qr", {
     headers: { Cookie: `${alipay}; ${wechat}` },
   });
 };

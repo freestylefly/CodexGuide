@@ -1,9 +1,9 @@
 # 付费交流群部署说明
 
-当前先使用与 `canghecode.com` 个人 ICP 备案主体一致的个人支付宝账号。付费说明页面位于
-`https://codexguide.canghecode.com/community/join`，入口二维码指向
-`https://codexguide.canghecode.com/community/pay`，用于直接拉起支付宝网站支付。管理页位于
-`https://codexguide.canghecode.com/community/admin`。支付金额由服务端固定为 990 分，不能由浏览器传入。
+当前统一使用原有正式域名 `codexguide.ai`。付费说明页面位于
+`https://codexguide.ai/community/join`，入口二维码指向
+`https://codexguide.ai/community/pay`，用于直接拉起支付宝网站支付。管理页位于
+`https://codexguide.ai/community/admin`。支付金额由服务端固定为 990 分，不能由浏览器传入。
 
 ## 1. 准备 Neon
 
@@ -24,12 +24,12 @@
 
 ## 3. 配置支付宝生产环境
 
-1. 确认个人支付宝实名主体与 `canghecode.com` 的个人 ICP 备案主体一致。
-2. 在支付宝开放平台完成网站支付产品签约与网页应用发布，审核网站使用 `https://codexguide.canghecode.com`。
+1. 确认 `codexguide.ai` 的 ICP 备案主体与支付宝签约主体满足审核要求。
+2. 在支付宝开放平台完成网站支付产品签约与网页应用发布，审核网站使用 `https://codexguide.ai`。
 3. 确认 `ALIPAY_APP_ID`、应用公钥、`ALIPAY_PRIVATE_KEY` 和 `ALIPAY_PUBLIC_KEY` 属于同一套生产应用密钥。
 4. Node.js 使用 PKCS#1 应用私钥；格式不一致时用支付宝开放平台密钥工具转换，不要手工添加 PEM 头尾。
 5. 在 Vercel 配置 `ALIPAY_ENV=production`、`ALIPAY_GATEWAY=https://openapi.alipay.com/gateway.do`、`ALIPAY_NOTIFY_ENABLED=true` 和 `WECHAT_PAYMENT_ENABLED=false`。
-6. 生产异步通知地址为 `https://codexguide.canghecode.com/api/alipay/notify`。该地址必须公网 HTTPS 可访问、不得重定向，也不能被部署保护拦截。
+6. 生产异步通知地址为 `https://codexguide.ai/api/alipay/notify`。该地址必须公网 HTTPS 可访问、不得重定向，也不能被部署保护拦截。
 7. 退款接口仅允许已登录管理员调用；同一次退款会复用同一个退款请求号，避免重复退款。
 
 ## 4. 微信支付当前停用
