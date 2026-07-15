@@ -8,10 +8,12 @@ import {
   type WechatNotification,
 } from "../../server/wechat-pay.js";
 import { getWechatConfig } from "../../server/config.js";
+import { requireWechatPaymentEnabled } from "../../server/payment-availability.js";
 
 export default {
   async fetch(request: Request): Promise<Response> {
     try {
+      requireWechatPaymentEnabled();
       assertMethod(request, ["POST"]);
       const rawBody = await request.text();
       const config = getWechatConfig();

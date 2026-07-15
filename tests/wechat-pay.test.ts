@@ -104,14 +104,19 @@ describe("WeChat Pay notifications", () => {
   };
 
   const order: CommunityOrder = {
+    alipay_buyer_key: null,
+    alipay_trade_no: null,
     amount_cents: 990,
     buyer_key: "a".repeat(64),
     created_at: new Date(),
     currency: "CNY",
     id: transaction.out_trade_no!,
     paid_at: null,
+    payment_provider: "WECHAT",
     prepay_expires_at: null,
     prepay_id: null,
+    refund_request_no: null,
+    refunded_at: null,
     status: "PENDING",
     updated_at: new Date(),
     wechat_transaction_id: null,

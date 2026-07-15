@@ -9,6 +9,8 @@
   },
   "scripts": {
     "admin:hash-password": "node scripts/hash-admin-password.mjs",
+    "alipay:configure-sandbox": "node scripts/configure-alipay-sandbox.mjs",
+    "alipay:sandbox": "pnpm build && tsc -p tsconfig.local-server.json && node scripts/serve-paid-community.mjs",
     "dev": "vuepress dev docs --host 0.0.0.0",
     "build": "vuepress build docs",
     "clean": "rm -rf docs/.vuepress/.cache docs/.vuepress/.temp docs/.vuepress/dist",
@@ -20,7 +22,9 @@
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.1.0",
-    "@vercel/analytics": "^2.0.1"
+    "@vercel/analytics": "^2.0.1",
+    "alipay-sdk": "4.14.0",
+    "postgres": "3.4.9"
   },
   "devDependencies": {
     "@types/node": "^26.1.1",

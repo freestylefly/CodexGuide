@@ -3,6 +3,7 @@ import { defineClientConfig } from "vuepress/client";
 
 import PaidCommunity from "./components/PaidCommunity.vue";
 import PaidCommunityAdmin from "./components/PaidCommunityAdmin.vue";
+import PaidCommunityResult from "./components/PaidCommunityResult.vue";
 
 const analyticsHosts = new Set(["codexguide.ai", "www.codexguide.ai"]);
 
@@ -12,7 +13,6 @@ const navbarDropdownLinks: Record<string, string> = {
   实战案例导航: "/recipes/",
   参考手册导航: "/manual/",
   社区共建: "/community/roadmap.html",
-  付费交流群: "/community/join.html",
 };
 
 const legacySectionPaths: Record<string, string> = {
@@ -50,6 +50,7 @@ export default defineClientConfig({
   enhance: ({ app }) => {
     app.component("PaidCommunity", PaidCommunity);
     app.component("PaidCommunityAdmin", PaidCommunityAdmin);
+    app.component("PaidCommunityResult", PaidCommunityResult);
 
     if (typeof window !== "undefined") {
       document.addEventListener("click", (event) => {

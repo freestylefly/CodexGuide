@@ -8,10 +8,12 @@ import {
   readOAuthState,
 } from "../../../server/session.js";
 import { exchangeWechatOAuthCode } from "../../../server/wechat-oauth.js";
+import { requireWechatPaymentEnabled } from "../../../server/payment-availability.js";
 
 export default {
   async fetch(request: Request): Promise<Response> {
     try {
+      requireWechatPaymentEnabled();
       assertMethod(request, ["GET"]);
       const url = new URL(request.url);
       const code = url.searchParams.get("code") || "";

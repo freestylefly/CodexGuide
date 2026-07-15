@@ -2,12 +2,14 @@ import { requireCommunitySession } from "../../server/auth.js";
 import { errorResponse } from "../../server/errors.js";
 import { assertMethod, assertSameOrigin, noStoreHeaders } from "../../server/http.js";
 import { getBuyerOrderStatus, prepareCommunityOrder } from "../../server/order-service.js";
+import { requireWechatPaymentEnabled } from "../../server/payment-availability.js";
 
 const validOrderId = (value: string): boolean => /^CG[A-Z0-9]{20,30}$/.test(value);
 
 export default {
   async fetch(request: Request): Promise<Response> {
     try {
+      requireWechatPaymentEnabled();
       assertMethod(request, ["GET", "POST"]);
       const session = requireCommunitySession(request);
 

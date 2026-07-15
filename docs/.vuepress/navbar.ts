@@ -54,9 +54,9 @@ const communityItems = [
   { text: "社区教程合集", icon: "book", link: "/community/tutorials.md" },
 ];
 
-const wechatItems = [
-  { text: "打开付费入群页", icon: "message", link: "/community/join.md" },
-];
+const communityJoinLink = process.env.PUBLIC_SITE_URL?.trim()
+  ? new URL("/community/join", process.env.PUBLIC_SITE_URL).toString()
+  : "/community/join.md";
 
 export default navbar([
   { text: "首页", icon: "home", link: "/" },
@@ -109,9 +109,9 @@ export default navbar([
     children: communityItems,
   },
   {
-    text: "付费交流群",
+    text: "交流群",
     icon: "message",
-    ariaLabel: "付费交流群",
-    children: wechatItems,
+    link: communityJoinLink,
+    ariaLabel: "交流群",
   },
 ]);

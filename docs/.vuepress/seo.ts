@@ -1,4 +1,8 @@
-export const siteUrl = "https://codexguide.ai";
+const configuredSiteUrl = process.env.PUBLIC_SITE_URL?.trim();
+
+export const siteUrl = configuredSiteUrl
+  ? new URL(configuredSiteUrl).origin
+  : "https://codexguide.ai";
 
 export const siteDescription =
   "CodexGuide 是面向中文用户的 OpenAI Codex 教程，系统整理 Codex 桌面 App、CLI、IDE、Cloud、配置、Skills、AGENTS.md 和实战案例。";
@@ -33,7 +37,7 @@ export const pageDescriptions: Record<string, string> = {
   "/manual/": "Codex 参考手册，整理 OpenAI 官方资料、Codex 更新记录、参考来源与致谢。",
   "/community/roadmap.html": "CodexGuide 共建路线图，记录文档站骨架、教程、案例、截图、关键词索引和社区传播的后续计划。",
   "/community/tutorials.html": "Codex 社区优秀教程合集，收录社区维护的 Codex 开源教程、在线阅读资料和 PDF。",
-  "/community/join.html": "CodexGuide 付费交流群说明，介绍收费原因、服务边界，并支持在微信内支付后获取当前群二维码。",
+  "/community/join.html": "CodexGuide 付费交流群说明，介绍收费原因、服务边界，并支持使用支付宝支付 9.9 元后获取当前群二维码。",
   "/sponsors/": "CodexGuide 赞助商页面，集中展示支持本站建设的项目和服务。",
 
   "/start/01-what-is-codex.html": "Codex 入口地图，比较 CLI、桌面 App、Cloud、IDE、ChatGPT 和集成生态，帮助选择合适工作入口。",

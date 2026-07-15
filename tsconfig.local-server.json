@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.server.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "outDir": ".tmp/local-functions",
+    "rootDir": "."
+  },
+  "include": ["api/**/*.ts", "server/**/*.ts"],
+  "exclude": ["tests/**/*.ts"]
+}

@@ -60,7 +60,7 @@ export default hopeTheme({
       license: "MIT",
       triggerLength: 100,
       maxLength: 700,
-      canonical: "https://codexguide.ai/",
+      canonical: `${siteUrl}/`,
       global: true,
     },
     feed: {

@@ -15,6 +15,11 @@ docs/.vuepress/dist
 .env
 .env.*
 !.env.example
+.alipay-sandbox.json
 .vercel
+
+# Local payment integration Skills installed by the Alipay package.
+.agents/skills/alipay-aipay/
+.claude/skills/alipay-aipay/
 
 .claudian/

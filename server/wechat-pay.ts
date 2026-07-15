@@ -9,8 +9,9 @@ import type { CommunityOrder } from "./db.js";
 import type { WechatConfig } from "./config.js";
 import { getSiteUrl, getWechatConfig } from "./config.js";
 import { AppError } from "./errors.js";
+import { COMMUNITY_PRICE_CENTS } from "./payment-constants.js";
 
-export const COMMUNITY_PRICE_CENTS = 990;
+export { COMMUNITY_PRICE_CENTS } from "./payment-constants.js";
 const ORDER_DESCRIPTION = "CodexGuide 付费交流群";
 
 type Fetch = typeof globalThis.fetch;

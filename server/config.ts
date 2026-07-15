@@ -24,7 +24,9 @@ const pem = (value: string): string => value.replace(/\\n/g, "\n");
 export const getDatabaseUrl = (): string => required("DATABASE_URL");
 
 export const getSiteUrl = (): string => {
-  const url = new URL(process.env.PUBLIC_SITE_URL?.trim() || "https://codexguide.ai");
+  const url = new URL(
+    process.env.PUBLIC_SITE_URL?.trim() || "https://codexguide.canghecode.com",
+  );
 
   if (url.protocol !== "https:" && process.env.NODE_ENV === "production") {
     throw new ConfigError("PUBLIC_SITE_URL");
@@ -37,6 +39,51 @@ export const getCommunitySessionSecret = (): string => secret("COMMUNITY_SESSION
 export const getBuyerHmacSecret = (): string => secret("COMMUNITY_BUYER_HMAC_SECRET");
 export const getAdminSessionSecret = (): string => secret("ADMIN_SESSION_SECRET");
 export const getAdminPasswordHash = (): string => required("ADMIN_PASSWORD_HASH");
+
+export const isWechatPaymentEnabled = (): boolean =>
+  process.env.WECHAT_PAYMENT_ENABLED?.trim().toLowerCase() === "true";
+
+export type AlipayConfig = {
+  alipayPublicKey: string;
+  appId: string;
+  gateway: string;
+  notifyEnabled: boolean;
+  privateKey: string;
+  sellerId: string;
+};
+
+const ALIPAY_SANDBOX_GATEWAY = "https://openapi-sandbox.dl.alipaydev.com/gateway.do";
+const ALIPAY_PRODUCTION_GATEWAY = "https://openapi.alipay.com/gateway.do";
+
+export const getAlipayConfig = (): AlipayConfig => {
+  const environment = process.env.ALIPAY_ENV?.trim() || "production";
+
+  if (!['production', 'sandbox'].includes(environment)) {
+    throw new ConfigError("ALIPAY_ENV");
+  }
+
+  const expectedGateway =
+    environment === "sandbox" ? ALIPAY_SANDBOX_GATEWAY : ALIPAY_PRODUCTION_GATEWAY;
+  const gateway = process.env.ALIPAY_GATEWAY?.trim() || expectedGateway;
+
+  if (gateway !== expectedGateway) {
+    throw new ConfigError("ALIPAY_GATEWAY");
+  }
+
+  const notifyValue = process.env.ALIPAY_NOTIFY_ENABLED?.trim() || "false";
+  if (!['true', 'false'].includes(notifyValue)) {
+    throw new ConfigError("ALIPAY_NOTIFY_ENABLED");
+  }
+
+  return {
+    alipayPublicKey: required("ALIPAY_PUBLIC_KEY"),
+    appId: required("ALIPAY_APP_ID"),
+    gateway,
+    notifyEnabled: notifyValue === "true",
+    privateKey: required("ALIPAY_PRIVATE_KEY"),
+    sellerId: required("ALIPAY_SELLER_ID"),
+  };
+};
 
 export type WechatConfig = {
   appId: string;

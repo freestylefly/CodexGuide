@@ -76,6 +76,7 @@ const signedRequest = (body: string, valid = true): Request => {
 
 describe("WeChat Pay notification endpoint", () => {
   beforeEach(() => {
+    process.env.WECHAT_PAYMENT_ENABLED = "true";
     process.env.PUBLIC_SITE_URL = "https://codexguide.ai";
     process.env.WECHAT_APP_ID = "wx-test-app";
     process.env.WECHAT_APP_SECRET = "app-secret";
@@ -107,6 +108,16 @@ describe("WeChat Pay notification endpoint", () => {
     const response = await handler.fetch(signedRequest(notificationBody()));
     expect(response.status).toBe(204);
     expect(dbMocks.markOrderPaid).toHaveBeenCalledWith(orderId, "4200000000001");
+  });
+
+  it("returns not found without reading payment configuration when WeChat Pay is disabled", async () => {
+    process.env.WECHAT_PAYMENT_ENABLED = "false";
+
+    const response = await handler.fetch(signedRequest(notificationBody()));
+
+    expect(response.status).toBe(404);
+    expect(dbMocks.findOrderById).not.toHaveBeenCalled();
+    expect(dbMocks.markOrderPaid).not.toHaveBeenCalled();
   });
 
   it("rejects invalid signatures before touching the order", async () => {

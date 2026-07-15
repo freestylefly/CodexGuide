@@ -3,13 +3,18 @@ CREATE TABLE IF NOT EXISTS community_orders (
   buyer_key CHAR(64) NOT NULL,
   amount_cents INTEGER NOT NULL CHECK (amount_cents > 0),
   currency CHAR(3) NOT NULL DEFAULT 'CNY',
+  payment_provider VARCHAR(16) NOT NULL DEFAULT 'WECHAT' CHECK (payment_provider IN ('ALIPAY', 'WECHAT')),
   status VARCHAR(16) NOT NULL CHECK (status IN ('PENDING', 'PAID', 'CLOSED', 'REFUNDED', 'REVOKED')),
   prepay_id TEXT,
   prepay_expires_at TIMESTAMPTZ,
   wechat_transaction_id VARCHAR(64) UNIQUE,
+  alipay_trade_no VARCHAR(64) UNIQUE,
+  alipay_buyer_key CHAR(64),
+  refund_request_no VARCHAR(64),
   created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
   updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-  paid_at TIMESTAMPTZ
+  paid_at TIMESTAMPTZ,
+  refunded_at TIMESTAMPTZ
 );
 
 CREATE INDEX IF NOT EXISTS community_orders_buyer_created_idx

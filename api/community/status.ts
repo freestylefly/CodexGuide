@@ -1,29 +1,39 @@
 import { findCurrentOrder, hasActiveGroupQr } from "../../server/db.js";
+import { readPaidCommunityBuyers } from "../../server/auth.js";
 import { errorResponse } from "../../server/errors.js";
 import { assertMethod, noStoreHeaders } from "../../server/http.js";
-import { readCommunitySession } from "../../server/session.js";
 
 export default {
   async fetch(request: Request): Promise<Response> {
     try {
       assertMethod(request, ["GET"]);
-      const session = readCommunitySession(request);
+      const buyers = readPaidCommunityBuyers(request);
 
-      if (!session) {
+      if (buyers.length === 0) {
         return Response.json(
           {
             authenticated: false,
-            authUrl: "/api/auth/wechat/start?returnTo=%2Fcommunity%2Fjoin",
             eligible: false,
+            sessionUrl: "/api/auth/alipay/session",
           },
           { headers: noStoreHeaders() },
         );
       }
 
-      const [order, groupQr] = await Promise.all([
-        findCurrentOrder(session.buyerKey),
+      const [buyerOrders, groupQr] = await Promise.all([
+        Promise.all(
+          buyers.map(async (buyer) => ({
+            buyer,
+            order: await findCurrentOrder(buyer.buyerKey, buyer.provider),
+          })),
+        ),
         hasActiveGroupQr(),
       ]);
+      const selected =
+        buyerOrders.find(({ order }) => order?.status === "PAID") ||
+        buyerOrders.find(({ order }) => order?.status === "PENDING") ||
+        buyerOrders[0];
+      const { buyer, order } = selected;
 
       return Response.json(
         {
@@ -32,6 +42,7 @@ export default {
           groupQrReady: groupQr,
           orderId: order?.id ?? null,
           orderStatus: order?.status ?? null,
+          paymentProvider: order?.payment_provider ?? buyer.provider,
         },
         { headers: noStoreHeaders() },
       );

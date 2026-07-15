@@ -1,4 +1,4 @@
-import { requireCommunitySession } from "../../server/auth.js";
+import { requirePaidCommunityBuyers } from "../../server/auth.js";
 import { findCurrentOrder, getActiveGroupQr } from "../../server/db.js";
 import { AppError, errorResponse } from "../../server/errors.js";
 import { assertMethod, noStoreHeaders } from "../../server/http.js";
@@ -7,10 +7,13 @@ export default {
   async fetch(request: Request): Promise<Response> {
     try {
       assertMethod(request, ["GET"]);
-      const session = requireCommunitySession(request);
-      const order = await findCurrentOrder(session.buyerKey);
+      const buyers = requirePaidCommunityBuyers(request);
+      const orders = await Promise.all(
+        buyers.map((buyer) => findCurrentOrder(buyer.buyerKey, buyer.provider)),
+      );
+      const order = orders.find((candidate) => candidate?.status === "PAID");
 
-      if (order?.status !== "PAID") {
+      if (!order) {
         throw new AppError(403, "payment_required", "确认支付后才能查看群二维码。" );
       }
 

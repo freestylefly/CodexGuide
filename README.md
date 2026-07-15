@@ -186,11 +186,11 @@ pnpm build
 
 ## 社区共建
 
-CodexGuide 交流群采用 9.9 元付费入群，用于筛选同频用户并支持资料整理和日常维护。扫描下方二维码，或打开[付费交流群说明](https://codexguide.ai/community/join)，在微信内了解服务边界并完成支付。
+CodexGuide 交流群采用 9.9 元付费入群，用于筛选同频用户并支持资料整理和日常维护。使用支付宝扫一扫或手机相机扫描下方二维码可直接进入支付宝支付；也可以先打开[付费交流群说明](https://codexguide.canghecode.com/community/join)，了解服务边界后再决定是否加入。
 
 <p align="center">
-  <a href="https://codexguide.ai/community/join">
-    <img src="./docs/.vuepress/public/images/codexguide-paid-community-entry.svg" alt="扫描后打开 CodexGuide 付费交流群说明与支付页面" width="360" />
+  <a href="https://codexguide.canghecode.com/community/join">
+    <img src="./docs/.vuepress/public/images/codexguide-paid-community-entry.svg" alt="支付宝扫一扫或手机相机扫码发起 CodexGuide 交流群支付" width="360" />
   </a>
 </p>
 

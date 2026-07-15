@@ -3,6 +3,7 @@ import { cookie, readCookie } from "./http.js";
 import { seal, unseal } from "./security.js";
 
 export const COMMUNITY_SESSION_COOKIE = "codexguide_community";
+export const ALIPAY_SESSION_COOKIE = "codexguide_alipay_community";
 export const OAUTH_STATE_COOKIE = "codexguide_oauth_state";
 export const ADMIN_SESSION_COOKIE = "codexguide_community_admin";
 
@@ -18,6 +19,12 @@ export type OAuthState = {
   nonce: string;
   returnTo: string;
   type: "oauth-state";
+};
+
+export type AlipaySession = {
+  buyerKey: string;
+  exp: number;
+  type: "alipay-community";
 };
 
 export type AdminSession = {
@@ -40,6 +47,26 @@ export const communitySessionCookie = (openid: string, buyerKey: string): string
   );
 
   return cookie(COMMUNITY_SESSION_COOKIE, token, {
+    maxAge,
+    secure: process.env.NODE_ENV === "production",
+  });
+};
+
+export const readAlipaySession = (request: Request): AlipaySession | null =>
+  unseal<AlipaySession>(
+    readCookie(request, ALIPAY_SESSION_COOKIE),
+    getCommunitySessionSecret(),
+    "alipay-community",
+  );
+
+export const alipaySessionCookie = (buyerKey: string): string => {
+  const maxAge = 365 * 24 * 60 * 60;
+  const token = seal(
+    { type: "alipay-community", buyerKey, exp: Date.now() + maxAge * 1000 },
+    getCommunitySessionSecret(),
+  );
+
+  return cookie(ALIPAY_SESSION_COOKIE, token, {
     maxAge,
     secure: process.env.NODE_ENV === "production",
   });
