@@ -23,25 +23,47 @@ const pem = (value: string): string => value.replace(/\\n/g, "\n");
 
 export const getDatabaseUrl = (): string => required("DATABASE_URL");
 
-export const getSiteUrl = (): string => {
-  const url = new URL(
-    process.env.PUBLIC_SITE_URL?.trim() || "https://codexguide.ai",
-  );
+const origin = (name: string, fallback: string): string => {
+  let url: URL;
+
+  try {
+    url = new URL(process.env[name]?.trim() || fallback);
+  } catch {
+    throw new ConfigError(name);
+  }
 
   if (url.protocol !== "https:" && process.env.NODE_ENV === "production") {
-    throw new ConfigError("PUBLIC_SITE_URL");
+    throw new ConfigError(name);
   }
 
   return url.origin;
 };
+
+const booleanValue = (name: string, fallback = false): boolean => {
+  const value = process.env[name]?.trim().toLowerCase();
+  if (!value) return fallback;
+  if (!["true", "false"].includes(value)) throw new ConfigError(name);
+  return value === "true";
+};
+
+export const getPublicSiteUrl = (): string =>
+  origin("PUBLIC_SITE_URL", "https://codexguide.ai");
+
+export const getCommunitySiteUrl = (): string =>
+  origin("COMMUNITY_SITE_URL", getPublicSiteUrl());
+
+export const getSiteUrl = getCommunitySiteUrl;
 
 export const getCommunitySessionSecret = (): string => secret("COMMUNITY_SESSION_SECRET");
 export const getBuyerHmacSecret = (): string => secret("COMMUNITY_BUYER_HMAC_SECRET");
 export const getAdminSessionSecret = (): string => secret("ADMIN_SESSION_SECRET");
 export const getAdminPasswordHash = (): string => required("ADMIN_PASSWORD_HASH");
 
+export const isCommunityPaymentEnabled = (): boolean =>
+  booleanValue("COMMUNITY_PAYMENT_ENABLED");
+
 export const isWechatPaymentEnabled = (): boolean =>
-  process.env.WECHAT_PAYMENT_ENABLED?.trim().toLowerCase() === "true";
+  booleanValue("WECHAT_PAYMENT_ENABLED");
 
 export type AlipayConfig = {
   alipayPublicKey: string;
@@ -70,16 +92,11 @@ export const getAlipayConfig = (): AlipayConfig => {
     throw new ConfigError("ALIPAY_GATEWAY");
   }
 
-  const notifyValue = process.env.ALIPAY_NOTIFY_ENABLED?.trim() || "false";
-  if (!['true', 'false'].includes(notifyValue)) {
-    throw new ConfigError("ALIPAY_NOTIFY_ENABLED");
-  }
-
   return {
     alipayPublicKey: required("ALIPAY_PUBLIC_KEY"),
     appId: required("ALIPAY_APP_ID"),
     gateway,
-    notifyEnabled: notifyValue === "true",
+    notifyEnabled: booleanValue("ALIPAY_NOTIFY_ENABLED"),
     privateKey: required("ALIPAY_PRIVATE_KEY"),
     sellerId: required("ALIPAY_SELLER_ID"),
   };

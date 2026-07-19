@@ -6,6 +6,10 @@ import {
 } from "../../server/alipay-order-service.js";
 import { errorResponse } from "../../server/errors.js";
 import { assertMethod, assertSameOrigin, noStoreHeaders } from "../../server/http.js";
+import {
+  requireCommunityPaymentEnabled,
+  requireCommunitySiteOrigin,
+} from "../../server/payment-availability.js";
 
 const validOrderId = (value: string): boolean => /^CG[A-Z0-9]{20,30}$/u.test(value);
 
@@ -25,6 +29,8 @@ export default {
 
       if (request.method === "POST") {
         assertSameOrigin(request);
+        requireCommunitySiteOrigin(request);
+        requireCommunityPaymentEnabled();
         const result = await prepareAlipayCommunityOrder(session.buyerKey);
         return Response.json(result, { headers: noStoreHeaders() });
       }

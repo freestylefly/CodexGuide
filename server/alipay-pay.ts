@@ -1,7 +1,11 @@
 import { AlipaySdk } from "alipay-sdk";
 
 import type { AlipayConfig } from "./config.js";
-import { getAlipayConfig, getBuyerHmacSecret, getSiteUrl } from "./config.js";
+import {
+  getAlipayConfig,
+  getBuyerHmacSecret,
+  getCommunitySiteUrl,
+} from "./config.js";
 import type { CommunityOrder } from "./db.js";
 import { AppError } from "./errors.js";
 import {
@@ -83,7 +87,7 @@ export const createAlipayPaymentForm = (
     throw new AppError(409, "invalid_alipay_order", "订单状态无法发起支付宝支付。" );
   }
 
-  const returnUrl = new URL("/community/result", getSiteUrl());
+  const returnUrl = new URL("/community/result", getCommunitySiteUrl());
   returnUrl.searchParams.set("orderId", order.id);
   const request: {
     bizContent: Record<string, string>;
@@ -101,7 +105,7 @@ export const createAlipayPaymentForm = (
   };
 
   if (config.notifyEnabled) {
-    request.notifyUrl = new URL("/api/alipay/notify", getSiteUrl()).toString();
+    request.notifyUrl = new URL("/api/alipay/notify", getCommunitySiteUrl()).toString();
   }
 
   const paymentHtml = sdk(config).pageExec("alipay.trade.page.pay", "POST", request);
@@ -183,6 +187,7 @@ export const validateAlipayQueryPayment = (
     order.currency !== "CNY" ||
     order.payment_provider !== "ALIPAY" ||
     (result.seller_id !== undefined && result.seller_id !== config.sellerId) ||
+    (order.alipay_trade_no !== null && order.alipay_trade_no !== result.trade_no) ||
     !result.trade_no
   ) {
     throw new AppError(400, "alipay_payment_mismatch", "支付宝支付结果与本地订单不匹配。" );
@@ -212,12 +217,14 @@ export const validateAlipayNotification = (
 
   if (
     notification.notify_type !== "trade_status_sync" ||
+    notification.sign_type !== "RSA2" ||
     notification.app_id !== config.appId ||
     notification.seller_id !== config.sellerId ||
     notification.out_trade_no !== order.id ||
     amountToCents(notification.total_amount) !== order.amount_cents ||
     order.currency !== "CNY" ||
     order.payment_provider !== "ALIPAY" ||
+    (order.alipay_trade_no !== null && order.alipay_trade_no !== notification.trade_no) ||
     !paidStatuses.has(notification.trade_status || "") ||
     !notification.trade_no
   ) {

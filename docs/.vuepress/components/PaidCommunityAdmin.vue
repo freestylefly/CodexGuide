@@ -1,6 +1,11 @@
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted, ref } from "vue";
 
+import {
+  loadCommunityRuntimeConfig,
+  redirectToCommunityOrigin,
+} from "../community-runtime.js";
+
 const authenticated = ref(false);
 const checking = ref(true);
 const password = ref("");
@@ -102,6 +107,8 @@ const logout = async (): Promise<void> => {
 
 onMounted(async () => {
   try {
+    const runtime = await loadCommunityRuntimeConfig();
+    if (redirectToCommunityOrigin(runtime.communityOrigin)) return;
     await checkSession();
   } catch (error) {
     checking.value = false;

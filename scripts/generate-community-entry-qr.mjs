@@ -6,11 +6,13 @@ const output = fileURLToPath(
   new URL("../docs/.vuepress/public/images/codexguide-paid-community-entry.svg", import.meta.url),
 );
 const siteUrl = new URL(
-  process.env.PUBLIC_SITE_URL?.trim() || "https://codexguide.ai",
+  process.env.COMMUNITY_SITE_URL?.trim() ||
+    process.env.PUBLIC_SITE_URL?.trim() ||
+    "https://codexguide.ai",
 );
 
 if (siteUrl.protocol !== "https:") {
-  throw new Error("PUBLIC_SITE_URL must use HTTPS when generating the public entry QR");
+  throw new Error("COMMUNITY_SITE_URL must use HTTPS when generating the public entry QR");
 }
 
 const paymentUrl = new URL("/community/pay", siteUrl).toString();

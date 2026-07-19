@@ -126,4 +126,26 @@ describe("Alipay website payment", () => {
     const forged = { ...notification, total_amount: "0.01" };
     expect(() => verifyAlipayNotificationSignature(forged, config)).toThrow("签名无效");
   });
+
+  it("rejects a second Alipay trade number for an already paid order", () => {
+    const paidOrder = {
+      ...order,
+      alipay_trade_no: "2026071522000000000003",
+      status: "PAID" as const,
+    };
+
+    expect(() =>
+      validateAlipayQueryPayment(
+        {
+          code: "10000",
+          out_trade_no: order.id,
+          total_amount: "9.90",
+          trade_no: "2026071522000000000004",
+          trade_status: "TRADE_SUCCESS",
+        },
+        paidOrder,
+        config,
+      ),
+    ).toThrow("不匹配");
+  });
 });

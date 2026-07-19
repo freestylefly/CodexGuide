@@ -45,6 +45,7 @@ const routeFiles = new Map([
   ["/api/alipay/notify", "api/alipay/notify.js"],
   ["/api/alipay/order", "api/alipay/order.js"],
   ["/api/auth/alipay/session", "api/auth/alipay/session.js"],
+  ["/api/community/config", "api/community/config.js"],
   ["/api/community/qr", "api/community/qr.js"],
   ["/api/community/status", "api/community/status.js"],
 ]);
