@@ -1,10 +1,10 @@
-import { getSiteUrl, getWechatConfig, type WechatConfig } from "./config.js";
+import { getCommunitySiteUrl, getWechatConfig, type WechatConfig } from "./config.js";
 import { AppError } from "./errors.js";
 
 type Fetch = typeof globalThis.fetch;
 
 export const buildWechatOAuthUrl = (state: string, config: WechatConfig = getWechatConfig()): string => {
-  const callback = `${getSiteUrl()}/api/auth/wechat/callback`;
+  const callback = `${getCommunitySiteUrl()}/api/auth/wechat/callback`;
   const params = new URLSearchParams({
     appid: config.appId,
     redirect_uri: callback,

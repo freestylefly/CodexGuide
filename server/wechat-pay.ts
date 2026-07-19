@@ -7,7 +7,7 @@ import {
 
 import type { CommunityOrder } from "./db.js";
 import type { WechatConfig } from "./config.js";
-import { getSiteUrl, getWechatConfig } from "./config.js";
+import { getCommunitySiteUrl, getWechatConfig } from "./config.js";
 import { AppError } from "./errors.js";
 import { COMMUNITY_PRICE_CENTS } from "./payment-constants.js";
 
@@ -165,7 +165,7 @@ export const createWechatJsapiOrder = async (
       appid: config.appId,
       description: ORDER_DESCRIPTION,
       mchid: config.merchantId,
-      notify_url: `${getSiteUrl()}/api/wechat-pay/notify`,
+      notify_url: `${getCommunitySiteUrl()}/api/wechat-pay/notify`,
       out_trade_no: orderId,
       payer: { openid },
       time_expire: expiresAt.toISOString().replace(/\.\d{3}Z$/, "+00:00"),

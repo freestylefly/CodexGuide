@@ -54,8 +54,10 @@ const communityItems = [
   { text: "社区教程合集", icon: "book", link: "/community/tutorials.md" },
 ];
 
-const communityJoinLink = process.env.PUBLIC_SITE_URL?.trim()
-  ? new URL("/community/join", process.env.PUBLIC_SITE_URL).toString()
+const communitySiteUrl =
+  process.env.COMMUNITY_SITE_URL?.trim() || process.env.PUBLIC_SITE_URL?.trim();
+const communityJoinLink = communitySiteUrl
+  ? new URL("/community/join", communitySiteUrl).toString()
   : "/community/join.md";
 
 export default navbar([

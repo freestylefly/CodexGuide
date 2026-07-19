@@ -1,7 +1,12 @@
 <script setup lang="ts">
 import { computed, onBeforeUnmount, onMounted, ref } from "vue";
 
-type PageState = "checking" | "ready" | "paying" | "eligible" | "error";
+import {
+  loadCommunityRuntimeConfig,
+  redirectToCommunityOrigin,
+} from "../community-runtime.js";
+
+type PageState = "checking" | "ready" | "paying" | "eligible" | "unavailable" | "error";
 
 type CommunityStatus = {
   authenticated: boolean;
@@ -25,6 +30,7 @@ const accepted = ref(props.direct);
 const autoPayStarted = ref(false);
 const message = ref("正在确认支付宝支付会话和入群资格…");
 const orderId = ref<string | null>(null);
+const paymentEnabled = ref(false);
 const qrUrl = ref<string | null>(null);
 
 const busy = computed(() => ["checking", "paying"].includes(state.value));
@@ -40,7 +46,14 @@ const responseError = async (response: Response): Promise<string> => {
 
 const loadGroupQr = async (): Promise<void> => {
   const response = await fetch("/api/community/qr", { credentials: "same-origin", cache: "no-store" });
-  if (!response.ok) throw new Error(await responseError(response));
+  if (!response.ok) {
+    if (response.status === 503) {
+      state.value = "eligible";
+      message.value = await responseError(response);
+      return;
+    }
+    throw new Error(await responseError(response));
+  }
 
   const blob = await response.blob();
   if (qrUrl.value) URL.revokeObjectURL(qrUrl.value);
@@ -72,7 +85,18 @@ const refreshStatus = async (): Promise<void> => {
 
   orderId.value = status.orderId || null;
   if (status.eligible) {
+    if (status.groupQrReady === false) {
+      state.value = "eligible";
+      message.value = "支付宝到账已确认，群二维码正在更新，请稍后刷新。";
+      return;
+    }
     await loadGroupQr();
+    return;
+  }
+
+  if (!paymentEnabled.value) {
+    state.value = "unavailable";
+    message.value = "支付宝正式收款通道正在做上线检查，暂未开放新订单。";
     return;
   }
 
@@ -107,7 +131,7 @@ const submitPaymentHtml = (paymentHtml: string): void => {
 };
 
 const startPayment = async (): Promise<void> => {
-  if (!accepted.value || busy.value) return;
+  if (!accepted.value || !paymentEnabled.value || busy.value) return;
 
   try {
     state.value = "paying";
@@ -139,6 +163,9 @@ const retry = async (): Promise<void> => {
   state.value = "checking";
   message.value = "正在重新确认状态…";
   try {
+    const runtime = await loadCommunityRuntimeConfig();
+    if (redirectToCommunityOrigin(runtime.communityOrigin)) return;
+    paymentEnabled.value = runtime.paymentEnabled;
     await refreshStatus();
   } catch (error) {
     state.value = "error";
@@ -147,12 +174,7 @@ const retry = async (): Promise<void> => {
 };
 
 onMounted(async () => {
-  try {
-    await refreshStatus();
-  } catch (error) {
-    state.value = "error";
-    message.value = error instanceof Error ? error.message : "页面加载失败，请稍后重试。";
-  }
+  await retry();
 });
 
 onBeforeUnmount(() => {
@@ -202,7 +224,7 @@ onBeforeUnmount(() => {
       </template>
 
       <template v-else>
-        <label v-if="!props.direct" class="paid-community-consent">
+        <label v-if="!props.direct && paymentEnabled" class="paid-community-consent">
           <input v-model="accepted" type="checkbox">
           <span>我已了解：费用用于入群资格与社群维护，不承诺社群永久运营、固定答疑次数或一对一服务；支付异常与退款请联系公众号“苍何”人工处理。</span>
         </label>
@@ -215,12 +237,20 @@ onBeforeUnmount(() => {
         >
           {{ busy ? "正在跳转支付宝…" : "支付宝支付 ¥9.9" }}
         </button>
-        <button v-if="state === 'error'" class="paid-community-retry" type="button" @click="retry">
+        <button
+          v-if="state === 'error' || state === 'unavailable'"
+          class="paid-community-retry"
+          type="button"
+          @click="retry"
+        >
           重新检查
         </button>
       </template>
 
-      <div v-if="!props.direct && state !== 'eligible'" class="paid-community-scan-option">
+      <div
+        v-if="!props.direct && paymentEnabled && state !== 'eligible'"
+        class="paid-community-scan-option"
+      >
         <span>也可以使用手机相机或支付宝扫一扫</span>
         <img
           class="paid-community-entry-qr"
@@ -267,6 +297,7 @@ onBeforeUnmount(() => {
 .paid-community-status-dot { flex: 0 0 auto; width: .65rem; height: .65rem; margin-top: .45rem; border-radius: 50%; background: #94a3b8; }
 .paid-community-status-dot.is-eligible { background: #16a34a; }
 .paid-community-status-dot.is-error { background: #dc2626; }
+.paid-community-status-dot.is-unavailable { background: #64748b; }
 .paid-community-status-dot.is-paying, .paid-community-status-dot.is-checking { background: #eab308; }
 .paid-community-consent { display: flex; align-items: flex-start; gap: .65rem; color: var(--vp-c-text-mute); font-size: .88rem; line-height: 1.6; cursor: pointer; }
 .paid-community-consent input { flex: 0 0 auto; margin-top: .3rem; }

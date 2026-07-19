@@ -28,9 +28,33 @@
 2. 在支付宝开放平台完成网站支付产品签约与网页应用发布，审核网站使用 `https://codexguide.ai`。
 3. 确认 `ALIPAY_APP_ID`、应用公钥、`ALIPAY_PRIVATE_KEY` 和 `ALIPAY_PUBLIC_KEY` 属于同一套生产应用密钥。
 4. Node.js 使用 PKCS#1 应用私钥；格式不一致时用支付宝开放平台密钥工具转换，不要手工添加 PEM 头尾。
-5. 在 Vercel 配置 `ALIPAY_ENV=production`、`ALIPAY_GATEWAY=https://openapi.alipay.com/gateway.do`、`ALIPAY_NOTIFY_ENABLED=true` 和 `WECHAT_PAYMENT_ENABLED=false`。
-6. 生产异步通知地址为 `https://codexguide.ai/api/alipay/notify`。该地址必须公网 HTTPS 可访问、不得重定向，也不能被部署保护拦截。
-7. 退款接口仅允许已登录管理员调用；同一次退款会复用同一个退款请求号，避免重复退款。
+5. 在 Vercel 的 Production 环境一次配齐以下变量；首次部署保持
+   `COMMUNITY_PAYMENT_ENABLED=false`：
+
+   ```text
+   PUBLIC_SITE_URL=https://codexguide.ai
+   COMMUNITY_SITE_URL=https://codexguide.ai
+   COMMUNITY_PAYMENT_ENABLED=false
+   DATABASE_URL=<Neon 池化连接串>
+   ALIPAY_ENV=production
+   ALIPAY_APP_ID=<生产应用 AppId>
+   ALIPAY_PRIVATE_KEY=<生产应用 PKCS#1 私钥原文>
+   ALIPAY_PUBLIC_KEY=<生产支付宝 RSA2 公钥原文>
+   ALIPAY_SELLER_ID=<签约主体 PID>
+   ALIPAY_GATEWAY=https://openapi.alipay.com/gateway.do
+   ALIPAY_NOTIFY_ENABLED=true
+   WECHAT_PAYMENT_ENABLED=false
+   COMMUNITY_SESSION_SECRET=<至少 32 字节的随机值>
+   COMMUNITY_BUYER_HMAC_SECRET=<至少 32 字节的独立随机值>
+   ADMIN_SESSION_SECRET=<至少 32 字节的独立随机值>
+   ADMIN_PASSWORD_HASH=<pnpm admin:hash-password 的输出>
+   ```
+
+   三个随机值必须彼此独立。不要把任何私钥、连接串、随机值或管理员密码提交到仓库。
+6. 重新部署后确认 `/api/community/config` 返回 200 且
+   `paymentEnabled=false`，再完成数据库迁移、管理员登录和群二维码上传。
+7. 生产异步通知地址为 `https://codexguide.ai/api/alipay/notify`。该地址必须公网 HTTPS 可访问、不得重定向，也不能被部署保护拦截。
+8. 退款接口仅允许已登录管理员调用；同一次退款会复用同一个退款请求号，避免重复退款。
 
 ## 4. 微信支付当前停用
 
@@ -66,3 +90,6 @@ WHERE id = '商户订单号' AND status = 'PAID';
 3. 部署公网 HTTPS 环境后验证支付宝异步通知验签、金额与商户校验、幂等处理和 `success` 响应。
 4. 确认未付款会话请求 `/api/community/qr` 返回 403。
 5. 正式发布前确认生产环境金额仍固定为 990 分，且沙箱密钥没有进入 Vercel 生产变量。
+6. 上述检查全部通过后，将 Vercel Production 的
+   `COMMUNITY_PAYMENT_ENABLED` 改为 `true` 并重新部署；确认
+   `/api/community/config` 返回 `paymentEnabled=true` 后再公开入口。

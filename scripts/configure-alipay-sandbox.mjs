@@ -37,7 +37,9 @@ const managedNames = new Set([
   "ALIPAY_PUBLIC_KEY",
   "ALIPAY_SELLER_ID",
   "COMMUNITY_BUYER_HMAC_SECRET",
+  "COMMUNITY_PAYMENT_ENABLED",
   "COMMUNITY_SESSION_SECRET",
+  "COMMUNITY_SITE_URL",
   "DATABASE_URL",
   "PUBLIC_SITE_URL",
 ]);
@@ -61,6 +63,8 @@ const previousValue = (name) => {
 const secret = (name) => previousValue(name) || randomBytes(32).toString("hex");
 const managed = {
   PUBLIC_SITE_URL: "http://localhost:3000",
+  COMMUNITY_SITE_URL: "http://localhost:3000",
+  COMMUNITY_PAYMENT_ENABLED: "true",
   ALIPAY_ENV: "sandbox",
   ALIPAY_APP_ID: required.ALIPAY_APP_ID,
   ALIPAY_PRIVATE_KEY: required.ALIPAY_PRIVATE_KEY,
