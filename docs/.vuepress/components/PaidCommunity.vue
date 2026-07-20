@@ -191,6 +191,7 @@ onBeforeUnmount(() => {
         <p>当教程无法覆盖你的项目，可以在群里交流配置、任务设计、Skills、Plugins、自动化和排障经验，更快找到可执行的下一步。</p>
         <ul class="paid-community-hero-benefits">
           <li>聚焦真实使用场景，减少泛泛讨论</li>
+          <li>智能体每日汇总各群精华，跨群重点一份掌握</li>
           <li>持续交流实战案例与重要更新</li>
           <li>连接长期使用 Codex 的中文伙伴</li>
         </ul>
@@ -210,6 +211,7 @@ onBeforeUnmount(() => {
           <li>AGENTS.md、Skills 与 Plugins</li>
           <li>自动化、浏览器与工具协作</li>
           <li>任务设计、排障与交付复盘</li>
+          <li>智能体每日群聊精华</li>
         </ul>
       </aside>
     </section>
@@ -316,6 +318,64 @@ onBeforeUnmount(() => {
         </div>
       </section>
 
+      <section class="paid-community-section paid-community-digest" aria-labelledby="community-digest-title">
+        <div class="paid-community-digest-copy">
+          <span class="paid-community-digest-kicker">智能体每日群聊精华</span>
+          <h2 id="community-digest-title">加入任一群，都能看见整个 Codex 社区当天在聊什么</h2>
+          <p>智能体会汇总各交流群当天的消息量、参与人数和核心话题，并把精华每天推送到群里。即使错过实时消息，也能快速掌握值得跟进的问题、经验和行业动态。</p>
+
+          <ul class="paid-community-digest-points">
+            <li>
+              <strong>跨群汇总</strong>
+              <span>聚合多个交流群的讨论重点，不受单个群的信息范围限制。</span>
+            </li>
+            <li>
+              <strong>每日送达</strong>
+              <span>当天热点由智能体自动整理，打开群聊就能查看。</span>
+            </li>
+            <li>
+              <strong>快速补课</strong>
+              <span>消息量、参与人数和核心话题清晰呈现，几分钟掌握社区动态。</span>
+            </li>
+          </ul>
+
+          <a class="paid-community-digest-action" href="#community-checkout">¥9.9 加入，开始接收每日精华</a>
+          <small>每日精华由智能体根据群内实际讨论自动生成，内容会随当天话题变化。</small>
+        </div>
+
+        <div class="paid-community-digest-gallery">
+          <figure>
+            <img
+              src="/images/community-codex-daily-digest-highlights.jpg"
+              alt="Codex 社区智能体生成的每日各群消息分布与群聊精华"
+              width="1280"
+              height="1280"
+              loading="lazy"
+              decoding="async"
+            >
+            <figcaption>
+              <strong>每天提炼核心话题</strong>
+              <span>各群讨论重点、活跃情况和可复用经验集中呈现。</span>
+            </figcaption>
+          </figure>
+
+          <figure>
+            <img
+              src="/images/community-codex-daily-digest-groups.jpg"
+              alt="Codex 社区每日群聊精华总结，包含各群消息数与核心话题"
+              width="1280"
+              height="1280"
+              loading="lazy"
+              decoding="async"
+            >
+            <figcaption>
+              <strong>多个群的动态一份掌握</strong>
+              <span>加入任一群，都能持续了解整个社区当天的讨论脉络。</span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
       <section class="paid-community-section" aria-labelledby="community-benefits-title">
         <div class="paid-community-section-heading">
           <span>加入后可以获得什么</span>
@@ -335,8 +395,8 @@ onBeforeUnmount(() => {
           </article>
           <article>
             <span>03</span>
-            <strong>重要变化跟进</strong>
-            <p>围绕值得关注的功能与使用变化交流，减少碎片信息干扰。</p>
+            <strong>每日群聊精华</strong>
+            <p>智能体汇总多个群的消息与核心话题，快速跟进社区当天的重点动态。</p>
           </article>
           <article>
             <span>04</span>
@@ -405,7 +465,7 @@ onBeforeUnmount(() => {
 .paid-community-shell.is-direct { width: min(100%, 30rem); padding-top: clamp(2rem, 12vh, 7rem); }
 .paid-community-top { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(18rem, .72fr); align-items: center; gap: clamp(2rem, 6vw, 5rem); margin: 1rem 0 2rem; border: 1px solid var(--vp-c-border); border-radius: 8px; padding: clamp(1.75rem, 4vw, 3.2rem); background: linear-gradient(145deg, var(--vp-c-accent-soft), transparent 58%), var(--vp-c-bg); }
 .paid-community-hero { min-width: 0; }
-.paid-community-kicker, .paid-community-section-heading > span, .paid-community-boundary > div > span { color: var(--vp-c-accent); font-size: .8rem; font-weight: 800; }
+.paid-community-kicker, .paid-community-section-heading > span, .paid-community-digest-kicker, .paid-community-boundary > div > span { color: var(--vp-c-accent); font-size: .8rem; font-weight: 800; }
 .paid-community-hero h1 { max-width: 44rem; margin: .8rem 0 0; border: 0; padding: 0; font-size: clamp(2.2rem, 4vw, 3.65rem); line-height: 1.08; letter-spacing: -.035em; text-wrap: balance; }
 .paid-community-hero > p { max-width: 42rem; margin: 1.25rem 0 0; color: var(--vp-c-text-mute); font-size: 1.03rem; line-height: 1.75; }
 .paid-community-hero-benefits { display: grid; gap: .55rem; margin: 1.25rem 0 0; padding: 0; list-style: none; }
@@ -455,6 +515,23 @@ onBeforeUnmount(() => {
 .paid-community-proof-footer p { margin: 0; color: var(--vp-c-text-mute); font-size: .82rem; line-height: 1.6; }
 .paid-community-proof-footer a { flex: 0 0 auto; color: var(--vp-c-accent); font-size: .9rem; font-weight: 750; text-decoration: none; }
 .paid-community-proof-footer a:hover { text-decoration: underline; }
+.paid-community-digest { border: 1px solid color-mix(in srgb, var(--vp-c-accent) 48%, var(--vp-c-border)); border-radius: 14px; padding: clamp(1.5rem, 4vw, 3rem); background: linear-gradient(145deg, var(--vp-c-accent-soft), transparent 64%), var(--vp-c-bg); }
+.paid-community-digest-copy { min-width: 0; }
+.paid-community-digest-copy h2 { max-width: 48rem; margin: .7rem 0 0; border: 0; padding: 0; font-size: clamp(1.8rem, 3.2vw, 2.65rem); line-height: 1.15; letter-spacing: -.025em; }
+.paid-community-digest-copy > p { max-width: 48rem; margin: 1rem 0 0; color: var(--vp-c-text-mute); line-height: 1.75; }
+.paid-community-digest-points { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin: 1.5rem 0 0; padding: 0; list-style: none; }
+.paid-community-digest-points li { border-top: 2px solid var(--vp-c-accent); padding-top: .75rem; }
+.paid-community-digest-points strong { display: block; margin-bottom: .35rem; color: var(--vp-c-text); font-size: .9rem; line-height: 1.6; }
+.paid-community-digest-points span { color: var(--vp-c-text-mute); font-size: .87rem; line-height: 1.6; }
+.paid-community-digest-action { display: inline-flex; align-items: center; justify-content: center; min-height: 2.8rem; margin-top: 1.5rem; border-radius: 8px; padding: .55rem 1rem; background: var(--vp-c-accent); color: #fff; font-size: .92rem; font-weight: 750; text-decoration: none; }
+.paid-community-digest-action:hover { color: #fff; text-decoration: none; transform: translateY(-1px); }
+.paid-community-digest-copy > small { display: block; margin-top: .7rem; color: var(--vp-c-text-mute); font-size: .76rem; line-height: 1.6; }
+.paid-community-digest-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; min-width: 0; margin-top: 2rem; }
+.paid-community-digest-gallery figure { min-width: 0; margin: 0; overflow: hidden; border: 1px solid var(--vp-c-border); border-radius: 12px; background: var(--vp-c-bg); box-shadow: 0 18px 50px color-mix(in srgb, var(--vp-c-shadow) 48%, transparent); }
+.paid-community-digest-gallery img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; background: var(--vp-c-bg-soft); }
+.paid-community-digest-gallery figcaption { display: grid; gap: .45rem; padding: 1rem; }
+.paid-community-digest-gallery figcaption strong { color: var(--vp-c-text); font-size: .92rem; line-height: 1.45; }
+.paid-community-digest-gallery figcaption span { color: var(--vp-c-text-mute); font-size: .8rem; line-height: 1.55; }
 .paid-community-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; }
 .paid-community-grid article { border: 1px solid var(--vp-c-border); border-radius: 8px; padding: 1.3rem; background: var(--vp-c-bg); }
 .paid-community-grid strong { display: block; margin: 1rem 0 0; font-size: 1.06rem; line-height: 1.45; }
@@ -472,5 +549,5 @@ onBeforeUnmount(() => {
 .paid-community-boundary summary { cursor: pointer; color: var(--vp-c-text); font-weight: 750; line-height: 1.55; }
 .paid-community-boundary ul { margin: 1rem 0 0; padding-inline-start: 1.2rem; color: var(--vp-c-text-mute); line-height: 1.75; }
 @media (max-width: 960px) { .paid-community-top, .paid-community-boundary { grid-template-columns: 1fr; } .paid-community-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 720px) { .paid-community-shell { padding-top: 0; } .paid-community-top { padding: 1.3rem; } .paid-community-hero-action { width: 100%; box-sizing: border-box; } .paid-community-proof-grid, .paid-community-grid, .paid-community-fit-grid { grid-template-columns: 1fr; } .paid-community-proof-footer { align-items: flex-start; flex-direction: column; } }
+@media (max-width: 720px) { .paid-community-shell { padding-top: 0; } .paid-community-top, .paid-community-digest { padding: 1.3rem; } .paid-community-hero-action, .paid-community-digest-action { width: 100%; box-sizing: border-box; } .paid-community-proof-grid, .paid-community-digest-points, .paid-community-digest-gallery, .paid-community-grid, .paid-community-fit-grid { grid-template-columns: 1fr; } .paid-community-proof-footer { align-items: flex-start; flex-direction: column; } }
 </style>
