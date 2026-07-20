@@ -14,8 +14,8 @@ actions:
   - text: 阅读学习路线
     link: /guide/
     type: default
-  - text: 加入社区共建
-    link: /community/roadmap.md
+  - text: 加入付费交流群
+    link: /community/join.md
     type: default
 ---
 
@@ -188,24 +188,37 @@ CodexGuide 提供分层次的精细教学。助力你快速入门 Codex，并通
 
 <div class="home-community-copy">
 
-## 一起完善 CodexGuide
+<div class="home-section-kicker">付费交流群</div>
 
-Codex 更新很快，中文教程也需要一起维护。欢迎加入付费交流群，提交反馈、补充案例、提供教程、交流真实使用经验。9.9 元的门槛用于筛选同频用户并支持资料整理和日常维护。
+## 和认真使用 Codex 的人一起进步
+
+当教程无法覆盖你的真实场景，可以在群里交流配置、工作流、Skills、Plugins、自动化和项目实战。9.9 元一次付费，入群资格长期有效。
+
+<ul class="home-community-benefits">
+  <li>围绕真实问题交流，减少泛泛讨论</li>
+  <li>持续获取实战案例与重要更新</li>
+  <li>认识同样在长期使用 Codex 的伙伴</li>
+</ul>
 
 <div class="home-action-row">
-  <a class="home-primary-link" href="/community/roadmap.md">查看社区共建</a>
-  <a href="/community/tutorials.md">阅读社区教程</a>
-  <a href="/manual/">查看参考手册</a>
+  <a class="home-primary-link" href="/community/join.md">¥9.9 了解并加入</a>
+  <a href="/community/roadmap.md">参与社区共建</a>
 </div>
+
+<p class="home-community-note">支付宝支付 · 付款后当前浏览器自动保存入群资格</p>
 
 </div>
 
-<figure class="home-community-qr">
-  <a href="https://codexguide.ai/community/join" aria-label="了解并加入 CodexGuide 付费交流群">
-    <img src="/images/codexguide-paid-community-entry.svg" alt="支付宝扫一扫或手机相机扫码发起 CodexGuide 交流群支付" loading="lazy" />
-  </a>
-  <figcaption>支付宝扫一扫或手机相机扫码支付</figcaption>
-</figure>
+<aside class="home-community-panel">
+  <span>适合这些读者</span>
+  <strong>你已经开始使用 Codex，并希望把它真正融入工作</strong>
+  <ul>
+    <li>手上有具体问题或项目</li>
+    <li>愿意分享过程和有效经验</li>
+    <li>希望获得长期、稳定的中文交流环境</li>
+  </ul>
+  <a href="/community/join.md">查看完整介绍</a>
+</aside>
 
 </section>
 
