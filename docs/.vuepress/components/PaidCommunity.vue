@@ -184,30 +184,46 @@ onBeforeUnmount(() => {
 
 <template>
   <main class="paid-community-shell" :class="{ 'is-direct': props.direct }">
-    <section v-if="!props.direct" class="paid-community-hero">
-      <span class="paid-community-kicker">CodexGuide Community</span>
-      <h1>加入高质量 Codex 交流群</h1>
-      <p>用一个小门槛筛选认真交流的同频伙伴，也让资料整理、内容更新和日常群维护能够持续下去。</p>
+    <section v-if="!props.direct" class="paid-community-top">
+      <div class="paid-community-hero">
+        <span class="paid-community-kicker">CodexGuide 付费交流群</span>
+        <h1>和认真使用 Codex 的人，一起解决真实问题</h1>
+        <p>当教程无法覆盖你的项目，可以在群里交流配置、任务设计、Skills、Plugins、自动化和排障经验，更快找到可执行的下一步。</p>
+        <ul class="paid-community-hero-benefits">
+          <li>聚焦真实使用场景，减少泛泛讨论</li>
+          <li>持续交流实战案例与重要更新</li>
+          <li>连接长期使用 Codex 的中文伙伴</li>
+        </ul>
+        <a class="paid-community-hero-action" href="#community-checkout">查看价格并加入</a>
+        <div class="paid-community-assurance">
+          <span>一次付费</span>
+          <span>入群资格长期有效</span>
+          <span>支付宝收款</span>
+        </div>
+      </div>
+
+      <aside class="paid-community-scope" aria-label="社群交流范围">
+        <span>主要交流范围</span>
+        <strong>围绕 Codex 的真实使用与项目实践</strong>
+        <ul>
+          <li>Codex App 与 CLI</li>
+          <li>AGENTS.md、Skills 与 Plugins</li>
+          <li>自动化、浏览器与工具协作</li>
+          <li>任务设计、排障与交付复盘</li>
+        </ul>
+      </aside>
     </section>
 
-    <section v-if="!props.direct" class="paid-community-grid" aria-label="付费说明">
-      <article>
-        <strong>更少广告与无效信息</strong>
-        <p>付费门槛用于减少营销账号、广告刷屏和低质量重复请求。</p>
-      </article>
-      <article>
-        <strong>支持持续维护</strong>
-        <p>费用用于支持 CodexGuide 内容整理、资料更新和社群日常维护。</p>
-      </article>
-      <article>
-        <strong>当前浏览器保存资格</strong>
-        <p>付款后可在当前浏览器重新打开本页，查看当前有效的群二维码。</p>
-      </article>
-    </section>
-
-    <section class="paid-community-checkout">
+    <section
+      id="community-checkout"
+      class="paid-community-checkout"
+      aria-labelledby="community-checkout-title"
+    >
       <div class="paid-community-price">
-        <span>一次付费</span>
+        <div>
+          <span id="community-checkout-title">一次付费</span>
+          <small>入群资格长期有效</small>
+        </div>
         <strong><small>¥</small>9.9</strong>
       </div>
 
@@ -226,7 +242,7 @@ onBeforeUnmount(() => {
       <template v-else>
         <label v-if="!props.direct && paymentEnabled" class="paid-community-consent">
           <input v-model="accepted" type="checkbox">
-          <span>我已了解：费用用于入群资格与社群维护，不承诺社群永久运营、固定答疑次数或一对一服务；支付异常与退款请联系公众号“苍何”人工处理。</span>
+          <span>我已了解：费用用于入群资格与社群维护，完整服务边界见本页下方，不包含固定答疑次数或一对一服务。</span>
         </label>
         <button
           v-if="state === 'ready' || state === 'paying'"
@@ -247,49 +263,121 @@ onBeforeUnmount(() => {
         </button>
       </template>
 
-      <div
-        v-if="!props.direct && paymentEnabled && state !== 'eligible'"
-        class="paid-community-scan-option"
-      >
-        <span>也可以使用手机相机或支付宝扫一扫</span>
-        <img
-          class="paid-community-entry-qr"
-          src="/images/codexguide-paid-community-entry.svg"
-          alt="扫描后直接发起 CodexGuide 交流群支付宝支付"
-        >
-        <p class="paid-community-hint">手机打开后会直接跳转支付宝收银台，无需再次阅读付费说明。</p>
+      <div v-if="!props.direct && state !== 'eligible'" class="paid-community-payment-notes">
+        <span>支付宝安全收款</span>
+        <span>付款后当前浏览器自动保存资格</span>
+        <span>支付异常可联系公众号“苍何”</span>
       </div>
     </section>
 
-    <section v-if="!props.direct" class="paid-community-boundary">
-      <h2>服务边界</h2>
-      <ul>
-        <li>群内交流以成员互助和经验分享为主，不构成官方技术支持。</li>
-        <li>入群资格长期有效，但不代表群聊、运营频率或具体服务永久不变。</li>
-        <li>群二维码可能因到期或满员而更换，已付款用户刷新本页即可查看新群码。</li>
-        <li>支付宝网站支付本身不提供自动登录；清除浏览器数据或更换设备后，请凭订单信息联系公众号“苍何”人工恢复。</li>
-        <li>请遵守群规；广告、欺诈、恶意骚扰等行为可能被移出群聊。</li>
-      </ul>
-    </section>
+    <template v-if="!props.direct">
+      <section class="paid-community-section" aria-labelledby="community-benefits-title">
+        <div class="paid-community-section-heading">
+          <span>加入后可以获得什么</span>
+          <h2 id="community-benefits-title">让每一次交流都更接近解决问题</h2>
+          <p>社群围绕具体场景展开，重视上下文、验证结果和可复用经验。</p>
+        </div>
+        <div class="paid-community-grid">
+          <article>
+            <span>01</span>
+            <strong>真实问题交流</strong>
+            <p>说明环境、目标和卡点，与群友一起拆解下一步，减少盲目试错。</p>
+          </article>
+          <article>
+            <span>02</span>
+            <strong>实战案例参考</strong>
+            <p>了解别人如何组合 Codex 和各类工具，再迁移到自己的工作流。</p>
+          </article>
+          <article>
+            <span>03</span>
+            <strong>重要变化跟进</strong>
+            <p>围绕值得关注的功能与使用变化交流，减少碎片信息干扰。</p>
+          </article>
+          <article>
+            <span>04</span>
+            <strong>长期同行连接</strong>
+            <p>认识持续使用 Codex 的创作者、开发者和效率实践者。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="paid-community-section paid-community-fit" aria-labelledby="community-fit-title">
+        <div class="paid-community-section-heading">
+          <span>先判断是否适合</span>
+          <h2 id="community-fit-title">有真实场景的人，会获得更多价值</h2>
+        </div>
+        <div class="paid-community-fit-grid">
+          <article class="is-recommended">
+            <span>更适合加入</span>
+            <ul>
+              <li>已经开始使用 Codex App 或 CLI</li>
+              <li>手上有项目、工作流或具体问题</li>
+              <li>愿意说明上下文，也愿意分享有效经验</li>
+              <li>希望获得长期、稳定的中文交流环境</li>
+            </ul>
+          </article>
+          <article>
+            <span>建议先看免费教程</span>
+            <ul>
+              <li>还没有完成 Codex 的安装与首次登录</li>
+              <li>当前只需要解决一个基础操作问题</li>
+              <li>暂时没有明确的使用场景</li>
+              <li>期待全天候客服或一对一代操作</li>
+            </ul>
+            <a href="/start/">先完成快速上手</a>
+          </article>
+        </div>
+      </section>
+
+      <section
+        id="service-boundary"
+        class="paid-community-section paid-community-boundary"
+        aria-labelledby="community-boundary-title"
+      >
+        <div>
+          <span>为什么设置付费门槛</span>
+          <h2 id="community-boundary-title">保护交流质量，也支持长期维护</h2>
+          <p>9.9 元用于筛选愿意认真交流的成员，也支持 CodexGuide 内容整理和社群日常维护。</p>
+        </div>
+        <details>
+          <summary>查看完整服务边界</summary>
+          <ul>
+            <li>群内交流以成员互助和经验分享为主，不构成官方技术支持。</li>
+            <li>入群资格长期有效，群聊、运营频率和具体服务可能随实际情况调整。</li>
+            <li>群二维码可能因到期或满员而更换，已付款用户刷新本页即可查看新群码。</li>
+            <li>清除浏览器数据或更换设备后，请凭订单信息联系公众号“苍何”人工恢复。</li>
+            <li>请遵守群规；广告、欺诈、恶意骚扰等行为可能被移出群聊。</li>
+          </ul>
+        </details>
+      </section>
+    </template>
   </main>
 </template>
 
 <style scoped>
 :global(.theme-container:has(.paid-community-shell) .vp-page-title) { display: none; }
-.paid-community-shell { width: min(100%, 54rem); margin: 0 auto; padding: 1rem 0 4rem; }
+.paid-community-shell { width: min(100%, 70rem); margin: 0 auto; padding: 1rem 0 4rem; }
 .paid-community-shell.is-direct { width: min(100%, 30rem); padding-top: clamp(2rem, 12vh, 7rem); }
-.paid-community-hero { padding: clamp(2rem, 6vw, 4.5rem) 0 2rem; text-align: center; }
-.paid-community-kicker { color: var(--vp-c-accent); font-size: .78rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
-.paid-community-hero h1 { margin: .65rem 0 1rem; border: 0; font-size: clamp(2rem, 6vw, 3.6rem); line-height: 1.12; }
-.paid-community-hero p { max-width: 42rem; margin: 0 auto; color: var(--vp-c-text-mute); font-size: 1.05rem; line-height: 1.8; }
-.paid-community-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .85rem; margin: 1rem 0 1.5rem; }
-.paid-community-grid article, .paid-community-checkout, .paid-community-boundary { border: 1px solid var(--vp-c-border); border-radius: 14px; background: var(--vp-c-bg); }
-.paid-community-grid article { padding: 1.15rem; }
-.paid-community-grid strong { display: block; margin-bottom: .45rem; }
-.paid-community-grid p { margin: 0; color: var(--vp-c-text-mute); font-size: .92rem; line-height: 1.65; }
-.paid-community-checkout { padding: clamp(1.25rem, 4vw, 2rem); box-shadow: 0 18px 60px color-mix(in srgb, var(--vp-c-shadow) 65%, transparent); }
+.paid-community-top { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(18rem, .72fr); align-items: center; gap: clamp(2rem, 6vw, 5rem); margin: 1rem 0 2rem; border: 1px solid var(--vp-c-border); border-radius: 8px; padding: clamp(1.75rem, 4vw, 3.2rem); background: linear-gradient(145deg, var(--vp-c-accent-soft), transparent 58%), var(--vp-c-bg); }
+.paid-community-hero { min-width: 0; }
+.paid-community-kicker, .paid-community-section-heading > span, .paid-community-boundary > div > span { color: var(--vp-c-accent); font-size: .8rem; font-weight: 800; }
+.paid-community-hero h1 { max-width: 44rem; margin: .8rem 0 0; border: 0; padding: 0; font-size: clamp(2.2rem, 4vw, 3.65rem); line-height: 1.08; letter-spacing: -.035em; text-wrap: balance; }
+.paid-community-hero > p { max-width: 42rem; margin: 1.25rem 0 0; color: var(--vp-c-text-mute); font-size: 1.03rem; line-height: 1.75; }
+.paid-community-hero-benefits { display: grid; gap: .55rem; margin: 1.25rem 0 0; padding: 0; list-style: none; }
+.paid-community-hero-benefits li { border-inline-start: 2px solid var(--vp-c-accent); padding-inline-start: .75rem; color: var(--vp-c-text); font-weight: 650; line-height: 1.5; }
+.paid-community-hero-action { display: inline-flex; align-items: center; justify-content: center; min-height: 2.8rem; margin-top: 1.5rem; border: 1px solid var(--vp-c-accent); border-radius: 8px; padding: .55rem 1rem; background: var(--vp-c-accent); color: #fff; font-weight: 750; text-decoration: none; }
+.paid-community-hero-action:hover { color: #fff; text-decoration: none; transform: translateY(-1px); }
+.paid-community-assurance { display: flex; flex-wrap: wrap; gap: .55rem 1rem; margin-top: .9rem; color: var(--vp-c-text-mute); font-size: .84rem; font-weight: 650; }
+.paid-community-scope { border: 1px solid var(--vp-c-border); border-radius: 8px; padding: clamp(1.35rem, 3vw, 2rem); background: var(--vp-c-bg); box-shadow: 0 18px 50px color-mix(in srgb, var(--vp-c-shadow) 60%, transparent); }
+.paid-community-scope > span, .paid-community-grid article > span, .paid-community-fit-grid article > span { color: var(--vp-c-accent); font-size: .78rem; font-weight: 800; }
+.paid-community-scope > strong { display: block; margin-top: .75rem; color: var(--vp-c-text); font-size: 1.12rem; line-height: 1.5; }
+.paid-community-scope ul { margin: 1rem 0 0; padding-inline-start: 1.1rem; }
+.paid-community-scope li { margin-top: .55rem; color: var(--vp-c-text-mute); line-height: 1.55; }
+.paid-community-checkout { width: min(100%, 42rem); margin: 0 auto; scroll-margin-top: 6rem; border: 1px solid var(--vp-c-border); border-radius: 8px; padding: clamp(1.25rem, 4vw, 2rem); background: var(--vp-c-bg); box-shadow: 0 18px 60px color-mix(in srgb, var(--vp-c-shadow) 65%, transparent); }
 .paid-community-price { display: flex; align-items: end; justify-content: space-between; gap: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--vp-c-border); }
-.paid-community-price span { color: var(--vp-c-text-mute); font-weight: 650; }
+.paid-community-price > div { display: grid; gap: .25rem; }
+.paid-community-price span { color: var(--vp-c-text); font-weight: 750; }
+.paid-community-price > div small { color: var(--vp-c-text-mute); font-size: .82rem; }
 .paid-community-price strong { color: #1677ff; font-size: 2.35rem; line-height: 1; }
 .paid-community-price small { margin-right: .15rem; font-size: 1rem; }
 .paid-community-status { display: flex; align-items: flex-start; gap: .7rem; margin: 1.15rem 0; padding: .9rem 1rem; border-radius: 10px; background: var(--vp-c-bg-soft); }
@@ -304,11 +392,29 @@ onBeforeUnmount(() => {
 .paid-community-pay, .paid-community-retry { width: 100%; margin-top: 1rem; border: 0; border-radius: 10px; padding: .9rem 1.2rem; color: #fff; background: #1677ff; font: inherit; font-weight: 750; cursor: pointer; }
 .paid-community-pay:disabled { cursor: not-allowed; opacity: .48; }
 .paid-community-retry { background: var(--vp-c-accent); }
-.paid-community-entry-qr, .paid-community-group-qr img { display: block; width: min(100%, 20rem); margin: 1rem auto; border: 1px solid var(--vp-c-border); border-radius: 12px; background: #fff; }
+.paid-community-group-qr img { display: block; width: min(100%, 20rem); margin: 1rem auto; border: 1px solid var(--vp-c-border); border-radius: 8px; background: #fff; }
 .paid-community-hint { margin: .75rem auto 0; color: var(--vp-c-text-mute); font-size: .88rem; line-height: 1.6; text-align: center; }
-.paid-community-scan-option { margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--vp-c-border); color: var(--vp-c-text-mute); text-align: center; }
-.paid-community-boundary { margin-top: 1.5rem; padding: 1.25rem 1.5rem; }
-.paid-community-boundary h2 { margin: 0 0 .75rem; border: 0; font-size: 1.1rem; }
-.paid-community-boundary ul { margin: 0; padding-left: 1.2rem; color: var(--vp-c-text-mute); line-height: 1.75; }
-@media (max-width: 720px) { .paid-community-grid { grid-template-columns: 1fr; } .paid-community-shell { padding-top: 0; } }
+.paid-community-payment-notes { display: flex; flex-wrap: wrap; gap: .55rem 1rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--vp-c-border); color: var(--vp-c-text-mute); font-size: .8rem; font-weight: 600; }
+.paid-community-section { margin: clamp(4rem, 9vw, 7rem) 0; }
+.paid-community-section-heading { max-width: 48rem; }
+.paid-community-section-heading h2, .paid-community-boundary h2 { margin: .7rem 0 0; border: 0; padding: 0; font-size: clamp(1.8rem, 3.8vw, 3rem); line-height: 1.15; letter-spacing: -.025em; }
+.paid-community-section-heading > p { margin: .9rem 0 0; color: var(--vp-c-text-mute); font-size: 1rem; line-height: 1.75; }
+.paid-community-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; }
+.paid-community-grid article { border: 1px solid var(--vp-c-border); border-radius: 8px; padding: 1.3rem; background: var(--vp-c-bg); }
+.paid-community-grid strong { display: block; margin: 1rem 0 0; font-size: 1.06rem; line-height: 1.45; }
+.paid-community-grid p { margin: .65rem 0 0; color: var(--vp-c-text-mute); font-size: .92rem; line-height: 1.65; }
+.paid-community-fit { border-top: 1px solid var(--vp-c-border); border-bottom: 1px solid var(--vp-c-border); padding: clamp(3.5rem, 7vw, 5.5rem) 0; }
+.paid-community-fit-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; }
+.paid-community-fit-grid article { border: 1px solid var(--vp-c-border); border-radius: 8px; padding: clamp(1.35rem, 3vw, 2rem); background: var(--vp-c-bg); }
+.paid-community-fit-grid article.is-recommended { border-color: var(--vp-c-accent); background: var(--vp-c-accent-soft); }
+.paid-community-fit-grid ul { margin: 1rem 0 0; padding-inline-start: 1.15rem; }
+.paid-community-fit-grid li { margin-top: .65rem; color: var(--vp-c-text); line-height: 1.6; }
+.paid-community-fit-grid a { display: inline-flex; margin-top: .9rem; color: var(--vp-c-accent); font-weight: 750; text-decoration: none; }
+.paid-community-boundary { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1fr); align-items: start; gap: clamp(2rem, 6vw, 5rem); border: 1px solid var(--vp-c-border); border-radius: 8px; padding: clamp(1.75rem, 5vw, 3.2rem); background: var(--vp-c-bg-soft); }
+.paid-community-boundary p { margin: .9rem 0 0; color: var(--vp-c-text-mute); line-height: 1.75; }
+.paid-community-boundary details { border-top: 1px solid var(--vp-c-border); border-bottom: 1px solid var(--vp-c-border); padding: 1rem 0; }
+.paid-community-boundary summary { cursor: pointer; color: var(--vp-c-text); font-weight: 750; line-height: 1.55; }
+.paid-community-boundary ul { margin: 1rem 0 0; padding-inline-start: 1.2rem; color: var(--vp-c-text-mute); line-height: 1.75; }
+@media (max-width: 960px) { .paid-community-top, .paid-community-boundary { grid-template-columns: 1fr; } .paid-community-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 720px) { .paid-community-shell { padding-top: 0; } .paid-community-top { padding: 1.3rem; } .paid-community-hero-action { width: 100%; box-sizing: border-box; } .paid-community-grid, .paid-community-fit-grid { grid-template-columns: 1fr; } }
 </style>

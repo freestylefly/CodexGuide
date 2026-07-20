@@ -1307,9 +1307,9 @@
 
 .home-community {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(14rem, 0.36fr);
+  grid-template-columns: minmax(0, 1.08fr) minmax(18rem, 0.62fr);
   align-items: center;
-  gap: clamp(2rem, 6vw, 5rem);
+  gap: clamp(2rem, 5vw, 4rem);
   border-top: 1px solid var(--vp-c-border);
   padding-top: clamp(3rem, 6vw, 5rem);
 }
@@ -1318,27 +1318,69 @@
   max-width: 48rem;
 }
 
-.home-community-qr {
-  margin: 0;
-  justify-self: end;
-  width: min(100%, 15.5rem);
+.home-community-benefits {
+  display: grid;
+  gap: 0.75rem;
+  margin: 1.4rem 0 0;
+  padding: 0;
+  list-style: none;
 }
 
-.home-community-qr img {
-  display: block;
-  width: 100%;
+.home-community-benefits li {
+  border-inline-start: 2px solid var(--vp-c-accent);
+  padding-inline-start: 0.85rem;
+  color: var(--vp-c-text);
+  font-weight: 650;
+  line-height: 1.6;
+}
+
+.home-community-note {
+  margin: 0.9rem 0 0;
+  color: var(--vp-c-text-mute);
+  font-size: 0.88rem !important;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.home-community-panel {
   border: 1px solid var(--vp-c-border);
   border-radius: 8px;
-  background: #fff;
+  padding: clamp(1.35rem, 3vw, 2rem);
+  background:
+    linear-gradient(145deg, var(--vp-c-accent-soft), transparent 68%),
+    var(--vp-c-bg);
 }
 
-.home-community-qr figcaption {
-  margin-top: 0.85rem;
+.home-community-panel > span {
+  color: var(--vp-c-accent);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.home-community-panel > strong {
+  display: block;
+  margin-top: 0.8rem;
+  color: var(--vp-c-text);
+  font-size: 1.2rem;
+  line-height: 1.45;
+}
+
+.home-community-panel ul {
+  margin: 1.2rem 0 0;
+  padding-inline-start: 1.15rem;
+}
+
+.home-community-panel li {
+  margin-top: 0.65rem;
   color: var(--vp-c-text-mute);
-  font-size: 0.95rem;
-  font-weight: 650;
-  line-height: 1.5;
-  text-align: center;
+  line-height: 1.55;
+}
+
+.home-community-panel a {
+  display: inline-flex;
+  margin-top: 1.35rem;
+  color: var(--vp-c-accent);
+  font-weight: 750;
 }
 
 .setting-card-grid {
@@ -1529,9 +1571,6 @@
     grid-template-columns: 1fr;
   }
 
-  .home-community-qr {
-    justify-self: start;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
