@@ -511,8 +511,8 @@ onBeforeUnmount(() => {
 
 <style scoped>
 :global(.theme-container:has(.paid-community-shell) .vp-page-title) { display: none; }
-:global(.theme-container:has(.paid-community-shell) [vp-content]) { max-width: 80rem; }
-.paid-community-shell { width: min(100%, 76rem); margin: 0 auto; padding: 1rem 0 4rem; }
+:global(.theme-container:has(.paid-community-shell) [vp-content]) { max-width: 108rem; }
+.paid-community-shell { width: min(100%, 104rem); margin: 0 auto; padding: 1rem 0 4rem; }
 .paid-community-shell.is-direct { width: min(100%, 30rem); padding-top: clamp(2rem, 12vh, 7rem); }
 .paid-community-top { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(17rem, .65fr); align-items: center; gap: clamp(2rem, 4vw, 3.5rem); margin: 1rem 0 2rem; border: 1px solid var(--vp-c-border); border-radius: 8px; padding: clamp(1.75rem, 3vw, 2.6rem); background: linear-gradient(145deg, var(--vp-c-accent-soft), transparent 58%), var(--vp-c-bg); }
 .paid-community-hero { min-width: 0; }
