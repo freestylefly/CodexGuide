@@ -54,10 +54,14 @@ const communityItems = [
   { text: "社区教程合集", icon: "book", link: "/community/tutorials.md" },
 ];
 
-const communitySiteUrl =
-  process.env.COMMUNITY_SITE_URL?.trim() || process.env.PUBLIC_SITE_URL?.trim();
-const communityJoinLink = communitySiteUrl
-  ? new URL("/community/join", communitySiteUrl).toString()
+const publicSiteUrl = process.env.PUBLIC_SITE_URL?.trim();
+const configuredCommunitySiteUrl = process.env.COMMUNITY_SITE_URL?.trim();
+const isSeparateCommunitySite =
+  configuredCommunitySiteUrl &&
+  (!publicSiteUrl ||
+    new URL(configuredCommunitySiteUrl).origin !== new URL(publicSiteUrl).origin);
+const communityJoinLink = isSeparateCommunitySite
+  ? new URL("/community/join", configuredCommunitySiteUrl).toString()
   : "/community/join.md";
 
 export default navbar([
