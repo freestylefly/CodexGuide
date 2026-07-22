@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@heroicons/vue':
+        specifier: 2.2.0
+        version: 2.2.0(vue@3.5.33(typescript@5.9.3))
       '@neondatabase/serverless':
         specifier: ^1.1.0
         version: 1.1.0
@@ -256,6 +259,11 @@ packages:
   '@fidm/x509@1.2.1':
     resolution: {integrity: sha512-nwc2iesjyc9hkuzcrMCBXQRn653XuAUKorfWM8PZyJawiy1QzLj4vahwzaI25+pfpwOLvMzbJ0uKpWLDNmo16w==}
     engines: {node: '>= 8'}
+
+  '@heroicons/vue@2.2.0':
+    resolution: {integrity: sha512-G3dbSxoeEKqbi/DFalhRxJU4mTXJn7GwZ7ae8NuEQzd1bqdd0jAbdaBZlHPcvPD2xI1iGzNVB4k20Un2AguYPw==}
+    peerDependencies:
+      vue: '>= 3'
 
   '@jridgewell/gen-mapping@0.3.13':
     resolution: {integrity: sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA==}
@@ -3059,6 +3067,10 @@ snapshots:
     dependencies:
       '@fidm/asn1': 1.0.4
       tweetnacl: 1.0.3
+
+  '@heroicons/vue@2.2.0(vue@3.5.33(typescript@5.9.3))':
+    dependencies:
+      vue: 3.5.33(typescript@5.9.3)
 
   '@jridgewell/gen-mapping@0.3.13':
     dependencies:

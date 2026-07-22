@@ -1,4 +1,13 @@
 <script setup lang="ts">
+import {
+  CalendarDaysIcon,
+  ChatBubbleLeftRightIcon,
+  CheckCircleIcon,
+  ClipboardDocumentCheckIcon,
+  LifebuoyIcon,
+  QrCodeIcon,
+  ShieldCheckIcon,
+} from "@heroicons/vue/24/outline";
 import { computed, onBeforeUnmount, onMounted, ref } from "vue";
 
 import {
@@ -185,35 +194,47 @@ onBeforeUnmount(() => {
 <template>
   <main class="paid-community-shell" :class="{ 'is-direct': props.direct }">
     <section v-if="!props.direct" class="paid-community-top">
-      <div class="paid-community-hero">
-        <span class="paid-community-kicker">CodexGuide 付费交流群</span>
-        <h1>和认真使用 Codex 的人，一起解决真实问题</h1>
-        <p>当教程无法覆盖你的项目，可以在群里交流配置、任务设计、Skills、Plugins、自动化和排障经验，更快找到可执行的下一步。</p>
-        <ul class="paid-community-hero-benefits">
-          <li>聚焦真实使用场景，减少泛泛讨论</li>
-          <li>智能体每日汇总各群精华，跨群重点一份掌握</li>
-          <li>持续交流实战案例与重要更新</li>
-          <li>连接长期使用 Codex 的中文伙伴</li>
-        </ul>
-        <a class="paid-community-hero-action" href="#community-checkout">查看价格并加入</a>
-        <div class="paid-community-assurance">
-          <span>一次付费</span>
-          <span>入群资格长期有效</span>
-          <span>支付宝收款</span>
+      <div class="paid-community-top-inner">
+        <div class="paid-community-hero">
+          <span class="paid-community-kicker">CodexGuide 高质量交流群</span>
+          <h1>把真实项目带进群里，<br>把可执行的方法带回去</h1>
+          <p>和正在使用 Codex 的创作者、开发者与效率实践者，交流配置、任务设计、Skills、Plugins、自动化与排障经验。</p>
+
+          <div class="paid-community-hero-features" aria-label="社群核心价值">
+            <div>
+              <span class="paid-community-feature-icon"><ChatBubbleLeftRightIcon aria-hidden="true" /></span>
+              <strong>真实问题讨论</strong>
+            </div>
+            <div>
+              <span class="paid-community-feature-icon"><ClipboardDocumentCheckIcon aria-hidden="true" /></span>
+              <strong>智能体每日群聊精华</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="paid-community-visual" aria-label="真实群聊与每日精华展示">
+          <figure class="paid-community-phone is-discussion">
+            <img
+              src="/images/community-codex-troubleshooting-discussion.jpg"
+              alt="Codex 用户交流群内关于额度重置与模型选择的真实讨论"
+              width="1280"
+              height="1280"
+              decoding="async"
+            >
+            <figcaption>真实群聊现场</figcaption>
+          </figure>
+          <figure class="paid-community-phone is-digest">
+            <img
+              src="/images/community-codex-daily-digest-highlights.jpg"
+              alt="Codex 社区智能体生成的每日群聊精华"
+              width="1280"
+              height="1280"
+              decoding="async"
+            >
+            <figcaption>智能体每日群聊精华</figcaption>
+          </figure>
         </div>
       </div>
-
-      <aside class="paid-community-scope" aria-label="社群交流范围">
-        <span>主要交流范围</span>
-        <strong>围绕 Codex 的真实使用与项目实践</strong>
-        <ul>
-          <li>Codex App 与 CLI</li>
-          <li>AGENTS.md、Skills 与 Plugins</li>
-          <li>自动化、浏览器与工具协作</li>
-          <li>任务设计、排障与交付复盘</li>
-          <li>智能体每日群聊精华</li>
-        </ul>
-      </aside>
     </section>
 
     <section
@@ -229,50 +250,101 @@ onBeforeUnmount(() => {
         <strong><small>¥</small>9.9</strong>
       </div>
 
-      <div class="paid-community-status" role="status" aria-live="polite">
-        <span class="paid-community-status-dot" :class="`is-${state}`" aria-hidden="true"></span>
-        <p>{{ message }}</p>
+      <div v-if="!props.direct" class="paid-community-payment-notes" aria-label="支付与服务说明">
+        <div>
+          <ShieldCheckIcon aria-hidden="true" />
+          <span>支付宝安全收款</span>
+        </div>
+        <div>
+          <CheckCircleIcon aria-hidden="true" />
+          <span>付款后自动保存资格</span>
+        </div>
+        <div>
+          <LifebuoyIcon aria-hidden="true" />
+          <span>异常可联系公众号“苍何”</span>
+        </div>
       </div>
 
-      <template v-if="state === 'eligible'">
-        <div class="paid-community-group-qr">
-          <img v-if="qrUrl" :src="qrUrl" alt="已付款用户可见的 CodexGuide 微信群二维码">
+      <div class="paid-community-checkout-action">
+        <div class="paid-community-status" role="status" aria-live="polite">
+          <span class="paid-community-status-dot" :class="`is-${state}`" aria-hidden="true"></span>
+          <p>{{ message }}</p>
         </div>
-        <p class="paid-community-hint">请勿转发群二维码。若二维码已失效或群已满，请联系公众号“苍何”。</p>
-      </template>
 
-      <template v-else>
-        <label v-if="!props.direct && paymentEnabled" class="paid-community-consent">
-          <input v-model="accepted" type="checkbox">
-          <span>我已了解：费用用于入群资格与社群维护，完整服务边界见本页下方，不包含固定答疑次数或一对一服务。</span>
-        </label>
-        <button
-          v-if="state === 'ready' || state === 'paying'"
-          class="paid-community-pay"
-          type="button"
-          :disabled="!accepted || busy"
-          @click="startPayment"
-        >
-          {{ busy ? "正在跳转支付宝…" : "支付宝支付 ¥9.9" }}
-        </button>
-        <button
-          v-if="state === 'error' || state === 'unavailable'"
-          class="paid-community-retry"
-          type="button"
-          @click="retry"
-        >
-          重新检查
-        </button>
-      </template>
+        <div v-if="paymentEnabled && state !== 'eligible'" class="paid-community-return-tip">
+          <QrCodeIcon aria-hidden="true" />
+          <p>
+            <strong>支付完成后，请记得返回本页面</strong>
+            <span>系统确认到账后，入群二维码会自动显示在这里。</span>
+          </p>
+        </div>
 
-      <div v-if="!props.direct && state !== 'eligible'" class="paid-community-payment-notes">
-        <span>支付宝安全收款</span>
-        <span>付款后当前浏览器自动保存资格</span>
-        <span>支付异常可联系公众号“苍何”</span>
+        <template v-if="state === 'eligible'">
+          <div class="paid-community-group-qr">
+            <img v-if="qrUrl" :src="qrUrl" alt="已付款用户可见的 CodexGuide 微信群二维码">
+          </div>
+          <p class="paid-community-hint">请勿转发群二维码。若二维码已失效或群已满，请联系公众号“苍何”。</p>
+        </template>
+
+        <template v-else>
+          <label v-if="!props.direct && paymentEnabled" class="paid-community-consent">
+            <input v-model="accepted" type="checkbox">
+            <span>我已阅读并了解本页下方的<a href="#service-boundary">社群交流与服务边界</a></span>
+          </label>
+          <button
+            v-if="state === 'ready' || state === 'paying'"
+            class="paid-community-pay"
+            type="button"
+            :disabled="!accepted || busy"
+            @click="startPayment"
+          >
+            {{ busy ? "正在跳转支付宝…" : "支付宝支付　¥9.9" }}
+          </button>
+          <button
+            v-if="state === 'error' || state === 'unavailable'"
+            class="paid-community-retry"
+            type="button"
+            @click="retry"
+          >
+            重新检查
+          </button>
+        </template>
       </div>
     </section>
 
     <template v-if="!props.direct">
+      <section class="paid-community-entry" aria-labelledby="community-entry-title">
+        <div class="paid-community-entry-heading">
+          <span aria-hidden="true"></span>
+          <h2 id="community-entry-title">加入后，你会进入这样的交流</h2>
+          <span aria-hidden="true"></span>
+        </div>
+
+        <div class="paid-community-entry-grid">
+          <article>
+            <span class="paid-community-entry-icon"><ChatBubbleLeftRightIcon aria-hidden="true" /></span>
+            <div>
+              <strong>带着上下文提问</strong>
+              <p>把项目背景、目标与报错贴进群里，获得有针对性的分析与可落地的解决思路。</p>
+            </div>
+          </article>
+          <article>
+            <span class="paid-community-entry-icon"><ClipboardDocumentCheckIcon aria-hidden="true" /></span>
+            <div>
+              <strong>参考验证过的实践</strong>
+              <p>来自真实项目的配置、任务设计、Skills、Plugins 与自动化方案，可直接复用与改造。</p>
+            </div>
+          </article>
+          <article>
+            <span class="paid-community-entry-icon"><CalendarDaysIcon aria-hidden="true" /></span>
+            <div>
+              <strong>每天掌握群聊重点</strong>
+              <p>每日群聊精华整理，提炼关键词与结论，帮你快速掌握最新方法与排障思路。</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
       <section class="paid-community-section paid-community-proof" aria-labelledby="community-proof-title">
         <div class="paid-community-section-heading">
           <span>真实交流现场</span>
@@ -376,36 +448,6 @@ onBeforeUnmount(() => {
         </div>
       </section>
 
-      <section class="paid-community-section" aria-labelledby="community-benefits-title">
-        <div class="paid-community-section-heading">
-          <span>加入后可以获得什么</span>
-          <h2 id="community-benefits-title">让每一次交流都更接近解决问题</h2>
-          <p>社群围绕具体场景展开，重视上下文、验证结果和可复用经验。</p>
-        </div>
-        <div class="paid-community-grid">
-          <article>
-            <span>01</span>
-            <strong>真实问题交流</strong>
-            <p>说明环境、目标和卡点，与群友一起拆解下一步，减少盲目试错。</p>
-          </article>
-          <article>
-            <span>02</span>
-            <strong>实战案例参考</strong>
-            <p>了解别人如何组合 Codex 和各类工具，再迁移到自己的工作流。</p>
-          </article>
-          <article>
-            <span>03</span>
-            <strong>每日群聊精华</strong>
-            <p>智能体汇总多个群的消息与核心话题，快速跟进社区当天的重点动态。</p>
-          </article>
-          <article>
-            <span>04</span>
-            <strong>长期同行连接</strong>
-            <p>认识持续使用 Codex 的创作者、开发者和效率实践者。</p>
-          </article>
-        </div>
-      </section>
-
       <section class="paid-community-section paid-community-fit" aria-labelledby="community-fit-title">
         <div class="paid-community-section-heading">
           <span>先判断是否适合</span>
@@ -461,46 +503,78 @@ onBeforeUnmount(() => {
 
 <style scoped>
 :global(.theme-container:has(.paid-community-shell) .vp-page-title) { display: none; }
-.paid-community-shell { width: min(100%, 70rem); margin: 0 auto; padding: 1rem 0 4rem; }
+.paid-community-shell { width: 100%; margin: 0; padding: 0 0 4rem; }
 .paid-community-shell.is-direct { width: min(100%, 30rem); padding-top: clamp(2rem, 12vh, 7rem); }
-.paid-community-top { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(18rem, .72fr); align-items: center; gap: clamp(2rem, 6vw, 5rem); margin: 1rem 0 2rem; border: 1px solid var(--vp-c-border); border-radius: 8px; padding: clamp(1.75rem, 4vw, 3.2rem); background: linear-gradient(145deg, var(--vp-c-accent-soft), transparent 58%), var(--vp-c-bg); }
-.paid-community-hero { min-width: 0; }
+.paid-community-top { width: 100vw; margin-inline: calc(50% - 50vw); overflow: hidden; background: #075f5e; color: #fff; }
+.paid-community-top-inner { display: grid; grid-template-columns: minmax(0, .98fr) minmax(31rem, 1.02fr); align-items: center; gap: clamp(2rem, 3.5vw, 3.5rem); box-sizing: border-box; max-width: 88rem; min-height: 34.5rem; margin: 0 auto; padding: clamp(2.75rem, 4.5vw, 4rem) clamp(1.5rem, 4vw, 3rem); }
+.paid-community-hero { position: relative; z-index: 2; min-width: 0; }
 .paid-community-kicker, .paid-community-section-heading > span, .paid-community-digest-kicker, .paid-community-boundary > div > span { color: var(--vp-c-accent); font-size: .8rem; font-weight: 800; }
-.paid-community-hero h1 { max-width: 44rem; margin: .8rem 0 0; border: 0; padding: 0; font-size: clamp(2.2rem, 4vw, 3.65rem); line-height: 1.08; letter-spacing: -.035em; text-wrap: balance; }
-.paid-community-hero > p { max-width: 42rem; margin: 1.25rem 0 0; color: var(--vp-c-text-mute); font-size: 1.03rem; line-height: 1.75; }
-.paid-community-hero-benefits { display: grid; gap: .55rem; margin: 1.25rem 0 0; padding: 0; list-style: none; }
-.paid-community-hero-benefits li { border-inline-start: 2px solid var(--vp-c-accent); padding-inline-start: .75rem; color: var(--vp-c-text); font-weight: 650; line-height: 1.5; }
-.paid-community-hero-action { display: inline-flex; align-items: center; justify-content: center; min-height: 2.8rem; margin-top: 1.5rem; border: 1px solid var(--vp-c-accent); border-radius: 8px; padding: .55rem 1rem; background: var(--vp-c-accent); color: #fff; font-weight: 750; text-decoration: none; }
-.paid-community-hero-action:hover { color: #fff; text-decoration: none; transform: translateY(-1px); }
-.paid-community-assurance { display: flex; flex-wrap: wrap; gap: .55rem 1rem; margin-top: .9rem; color: var(--vp-c-text-mute); font-size: .84rem; font-weight: 650; }
-.paid-community-scope { border: 1px solid var(--vp-c-border); border-radius: 8px; padding: clamp(1.35rem, 3vw, 2rem); background: var(--vp-c-bg); box-shadow: 0 18px 50px color-mix(in srgb, var(--vp-c-shadow) 60%, transparent); }
-.paid-community-scope > span, .paid-community-grid article > span, .paid-community-fit-grid article > span { color: var(--vp-c-accent); font-size: .78rem; font-weight: 800; }
-.paid-community-scope > strong { display: block; margin-top: .75rem; color: var(--vp-c-text); font-size: 1.12rem; line-height: 1.5; }
-.paid-community-scope ul { margin: 1rem 0 0; padding-inline-start: 1.1rem; }
-.paid-community-scope li { margin-top: .55rem; color: var(--vp-c-text-mute); line-height: 1.55; }
-.paid-community-checkout { width: min(100%, 42rem); margin: 0 auto; scroll-margin-top: 6rem; border: 1px solid var(--vp-c-border); border-radius: 8px; padding: clamp(1.25rem, 4vw, 2rem); background: var(--vp-c-bg); box-shadow: 0 18px 60px color-mix(in srgb, var(--vp-c-shadow) 65%, transparent); }
-.paid-community-price { display: flex; align-items: end; justify-content: space-between; gap: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--vp-c-border); }
+.paid-community-kicker { color: #d8fffb; font-size: .94rem; letter-spacing: .02em; }
+.paid-community-hero h1 { max-width: 42rem; margin: 1.35rem 0 0; border: 0; padding: 0; color: #fff; font-size: clamp(2.75rem, 4vw, 3.6rem); font-weight: 850; line-height: 1.25; letter-spacing: -.045em; text-wrap: balance; }
+.paid-community-hero > p { max-width: 38rem; margin: 1.35rem 0 0; color: rgba(255, 255, 255, .82); font-size: 1.08rem; line-height: 1.8; }
+.paid-community-hero-features { display: flex; flex-wrap: wrap; gap: 1rem 1.6rem; margin-top: 2.5rem; }
+.paid-community-hero-features > div { display: flex; align-items: center; gap: .8rem; }
+.paid-community-feature-icon { display: inline-flex; align-items: center; justify-content: center; width: 2.7rem; height: 2.7rem; border: 1px solid rgba(255, 255, 255, .55); border-radius: 10px; background: #f4fffd; color: #075f5e; box-shadow: 0 12px 28px rgba(0, 33, 33, .18); }
+.paid-community-feature-icon svg { width: 1.45rem; height: 1.45rem; stroke-width: 1.8; }
+.paid-community-hero-features strong { color: #fff; font-size: .96rem; font-weight: 720; white-space: nowrap; }
+.paid-community-visual { position: relative; min-height: 30rem; }
+.paid-community-phone { position: absolute; top: 50%; width: 19.75rem; height: 31.75rem; margin: 0; overflow: hidden; border: 5px solid rgba(255, 255, 255, .9); border-radius: 42px; background: #e8fffb; box-shadow: 0 30px 70px rgba(0, 28, 30, .38), 0 6px 18px rgba(0, 0, 0, .2); transform-origin: center; }
+.paid-community-phone img { display: block; width: 100%; height: 100%; border-radius: 36px; object-fit: cover; transform: scale(1.16); }
+.paid-community-phone.is-discussion { z-index: 2; left: 2%; transform: translateY(-51%) rotate(-4deg); }
+.paid-community-phone.is-discussion img { object-position: 0 center; transform-origin: 18% top; }
+.paid-community-phone.is-digest { z-index: 1; right: 0; width: 18.25rem; height: 29.25rem; transform: translateY(-47%) rotate(5deg); }
+.paid-community-phone.is-digest img { object-position: 100% center; transform-origin: 82% top; }
+.paid-community-phone figcaption { position: absolute; z-index: 2; right: .55rem; bottom: .6rem; border: 1px solid rgba(0, 87, 83, .28); border-radius: 8px; padding: .42rem .7rem; background: #e9fffb; color: #075f5e; box-shadow: 0 8px 20px rgba(0, 29, 29, .25); font-size: .78rem; font-weight: 800; white-space: nowrap; }
+.paid-community-phone.is-digest figcaption { right: .5rem; }
+.paid-community-checkout { display: grid; grid-template-columns: minmax(12.5rem, .72fr) minmax(31rem, 1.65fr) minmax(18.5rem, 1fr); align-items: stretch; box-sizing: border-box; width: 100vw; margin-inline: calc(50% - 50vw); scroll-margin-top: 6rem; border-bottom: 1px solid var(--vp-c-border); padding: 1.7rem max(1.5rem, calc((100vw - 82rem) / 2)); background: var(--vp-c-bg); box-shadow: 0 14px 38px color-mix(in srgb, var(--vp-c-shadow) 38%, transparent); }
+.paid-community-shell.is-direct .paid-community-checkout { display: block; width: 100%; margin: 0; border: 1px solid var(--vp-c-border); border-radius: 12px; padding: clamp(1.25rem, 4vw, 2rem); box-shadow: 0 18px 60px color-mix(in srgb, var(--vp-c-shadow) 65%, transparent); }
+.paid-community-price { display: flex; align-items: center; justify-content: space-between; gap: 1rem; border-right: 1px solid var(--vp-c-border); padding-right: clamp(1.5rem, 3vw, 2.75rem); }
+.paid-community-shell.is-direct .paid-community-price { align-items: end; border-right: 0; border-bottom: 1px solid var(--vp-c-border); padding: 0 0 1rem; }
 .paid-community-price > div { display: grid; gap: .25rem; }
 .paid-community-price span { color: var(--vp-c-text); font-weight: 750; }
 .paid-community-price > div small { color: var(--vp-c-text-mute); font-size: .82rem; }
-.paid-community-price strong { color: #1677ff; font-size: 2.35rem; line-height: 1; }
+.paid-community-price strong { color: #075f5e; font-size: 2.55rem; line-height: 1; white-space: nowrap; }
 .paid-community-price small { margin-right: .15rem; font-size: 1rem; }
-.paid-community-status { display: flex; align-items: flex-start; gap: .7rem; margin: 1.15rem 0; padding: .9rem 1rem; border-radius: 10px; background: var(--vp-c-bg-soft); }
-.paid-community-status p { margin: 0; line-height: 1.6; }
+.paid-community-payment-notes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: center; gap: 0; min-width: 0; }
+.paid-community-payment-notes > div { display: flex; min-width: 0; align-items: center; justify-content: center; gap: .65rem; padding: .35rem 1rem; color: var(--vp-c-text-mute); font-size: .82rem; font-weight: 650; text-align: center; }
+.paid-community-payment-notes > div + div { border-left: 1px solid var(--vp-c-border); }
+.paid-community-payment-notes svg { flex: 0 0 auto; width: 1.7rem; height: 1.7rem; color: #075f5e; stroke-width: 1.75; }
+.paid-community-checkout-action { display: flex; flex-direction: column; justify-content: center; min-width: 0; border-left: 1px solid var(--vp-c-border); padding-left: clamp(1.5rem, 3vw, 2.75rem); }
+.paid-community-shell.is-direct .paid-community-checkout-action { border-left: 0; padding-left: 0; }
+.paid-community-status { display: flex; align-items: flex-start; gap: .5rem; margin: 0 0 .6rem; color: var(--vp-c-text-mute); font-size: .75rem; }
+.paid-community-shell.is-direct .paid-community-status { margin: 1.15rem 0; padding: .9rem 1rem; border-radius: 10px; background: var(--vp-c-bg-soft); font-size: .88rem; }
+.paid-community-status p { margin: 0; line-height: 1.5; }
 .paid-community-status-dot { flex: 0 0 auto; width: .65rem; height: .65rem; margin-top: .45rem; border-radius: 50%; background: #94a3b8; }
 .paid-community-status-dot.is-eligible { background: #16a34a; }
 .paid-community-status-dot.is-error { background: #dc2626; }
 .paid-community-status-dot.is-unavailable { background: #64748b; }
 .paid-community-status-dot.is-paying, .paid-community-status-dot.is-checking { background: #eab308; }
-.paid-community-consent { display: flex; align-items: flex-start; gap: .65rem; color: var(--vp-c-text-mute); font-size: .88rem; line-height: 1.6; cursor: pointer; }
+.paid-community-return-tip { display: flex; align-items: flex-start; gap: .55rem; margin: 0 0 .7rem; border: 1px solid color-mix(in srgb, #075f5e 24%, var(--vp-c-border)); border-radius: 8px; padding: .6rem .7rem; background: var(--vp-c-accent-soft); color: var(--vp-c-text); }
+.paid-community-return-tip svg { flex: 0 0 auto; width: 1.25rem; height: 1.25rem; margin-top: .12rem; color: #075f5e; stroke-width: 1.8; }
+.paid-community-return-tip p { margin: 0; line-height: 1.45; }
+.paid-community-return-tip strong { display: block; color: #075f5e; font-size: .78rem; }
+.paid-community-return-tip span { display: block; margin-top: .12rem; color: var(--vp-c-text-mute); font-size: .7rem; }
+.paid-community-consent { display: flex; align-items: flex-start; gap: .5rem; color: var(--vp-c-text-mute); font-size: .76rem; line-height: 1.55; cursor: pointer; }
 .paid-community-consent input { flex: 0 0 auto; margin-top: .3rem; }
-.paid-community-pay, .paid-community-retry { width: 100%; margin-top: 1rem; border: 0; border-radius: 10px; padding: .9rem 1.2rem; color: #fff; background: #1677ff; font: inherit; font-weight: 750; cursor: pointer; }
+.paid-community-consent a { color: #075f5e; font-weight: 750; text-decoration: none; }
+.paid-community-pay, .paid-community-retry { width: 100%; margin-top: .7rem; border: 0; border-radius: 8px; padding: .82rem 1rem; color: #fff; background: #075f5e; font: inherit; font-weight: 780; cursor: pointer; box-shadow: 0 10px 24px rgba(7, 95, 94, .18); }
 .paid-community-pay:disabled { cursor: not-allowed; opacity: .48; }
-.paid-community-retry { background: var(--vp-c-accent); }
+.paid-community-retry { background: #075f5e; }
 .paid-community-group-qr img { display: block; width: min(100%, 20rem); margin: 1rem auto; border: 1px solid var(--vp-c-border); border-radius: 8px; background: #fff; }
 .paid-community-hint { margin: .75rem auto 0; color: var(--vp-c-text-mute); font-size: .88rem; line-height: 1.6; text-align: center; }
-.paid-community-payment-notes { display: flex; flex-wrap: wrap; gap: .55rem 1rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--vp-c-border); color: var(--vp-c-text-mute); font-size: .8rem; font-weight: 600; }
-.paid-community-section { margin: clamp(4rem, 9vw, 7rem) 0; }
+.paid-community-entry, .paid-community-section { width: min(calc(100% - 3rem), 70rem); margin-inline: auto; }
+.paid-community-entry { padding: clamp(2.25rem, 4vw, 3rem) 0 .5rem; }
+.paid-community-entry-heading { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: clamp(1.25rem, 4vw, 3rem); }
+.paid-community-entry-heading span { height: 1px; background: var(--vp-c-border); }
+.paid-community-entry-heading h2 { margin: 0; border: 0; padding: 0; color: var(--vp-c-text); font-size: clamp(1.45rem, 2.6vw, 2rem); line-height: 1.3; letter-spacing: -.02em; text-align: center; }
+.paid-community-entry-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; margin-top: 2.1rem; }
+.paid-community-entry-grid article { display: grid; grid-template-columns: auto 1fr; gap: 1rem; min-width: 0; padding: 0 clamp(1.2rem, 3vw, 2.2rem); }
+.paid-community-entry-grid article + article { border-left: 1px solid var(--vp-c-border); }
+.paid-community-entry-icon { display: inline-flex; align-items: center; justify-content: center; width: 3.9rem; height: 3.9rem; border-radius: 50%; background: var(--vp-c-accent-soft); color: #075f5e; }
+.paid-community-entry-icon svg { width: 2.15rem; height: 2.15rem; stroke-width: 1.7; }
+.paid-community-entry-grid strong { display: block; color: var(--vp-c-text); font-size: 1.03rem; line-height: 1.5; }
+.paid-community-entry-grid p { margin: .45rem 0 0; color: var(--vp-c-text-mute); font-size: .87rem; line-height: 1.7; }
+.paid-community-section { margin-top: clamp(4rem, 9vw, 7rem); margin-bottom: clamp(4rem, 9vw, 7rem); }
 .paid-community-section-heading { max-width: 48rem; }
 .paid-community-section-heading h2, .paid-community-boundary h2 { margin: .7rem 0 0; border: 0; padding: 0; font-size: clamp(1.8rem, 3.8vw, 3rem); line-height: 1.15; letter-spacing: -.025em; }
 .paid-community-section-heading > p { margin: .9rem 0 0; color: var(--vp-c-text-mute); font-size: 1rem; line-height: 1.75; }
@@ -532,10 +606,6 @@ onBeforeUnmount(() => {
 .paid-community-digest-gallery figcaption { display: grid; gap: .45rem; padding: 1rem; }
 .paid-community-digest-gallery figcaption strong { color: var(--vp-c-text); font-size: .92rem; line-height: 1.45; }
 .paid-community-digest-gallery figcaption span { color: var(--vp-c-text-mute); font-size: .8rem; line-height: 1.55; }
-.paid-community-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; }
-.paid-community-grid article { border: 1px solid var(--vp-c-border); border-radius: 8px; padding: 1.3rem; background: var(--vp-c-bg); }
-.paid-community-grid strong { display: block; margin: 1rem 0 0; font-size: 1.06rem; line-height: 1.45; }
-.paid-community-grid p { margin: .65rem 0 0; color: var(--vp-c-text-mute); font-size: .92rem; line-height: 1.65; }
 .paid-community-fit { border-top: 1px solid var(--vp-c-border); border-bottom: 1px solid var(--vp-c-border); padding: clamp(3.5rem, 7vw, 5.5rem) 0; }
 .paid-community-fit-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; }
 .paid-community-fit-grid article { border: 1px solid var(--vp-c-border); border-radius: 8px; padding: clamp(1.35rem, 3vw, 2rem); background: var(--vp-c-bg); }
@@ -548,6 +618,54 @@ onBeforeUnmount(() => {
 .paid-community-boundary details { border-top: 1px solid var(--vp-c-border); border-bottom: 1px solid var(--vp-c-border); padding: 1rem 0; }
 .paid-community-boundary summary { cursor: pointer; color: var(--vp-c-text); font-weight: 750; line-height: 1.55; }
 .paid-community-boundary ul { margin: 1rem 0 0; padding-inline-start: 1.2rem; color: var(--vp-c-text-mute); line-height: 1.75; }
-@media (max-width: 960px) { .paid-community-top, .paid-community-boundary { grid-template-columns: 1fr; } .paid-community-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 720px) { .paid-community-shell { padding-top: 0; } .paid-community-top, .paid-community-digest { padding: 1.3rem; } .paid-community-hero-action, .paid-community-digest-action { width: 100%; box-sizing: border-box; } .paid-community-proof-grid, .paid-community-digest-points, .paid-community-digest-gallery, .paid-community-grid, .paid-community-fit-grid { grid-template-columns: 1fr; } .paid-community-proof-footer { align-items: flex-start; flex-direction: column; } }
+@media (max-width: 1120px) {
+  .paid-community-top-inner { grid-template-columns: minmax(0, .95fr) minmax(27rem, 1.05fr); }
+  .paid-community-phone { width: 16.5rem; height: 28rem; }
+  .paid-community-phone.is-digest { width: 15rem; height: 25rem; }
+  .paid-community-checkout { grid-template-columns: minmax(11rem, .7fr) minmax(25rem, 1.45fr) minmax(17rem, 1fr); }
+  .paid-community-payment-notes > div { flex-direction: column; gap: .35rem; padding-inline: .65rem; }
+  .paid-community-entry-grid article { grid-template-columns: 1fr; }
+}
+@media (max-width: 960px) {
+  .paid-community-top-inner { grid-template-columns: 1fr; min-height: auto; padding-bottom: 1.5rem; }
+  .paid-community-hero { max-width: 46rem; }
+  .paid-community-visual { min-height: 28rem; }
+  .paid-community-phone.is-discussion { left: 17%; }
+  .paid-community-phone.is-digest { right: 17%; }
+  .paid-community-checkout { grid-template-columns: minmax(10.5rem, .65fr) minmax(0, 1.35fr); }
+  .paid-community-payment-notes { order: 3; grid-column: 1 / -1; margin-top: 1.2rem; border-top: 1px solid var(--vp-c-border); padding-top: 1.1rem; }
+  .paid-community-checkout-action { border-left: 1px solid var(--vp-c-border); }
+  .paid-community-boundary { grid-template-columns: 1fr; }
+}
+@media (max-width: 720px) {
+  .paid-community-shell { padding-top: 0; }
+  .paid-community-top-inner { gap: 1rem; padding: 3rem 1.25rem 0; }
+  .paid-community-hero h1 { margin-top: 1rem; font-size: clamp(2.35rem, 11vw, 3.1rem); line-height: 1.16; }
+  .paid-community-hero h1 br { display: none; }
+  .paid-community-hero > p { font-size: .98rem; line-height: 1.72; }
+  .paid-community-hero-features { display: grid; gap: .8rem; margin-top: 1.6rem; }
+  .paid-community-visual { min-height: 23.5rem; }
+  .paid-community-phone { width: 12rem; height: 20rem; }
+  .paid-community-phone.is-discussion { left: 5%; transform: translateY(-49%) rotate(-4deg); }
+  .paid-community-phone.is-digest { right: 4%; width: 11.5rem; height: 18.5rem; transform: translateY(-43%) rotate(5deg); }
+  .paid-community-phone img { border-width: 3px; border-radius: 24px; }
+  .paid-community-phone figcaption { right: -.45rem; bottom: .45rem; padding: .32rem .5rem; font-size: .68rem; }
+  .paid-community-checkout { grid-template-columns: 1fr; padding: 1.35rem 1.25rem; }
+  .paid-community-price { border-right: 0; border-bottom: 1px solid var(--vp-c-border); padding: 0 0 1rem; }
+  .paid-community-checkout-action { border-left: 0; padding: 1rem 0 0; }
+  .paid-community-payment-notes { grid-column: auto; grid-template-columns: 1fr; margin-top: 1rem; }
+  .paid-community-payment-notes > div { flex-direction: row; justify-content: flex-start; padding: .65rem 0; text-align: left; }
+  .paid-community-payment-notes > div + div { border-top: 1px solid var(--vp-c-border); border-left: 0; }
+  .paid-community-entry, .paid-community-section { width: min(calc(100% - 2.5rem), 70rem); }
+  .paid-community-entry-heading { grid-template-columns: 1fr; }
+  .paid-community-entry-heading span { display: none; }
+  .paid-community-entry-grid { grid-template-columns: 1fr; gap: 1.35rem; }
+  .paid-community-entry-grid article { grid-template-columns: auto 1fr; padding: 0; }
+  .paid-community-entry-grid article + article { border-top: 1px solid var(--vp-c-border); border-left: 0; padding-top: 1.35rem; }
+  .paid-community-entry-icon { width: 3.4rem; height: 3.4rem; }
+  .paid-community-digest { padding: 1.3rem; }
+  .paid-community-digest-action { width: 100%; box-sizing: border-box; }
+  .paid-community-proof-grid, .paid-community-digest-points, .paid-community-digest-gallery, .paid-community-fit-grid { grid-template-columns: 1fr; }
+  .paid-community-proof-footer { align-items: flex-start; flex-direction: column; }
+}
 </style>
