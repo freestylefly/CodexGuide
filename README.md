@@ -186,12 +186,10 @@ pnpm build
 
 ## 社区共建
 
-CodexGuide 交流群采用 9.9 元付费入群，用于筛选同频用户并支持资料整理和日常维护。使用支付宝扫一扫或手机相机扫描下方二维码可直接进入支付宝支付；也可以先打开[付费交流群说明](https://codexguide.ai/community/join)，了解服务边界后再决定是否加入。
+欢迎加入 CodexGuide 交流群，与同频伙伴一起交流 Codex 使用经验、实践案例和最新动态。点击[加入 Codex 交流群](https://codexguide.ai/community/join)即可加入，也欢迎微信扫码关注公众号 **苍何**，获取更多 AI 工具与效率实践。
 
 <p align="center">
-  <a href="https://codexguide.ai/community/join">
-    <img src="./docs/.vuepress/public/images/codexguide-paid-community-entry.svg" alt="支付宝扫一扫或手机相机扫码发起 CodexGuide 交流群支付" width="360" />
-  </a>
+  <img src="./docs/images/canghe-wechat-official-account-qr.png" alt="微信扫码关注公众号苍何" width="720" />
 </p>
 
 ## 事实来源
