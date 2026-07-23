@@ -55,6 +55,7 @@ export const recipeItemsSource: NavbarDocItem[] = [
   { file: "recipes/15-hatch-pet-photo.md", icon: "image" },
   { file: "recipes/16-android-remote-control.md", icon: "mobile" },
   { file: "recipes/17-desktop-pet.md", icon: "cat" },
+  { file: "recipes/18-codex-profiles.md", icon: "terminal" },
 ];
 
 export const manualItemsSource: NavbarDocItem[] = [
