@@ -23,7 +23,7 @@ permalink: /sponsors/
       <strong>AI-MEMBER 会员代充</strong>
     </a>
     <span>AI-MEMBER 面向个人用户、开发者与团队，提供 ChatGPT Plus+Pro充值、Claude Pro、Gemini Pro、Gork Super 等正价会员代充服务。</span>
-    <a class="sponsor-action-link" href="https://www.ai-member.icu?from=4069" target="_blank" rel="noopener noreferrer">查看教程</a>
+    <a class="sponsor-action-link" href="https://www.ai-member.icu?from=4068" target="_blank" rel="noopener noreferrer">查看教程</a>
   </div>
   <a class="sponsor-card" href="https://pptoken.cc/" target="_blank" rel="noopener noreferrer">
     <img src="https://raw.githubusercontent.com/freestylefly/wesight/main/public/readme/sponsors/pptoken.png" alt="PPToken" loading="lazy">
