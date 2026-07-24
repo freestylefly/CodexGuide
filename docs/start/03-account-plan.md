@@ -159,6 +159,98 @@ CodexGuide 不推荐具体商家，也不保证任何第三方礼品卡渠道的
 
 逻辑与苹果礼品卡类似：在安卓设备上切换到对应 Google 账号区域，通过 Google Play 购买礼品卡充值后订阅。有部分用户反映这条路可行，但实测稳定性不如苹果礼品卡，可作为备选方案。
 
+## 方法四：AI MEMBER 卡密自助充值（省去海外支付步骤-操作更简单）
+
+如果不想折腾海外 Apple ID、礼品卡或地区切换，也可以购买一张 ChatGPT Plus 充值卡密，再到 AI MEMBER 充值中心自助提交。整个流程都在浏览器里完成，适合已经有 ChatGPT 账号、但不方便使用海外支付方式的用户。
+
+  
+
+::: tip 第三方服务说明
+
+AI MEMBER 是第三方充值服务，并非 OpenAI 官方渠道。商品价格、库存、处理时间、支持的账号类型和售后规则，以下单页面实际显示为准。
+
+:::
+
+### **准备物品：**
+
+
+- 购买卡密地址：[https://www.ai-member.icu](https://www.ai-member.icu?from=4069)
+    
+- 一个可以正常登录的 ChatGPT 账号
+    
+- 支付宝或商品页当前支持的其他付款方式
+    
+- AI MEMBER 网站购买后得到的 CDKEY
+    
+- 其他ChatGPT Pro 100刀、200刀、Claude Pro、Grok Super等会员充值也可参考此文档
+
+
+### **第一步：选择适合自己账号的 Plus 商品**
+
+
+打开 [AI MEMBER 发卡网](https://www.ai-member.icu?from=4069)，在「ChatGPT」分类里选择支持卡密自助提交的 Plus 商品。本文截图使用的是其中的 GPT Plus 官方ios充值商品。
+
+下单前先把商品说明看完，尤其要确认自己的账号状态是否符合要求。
+
+![](https://cdn.canghecode.com/blog/codexguide-gpt-plus-1.png)
+
+### **第二步：填写订单信息并付款**
+
+在商品页填写常用联系方式，再设置一个订单查询密码。这个密码只用于查询订单，不是 ChatGPT 密码，建议单独设置并自己记好。随后填写验证码，选择页面当前可用的支付方式，按提示完成付款。
+
+AI MEMBER Plus 商品下单信息示例
+
+![](https://cdn.canghecode.com/blog/codexguide-gpt-plus-2.png)
+
+付款完成后先别急着关闭页面，保存好订单号，并复制订单中自动发放的 CDKEY。如果暂时没有看到卡密，可以打开 [订单查询](https://www.ai-member.icu/user/index/query)，使用订单号或下单时填写的联系方式查询。
+
+![](https://cdn.canghecode.com/blog/codexguide-gpt-plus-3.png)
+
+### 第三步：进入充值中心并验证卡密
+
+
+打开 [AI MEMBER 充值中心](https://recharge.ai-member.icu/canvas-flow.html)，确认页面顶部选中的是「GPT」和「中文」。把刚才得到的 CDKEY 粘贴到输入框，点击「验证卡密」。
+
+AI MEMBER ChatGPT Plus 充值中心
+
+![](https://cdn.canghecode.com/blog/codexguide-gpt-plus-4.png)
+
+验证通过后，页面会进入 Session 提交步骤。如果提示卡密不可用、商品不匹配或当前状态不能提交，先核对订单和商品类型，不要反复提交。
+
+![](https://cdn.canghecode.com/blog/codexguide-gpt-plus-5.png)
+
+### **第四步：在同一个浏览器中获取 Session**
+
+这里最容易出错的地方，是拿错了登录账号。请在当前浏览器中点击「打开 ChatGPT 官网」，确认登录的就是准备充值的账号；然后返回充值页，点击「打开 Session 页面」。
+
+官方 Session 页面地址是：
+
+`https://chatgpt.com/api/auth/session`
+
+页面打开后会显示一段 JSON 内容。使用 `Ctrl + A` 全选、`Ctrl + C` 复制，内容不要删减，也不要手动修改。
+
+ChatGPT 官网登录与 Session 获取步骤
+
+::: warning Session 要当作密码保护
+
+Session 中包含临时登录凭证。只在地址栏确认是 `https://recharge.ai-member.icu/` 时粘贴，不要把 Session 发到群聊、客服私聊或公开截图里。如果 Session 页面没有显示当前账号信息，先重新登录 ChatGPT，再打开一次。
+
+:::
+
+![](https://cdn.canghecode.com/blog/codexguide-gpt-plus-6.png)
+
+### **第五步：返回充值页并提交**
+
+回到充值中心，把刚才复制的完整内容粘贴到 Session 输入框。页面如果弹出账号邮箱确认，请认真核对，确定是要充值的账号后再提交。
+
+![](https://cdn.canghecode.com/blog/codexguide-gpt-plus-7.png)
+
+点击「提交充值」后保持页面打开，不要重复点击。处理完成后，当前页面会显示商品、账号、完成时间和处理状态。
+
+### **第六步：确认 Plus 是否到账**
+
+重新打开 ChatGPT，在账号设置中查看当前套餐是否已经变为 Plus。若充值页显示成功，但 ChatGPT 暂时没有更新，可以先重新登录 ChatGPT。
+
 ## 常见问题
 
 **Q：订阅后 Codex 额度够用吗？**
