@@ -20,6 +20,8 @@
   ·
   <a href="https://codexguide.ai/">在线阅读</a>
   ·
+  <a href="https://theme.codexguide.ai/">主题皮肤</a>
+  ·
   <a href="./docs/guide/index.md">学习路线</a>
   ·
   <a href="./docs/start/00-index.md">快速上手</a>
@@ -49,6 +51,18 @@
 GitHub README 适合快速了解项目，真正学习时更推荐打开网站阅读：网站里有更完整的导航、搜索、侧边栏目录、截图、设置速查图、学习路线和实战案例。每篇关键资料都会尽量标注最后核对日期，方便你判断内容是否需要回到 OpenAI 官方资料重新确认。
 
 如果你正在第一次接触 Codex，可以直接从网站的 [学习路线](https://codexguide.ai/guide/) 开始；如果你已经知道自己要用 CLI、桌面 App、Cloud 或 IDE，可以先看 [快速上手](https://codexguide.ai/start/) 和 [进阶教程](https://codexguide.ai/advanced/)。
+
+## 主题皮肤
+
+**CodexGuide 的主题皮肤站地址是 [theme.codexguide.ai](https://theme.codexguide.ai/)。**
+
+<p align="center">
+  <a href="https://theme.codexguide.ai/">
+    <img src="./assets/theme-codexguide-preview.png" alt="CodexGuide 主题皮肤网站截图" width="920" />
+  </a>
+</p>
+
+这里可以预览 Codex Themes 的官方主题、使用方法和下载入口，适合想给 Codex 桌面工作区换上个性化视觉风格的用户。
 
 ## 项目愿景
 

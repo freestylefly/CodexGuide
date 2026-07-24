@@ -102,6 +102,12 @@ export default navbar([
     ariaLabel: "赞助商",
   },
   {
+    text: "皮肤",
+    icon: "palette",
+    link: "https://theme.codexguide.ai/",
+    ariaLabel: "CodexGuide 主题皮肤",
+  },
+  {
     text: "更多",
     icon: "more",
     ariaLabel: "更多导航",
