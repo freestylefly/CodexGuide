@@ -4,7 +4,7 @@ permalink: /sponsors/
 ---
 
 ::: tip 最后核对
-赞助信息最后核对日期：2026-06-29。本页展示的赞助项目、价格、可用性、服务条款和售后政策请以赞助商官方页面为准；当前赞助入口为 [GetGPT Pro](https://getgpt.pro/i/codexguide)。
+赞助信息最后核对日期：2026-07-24。本页展示的赞助项目、价格、可用性、服务条款和售后政策请以赞助商官方页面为准。
 :::
 
 # 赞助商
@@ -17,6 +17,14 @@ permalink: /sponsors/
     <strong>GetGPT Pro</strong>
     <span>提供 ChatGPT、Claude 等 AI 订阅开通与充值服务，支持自助下单、快速到账与售后支持。</span>
   </a>
+  <div class="sponsor-card">
+    <a class="sponsor-primary-link" href="https://www.ai-member.icu?from=4068" target="_blank" rel="noopener noreferrer">
+      <img src="/assets/sponsors/ai-member.jpg" alt="AI-MEMBER 会员代充" loading="lazy">
+      <strong>AI-MEMBER 会员代充</strong>
+    </a>
+    <span>AI-MEMBER 面向个人用户、开发者与团队，提供 ChatGPT Plus+Pro充值、Claude Pro、Gemini Pro、Gork Super 等正价会员代充服务。</span>
+    <a class="sponsor-action-link" href="https://www.ai-member.icu?from=4069" target="_blank" rel="noopener noreferrer">查看教程</a>
+  </div>
   <a class="sponsor-card" href="https://pptoken.cc/" target="_blank" rel="noopener noreferrer">
     <img src="https://raw.githubusercontent.com/freestylefly/wesight/main/public/readme/sponsors/pptoken.png" alt="PPToken" loading="lazy">
     <strong>PPToken</strong>

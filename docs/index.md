@@ -194,6 +194,8 @@ CodexGuide 提供分层次的精细教学。助力你快速入门 Codex，并通
 
 当教程无法覆盖你的真实场景，可以在群里交流配置、工作流、Skills、Plugins、自动化和项目实战。智能体每天汇总各群精华，加入任一群也能了解整个 Codex 社区当天的重点。9.9 元一次付费，入群资格长期有效。
 
+<p class="home-community-scale"><strong>已有 5 个 Codex 交流群满员</strong><span>新成员将加入当前开放群，并持续收到整个社区的每日精华。</span></p>
+
 <ul class="home-community-benefits">
   <li>围绕真实问题交流，减少泛泛讨论</li>
   <li>智能体每日汇总多个群的核心话题</li>

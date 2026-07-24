@@ -883,6 +883,15 @@
   text-decoration: none;
 }
 
+.sponsor-primary-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.sponsor-primary-link:hover {
+  text-decoration: none;
+}
+
 .sponsor-card img {
   width: 100%;
   max-height: 8rem;
@@ -902,6 +911,17 @@
   margin-top: 0.55rem;
   color: var(--vp-c-text-mute);
   line-height: 1.7;
+}
+
+.sponsor-action-link {
+  margin-top: 0.75rem;
+  color: var(--vp-c-accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.sponsor-action-link:hover {
+  text-decoration: underline;
 }
 
 .home-split {
@@ -1316,6 +1336,30 @@
 
 .home-community-copy p {
   max-width: 48rem;
+}
+
+.home-community-scale {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.8rem;
+  width: fit-content;
+  margin: 1.15rem 0 0;
+  border: 1px solid color-mix(in srgb, var(--vp-c-accent) 44%, var(--vp-c-border));
+  border-radius: 8px;
+  padding: 0.75rem 0.9rem;
+  background: var(--vp-c-accent-soft);
+}
+
+.home-community-scale strong {
+  color: var(--vp-c-text);
+  font-size: 0.92rem;
+}
+
+.home-community-scale span {
+  color: var(--vp-c-text-mute);
+  font-size: 0.84rem;
+  line-height: 1.5;
 }
 
 .home-community-benefits {
