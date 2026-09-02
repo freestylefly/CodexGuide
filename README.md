@@ -199,7 +199,7 @@ pnpm build
 
 ## Star 趋势图
 
-[![Star History Chart](https://api.star-history.com/svg?repos=freestylefly/CodexGuide&type=Date)](https://www.star-history.com/#freestylefly/CodexGuide&Date)
+[![Star History Chart](https://star-history.dera.page/svg?repos=freestylefly/CodexGuide&type=Date)](https://star-history.dera.page/#freestylefly/CodexGuide&Date)
 
 ## 社区共建
 

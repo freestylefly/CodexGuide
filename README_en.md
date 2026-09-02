@@ -165,7 +165,7 @@ The development server starts the VuePress documentation site. The production si
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=freestylefly/CodexGuide&type=Date)](https://www.star-history.com/#freestylefly/CodexGuide&Date)
+[![Star History Chart](https://star-history.dera.page/svg?repos=freestylefly/CodexGuide&type=Date)](https://star-history.dera.page/#freestylefly/CodexGuide&Date)
 
 ## Community
 
