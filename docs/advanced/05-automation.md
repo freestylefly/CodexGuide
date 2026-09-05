@@ -3,7 +3,7 @@ description: "Codex 自动化指南，说明定时任务、提醒、监控、后
 ---
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-05-27。本文参考 [Using Codex with your ChatGPT plan](https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan) 与 [Codex use cases](https://developers.openai.com/codex/use-cases/)。不同客户端、工作区套餐和权限设置下，自动化入口和可选项可能会有所不同。
+官方资料最后核对日期：2026-09-04。本文参考 [Codex 与 ChatGPT 套餐帮助中心](https://help.openai.com/en/articles/11369540-codex-in-chatgpt) 与 [已安排任务](https://learn.chatgpt.com/docs/automations)。不同客户端、工作区套餐和权限设置下，自动化入口和可选项可能会有所不同。
 :::
 
 # Automation

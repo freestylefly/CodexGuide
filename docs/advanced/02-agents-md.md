@@ -3,7 +3,7 @@ description: "AGENTS.md 项目规则指南，说明如何写入项目命令、�
 ---
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-06-19。`AGENTS.md` 机制请以 [Codex AGENTS.md 官方文档](https://developers.openai.com/codex/guides/agents-md)、[AGENTS.md 标准网站](https://agents.md/) 和 [openai/codex GitHub repository](https://github.com/openai/codex) 为准。
+官方资料最后核对日期：2026-06-19。`AGENTS.md` 机制请以 [Codex AGENTS.md 官方文档](https://learn.chatgpt.com/docs/agent-configuration/agents-md)、[AGENTS.md 标准网站](https://agents.md/) 和 [openai/codex 源代码仓库](https://github.com/openai/codex) 为准。
 :::
 
 # AGENTS.md

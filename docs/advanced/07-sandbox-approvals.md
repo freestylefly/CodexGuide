@@ -3,7 +3,7 @@ description: "Codex 沙盒与审批指南：面向新手解释为什么 Codex �
 ---
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-06-18。本文依据 [Codex Sandboxing](https://developers.openai.com/codex/concepts/sandboxing)、[Agent approvals & security](https://developers.openai.com/codex/agent-approvals-security)、[Permissions](https://developers.openai.com/codex/permissions)、[Rules](https://developers.openai.com/codex/rules)、[Windows](https://developers.openai.com/codex/windows) 和 [Auto-review](https://developers.openai.com/codex/concepts/sandboxing/auto-review) 整理。
+官方资料最后核对日期：2026-09-04。本文依据 [沙盒](https://learn.chatgpt.com/docs/sandboxing)、[智能体审批与安全](https://learn.chatgpt.com/docs/agent-approvals-security)、[权限](https://learn.chatgpt.com/docs/permissions)、[规则](https://learn.chatgpt.com/docs/agent-configuration/rules)、[Windows 沙盒](https://learn.chatgpt.com/docs/windows/windows-sandbox) 和 [自动审核](https://learn.chatgpt.com/docs/sandboxing/auto-review) 整理。
 :::
 
 # 沙盒与审批
@@ -12,7 +12,7 @@ Codex 能读取代码、修改文件、执行命令。这些操作需要受控�
 
 沙盒和审批就是这套边界。
 
-对于绝大多数人而言，只需要把 `Auto-Reivew` 模式打开就够了。本文章旨在让你更好地理解 Codex 的沙盒机制和审批策略，同时补充一些进阶用法。
+对于绝大多数人而言，只需要把 `Auto-review` 模式打开就够了。本文章旨在让你更好地理解 Codex 的沙盒机制和审批策略，同时补充一些进阶用法。
 
 当你在利用沙盒和权限机制来约束 Codex 行为的时候，你已经在实践 `Harness Engineering `，即“约束工程” 。
 
@@ -149,7 +149,7 @@ approval_policy = "on-request"
 approvals_reviewer = "auto_review"
 ```
 
-更多阅读：[Agent approvals & security：Automatic approval reviews](https://developers.openai.com/codex/agent-approvals-security#run-without-approval-prompts)。
+更多阅读：[自动审核](https://learn.chatgpt.com/docs/sandboxing/auto-review)。
 
 ## 网络权限
 
@@ -266,7 +266,7 @@ approval_policy = { granular = {
 
 这里的 `true` 表示该类请求保持交互审批；`false` 表示自动拒绝。它是 `on-request` 的进阶替代，不是 UI 选项。
 
-更多详情请阅读：[Agent approvals & security：granular approval policy](https://developers.openai.com/codex/agent-approvals-security#run-without-approval-prompts)。
+更多详情请阅读：[智能体审批与安全](https://learn.chatgpt.com/docs/agent-approvals-security#run-without-approval-prompts)。
 
 ## 平台差异
 

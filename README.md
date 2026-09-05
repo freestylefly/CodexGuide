@@ -213,11 +213,12 @@ pnpm build
 
 本仓库优先引用官方资料，并会在关键页面标注“最后核对日期”。当前骨架参考：
 
-- [OpenAI Codex 产品页](https://openai.com/codex/)
-- [Codex in ChatGPT Help Center](https://help.openai.com/en/articles/11369540-codex-in-chatgpt)
-- [OpenAI Codex CLI Getting Started](https://help.openai.com/en/articles/11096431-openai-codex-cli-getting-started)
-- [Codex cloud docs](https://platform.openai.com/docs/codex)
-- [openai/codex GitHub repository](https://github.com/openai/codex)
+- [Codex 产品介绍](https://openai.com/codex/)
+- [Codex 与 ChatGPT 套餐](https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan)
+- [Codex 官方文档](https://learn.chatgpt.com/docs)
+- [Codex CLI 官方文档](https://learn.chatgpt.com/docs/codex/cli)
+- [Codex Cloud 官方文档](https://learn.chatgpt.com/docs/cloud)
+- [openai/codex 源代码仓库](https://github.com/openai/codex)
 
 ## 参与贡献
 

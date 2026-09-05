@@ -3,7 +3,7 @@ description: "Codex 与 Draw.io MCP 案例，说明如何用 AI 自动绘制架�
 ---
 
 ::: tip 最后核对
-公开资料最后核对日期：2026-06-29。本文参考 [Model Context Protocol](https://modelcontextprotocol.io/)、[jgraph/drawio-mcp](https://github.com/jgraph/drawio-mcp) 与 [draw.io](https://www.drawio.com/)。第三方 MCP 的安装命令、授权方式和兼容性请以原项目说明为准。
+官方资料最后核对日期：2026-09-04。本文关于 MCP 机制参考 [Codex MCP 官方文档](https://learn.chatgpt.com/docs/extend/mcp)。案例中使用的 Draw.io MCP 来自社区仓库：[jgraph/drawio-mcp](https://github.com/jgraph/drawio-mcp)。图形编辑器请参考 [draw.io 官方网站](https://www.drawio.com/)。第三方 MCP 的安装命令、授权方式和兼容性请以原项目说明为准。
 :::
 
 # Codex × Draw.io MCP：AI 自动绘制架构图

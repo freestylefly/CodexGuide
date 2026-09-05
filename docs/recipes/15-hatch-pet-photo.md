@@ -3,7 +3,7 @@ description: "Codex Hatch Pet 功能案例，说明如何用一张照片生成�
 ---
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-06-29。本文记录 Codex 客户端中的 Hatch Pet 使用流程，相关入口、Slash Command、素材格式和生成结果请以当前 Codex 客户端为准；通用能力说明可参考 [Codex App docs](https://developers.openai.com/codex/app) 与 [Codex Skills](https://developers.openai.com/codex/skills)。
+官方资料最后核对日期：2026-09-04。本文记录 Codex 客户端中的 Hatch Pet 使用流程，相关入口、Slash Command、素材格式和生成结果请以当前 Codex 客户端为准；通用能力说明可参考 [Codex App 官方文档](https://learn.chatgpt.com/docs/app) 与 [Codex Skills 官方文档](https://learn.chatgpt.com/docs/build-skills)。
 :::
 
 # Codex × Hatch Pet：用一张照片生成专属宠物

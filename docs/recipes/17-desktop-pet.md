@@ -3,7 +3,7 @@ description: "Codex 桌面形象设置教程，记录桌面展示效果、素材
 ---
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-06-29。本文记录 Codex 桌面宠物相关流程，插件入口、Slash Command、状态展示和本地文件位置请以当前 Codex 客户端为准；通用能力说明可参考 [Codex App docs](https://developers.openai.com/codex/app)、[Codex Plugins](https://developers.openai.com/codex/plugins) 与 [Codex Skills](https://developers.openai.com/codex/skills)。
+官方资料最后核对日期：2026-09-04。本文记录 Codex 桌面宠物相关流程，插件入口、Slash Command、状态展示和本地文件位置请以当前 Codex 客户端为准；通用能力说明可参考 [Codex App 官方文档](https://learn.chatgpt.com/docs/app)、[Codex Plugins 官方文档](https://learn.chatgpt.com/docs/plugins) 与 [Codex Skills 官方文档](https://learn.chatgpt.com/docs/build-skills)。
 :::
 
 # 如何设置自己的 Codex 桌面宠物

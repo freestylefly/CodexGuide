@@ -3,7 +3,7 @@ description: "Codex 入口地图，比较 CLI、桌面 App、Cloud、IDE、ChatG
 ---
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-05-27。参考 [OpenAI Codex 产品页](https://openai.com/codex/)、[Codex 文档入口](https://developers.openai.com/codex/)、[Codex CLI 官方仓库](https://github.com/openai/codex) 与 [Codex in ChatGPT Help Center](https://help.openai.com/en/articles/11369540-codex-in-chatgpt)。
+官方资料最后核对日期：2026-09-02。参考 [Codex 产品介绍](https://openai.com/codex/)、[Codex 官方文档总览](https://learn.chatgpt.com/docs/)、[openai/codex 源代码仓库](https://github.com/openai/codex) 与 [Codex 与 ChatGPT 套餐帮助中心](https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan)。
 :::
 
 # Codex 是什么

@@ -3,7 +3,7 @@ description: "Codex 任务执行与验证闭环教程，说明如何写清任务
 ---
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-06-29。本文是 Codex 任务执行与验证流程总结，命令执行、权限审批、沙盒边界和结果检查请参考 [Codex CLI features](https://developers.openai.com/codex/cli/features)、[Permissions](https://developers.openai.com/codex/permissions) 与 [Agent approvals & security](https://developers.openai.com/codex/agent-approvals-security)。
+官方资料最后核对日期：2026-09-02。本文是 Codex 任务执行与验证流程总结，命令执行、权限审批、沙盒边界和结果检查请参考 [Codex CLI 官方文档](https://learn.chatgpt.com/docs/codex/cli)、[权限](https://learn.chatgpt.com/docs/permissions) 与 [智能体审批与安全](https://learn.chatgpt.com/docs/agent-approvals-security)。
 :::
 
 # 任务执行与验证闭环

@@ -3,7 +3,7 @@ description: "Codex Skills 和 Plugins 入门说明，介绍技能、插件、MC
 ---
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-06-20。本文参考 [Agent Skills 标准](https://agentskills.io/)、[Codex Skills](https://developers.openai.com/codex/skills)、[Codex Plugins](https://developers.openai.com/codex/plugins) 与 [Build plugins](https://developers.openai.com/codex/plugins/build)。如果你的界面与本文截图不完全一致，请优先以当前客户端和工作区可用功能为准。
+官方资料最后核对日期：2026-09-04。本文参考 [Agent Skills 标准](https://agentskills.io/)、[Codex Skills 官方文档](https://learn.chatgpt.com/docs/build-skills)、[Codex Plugins 官方文档](https://learn.chatgpt.com/docs/plugins) 与 [构建 Plugins 官方文档](https://learn.chatgpt.com/docs/build-plugins)。如果你的界面与本文截图不完全一致，请优先以当前客户端和工作区可用功能为准。
 :::
 
 # Skills 和 Plugins

@@ -3,7 +3,7 @@ description: "Codex 费用与 Token 入门说明，解释 ChatGPT 计划额度�
 ---
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-06-27。本文参考 [OpenAI Token 说明](https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-do-i-count-them)、[OpenAI API Pricing](https://openai.com/api/pricing/) 与 [Prompt Caching](https://platform.openai.com/docs/guides/prompt-caching)。价格、额度和可用模型会变化，真正下单或部署前请回到官方页面核对。
+官方资料最后核对日期：2026-09-04。本文参考 [OpenAI Token 帮助中心](https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-track-them)、[ChatGPT 定价页](https://chatgpt.com/pricing/)、[OpenAI API 定价页](https://developers.openai.com/api/docs/pricing) 与 [Prompt Caching 官方文档](https://developers.openai.com/api/docs/guides/prompt-caching)。价格、额度和可用模型会变化，真正下单或部署前请回到官方页面核对。
 :::
 
 # 理解费用与上下文
@@ -44,7 +44,7 @@ Token 是模型读写文本时的基本“小块”。它不等于字数，也�
 
 Prompt caching 可以理解为：模型服务端会记住你最近用过的一段长前缀。当后续请求的开头部分和之前足够相似时，这部分输入会按 cached input tokens 计费。缓存输入通常比普通输入便宜，响应也可能更快。
 
-![Prompt caching 稳定前缀示例](https://cdn.canghecode.com/codexguide/docs/images/prompt-caching-stable-prefix-watermarked-small.png)
+![OpenAI 模型 Prompt caching 价格示例](../images/openai-model-prompt-caching-pricing.png)
 
 | 类型 | 含义 | 费用 |
 | --- | --- | --- |

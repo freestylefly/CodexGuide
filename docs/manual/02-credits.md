@@ -3,7 +3,7 @@ description: "CodexGuide 参考来源与致谢，整理案例中涉及的第三�
 ---
 
 ::: tip 最后核对
-资料最后核对日期：2026-06-29。本站参考来源以原作者发布页、GitHub 仓库、视频平台和 OpenAI 官方资料为准；涉及第三方工具安装、授权、价格、维护状态和输出格式时，请打开表格中的原链接核对。
+官方资料最后核对日期：2026-09-05。本站参考来源以原作者发布页、GitHub 仓库、视频平台和 [Codex 官方文档总览](https://learn.chatgpt.com/docs/) 为准；涉及第三方工具安装、授权、价格、维护状态和输出格式时，请打开表格中的原链接核对。
 :::
 
 # 参考来源与致谢
@@ -62,9 +62,9 @@ description: "CodexGuide 参考来源与致谢，整理案例中涉及的第三�
 
 | 文档 | 相关案例 | 链接 |
 |------|----------|------|
-| Using Codex with your ChatGPT plan | [12 Codex × Chrome](../recipes/12-chrome-browser-plugin.md) | [查看文档](https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan) |
-| Codex Skills 官方说明 | [01 Codex × PPT Skill](../recipes/01-ppt-skill-walkthrough.md) | [查看文档](https://developers.openai.com/codex/skills) |
-| Codex Use Cases | [12 Codex × Chrome](../recipes/12-chrome-browser-plugin.md) | [查看文档](https://developers.openai.com/codex/explore/) |
+| Codex 与 ChatGPT 套餐帮助中心 | [12 Codex × Chrome](../recipes/12-chrome-browser-plugin.md) | [查看文档](https://help.openai.com/en/articles/11369540-codex-in-chatgpt) |
+| Codex Skills 官方文档 | [01 Codex × PPT Skill](../recipes/01-ppt-skill-walkthrough.md) | [查看文档](https://learn.chatgpt.com/docs/build-skills) |
+| Codex 用例 | [12 Codex × Chrome](../recipes/12-chrome-browser-plugin.md) | [查看文档](https://learn.chatgpt.com/use-cases) |
 
 ---
 

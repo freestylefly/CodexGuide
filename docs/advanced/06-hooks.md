@@ -3,7 +3,7 @@ description: "Codex Hooks 入门指南，说明 Hooks 的用途、配置位置�
 ---
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-06-19。本文依据 [Codex Hooks 官方文档](https://developers.openai.com/codex/hooks) 和 [Codex Configuration Reference](https://developers.openai.com/codex/config-reference) 整理。
+官方资料最后核对日期：2026-09-04。本文依据 [Codex Hooks 官方文档](https://learn.chatgpt.com/docs/hooks) 和 [Codex 配置参考资料](https://learn.chatgpt.com/docs/config-file/config-reference) 整理。
 :::
 
 # Hooks

@@ -3,7 +3,7 @@ description: "Codex 权限管理指南，说明文件访问、命令审批、网
 ---
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-06-15。本文参考 [Codex app settings](https://developers.openai.com/codex/app/settings)、[Sandboxing](https://developers.openai.com/codex/concepts/sandboxing#how-you-control-it)、[Permissions](https://developers.openai.com/codex/permissions) 与 [Agent approvals & security](https://developers.openai.com/codex/agent-approvals-security)。不同版本的界面具体名称、入口和可用选项会有所不同，请以你当前使用的客户端界面为准。
+官方资料最后核对日期：2026-09-04。本文参考 [Codex App 设置](https://learn.chatgpt.com/docs/reference/settings)、[沙盒](https://learn.chatgpt.com/docs/sandboxing)、[权限](https://learn.chatgpt.com/docs/permissions) 与 [智能体审批与安全](https://learn.chatgpt.com/docs/agent-approvals-security)。不同版本的界面具体名称、入口和可用选项会有所不同，请以你当前使用的客户端界面为准。
 :::
 
 # 权限管理
@@ -12,7 +12,7 @@ description: "Codex 权限管理指南，说明文件访问、命令审批、网
 1. 聊天框下方的权限选择
 2. 设置里的“配置”项
 
-权限管理和**沙盒**（Sandbox）本质上是同一个概念。想深入可以看 [OpenAI 官方文档](https://developers.openai.com/codex/concepts/sandboxing#how-you-control-it) 或者 [沙盒与审批](./07-sandbox-approvals.html) 以了解更多。
+权限管理和**沙盒**（Sandbox）本质上是同一个概念。想深入可以看 [沙盒](https://learn.chatgpt.com/docs/sandboxing) 或者 [沙盒与审批](./07-sandbox-approvals.html) 以了解更多。
 
 ## 聊天框里的权限选项
 
@@ -90,7 +90,7 @@ description: "Codex 权限管理指南，说明文件访问、命令审批、网
 
 ![Codex App config.toml 配置示例](https://cdn.canghecode.com/codexguide/docs/images/codex-app-config-toml-settings-watermarked-small.png)
 
-上表仅展示部分常见配置选项，更多请查看[OpenAI Premission](https://developers.openai.com/codex/permissions)。
+上表仅展示部分常见配置选项，更多请查看[权限](https://learn.chatgpt.com/docs/permissions)。
 
 ## 推荐
 
