@@ -3,7 +3,7 @@ description: "Codex 连接安卓手机教程，说明如何通过扫码将手机
 ---
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-05-27。本文参考 OpenAI 官方文章 [Work with Codex from anywhere](https://openai.com/index/work-with-codex-from-anywhere/) 与 [Using Codex with your ChatGPT plan](https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan)。手机端入口、可用地区、系统支持和界面名称请以当前 ChatGPT App 与 Codex 客户端为准。
+官方资料最后核对日期：2026-09-04。本文参考 [Codex Remote 官方文档](https://learn.chatgpt.com/docs/remote)、[远程连接](https://learn.chatgpt.com/docs/remote-connections) 与 [Codex 与 ChatGPT 套餐帮助中心](https://help.openai.com/en/articles/11369540-codex-in-chatgpt)。手机端入口、可用地区、系统支持和界面名称请以当前 ChatGPT App 与 Codex 客户端为准。
 :::
 
 # Codex × 安卓手机：扫码连接，远程操控

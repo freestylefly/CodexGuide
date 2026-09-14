@@ -3,7 +3,7 @@ description: "Codex 与飞书 CLI 案例，说明如何用一句话处理飞书�
 ---
 
 ::: tip 最后核对
-公开资料最后核对日期：2026-06-29。本文参考 [larksuite/cli](https://github.com/larksuite/cli/blob/main/README.zh.md) 与 [飞书开放平台](https://open.feishu.cn/)。飞书 CLI 的登录、授权、命令参数和 API 能力请以官方仓库与开放平台文档为准。
+官方资料最后核对日期：2026-09-04。本文参考 [飞书 CLI 官方仓库](https://github.com/larksuite/cli)、[飞书开放平台](https://open.feishu.cn/) 与 [Codex CLI 官方文档](https://learn.chatgpt.com/docs/codex/cli)。飞书 CLI 的登录、授权、命令参数和 API 能力请以官方仓库与开放平台文档为准。
 :::
 
 # Codex × 飞书 CLI：一句话处理飞书数据

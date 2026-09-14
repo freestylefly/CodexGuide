@@ -3,7 +3,7 @@ description: "Codex 与 PPT Skill 案例，说明如何用一句话生成演示�
 ---
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-05-27。本文关于 Skill 机制参考 [Codex Skills](https://developers.openai.com/codex/skills)。案例中使用的 PPT Skill 来自社区仓库：[guizang-ppt-skill](https://github.com/op7418/guizang-ppt-skill)。第三方 Skill 的安装方式、依赖要求和输出格式请以原仓库说明为准。
+官方资料最后核对日期：2026-09-04。本文关于 Skill 机制参考 [Codex Skills 官方文档](https://learn.chatgpt.com/docs/build-skills)。案例中使用的 PPT Skill 来自社区仓库：[guizang-ppt-skill](https://github.com/op7418/guizang-ppt-skill)。第三方 Skill 的安装方式、依赖要求和输出格式请以原仓库说明为准。
 :::
 
 # Codex × PPT Skill：一句话生成演示文稿

@@ -3,7 +3,7 @@ description: "Codex 与云服务器排障案例，说明如何远程复现问题
 ---
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-06-29。本文参考 [Codex CLI features](https://developers.openai.com/codex/cli/features)、[Agent approvals & security](https://developers.openai.com/codex/agent-approvals-security) 与 [Codex Cloud docs](https://platform.openai.com/docs/codex)。远程服务器登录、凭据管理和生产环境操作请按你的组织安全规范执行。
+官方资料最后核对日期：2026-09-04。本文参考 [Codex CLI 官方文档](https://learn.chatgpt.com/docs/codex/cli)、[智能体审批与安全](https://learn.chatgpt.com/docs/agent-approvals-security) 与 [Codex Cloud 官方文档](https://learn.chatgpt.com/docs/cloud)。远程服务器登录、凭据管理和生产环境操作请按你的组织安全规范执行。
 :::
 
 # Codex × 云服务器：远程定位并修复 Bug

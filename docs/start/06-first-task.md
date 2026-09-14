@@ -3,7 +3,7 @@ description: "用 Codex 完成第一个任务的入门教程，带你选择工�
 ---
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-06-29。本章以桌面 App 第一个任务为例，Codex App 的项目、工作区、权限和任务执行入口请以 [Codex App docs](https://developers.openai.com/codex/app)、[Settings](https://developers.openai.com/codex/app/settings) 与 [Agent approvals & security](https://developers.openai.com/codex/agent-approvals-security) 为准。
+官方资料最后核对日期：2026-09-02。本章以桌面 App 第一个任务为例，Codex App 的项目、工作区、权限和任务执行入口请以 [Codex App 官方文档](https://learn.chatgpt.com/docs/app)、[Codex App 设置](https://learn.chatgpt.com/docs/reference/settings) 与 [智能体审批与安全](https://learn.chatgpt.com/docs/agent-approvals-security) 为准。
 :::
 
 # 用 Codex 完成第一个任务

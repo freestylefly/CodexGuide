@@ -1,9 +1,9 @@
 ---
-description: "Codex CLI 安装与登录教程，覆盖 Node 环境、安装命令、版本检查、登录流程和首次运行准备。"
+description: "Codex CLI 安装与登录教程，覆盖安装命令、版本检查、登录流程和首次运行准备。"
 ---
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-05-27。CLI 系统要求与安装方式参考 [openai/codex 官方仓库](https://github.com/openai/codex)、[CLI install 文档](https://github.com/openai/codex/blob/main/docs/install.md) 和 [Codex CLI Help Center](https://help.openai.com/en/articles/11096431-openai-codex-cli-getting-started)。
+官方资料最后核对日期：2026-09-03。系统要求参考 [CLI install 文档](https://github.com/openai/codex/blob/main/docs/install.md)；安装方式参考 [openai/codex 官方仓库](https://github.com/openai/codex)、[Codex CLI 官方文档](https://learn.chatgpt.com/docs/codex/cli) 和 [Codex CLI Help Center](https://help.openai.com/en/articles/11096431-openai-codex-cli-getting-started)。
 :::
 
 # 安装CLI
@@ -28,20 +28,42 @@ npm -v
 git --version
 ```
 
+独立安装脚本不依赖 Node.js。只有选择 npm 安装时，才需要 Node 和 npm。
+
 ![codex-cli-prerequisite-version-check](https://cdn.canghecode.com/codexguide/docs/images/codex-cli-prerequisite-version-check.png)
 
 ## 安装 CLI
 
-常见安装方式：
+官方当前推荐独立安装脚本：
+
+macOS / Linux：
+
+```bash
+curl -fsSL https://chatgpt.com/codex/install.sh | sh
+```
+
+Windows（PowerShell）：
+
+```powershell
+powershell -ExecutionPolicy ByPass -c "irm https://chatgpt.com/codex/install.ps1 | iex"
+```
+
+GitHub 仓库的系统要求仍写 Windows 11 通过 WSL2。如果原生安装遇到问题，可在 WSL2 里改用上面的 macOS / Linux 命令。
+
+也可以用包管理器：
 
 ```bash
 npm install -g @openai/codex
 ```
 
-更新到最新版本：
+```bash
+brew install --cask codex
+```
+
+更新时：独立安装脚本和 npm 再执行同一条安装命令。Homebrew 使用：
 
 ```bash
-npm install -g @openai/codex@latest
+brew upgrade --cask codex
 ```
 
 检查版本：
@@ -89,9 +111,9 @@ codex
 
 | 现象 | 可能原因 | 处理方式 |
 | --- | --- | --- |
-| `codex` 命令找不到 | npm global bin 未进 PATH | 查看 `npm bin -g`，把目录加入 shell PATH |
+| `codex` 命令找不到 | 安装目录未进 PATH | 独立安装默认在 `~/.local/bin`；npm 安装查看 `npm bin -g`，把目录加入 shell PATH |
 | 登录后仍提示无权限 | 账号计划、组织策略或会话状态问题 | 重新登录，并查看 Help Center 中的计划说明 |
-| Windows 运行异常 | 未使用 WSL2 或 shell 环境不完整 | 按官方建议使用 Windows 11 + WSL2 |
+| Windows 运行异常 | 未使用 WSL2，或原生安装后 PATH 不完整 | 仓库系统要求仍是 Windows 11 + WSL2；若使用官方 PowerShell 安装，确认 `%LOCALAPPDATA%\Programs\OpenAI\Codex\bin` 已加入 PATH |
 | 仓库命令跑不起来 | 项目依赖未安装或本地环境缺失 | 先安装项目依赖，再让 Codex 读取测试配置 |
 
 ## 下一步

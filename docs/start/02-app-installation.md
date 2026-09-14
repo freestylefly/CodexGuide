@@ -3,7 +3,7 @@ description: "Codex 桌面 App 下载与安装教程，说明 macOS、Windows �
 ---
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-06-13。下载地址与安装方式以 [OpenAI Codex 产品页](https://openai.com/codex/) 和 [chatgpt.com/codex/get-started](https://chatgpt.com/codex/get-started/) 为准，不同地区和账号套餐下可用功能可能有所差异。
+官方资料最后核对日期：2026-09-02。下载地址与安装方式以 [Codex 产品介绍以及下载](https://openai.com/codex/) 为准，不同地区和账号套餐下可用功能可能有所差异。
 :::
 
 # Codex 桌面 App 下载与安装
@@ -13,7 +13,7 @@ description: "Codex 桌面 App 下载与安装教程，说明 macOS、Windows �
 
 ## 下载
 
-打开 [chatgpt.com/codex/get-started](https://chatgpt.com/codex/get-started/)，页面中央会显示对应系统的下载按钮。
+打开 [Codex 产品介绍以及下载](https://chatgpt.com/zh-Hans-CN/codex/)，页面中央会显示对应系统的下载按钮。
 
 
 >如果第一次注册，也可以接受邀请：[chatgpt.com/codex/](https://chatgpt.com/accept-referral?referral_context=eyJyZWZlcnJhbF9pZCI6IjZhNzk3YmQ2M2FiMDgxOTE5MTk4M2I3OTg3NTRlNzRiIiwicmVmZXJyYWxfdHlwZSI6ImNvZGV4X3JlZmVycmFsX2NvbnN1bWVyIiwiaW52aXRlX3BhZ2VfYmVuZWZpdF90ZXh0IjoiIiwiaGFzX3Jld2FyZHMiOmZhbHNlLCJlbWFpbF9yZWZlcnJlZF90byI6IjI2ODk0NTg2NTZAcXEuY29tIiwid29ya3NwYWNlX2lkIjpudWxsLCJ3b3Jrc3BhY2VfbmFtZSI6bnVsbCwicmVkZW1wdGlvbl9hY3Rpb24iOiJjb2RleF90dXJuIn0)
@@ -31,9 +31,11 @@ description: "Codex 桌面 App 下载与安装教程，说明 macOS、Windows �
 
 **Windows：**
 
-![Codex 桌面 App 下载页 Windows](https://cdn.canghecode.com/codexguide/docs/images/chatgpt-codex-get-started-clean.png)
+![Codex 桌面 App 下载页 Windows](../images/chatgpt-codex-get-started-clean.png)
 
 Windows 用户点击对应的下载按钮，下载完成后运行安装程序，按提示完成安装。
+
+微软商店可以关闭 VPN 之后尝试打开并且下载 ChatGPT
 
 如果点击后微软商店打不开、白屏，或一直卡在「获取」/「正在安装」，可以改用离线安装方式。核心思路是：不走微软商店客户端，直接从微软服务器解析 Codex 安装包，再手动安装。
 

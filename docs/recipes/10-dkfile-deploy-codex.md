@@ -3,7 +3,7 @@ description: "Codex 与 DKFile 发布案例，说明如何用 AI 生成网页、
 ---
 
 ::: tip 最后核对
-公开资料最后核对日期：2026-06-29。本文参考 [DKFile](https://dkfile.net) 与 [Codex App docs](https://developers.openai.com/codex/app)。第三方发布服务的价格、注册入口、文件限制、可用性和服务条款请以服务商官方页面为准。
+官方资料最后核对日期：2026-09-04。本文参考 [DKFile 官方网站](https://dkfile.net) 与 [Codex App 官方文档](https://learn.chatgpt.com/docs/app)。第三方发布服务的价格、注册入口、文件限制、可用性和服务条款请以服务商官方页面为准。
 :::
 
 # Codex × DKFile：AI 网页一键发布到公网

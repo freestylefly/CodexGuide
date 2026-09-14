@@ -3,7 +3,7 @@ description: "Codex 与 Notion MCP 案例，说明如何连接 Notion 知识空�
 ---
 
 ::: tip 最后核对
-公开资料最后核对日期：2026-06-29。本文参考 [Model Context Protocol](https://modelcontextprotocol.io/) 与 [Notion](https://www.notion.com/)。Notion MCP 的授权范围、可读写对象和连接入口请以 Notion 官方说明和当前 Codex 客户端为准。
+官方资料最后核对日期：2026-09-04。本文关于 MCP 机制参考 [Codex MCP 官方文档](https://learn.chatgpt.com/docs/extend/mcp)。知识空间请参考 [Notion 官方网站](https://www.notion.com/)。Notion MCP 的授权范围、可读写对象和连接入口请以 Notion 官方说明和当前 Codex 客户端为准。
 :::
 
 # Codex × Notion MCP：打通你的知识工作空间

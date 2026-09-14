@@ -3,7 +3,7 @@ description: "第一次让 Codex CLI 改代码的教程，说明如何选择低�
 ---
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-05-27。本文参考 [Codex CLI features](https://developers.openai.com/codex/cli/features)、[openai/codex getting started](https://github.com/openai/codex/blob/main/docs/getting-started.md)、[AGENTS.md guide](https://developers.openai.com/codex/guides/agents-md) 与 [Codex security](https://developers.openai.com/codex/agent-approvals-security)。
+官方资料最后核对日期：2026-09-03。本文参考 [Codex CLI 官方文档](https://learn.chatgpt.com/docs/codex/cli)、[Codex AGENTS.md 官方文档](https://learn.chatgpt.com/docs/agent-configuration/agents-md) 与 [智能体审批与安全](https://learn.chatgpt.com/docs/agent-approvals-security)。
 :::
 
 # 运行 CLI

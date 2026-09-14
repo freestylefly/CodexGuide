@@ -3,7 +3,7 @@ description: "Codex 团队实践指南，整理 AGENTS.md、PR、排障、知识
 ---
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-06-29。本文参考 [Codex AGENTS.md 官方文档](https://developers.openai.com/codex/guides/agents-md)、[Permissions](https://developers.openai.com/codex/permissions)、[Agent approvals & security](https://developers.openai.com/codex/agent-approvals-security) 与 [Codex App Worktrees](https://developers.openai.com/codex/app/worktrees)。团队制度、审批边界和共享规则请结合本组织实际情况确认。
+官方资料最后核对日期：2026-09-04。本文参考 [Codex AGENTS.md 官方文档](https://learn.chatgpt.com/docs/agent-configuration/agents-md)、[权限](https://learn.chatgpt.com/docs/permissions)、[智能体审批与安全](https://learn.chatgpt.com/docs/agent-approvals-security) 与 [Codex Worktrees 官方文档](https://learn.chatgpt.com/docs/environments/git-worktrees)。团队制度、审批边界和共享规则请结合本组织实际情况确认。
 :::
 
 # 团队实践
@@ -44,7 +44,7 @@ description: "Codex 团队实践指南，整理 AGENTS.md、PR、排障、知识
 
 ## 共享规则与个人偏好
 
-团队的共同规则建议放进 `AGENTS.md`，例如项目结构、命令、测试要求、目录边界和安全红线。个人本机路径、私有工具习惯、临时限制和回复偏好，可以参考 [团队共享规则和本地私有规则](/advanced/02-agents-md.html#团队共享规则和本地私有规则) 拆到 `AGENTS.local.md`。
+团队的共同规则建议放进 `AGENTS.md`，例如项目结构、命令、测试要求、目录边界和安全红线。个人本机路径、私有工具习惯、临时限制和回复偏好，可以参考 [团队协作](./02-agents-md.md#团队协作) 拆到 `AGENTS.local.md`。
 
 如果团队允许使用社区工具，可以评估 [codex-agents-local](https://github.com/samzong/codex-agents-local)。使用前先确认 `AGENTS.local.md` 和 `AGENTS.override.md` 已加入 ignore，并让 Codex 审查安装步骤对 `~/.local/bin` 与 `~/.codex/hooks.json` 的影响。
 

@@ -3,7 +3,7 @@ description: "Codex CLI 选项与命令指南，覆盖交互模式、非交互�
 ---
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-05-27。本文参考 [Codex CLI features](https://developers.openai.com/codex/cli/features)、[Codex CLI 官方仓库](https://github.com/openai/codex)、[CLI getting started](https://github.com/openai/codex/blob/main/docs/getting-started.md)、[exec 文档](https://github.com/openai/codex/blob/main/docs/exec.md) 与 [slash commands 文档](https://github.com/openai/codex/blob/main/docs/slash_commands.md)。
+官方资料最后核对日期：2026-09-03。本文参考 [Codex CLI 官方文档](https://learn.chatgpt.com/docs/codex/cli)、[openai/codex 源代码仓库](https://github.com/openai/codex)、[非交互模式](https://learn.chatgpt.com/docs/non-interactive-mode)、[CLI Slash Commands 官方文档](https://learn.chatgpt.com/docs/cli/slash-commands) 与 [CLI 命令参考](https://developers.openai.com/codex/cli/reference)。参数名和命令列表以当前 `codex --help` 为准。
 :::
 
 # CLI 选项与命令
@@ -18,6 +18,8 @@ CLI 是 Codex 最适合练基本功的入口。本页按官方教程的逻辑，
 | 交互模式 | 学习仓库、逐步改代码、需要随时打断 | `codex` |
 | 一次性任务 | CI、脚本、批量分析、生成摘要 | `codex exec "任务说明"` |
 | 恢复会话 | 延续之前上下文、继续未完成任务 | `codex resume` |
+
+官方还有 `codex review`、`codex cloud` 等入口。入门阶段先把上面三种跑熟即可。
 
 ## 交互模式
 
@@ -50,6 +52,8 @@ codex
 ```bash
 codex exec "请阅读 README 和 package.json，输出本项目的本地启动命令和测试命令。不要修改文件。"
 ```
+
+默认在只读沙盒中运行。如果这次任务需要改文件，显式加上 `--sandbox workspace-write`。需要把输出交给后续命令解析时，加上 `--json`。不要再使用已弃用的 `--full-auto`。
 
 适合的场景：
 
@@ -88,7 +92,20 @@ codex exec "请阅读 README 和 package.json，输出本项目的本地启动�
 
 下次恢复时，把上一段总结作为第一条消息，能显著减少上下文断裂。
 
-示例：
+交互会话可以直接恢复：
+
+```bash
+codex resume
+codex resume --last
+```
+
+`codex resume` 默认打开会话选择器，并优先显示当前目录的会话。非交互任务用：
+
+```bash
+codex exec resume --last "继续上一步"
+```
+
+恢复后的第一条消息可以这样写：
 
 ```text
 继续上一次任务。上一阶段已经完成：
@@ -102,6 +119,8 @@ codex exec "请阅读 README 和 package.json，输出本项目的本地启动�
 ## Slash Commands
 
 Slash Commands 用于在 CLI 会话中快速查看状态、调整行为或执行常用动作。不同版本命令列表可能会变化，最稳妥的方式是在 CLI 内输入 `/` 查看当前可用命令。
+
+入门时可以先记住这几个：`/status`、`/model`、`/permissions`、`/compact`、`/diff`、`/resume`。
 
 常见使用方式：
 

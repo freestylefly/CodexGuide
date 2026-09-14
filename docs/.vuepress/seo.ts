@@ -51,7 +51,7 @@ export const pageDescriptions: Record<string, string> = {
   "/start/08-task-execution.html": "Codex 任务执行与验证闭环教程，说明如何观察执行过程、检查 diff、验证结果并处理失败。",
   "/start/09-mobile-control.html": "手机端跟进桌面 Codex 任务教程，说明 ChatGPT App 入口、跨设备连接、任务查看和协同边界。",
 
-  "/start/10-cli-installation.html": "Codex CLI 安装教程，覆盖 Node 环境、安装命令、版本检查、登录流程和第一次运行准备。",
+  "/start/10-cli-installation.html": "Codex CLI 安装教程，覆盖安装命令、版本检查、登录流程和第一次运行准备。",
   "/start/11-cli-first-run.html": "第一次让 Codex CLI 改代码的教程，说明如何选择低风险任务、让 Codex 读仓库、修改文件并运行验证。",
   "/start/12-cli-options.html": "Codex CLI 选项与命令指南，覆盖交互模式、非交互执行、恢复会话、Slash Commands 和常用启动参数。",
   "/start/13-ide-vscode.html": "在 VS Code 中使用 Codex 的教程，介绍插件入口、文件上下文、局部修改、解释代码和编辑器内协作方式。",
