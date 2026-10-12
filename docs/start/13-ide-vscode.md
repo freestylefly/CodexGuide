@@ -16,7 +16,7 @@ description: "在 VS Code 中使用 Codex 的教程，介绍插件入口、文�
 打开 VS Code，点击左侧边栏的「扩展」图标，在搜索框中输入 **Codex**，选择第一个结果，点击「安装」即可。
 
 ::: tip
-这里安装的是 OpenAI 官方发布的 ChatGPT 插件，其中集成了 Codex 的对话与代码辅助能力。
+这里安装的是 OpenAI 官方发布的 Codex 扩展，可以直接在编辑器中使用 Codex 的对话与代码辅助能力。
 :::
 
 ![搜索并安装 Codex 插件](https://cdn.canghecode.com/codexguide/docs/images/vscode-codex-extension-marketplace.png)

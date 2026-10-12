@@ -4,7 +4,7 @@ permalink: /manual/
 ---
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-05-27。本文汇总 OpenAI Codex 官方资料、GitHub 仓库和关键事实来源；涉及价格、计划、模型、可用地区、功能开关和账号权限时，请优先打开原文确认。
+官方资料最后核对日期：2026-10-12。本文汇总 OpenAI Codex 官方资料、GitHub 仓库和关键事实来源；涉及价格、计划、模型、可用地区、功能开关和账号权限时，请优先打开原文确认。
 :::
 
 # 参考手册
@@ -15,10 +15,10 @@ permalink: /manual/
 ## OpenAI 官方
 
 - [Codex 产品页](https://openai.com/codex/)：Codex 的产品定位、使用界面和团队能力概览。
-- [Codex in ChatGPT Help Center](https://help.openai.com/en/articles/11369540-codex-in-chatgpt)：计划可用性、入口和常见问题。
+- [Using Codex with your ChatGPT plan](https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan)：计划可用性、入口和常见问题。
 - [OpenAI Codex CLI Getting Started](https://help.openai.com/en/articles/11096431-openai-codex-cli-getting-started)：CLI 入门、安装和基础能力。
-- [Codex 文档入口](https://developers.openai.com/codex/)：Codex 桌面 App、CLI、Cloud、配置、安全、Skills、MCP 等官方文档入口。
-- [Codex cloud docs](https://platform.openai.com/docs/codex)：云端任务、GitHub 连接和仓库工作流入口。
+- [ChatGPT 与 Codex 文档入口](https://learn.chatgpt.com/docs)：Codex 桌面 App、CLI、Cloud、配置、安全、Skills、MCP 等官方文档入口。
+- [Codex Cloud docs](https://learn.chatgpt.com/docs/cloud)：云端任务、GitHub 连接和仓库工作流入口。
 - [Introducing Codex](https://openai.com/index/introducing-codex/)：Codex 发布背景和云端软件工程代理介绍。
 - [Introducing the Codex app](https://openai.com/index/introducing-the-codex-app/)：Codex 桌面 App 相关介绍。
 - [Work with Codex from anywhere](https://openai.com/index/work-with-codex-from-anywhere/)：ChatGPT 手机 App 中的 Codex 入口、跨设备连接和可用性说明。
@@ -26,29 +26,29 @@ permalink: /manual/
 
 ## 官方文档重点页面
 
-- [Codex App docs（桌面端）](https://developers.openai.com/codex/app)：桌面 App 功能入口，包含本地项目、Review、Automations、Worktrees、Local Environments、In-app Browser、Computer Use 等主题。
-- [Codex CLI features](https://developers.openai.com/codex/cli/features)：CLI 交互模式、非交互模式、功能概览。
-- [AGENTS.md](https://developers.openai.com/codex/guides/agents-md)：项目规则文件的官方说明。
-- [Codex security](https://developers.openai.com/codex/agent-approvals-security)：沙盒、审批和安全边界。
-- [Codex config basic](https://developers.openai.com/codex/config-basic)：基础配置。
-- [Codex config advanced](https://developers.openai.com/codex/config-advanced)：高级配置。
-- [Codex config reference](https://developers.openai.com/codex/config-reference)：完整配置参考。
-- [Codex skills](https://developers.openai.com/codex/skills)：Skills 官方说明。
-- [Codex Cloud docs](https://platform.openai.com/docs/codex)：云端任务、环境、仓库连接和任务执行入口。
+- [ChatGPT 桌面 App](https://learn.chatgpt.com/docs/app)：桌面 App 功能入口，包含本地项目、Review、Automations、Worktrees、Local Environments、In-app Browser、Computer Use 等主题。
+- [Codex CLI](https://learn.chatgpt.com/docs/codex/cli)：CLI 交互模式、非交互模式、功能概览。
+- [AGENTS.md](https://learn.chatgpt.com/docs/agent-configuration/agents-md)：项目规则文件的官方说明。
+- [Agent approvals & security](https://learn.chatgpt.com/docs/agent-approvals-security)：沙盒、审批和安全边界。
+- [Config basics](https://learn.chatgpt.com/docs/config-file/config-basic)：基础配置。
+- [Advanced configuration](https://learn.chatgpt.com/docs/config-file/config-advanced)：高级配置。
+- [Configuration reference](https://learn.chatgpt.com/docs/config-file/config-reference)：完整配置参考。
+- [Build skills](https://learn.chatgpt.com/docs/build-skills)：Skills 官方说明。
+- [Codex Cloud docs](https://learn.chatgpt.com/docs/cloud)：云端任务、环境、仓库连接和任务执行入口。
 
-## GitHub 官方仓库
+## 开源仓库与相关文档
 
 - [openai/codex](https://github.com/openai/codex)：Codex CLI 开源仓库。
-- [AGENTS.md 相关文档](https://github.com/openai/codex/blob/main/docs/agents_md.md)：项目规则文件相关说明。
-- [CLI getting started](https://github.com/openai/codex/blob/main/docs/getting-started.md)：CLI 首次使用流程。
-- [Authentication](https://github.com/openai/codex/blob/main/docs/authentication.md)：认证和登录相关说明。
-- [Exec](https://github.com/openai/codex/blob/main/docs/exec.md)：非交互模式相关说明。
-- [Slash Commands](https://github.com/openai/codex/blob/main/docs/slash_commands.md)：CLI 会话命令说明。
+- [AGENTS.md 相关文档](https://learn.chatgpt.com/docs/agent-configuration/agents-md)：项目规则文件相关说明。
+- [CLI getting started](https://learn.chatgpt.com/docs/codex/cli)：CLI 首次使用流程。
+- [Authentication](https://learn.chatgpt.com/docs/auth)：认证和登录相关说明。
+- [Non-interactive mode](https://learn.chatgpt.com/docs/non-interactive-mode)：非交互模式相关说明。
+- [Slash commands](https://learn.chatgpt.com/docs/reference/slash-commands)：CLI 会话命令说明。
 - [CLI 安装与构建](https://github.com/openai/codex/blob/main/docs/install.md)：系统要求、源码构建和日志说明。
-- [CLI 配置](https://github.com/openai/codex/blob/main/docs/config.md)：配置文档索引。
-- [Sandbox 文档](https://github.com/openai/codex/blob/main/docs/sandbox.md)：沙盒与审批官方入口。
-- [Exec Policy](https://github.com/openai/codex/blob/main/docs/execpolicy.md)：命令执行策略相关说明。
-- [Skills](https://github.com/openai/codex/blob/main/docs/skills.md)：CLI 仓库中的 Skills 文档。
+- [CLI 配置](https://learn.chatgpt.com/docs/config-file/config-basic)：配置文档索引。
+- [Sandbox 文档](https://learn.chatgpt.com/docs/sandboxing)：沙盒与审批官方入口。
+- [Execution policy](https://learn.chatgpt.com/docs/agent-configuration/rules)：命令执行策略相关说明。
+- [Skills](https://learn.chatgpt.com/docs/build-skills)：Skills 官方说明。
 
 ## 如何使用这些资料
 

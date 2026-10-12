@@ -3,7 +3,7 @@ description: "Codex Hooks 入门指南，说明 Hooks 的用途、配置位置�
 ---
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-06-19。本文依据 [Codex Hooks 官方文档](https://developers.openai.com/codex/hooks) 和 [Codex Configuration Reference](https://developers.openai.com/codex/config-reference) 整理。
+官方资料最后核对日期：2026-10-12。本文依据 [Codex Hooks 官方文档](https://learn.chatgpt.com/docs/hooks) 和 [Codex Configuration Reference](https://learn.chatgpt.com/docs/config-file/config-reference) 整理。
 :::
 
 # Hooks
@@ -82,7 +82,12 @@ Hooks 配置包含三层：
 }
 ```
 
-当前实际执行的 handler 类型是 `type: "command"`。`prompt` 和 `agent` 这类 handler 目前会被解析，但不会执行。
+当前支持两种 handler：
+
+- `type: "command"`：在本地执行命令或脚本。
+- `type: "mcp_tool"`：调用已经连接的 MCP Server 工具。
+
+`prompt` 和 `agent` handler 目前会被解析，但会被跳过，不会执行。
 
 ## 事件与触发
 
@@ -108,6 +113,8 @@ Codex 准备调用工具
 ```
 
 如果中途发生上下文压缩，会触发 `PreCompact` 和 `PostCompact`。如果 Codex 启动子代理，会触发 `SubagentStart` 和 `SubagentStop`。
+
+用户中断正在执行的主线程 turn 时会触发 `Interrupt`；主线程结束、被归档或删除、Codex 正常关闭，或会话在没有客户端打开的情况下空闲约 30 分钟时，会触发 `SessionEnd`。这两个事件都不会为子代理触发。
 
 ### 匹配规则
 
@@ -150,14 +157,14 @@ Codex 准备调用工具
 
 不同事件能改变 Codex 行为的程度不同：
 
-| 事件 | 能否阻止或改变后续行为 |
-| --- | --- |
-| `PreToolUse` | 可以拒绝部分工具调用，也可以给 Codex 补充上下文 |
-| `PermissionRequest` | 可以允许或拒绝权限请求 |
-| `PostToolUse` | 工具已经执行完，不能撤销副作用，只能改变 Codex 接下来看到的反馈 |
-| `UserPromptSubmit` | 可以阻止用户提示词提交，或补充上下文 |
-| `Stop` | 可以要求 Codex 继续一轮 |
-| `SessionStart` | 主要用于补充会话开始时的上下文 |
+| 事件                  | 能否阻止或改变后续行为                         |
+| ------------------- | ----------------------------------- |
+| `PreToolUse`        | 可以拒绝部分工具调用，也可以给 Codex 补充上下文         |
+| `PermissionRequest` | 可以允许或拒绝权限请求                         |
+| `PostToolUse`       | 工具已经执行完，不能撤销副作用，只能改变 Codex 接下来看到的反馈 |
+| `UserPromptSubmit`  | 可以阻止用户提示词提交，或补充上下文                  |
+| `Stop`              | 可以要求 Codex 继续一轮                     |
+| `SessionStart`      | 主要用于补充会话开始时的上下文                     |
 
 因此，想阻止危险命令，要用 `PreToolUse`；想审查执行结果，用 `PostToolUse`；想避免 Codex 过早结束，用 `Stop`。将 Hook 配置在错误的事件点，效果会不同。
 
@@ -185,6 +192,8 @@ Codex 准备调用工具
 | `PreCompact` / `PostCompact` | 上下文压缩前后 | 保存摘要、补充压缩后的上下文 |
 | `SubagentStart` / `SubagentStop` | 子代理开始或停止 | 给子代理补充规则，要求子代理继续检查 |
 | `Stop` | 当前 turn 即将结束 | 要求 Codex 再跑测试、补总结或继续处理失败项 |
+| `Interrupt` | 用户中断正在执行的主线程 turn | 快速保存状态或记录中断原因 |
+| `SessionEnd` | 主线程结束 | 保存最终记录、执行轻量清理 |
 
 该表用于建立直观理解。真正写 Hook 时，要再看具体事件支持哪些输入字段、输出字段和决策格式。
 
@@ -208,20 +217,24 @@ manual|auto
 - `PreToolUse`、`PermissionRequest`、`PostToolUse`：匹配工具名，例如 `Bash`、`apply_patch`、MCP tool name。
 - `SessionStart`：匹配启动来源，例如 `startup`、`resume`、`clear`、`compact`。
 - `PreCompact`、`PostCompact`：匹配压缩触发方式，例如 `manual` 或 `auto`。
-- `UserPromptSubmit` 和 `Stop`：目前不使用 matcher，配置了也会被忽略。
+- `SessionEnd`：匹配结束原因，当前值为 `other`。
+- `SubagentStart`、`SubagentStop`：匹配子代理类型。
+- `UserPromptSubmit`、`Stop` 和 `Interrupt`：目前不使用 matcher，配置了也会被忽略。
 
 ## 输入输出
 
 每个 command Hook 都会从 `stdin` 收到一个 JSON 对象。常见字段如下：
 
-| 字段 | 含义 |
-| --- | --- |
-| `session_id` | 当前 Codex 会话 id |
+| 字段                | 含义                    |
+| ----------------- | --------------------- |
+| `session_id`      | 当前 Codex 会话 id        |
 | `transcript_path` | 会话 transcript 路径，可能为空 |
-| `cwd` | 当前工作目录 |
-| `hook_event_name` | 当前 Hook 事件名 |
-| `model` | 当前模型 slug |
-| `permission_mode` | 当前权限模式，部分事件会提供 |
+| `cwd`             | 当前工作目录                |
+| `hook_event_name` | 当前 Hook 事件名           |
+| `model`           | 当前模型 slug             |
+| `permission_mode` | 当前权限模式，部分事件会提供        |
+
+turn scope 事件还会提供 `turn_id`。`permission_mode` 的当前取值包括 `default`、`acceptEdits`、`plan`、`dontAsk` 和 `bypassPermissions`。
 
 Hook 可以通过退出码和 `stdout` / `stderr` 影响 Codex。主要分为两类：
 
@@ -255,7 +268,25 @@ Hook 可以通过退出码和 `stdout` / `stderr` 影响 Codex。主要分为两
 }
 ```
 
-需要明确边界：`PreToolUse` 是 guardrail，不是完整安全边界。官方说明它目前不会拦截所有 shell 调用，也不会拦截 `WebSearch` 等非 shell、非 MCP 工具。真正高风险的项目，仍然要依赖沙盒、审批、权限策略和人工 review。
+目前，`PreToolUse` 和 `PostToolUse` 可以观察 shell、统一执行工具 `exec_command`、`apply_patch`、MCP 工具以及大多数本地函数工具。其中，shell 和 `exec_command` 的 matcher 名称都是 `Bash`，`apply_patch` 则可以用 `Edit` 或 `Write` 匹配。不过，`WebSearch` 等托管工具不会经过本地 function-tool Hook 路径，某些专用工具也可能不触发 Hook。
+
+也正因如此，`PreToolUse` 是 guardrail，不能视为完整的安全边界。在高风险项目中，仍需要结合沙盒、审批、权限策略和人工 review 来降低风险。
+
+`PreToolUse` 还可以在放行时返回 `updatedInput` 改写受支持的工具输入：
+
+```json
+{
+  "hookSpecificOutput": {
+    "hookEventName": "PreToolUse",
+    "permissionDecision": "allow",
+    "updatedInput": {
+      "command": "echo rewritten"
+    }
+  }
+}
+```
+
+使用 `updatedInput` 时，需要同时将 `permissionDecision` 设为 `"allow"`。如果目标是 `Bash` 或 `apply_patch`，`updatedInput` 中必须包含字符串类型的 `command` 字段；如果目标是 MCP 工具或其他本地函数工具，`updatedInput` 则作为新的参数对象，替换原有输入。
 
 ### 处理权限请求
 
@@ -305,9 +336,73 @@ Hook 可以通过退出码和 `stdout` / `stderr` 影响 Codex。主要分为两
 
 这不是拒绝本轮结果，而是告诉 Codex 继续一轮，并把 `reason` 作为新的继续提示词。
 
+## MCP tool Hooks
+
+`mcp_tool` handler 可以在生命周期事件中调用已经连接的 MCP Server 工具。例如，在文件编辑后请 `scanner` Server 检查 patch：
+
+```json
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "mcp_tool",
+            "server": "scanner",
+            "tool": "scan_patch",
+            "input": { "patch": "${tool_input.command}" },
+            "timeout": 30,
+            "statusMessage": "Scanning edited files"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+`input` 支持 `${field.nested}` 形式的事件字段占位符。整个值只是一个占位符时会保留原 JSON 类型；嵌入字符串时则转为文本。
+
+MCP tool Hook 有几个边界：
+
+- 它只使用现有 MCP 连接，不会启动或重连 Server。
+- 它同步执行，不会另行请求工具审批，也不会触发其他 Hook。
+- 明确返回的受支持拒绝可以阻止操作；Server 缺失、工具不可用、错误或超时本身不会阻止操作。
+- `SessionStart` 可能早于 MCP Server 就绪；`SessionEnd` 不支持 MCP tool Hook。
+
+## 超时、大输出与后台运行
+
+`timeout` 的单位是秒。大多数 Hook 默认超时为 600 秒；`SessionEnd` 和 `Interrupt` 默认为 1 秒，最长只支持 3 秒，因此它们只适合快速记录或轻量清理。
+
+默认情况下，Codex 会等待 command Hook 结束。不需要阻止当前操作的记录、通知等任务，可以设置：
+
+```json
+{
+  "type": "command",
+  "command": "python3 ~/.codex/hooks/post_tool_use.py",
+  "async": true,
+  "timeout": 120
+}
+```
+
+后台 Hook 执行完成后，Codex 会在下一个安全时机，将其中受支持的信息传递给模型。不过，这不会自动开启新的 turn，也无法事后阻止、批准或改写已经继续执行的操作。
+
+默认情况下，每条对模型可见的 Hook 输出以约 2,500 tokens 为截断阈值。超出该阈值后，Codex 会将完整文本保存到 `<temp_dir>/hook_outputs/<session_id>/<uuid>.txt`，只向模型提供文本的头尾预览和文件路径。
+
+你可以通过 `additionalContextLimit` 调整 `additionalContext` 的阈值，但输出内容仍应尽量简洁，并且不得包含密钥或其他敏感信息。
+
+## 插件与企业托管 Hooks
+
+已启用的插件也可以提供 Hook。默认情况下，Codex 会读取插件根目录下的 `hooks/hooks.json`；也可以在插件 manifest 中使用 `hooks` 字段，指定配置文件的路径或直接写入配置。需要注意的是，安装或启用插件并不代表自动信任它提供的 Hook。这些 Hook 仍需按照其他非托管 Hook 的标准进行审查。
+
+企业管理员可以在全局 `requirements.toml` 中定义托管 Hook。将 `allow_managed_hooks_only` 设为 `true` 后，Codex 会忽略来自用户、项目、会话和插件的 Hook。
+
+Work Cloud 本地访问、dots 和本地 Codex 对托管 Hook 的支持范围各不相同。云端编排场景主要支持由管理员配置的远程 `mcp_tool` Hook，因此不能默认本地 command 脚本会在所有 Work 环境中执行。上线前，应在实际使用的环境中测试回调连通性、事件覆盖范围以及执行失败时的处理行为。
+
 ## 审查与信任
 
-![Codex Hooks 审查与信任界面](https://cdn.canghecode.com/codexguide/docs/images/codex-hooks-trust-review-watermarked-small.png)
+![image.png](https://cdn.canghecode.com/yanyan/20261012092858923.png)
 
 非托管 command Hook 在运行前需要被审查和信任。Codex 会根据 Hook 当前定义计算 hash；Hook 修改后，会重新进入待审查状态，在信任前会被跳过。
 
