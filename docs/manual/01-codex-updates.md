@@ -3,7 +3,7 @@ description: "近期 Codex 更新中文摘要，依据 OpenAI 官方 Codex chang
 ---
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-06-27。本文依据 [OpenAI Codex changelog](https://developers.openai.com/codex/changelog) 整理，仅提供中文摘要和阅读索引；功能开放范围、账号计划、地区限制、模型可用性与版本号，请以官方原文为准。
+官方资料最后核对日期：2026-09-04。本文依据 [Codex 更新日志](https://learn.chatgpt.com/docs/changelog) 整理，仅提供中文摘要和阅读索引；功能开放范围、账号计划、地区限制、模型可用性与版本号，请以官方原文为准。
 :::
 
 # 近期Codex更新

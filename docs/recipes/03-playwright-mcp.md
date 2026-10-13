@@ -3,7 +3,7 @@ description: "Codex 与 Playwright MCP 案例，说明如何让 AI 操作浏览�
 ---
 
 ::: tip 最后核对
-公开资料最后核对日期：2026-06-29。本文参考 [Model Context Protocol](https://modelcontextprotocol.io/)、[Playwright](https://playwright.dev/) 与 [microsoft/playwright-mcp](https://github.com/microsoft/playwright-mcp)。浏览器自动化能力、安装方式和可用工具名称请以原项目说明为准。
+官方资料最后核对日期：2026-09-04。本文关于 MCP 机制参考 [Codex MCP 官方文档](https://learn.chatgpt.com/docs/extend/mcp)。案例中使用的 Playwright MCP 来自仓库：[microsoft/playwright-mcp](https://github.com/microsoft/playwright-mcp)。浏览器自动化请参考 [Playwright 官方网站](https://playwright.dev/)。浏览器自动化能力、安装方式和可用工具名称请以原项目说明为准。
 :::
 
 # Codex × Playwright MCP：让 AI 像人一样操控浏览器

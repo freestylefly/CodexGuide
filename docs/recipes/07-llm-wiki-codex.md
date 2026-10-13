@@ -3,7 +3,7 @@ description: "Codex 与 LLM Wiki 案例，说明如何在 Obsidian 中搭建 AI 
 ---
 
 ::: tip 最后核对
-公开资料最后核对日期：2026-06-29。本文参考 Andrej Karpathy 的 [LLM Wiki gist](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f)、[Obsidian](https://obsidian.md/) 与 [Codex CLI features](https://developers.openai.com/codex/cli/features)。知识库结构、插件安装和外部资料抓取方式请以原项目与当前工具版本为准。
+官方资料最后核对日期：2026-09-04。本文参考 Andrej Karpathy 的 [LLM Wiki gist](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f)、[Obsidian 官方网站](https://obsidian.md/) 与 [Codex CLI 官方文档](https://learn.chatgpt.com/docs/codex/cli)。知识库结构、插件安装和外部资料抓取方式请以原项目与当前工具版本为准。
 :::
 
 # Codex × LLM Wiki：在 Obsidian 中搭建 AI 知识库

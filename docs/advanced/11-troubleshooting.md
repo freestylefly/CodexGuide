@@ -3,7 +3,7 @@ description: "Codex 排障手册，汇总登录、安装、权限、依赖、命
 ---
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-06-29。本文参考 [Codex 文档入口](https://developers.openai.com/codex/)、[Windows](https://developers.openai.com/codex/windows)、[Codex CLI 官方仓库](https://github.com/openai/codex) 与 [Agent approvals & security](https://developers.openai.com/codex/agent-approvals-security)。排障命令、路径和界面名称会随系统、客户端和 CLI 版本变化。
+官方资料最后核对日期：2026-09-05。本文参考 [Codex 官方文档总览](https://learn.chatgpt.com/docs)、[Windows 沙盒](https://learn.chatgpt.com/docs/windows/windows-sandbox)、[openai/codex 官方仓库](https://github.com/openai/codex) 与 [智能体审批与安全](https://learn.chatgpt.com/docs/agent-approvals-security)。排障命令、路径和界面名称会随系统、客户端和 CLI 版本变化。
 :::
 
 # 排障手册
@@ -65,7 +65,7 @@ description: "Codex 排障手册，汇总登录、安装、权限、依赖、命
 `Reconnecting` 不是一个具体根因。它可能是主连接、会话恢复、WebSocket / SSE 流、代理协议、MCP worker 或服务端临时问题。不要一开始就重装 Codex、覆盖 `config.toml`，或者直接换账号。
 
 ::: tip 最后核对
-官方资料和 GitHub issue 最后核对日期：2026-06-14。本文参考 OpenAI [Codex app troubleshooting](https://developers.openai.com/codex/app/troubleshooting)、[Environment variables](https://developers.openai.com/codex/environment-variables)、[Use Codex with Amazon Bedrock](https://developers.openai.com/codex/amazon-bedrock)、[Model Context Protocol](https://developers.openai.com/codex/mcp)，以及社区排障库 [Desktop Reconnecting / Proxy Triage](https://github.com/toby-bridges/community-codex-windows-troubleshooting/blob/main/DESKTOP-RECONNECTING-PROXY-GUIDE.md)。
+官方资料和 GitHub issue 最后核对日期：2026-09-04。本文参考 [Codex 排障官方文档](https://learn.chatgpt.com/docs/reference/troubleshooting)、[环境变量](https://learn.chatgpt.com/docs/config-file/environment-variables)、[Amazon Bedrock 官方文档](https://learn.chatgpt.com/docs/amazon-bedrock)、[Codex MCP 官方文档](https://learn.chatgpt.com/docs/extend/mcp)，以及社区排障库 [Windows Codex Error Guide：网络、DNS、npm、代理](https://github.com/toby-bridges/community-codex-windows-troubleshooting/blob/main/WINDOWS-CODEX-ERROR-GUIDE.md)。
 :::
 
 先按三层判断：

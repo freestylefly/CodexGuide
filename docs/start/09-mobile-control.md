@@ -3,7 +3,7 @@ description: "手机端跟进桌面 Codex 任务教程，说明 ChatGPT App 入�
 ---
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-06-13。本文参考 OpenAI 官方文章 [Work with Codex from anywhere](https://openai.com/index/work-with-codex-from-anywhere/)。具体入口、可用地区、系统支持和界面名称会随客户端更新变化，请以当前 ChatGPT 手机 App 和 Codex 桌面 App 为准。
+官方资料最后核对日期：2026-09-02。本文参考 [Codex Remote 官方文档](https://learn.chatgpt.com/docs/remote) 与 [远程连接](https://learn.chatgpt.com/docs/remote-connections)。具体入口、可用地区、系统支持和界面名称会随客户端更新变化，请以当前 ChatGPT 手机 App 和 Codex 桌面 App 为准。
 :::
 
 # 用手机远程操控 Codex

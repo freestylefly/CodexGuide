@@ -3,7 +3,7 @@ description: "Codex config.toml 配置指南，说明模型、沙盒、审批、
 ---
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-05-27。本文参考 [Codex config basic](https://developers.openai.com/codex/config-basic)、[Codex config advanced](https://developers.openai.com/codex/config-advanced)、[Codex config reference](https://developers.openai.com/codex/config-reference) 与 [openai/codex config docs](https://github.com/openai/codex/blob/main/docs/config.md)。
+官方资料最后核对日期：2026-09-04。本文参考 [Codex 配置基础](https://learn.chatgpt.com/docs/config-file/config-basic)、[Codex 高级配置](https://learn.chatgpt.com/docs/config-file/config-advanced)、[Codex 配置参考资料](https://learn.chatgpt.com/docs/config-file/config-reference) 与 [openai/codex 配置文档](https://github.com/openai/codex/blob/main/docs/config.md)。
 :::
 
 # 配置文件 config.toml
@@ -25,7 +25,7 @@ description: "Codex config.toml 配置指南，说明模型、沙盒、审批、
 
 `config.toml` 保存 Codex 的持久配置，例如模型、沙盒、审批、profiles 和 MCP server。`~/.codex/.env` 更适合放 Desktop app 或 IDE extension 启动时需要读取的环境变量，例如 provider 需要的区域变量，或排障时临时验证过的代理变量。
 
-OpenAI [Amazon Bedrock provider 文档](https://developers.openai.com/codex/amazon-bedrock)提醒：Desktop app 和 VS Code extension 可能不会继承当前 shell 里的环境变量；如果这些入口需要某些变量，可以把值放进 `~/.codex/.env`，然后重启 app 或 extension。
+OpenAI [Amazon Bedrock 官方文档](https://learn.chatgpt.com/docs/amazon-bedrock)提醒：Desktop app 和 VS Code extension 可能不会继承当前 shell 里的环境变量；如果这些入口需要某些变量，可以把值放进 `~/.codex/.env`，然后重启 app 或 extension。
 
 写入前先确认两件事：
 
@@ -52,21 +52,13 @@ export NO_PROXY="localhost,127.0.0.1,::1,*.local"
 model = "gpt-5.1-codex-max"
 approval_policy = "on-request"
 sandbox_mode = "workspace-write"
-
-[profiles.readonly]
-approval_policy = "on-request"
-sandbox_mode = "read-only"
-
-[profiles.build]
-approval_policy = "on-request"
-sandbox_mode = "workspace-write"
 ```
 
 这个示例表达三件事：
 
 - 默认允许在当前工作区写文件。
 - 高风险命令仍需要审批。
-- 额外保留一个只读 profile，适合新仓库分析。
+- 额外的只读 profile 写成独立文件 `~/.codex/readonly.config.toml`，适合新仓库分析。不要再使用 `[profiles.*]`。
 
 ## 常见配置项按用途理解
 
@@ -86,7 +78,7 @@ sandbox_mode = "workspace-write"
 适合打开陌生仓库、生成项目地图、梳理测试命令。
 
 ```toml
-[profiles.readonly]
+# ~/.codex/readonly.config.toml
 sandbox_mode = "read-only"
 approval_policy = "on-request"
 ```
@@ -106,7 +98,7 @@ codex --profile readonly
 适合修测试、补文档、小范围实现。
 
 ```toml
-[profiles.coding]
+# ~/.codex/coding.config.toml
 sandbox_mode = "workspace-write"
 approval_policy = "on-request"
 ```
@@ -122,7 +114,7 @@ approval_policy = "on-request"
 适合 PR review、发布前风险扫描、diff 总结。
 
 ```toml
-[profiles.review]
+# ~/.codex/review.config.toml
 sandbox_mode = "read-only"
 approval_policy = "on-request"
 ```
@@ -257,12 +249,12 @@ codex-provider restore <backup-dir>
 
 ## 官方资料延伸
 
-- [Config basic](https://developers.openai.com/codex/config-basic)
-- [Config advanced](https://developers.openai.com/codex/config-advanced)
-- [Config reference](https://developers.openai.com/codex/config-reference)
-- [Environment variables](https://developers.openai.com/codex/environment-variables)
-- [Use Codex with Amazon Bedrock](https://developers.openai.com/codex/amazon-bedrock)
-- [openai/codex config docs](https://github.com/openai/codex/blob/main/docs/config.md)
+- [Codex 配置基础](https://learn.chatgpt.com/docs/config-file/config-basic)
+- [Codex 高级配置](https://learn.chatgpt.com/docs/config-file/config-advanced)
+- [Codex 配置参考资料](https://learn.chatgpt.com/docs/config-file/config-reference)
+- [环境变量](https://learn.chatgpt.com/docs/config-file/environment-variables)
+- [Amazon Bedrock 官方文档](https://learn.chatgpt.com/docs/amazon-bedrock)
+- [openai/codex 配置文档](https://github.com/openai/codex/blob/main/docs/config.md)
 
 ## 下一步
 

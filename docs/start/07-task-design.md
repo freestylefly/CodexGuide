@@ -3,7 +3,7 @@ description: "Codex 任务设计方法，说明如何写清目标、背景、范
 ---
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-06-29。本文是 Codex 任务设计方法总结，涉及上下文、指令、验证和安全边界时，请参考 [Codex 文档入口](https://developers.openai.com/codex/)、[AGENTS.md guide](https://developers.openai.com/codex/guides/agents-md) 与 [Agent approvals & security](https://developers.openai.com/codex/agent-approvals-security)。
+官方资料最后核对日期：2026-09-02。本文是 Codex 任务设计方法总结，涉及上下文、指令、验证和安全边界时，请参考 [Codex 官方文档总览](https://learn.chatgpt.com/docs/)、[Codex AGENTS.md 官方文档](https://learn.chatgpt.com/docs/agent-configuration/agents-md) 与 [智能体审批与安全](https://learn.chatgpt.com/docs/agent-approvals-security)。
 :::
 
 # 任务设计

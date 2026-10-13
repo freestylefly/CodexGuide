@@ -3,7 +3,7 @@ description: "Codex 自动线程管理指南：解释 thread、resume、fork、w
 ---
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-06-25。本文参考 [Kimi Code Agents and Sub-Agents](https://moonshotai.github.io/kimi-code/en/customization/agents)、[OpenAI Codex Subagents](https://developers.openai.com/codex/subagents)、[Codex CLI features](https://developers.openai.com/codex/cli/features) 和 [Codex App Worktrees](https://developers.openai.com/codex/app/worktrees) 整理。不同版本的 App、CLI 和移动端界面可能会变化，请以当前客户端为准。
+官方资料最后核对日期：2026-09-04。本文参考 [Kimi Code Agents and Sub-Agents](https://moonshotai.github.io/kimi-code/en/customization/agents)、[Codex Subagents 官方文档](https://learn.chatgpt.com/docs/agent-configuration/subagents)、[Codex CLI 官方文档](https://learn.chatgpt.com/docs/codex/cli) 和 [Codex Worktrees 官方文档](https://learn.chatgpt.com/docs/environments/git-worktrees) 整理。不同版本的 App、CLI 和移动端界面可能会变化，请以当前客户端为准。
 :::
 
 # 自动线程管理

@@ -4,7 +4,7 @@ permalink: /recipes/
 ---
 
 ::: tip 最后核对
-资料最后核对日期：2026-06-29。本页是实战案例索引，Codex 官方能力请以 [Codex 文档入口](https://developers.openai.com/codex/)、[Codex Skills](https://developers.openai.com/codex/skills)、[Codex Plugins](https://developers.openai.com/codex/plugins) 与 [Codex use cases](https://developers.openai.com/codex/use-cases/) 为准；第三方工具以各案例中的原仓库和官方页面为准。
+资料最后核对日期：2026-09-04。本页是实战案例索引，Codex 官方能力请以 [Codex 官方文档总览](https://learn.chatgpt.com/docs)、[Codex Skills 官方文档](https://learn.chatgpt.com/docs/build-skills)、[Codex Plugins 官方文档](https://learn.chatgpt.com/docs/plugins) 与 [Codex 用例](https://learn.chatgpt.com/use-cases) 为准；第三方工具以各案例中的原仓库和官方页面为准。
 :::
 
 # 实战案例库

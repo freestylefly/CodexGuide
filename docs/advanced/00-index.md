@@ -4,12 +4,12 @@ permalink: /advanced/
 ---
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-06-29。本页是进阶教程索引，涉及费用、上下文、AGENTS.md、Skills、Plugins、权限、自动化、Hooks、沙盒、线程管理、配置和团队实践的细节，请以 [Codex 文档入口](https://developers.openai.com/codex/) 与各章节引用的官方资料为准。
+官方资料最后核对日期：2026-09-03。本页是进阶教程索引，涉及费用、上下文、AGENTS.md、Skills、Plugins、权限、自动化、Hooks、沙盒、线程管理、配置和团队实践的细节，请以 [Codex 官方文档总览](https://learn.chatgpt.com/docs) 与各章节引用的官方资料为准。
 :::
 
 # 进阶教程
 
-相信你已经能通过 [快速上手](../start/00-index.md) 完成了你到第一个任务。
+相信你已经能通过 [快速上手](../start/00-index.md) 完成了你的第一个任务。
 
 如果你仍有好奇心，你可以按照下面的顺序深入了解 Codex 的各个方面。你将会学到一些很通用的 Agent 使用技巧。这意味着不少内容你都可以迁移到 Claude Code、KimiCode 等其他Agent上。
 

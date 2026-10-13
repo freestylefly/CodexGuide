@@ -3,7 +3,7 @@ description: "在 VS Code 中使用 Codex 的教程，介绍插件入口、文�
 ---
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-06-29。本文以 VS Code 为例演示 Codex IDE 入口，插件安装、登录、界面名称和可用功能请以当前编辑器插件与 [Codex 文档入口](https://developers.openai.com/codex/) 为准；CLI 基础能力可参考 [Codex CLI features](https://developers.openai.com/codex/cli/features)。
+官方资料最后核对日期：2026-06-29。本文以 VS Code 为例演示 Codex IDE 入口，插件安装、登录、界面名称和可用功能请以当前编辑器插件与 [Codex IDE 官方文档](https://learn.chatgpt.com/docs/codex/ide) 为准；CLI 基础能力可参考 [Codex CLI 官方文档](https://learn.chatgpt.com/docs/codex/cli)。
 :::
 
 # 在 VS Code 中使用 Codex

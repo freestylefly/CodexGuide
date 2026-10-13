@@ -3,7 +3,7 @@ description: "Codex Cloud 使用指南，说明云端任务、仓库连接、长
 ---
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-06-29。本文参考 [Codex Cloud docs](https://platform.openai.com/docs/codex)、[Using Codex with your ChatGPT plan](https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan) 与 [Agent approvals & security](https://developers.openai.com/codex/agent-approvals-security)。云端环境、仓库连接、任务权限和可用计划请以官方页面为准。
+官方资料最后核对日期：2026-09-03。本文参考 [Codex Cloud 官方文档](https://learn.chatgpt.com/docs/cloud)、[Codex 与 ChatGPT 套餐帮助中心](https://help.openai.com/en/articles/11369540-codex-in-chatgpt) 与 [智能体审批与安全](https://learn.chatgpt.com/docs/agent-approvals-security)。云端环境、仓库连接、任务权限和可用计划请以官方页面为准。
 :::
 
 # 使用 Codex Cloud

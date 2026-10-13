@@ -3,7 +3,7 @@ description: "Codex Chrome 浏览器插件案例，说明如何让 AI 控制浏�
 ---
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-05-27。本文参考 [Using Codex with your ChatGPT plan](https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan) 与 [Codex use cases](https://developers.openai.com/codex/explore/)。具体插件名称、安装流程和入口位置可能会随客户端版本或工作区配置变化。
+官方资料最后核对日期：2026-09-04。本文参考 [Codex 与 ChatGPT 套餐帮助中心](https://help.openai.com/en/articles/11369540-codex-in-chatgpt) 与 [Codex 用例](https://learn.chatgpt.com/use-cases)。具体插件名称、安装流程和入口位置可能会随客户端版本或工作区配置变化。
 :::
 
 # Codex × Chrome：让 AI 直接控制浏览器
