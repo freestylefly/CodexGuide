@@ -3,28 +3,32 @@ description: "ChatGPT Plus 与 Pro 订阅指南，整理 Codex 可用性、账�
 ---
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-09-02。定价与套餐以 [ChatGPT 定价页](https://chatgpt.com/pricing/) 和 [Codex 与 ChatGPT 套餐](https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan) 为准。
+官方资料最后核对日期：2026-10-12。定价与套餐以 [ChatGPT 定价页](https://chatgpt.com/pricing/) 和 [Using Codex with your ChatGPT plan](https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan) 为准。
 :::
 
-# 订阅 ChatGPT Plus / Pro 和其他套餐
+# 订阅 ChatGPT Plus / Pro
 
 ## 为什么需要订阅
 
-Codex 已包含在 ChatGPT Free、Go、Plus、Pro、Business、Enterprise 和 Edu 等套餐中，不同套餐主要区别在于使用额度、速率限制以及部分高级功能。
+目前，ChatGPT Free、Go、Plus、Pro、Business、Edu 和 Enterprise 套餐都可以使用 Codex，但可用功能和使用额度有所不同。
+
+Free 和 Go 适合体验轻量的本地编码任务，不支持 Codex Cloud；如果需要运行云端任务，或者希望获得更高的使用额度，可以选择 Plus 或更高等级的套餐。
 
 | 套餐 | 月费（美元） | Codex 可用情况 |
-| --- | ---: | --- |
-| Free | 免费 | 可试用 Codex，适合简短的编程任务 |
-| Go | $8 | 可使用 Codex，适合轻量级编程任务 |
-| Plus | $20 | 完整使用 Codex，适合日常及较频繁的开发任务 |
-| Pro 5x | $100 | Plus 约 5 倍的 Codex 使用额度，适合中高强度开发 |
-| Pro 20x | $200 | Plus 约 20 倍的 Codex 使用额度，适合高强度开发 |
-| Business | $20/用户/月（按年付费） | 包含 Codex，并提供团队工作空间、管理与安全功能 |
-| Enterprise / Edu | 联系销售团队 | 包含 Codex，并提供企业级安全、管理和更灵活的使用额度 |
+| --- | --- | --- |
+| Free | 免费 | 适合体验快速、轻量的本地编码任务，不支持 Codex Cloud |
+| Go | $8 | 适合轻量编码任务，不支持 Codex Cloud |
+| Plus | $20 | 提供更多 Codex 使用额度，并支持 Web、CLI、IDE、iOS 及云端集成 |
+| Pro | $100 / $200 / $500 | 在 Plus 的基础上提供三档更高额度，其中 $500 档支持 Ultrafast mode |
+| Business | 年付 $20/用户/月；月付 $25/用户/月 | 至少 2 人起订，适合需要团队工作区和管理功能的组织 |
+| Enterprise / Edu | 联系销售团队 | 面向企业和教育机构，提供更完善的安全、权限、审计及数据控制能力 |
 
-> 套餐价格、Codex 使用额度和功能范围可能随 OpenAI 政策调整，请以官方最新定价页面为准。
+对于个人开发者，建议先从 **Plus（$20/月）** 开始。它已经包含 Codex Cloud 和常用的云端集成功能，可以满足日常开发需求。如果后续额度不够，再根据实际使用情况升级到 Pro。
 
-对大多数个人开发者来说，**Plus（$20/月）是性价比最高的起点**。
+::: tip 关于共享额度
+ChatGPT Work 与 Codex 共享使用额度。在 Plus 和 Pro 套餐中，符合条件的 ChatGPT Work、Codex、Word、Excel 和 PowerPoint 等功能可能共用同一份 agentic usage allowance。使用其中一项功能，可能会减少其他功能的可用额度，具体使用情况请以账户中的 Usage 页面为准。
+:::
+
 
 ## 前提条件
 
@@ -41,8 +45,6 @@ Codex 已包含在 ChatGPT Free、Go、Plus、Pro、Business、Enterprise 和 Ed
 ## 方法一：苹果礼品卡（最稳定，推荐优先尝试）
 
 ### 支付宝购买
-
-
 
 适合已有 iOS 设备或愿意准备一台的用户。整个流程在国内支付宝内完成充值，不需要境外银行卡。
 
@@ -373,11 +375,11 @@ Session 中包含临时登录凭证。只在地址栏确认是 `https://recharge
 
 **Q：订阅后 Codex 额度够用吗？**
 
-Plus 按 token 计费，套餐本身包含使用额度；当前后台会依据 token、模型、上下文、推理、工具等因素换算使用消耗。只有超过包含额度后，符合条件的用户才可以购买额外 credits。当前 Codex 添加了 5 小时滚动窗口；官方现在甚至提供符合条件的 Plus/Pro 用户购买 weekly reset 的机制（2026 年 9 月起），日常开发任务普通使用量通常可以撑一整个月。如果额度用完，可以单独购买额外额度，也可以等下月重置。
+Plus 按 token 计费（2026 年 4 月起），日常开发任务普通使用量通常可以撑一整个月。如果额度用完，可以单独购买额外额度，也可以等下月重置。
 
 **Q：Plus 和 Pro 区别大吗？**
 
-Pro 提供 Plus 约 5 倍或 20 倍的 Codex 使用额度，适合重度用户或需要大量并行任务的场景。普通开发者先从 Plus 开始，不够用再升级。
+Pro 的 Codex 使用额度是 Plus 的 5 倍，适合重度用户或需要大量并行任务的场景。普通开发者先从 Plus 开始，不够用再升级。
 
 **Q：可以用现有手机而不买二手设备吗？**
 

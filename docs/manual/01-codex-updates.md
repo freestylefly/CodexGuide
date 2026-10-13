@@ -1,9 +1,9 @@
 ---
-description: "近期 Codex 更新中文摘要，依据 OpenAI 官方 Codex changelog 自 2025 年起整理，包含月份导航、官方原文链接和最后核对日期。"
+description: "近期 Codex 更新中文摘要，依据 OpenAI 官方 ChatGPT & Codex changelog 自 2025 年起整理，包含月份导航、官方原文链接和最后核对日期。"
 ---
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-09-04。本文依据 [Codex 更新日志](https://learn.chatgpt.com/docs/changelog) 整理，仅提供中文摘要和阅读索引；功能开放范围、账号计划、地区限制、模型可用性与版本号，请以官方原文为准。
+官方资料最后核对日期：2026-10-12。本文依据 [OpenAI ChatGPT & Codex changelog](https://learn.chatgpt.com/docs/changelog) 整理，仅摘要其中与 Codex 直接相关的更新，不代表对合并更新流的逐项翻译；功能开放范围、账号计划、地区限制、模型可用性与版本号，请以官方原文为准。
 :::
 
 # 近期Codex更新
@@ -13,6 +13,10 @@ description: "近期 Codex 更新中文摘要，依据 OpenAI 官方 Codex chang
 
 <div class="codex-update-layout">
 <nav class="codex-update-months" aria-label="2026 年 Codex 更新月份导航">
+  <a href="#october-2026">2026 年 10 月</a>
+  <a href="#september-2026">2026 年 9 月</a>
+  <a href="#august-2026">2026 年 8 月</a>
+  <a href="#july-2026">2026 年 7 月</a>
   <a href="#june-2026">2026 年 6 月</a>
   <a href="#may-2026">2026 年 5 月</a>
   <a href="#april-2026">2026 年 4 月</a>
@@ -30,9 +34,135 @@ description: "近期 Codex 更新中文摘要，依据 OpenAI 官方 Codex chang
 
 <div class="codex-update-content">
 
+<h2 id="october-2026">2026 年 10 月</h2>
+
+[官方原文：October 2026](https://learn.chatgpt.com/docs/changelog#october-2026)
+
+<article class="codex-update-entry">
+
+<p class="codex-update-date">2026-10-08</p>
+
+### GPT-6.1 Sol Ultrafast 进入 Codex 与 ChatGPT Work
+
+Ultrafast 模式可加快 GPT-6.1 Sol 的 token 生成速度。官方当前将它提供给 Pro $500 以及符合条件的 Enterprise 和 Edu 计划；Enterprise 默认关闭，需由 workspace owner 开启。该模式支持美国和欧洲（EEA 与 Switzerland）的 inference residency。
+
+</article>
+
+<article class="codex-update-entry">
+
+<p class="codex-update-date">2026-10-07 / 2026-10-02</p>
+
+### ChatGPT for iOS <span class="codex-update-version">1.2026.272 / 1.2026.267</span>
+
+iOS 端支持在回复中直接预览 Page，也可打开 Codex task 链接。首屏与锁屏小组件可显示近期任务、剩余用量和重置时间。本轮还重新设计了 approval picker，改进插件入口、长 thread 流式输出、worktree 一致性、离线计算机任务与手动 pairing code 输入。
+
+</article>
+
+<h2 id="september-2026">2026 年 9 月</h2>
+
+[官方原文：September 2026](https://learn.chatgpt.com/docs/changelog#september-2026)
+
+<article class="codex-update-entry">
+
+<p class="codex-update-date">2026-09-29 / 2026-09-22</p>
+
+### GPT-6.1 Sol、GPT-6 Sol 与 GPT-6 Luna
+
+GPT-6 Sol 与 GPT-6 Luna 开始在 Codex 和 ChatGPT Work 中推出：Sol 适合复杂编码和 agentic workflow，Luna 适合更聚焦、高吞吐的任务。随后上线的 GPT-6.1 Sol 在复杂任务中提供接近 Astra 的能力，但成本更低，适合重复且长时间运行的代码、应用与文档工作。可用性取决于计划、客户端和 workspace settings。
+
+</article>
+
+<article class="codex-update-entry">
+
+<p class="codex-update-date">2026-09-14</p>
+
+### GPT-5.3-Codex-Spark 停止提供，GPT-5.5 公布退役计划
+
+GPT-5.3-Codex-Spark research preview 已从 ChatGPT desktop app、Codex CLI 和 IDE extension 中移除。官方同时宣布 GPT-5.5 将于 2026-10-14 从各计划的 ChatGPT、ChatGPT Work 和 Codex 中退役，但不影响 OpenAI API。仍在 workspace defaults、managed configuration、custom agent、scheduled task 或脚本中指定这些模型的用户需要迁移。
+
+</article>
+
+<article class="codex-update-entry">
+
+<p class="codex-update-date">2026-09-05</p>
+
+### Codex MCP server 命令移除
+
+`codex mcp-server` 命令和独立的 `codex-mcp-server` 二进制文件在 8 月 24 日弃用后正式移除。需要嵌入 Codex 的集成应迁移至 Codex app server；这不影响 Codex 通过 `codex mcp` 连接外部 MCP server。官方仍将 app-server 命令标为实验性功能，不支持生产工作负载。
+
+</article>
+
+<h2 id="august-2026">2026 年 8 月</h2>
+
+[官方原文：August 2026](https://learn.chatgpt.com/docs/changelog#august-2026)
+
+<article class="codex-update-entry">
+
+<p class="codex-update-date">2026-08-25</p>
+
+### 浏览器扩展、Site tools 与 cloud sign-in
+
+ChatGPT browser extension 除 Chrome 外开始支持 Microsoft Edge、Brave、Opera 和 Vivaldi，可用于 tab mention 和 browser control，但 Opera 不支持 side chat。桌面端内置浏览器也加入 Site tools（WebMCP），让 ChatGPT Work 和 Codex 调用网站提供的工具。部分计划还可在 web、iOS 和 Android 中使用独立的 cloud browser sign-in 流程。
+
+</article>
+
+<article class="codex-update-entry">
+
+<p class="codex-update-date">2026-08-25 / 2026-08-24</p>
+
+### 事件触发的定时任务与 MCP server 弃用
+
+Scheduled tasks 可由 Gmail、Slack 和 GitHub 中受支持的事件触发，例如邮件、指定 Slack channel 消息或 pull request 评论与合并。事件触发的任务不能同时使用基于时间的 schedule。同期 `codex mcp-server` 被标记为弃用，官方建议迁移至 Codex app server；该命令后于 9 月 5 日正式移除。
+
+</article>
+
+<article class="codex-update-entry">
+
+<p class="codex-update-date">2026-08-20 / 2026-08-19</p>
+
+### 桌面端、共享 thread 与 GitLab 集成
+
+macOS 端新增 Apple Messages plugin，并开放本地 Codex thread 的只读快照共享；共享前仍应人工检查敏感信息，因为自动脱敏可能无法覆盖所有内容。Codex cloud 同期推出 GitLab beta，可从 issue 或 merge request 中通过 `@codex` 启动任务，并执行一次性或自动 merge request review。
+
+</article>
+
+<h2 id="july-2026">2026 年 7 月</h2>
+
+[官方原文：July 2026](https://learn.chatgpt.com/docs/changelog#july-2026)
+
+<article class="codex-update-entry">
+
+<p class="codex-update-date">2026-07-31</p>
+
+### GPT-5.4 退役通知与 Record & Replay 区域扩展
+
+GPT-5.4 和 GPT-5.4 mini 定于 2026-08-31 起不再向使用 ChatGPT 登录的 Codex 用户提供；它们仍保留在 OpenAI API 和使用 API key 认证的 Codex session 中。官方当时建议将 GPT-5.4 迁移到 GPT-5.6 Terra，将 GPT-5.4 mini 迁移到 GPT-5.6 Luna。同日 Record & Replay 扩展至 EU、UK 和 Switzerland，但仍要求 Computer Use 可用且已启用。
+
+</article>
+
+<article class="codex-update-entry">
+
+<p class="codex-update-date">2026-07-30 / 2026-07-29</p>
+
+### 浏览器、多仓库 review、图像编辑与 Sign in with ChatGPT
+
+桌面端 26.727 加入浏览历史、多文件夹项目的跨仓库 review，以及对生成图像添加评论并继续编辑的流程。Sign in with ChatGPT 也开始在 Airtable、GitLab、HubSpot、Notion、Supabase 和 Vercel 等插件与合作方网站中测试；连接插件时，用户仍需单独审阅并批准该插件请求的权限。
+
+</article>
+
+<article class="codex-update-entry">
+
+<p class="codex-update-date">2026-07-23 / 2026-07-09</p>
+
+### ChatGPT Voice、多文件夹项目与桌面端整合
+
+ChatGPT Voice 可在桌面端的 Chat、Work 和 Codex 中通过语音启动、检查或引导其他 thread。本地项目可包含多个相关文件夹，但新 chat、Git 操作以及 `AGENTS.md`、skills 和 `config.toml` 自动发现以主文件夹为准。7 月 9 日起，Codex 正式成为 macOS 和 Windows ChatGPT desktop app 的一部分，现有 Codex app 用户可保留项目、设置和工作流。
+
+</article>
+
 <h2 id="june-2026">2026 年 6 月</h2>
 
-[官方原文：June 2026](https://developers.openai.com/codex/changelog#month-2026-06)
+[官方原文：June 2026](https://learn.chatgpt.com/docs/changelog#june-2026)
 
 <article class="codex-update-entry">
 
@@ -193,7 +323,7 @@ Codex 可将 Amazon Bedrock 配置为模型 provider，使用 AWS 托管的认�
 
 <h2 id="may-2026">2026 年 5 月</h2>
 
-[官方原文：May 2026](https://developers.openai.com/codex/changelog#month-2026-05)
+[官方原文：May 2026](https://learn.chatgpt.com/docs/changelog#may-2026)
 
 <article class="codex-update-entry">
 
@@ -247,7 +377,7 @@ ChatGPT mobile app 可连接运行 Codex app 的 Mac，并从手机上发起、�
 
 <h2 id="april-2026">2026 年 4 月</h2>
 
-[官方原文：April 2026](https://developers.openai.com/codex/changelog#month-2026-04)
+[官方原文：April 2026](https://learn.chatgpt.com/docs/changelog#april-2026)
 
 <article class="codex-update-entry">
 
@@ -281,7 +411,7 @@ CLI 0.128.0 开始支持持久化 `/goal` 工作流，包含 app-server API、mo
 
 <h2 id="march-2026">2026 年 3 月</h2>
 
-[官方原文：March 2026](https://developers.openai.com/codex/changelog#month-2026-03)
+[官方原文：March 2026](https://learn.chatgpt.com/docs/changelog#march-2026)
 
 <article class="codex-update-entry">
 
@@ -315,7 +445,7 @@ GPT-5.4 进入 Codex。官方将其定位为面向专业工作的主力 frontier
 
 <h2 id="february-2026">2026 年 2 月</h2>
 
-[官方原文：February 2026](https://developers.openai.com/codex/changelog#month-2026-02)
+[官方原文：February 2026](https://learn.chatgpt.com/docs/changelog#february-2026)
 
 <article class="codex-update-entry">
 
@@ -349,7 +479,7 @@ Codex app for macOS 发布。它是一个桌面界面，用于并行运行 agent
 
 <h2 id="january-2026">2026 年 1 月</h2>
 
-[官方原文：January 2026](https://developers.openai.com/codex/changelog#month-2026-01)
+[官方原文：January 2026](https://learn.chatgpt.com/docs/changelog#january-2026)
 
 <article class="codex-update-entry">
 
@@ -383,7 +513,7 @@ Custom prompts 已弃用。官方建议改用 skills 承载可复用说明和工
 
 <h2 id="december-2025">2025 年 12 月</h2>
 
-[官方原文：December 2025](https://developers.openai.com/codex/changelog#month-2025-12)
+[官方原文：December 2025](https://learn.chatgpt.com/docs/changelog#december-2025)
 
 <article class="codex-update-entry">
 
@@ -421,7 +551,7 @@ Codex 支持 Linear 集成。用户可以在 Linear issue 中分配或提及 `@C
 
 <h2 id="november-2025">2025 年 11 月</h2>
 
-[官方原文：November 2025](https://developers.openai.com/codex/changelog#month-2025-11)
+[官方原文：November 2025](https://learn.chatgpt.com/docs/changelog#november-2025)
 
 <article class="codex-update-entry">
 
@@ -471,7 +601,7 @@ Codex CLI 与 IDE Extension 新增 `gpt-5-codex-mini` 模型选项。该模型�
 
 <h2 id="october-2025">2025 年 10 月</h2>
 
-[官方原文：October 2025](https://developers.openai.com/codex/changelog#month-2025-10)
+[官方原文：October 2025](https://learn.chatgpt.com/docs/changelog#october-2025)
 
 <article class="codex-update-entry">
 
@@ -511,7 +641,7 @@ Codex 正式进入一般可用阶段，并同时发布三项能力：Slack 中�
 
 <h2 id="september-2025">2025 年 9 月</h2>
 
-[官方原文：September 2025](https://developers.openai.com/codex/changelog#month-2025-09)
+[官方原文：September 2025](https://learn.chatgpt.com/docs/changelog#september-2025)
 
 <article class="codex-update-entry">
 
@@ -540,7 +670,7 @@ GPT-5-Codex 发布。它是进一步针对 Codex 中 agentic coding 优化的 GP
 
 <h2 id="august-2025">2025 年 8 月</h2>
 
-[官方原文：August 2025](https://developers.openai.com/codex/changelog#month-2025-08)
+[官方原文：August 2025](https://learn.chatgpt.com/docs/changelog#august-2025)
 
 <article class="codex-update-entry">
 
@@ -568,7 +698,7 @@ Codex web 支持在提示中附加图片，适合前端修改、白板内容跟�
 
 <h2 id="june-2025">2025 年 6 月</h2>
 
-[官方原文：June 2025](https://developers.openai.com/codex/changelog#month-2025-06)
+[官方原文：June 2025](https://learn.chatgpt.com/docs/changelog#june-2025)
 
 <article class="codex-update-entry">
 
@@ -594,7 +724,7 @@ Codex 支持在任务执行期间访问互联网，用于安装依赖、升级�
 
 <h2 id="may-2025">2025 年 5 月</h2>
 
-[官方原文：May 2025](https://developers.openai.com/codex/changelog#month-2025-05)
+[官方原文：May 2025](https://learn.chatgpt.com/docs/changelog#may-2025)
 
 <article class="codex-update-entry">
 

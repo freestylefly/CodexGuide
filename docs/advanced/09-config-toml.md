@@ -1,38 +1,60 @@
 ---
-description: "Codex config.toml 配置指南，说明模型、沙盒、审批、profiles、MCP 和个人本地配置的组织方式。"
+description: "Codex config.toml 配置指南，说明模型、沙盒、审批、配置 profiles、权限 profiles、MCP 和个人本地配置的组织方式。"
 ---
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-09-04。本文参考 [Codex 配置基础](https://learn.chatgpt.com/docs/config-file/config-basic)、[Codex 高级配置](https://learn.chatgpt.com/docs/config-file/config-advanced)、[Codex 配置参考资料](https://learn.chatgpt.com/docs/config-file/config-reference) 与 [openai/codex 配置文档](https://github.com/openai/codex/blob/main/docs/config.md)。
+官方资料最后核对日期：2026-10-12。本文参考 [Codex config basic](https://developers.openai.com/codex/config-basic)、[Codex config advanced](https://developers.openai.com/codex/config-advanced)、[Codex config reference](https://developers.openai.com/codex/config-reference) 与 [openai/codex config docs](https://github.com/openai/codex/blob/main/docs/config.md)整理。
 :::
 
 # 配置文件 config.toml
 
-`config.toml` 用来保存 Codex CLI 的本地默认行为。你可以把它理解为“个人驾驶舱”：模型、审批、沙盒、profiles、MCP 服务等偏好都可以在这里集中管理。
+`config.toml` 用来保存 Codex 本地客户端的默认行为。你可以把它理解为“个人驾驶舱”：模型、审批、沙盒、profiles、MCP 服务等偏好都可以在这里集中管理。
 
 
 ## 配置文件放在哪里
 
-通常位于：
+用户级配置通常位于：
 
 ```text
 ~/.codex/config.toml
 ```
 
-项目长期规则建议写到仓库内的 `AGENTS.md`，个人偏好放到本机 `config.toml`。这样团队成员能共享项目规则，又能保留自己的 CLI 使用习惯。
+如果某些设置只想对当前项目或子目录生效，可以在仓库中增加：
+
+```text
+.codex/config.toml
+```
+
+Codex 只会在你信任项目后加载项目级 `.codex/` 配置。它会从项目根目录向当前工作目录逐层读取配置，同一个字段离当前目录越近，优先级越高。
+
+项目长期规则仍建议写到仓库内的 `AGENTS.md`，项目默认行为可以写进 `.codex/config.toml`，个人偏好放到本机 `~/.codex/config.toml`。这样团队成员能共享项目规则和必要的配置，又能保留自己的使用习惯。
+
+### 配置优先级
+
+当多个位置设置了同一个字段时，Codex 按下面的顺序取值，越靠前优先级越高：
+
+1. CLI 参数和 `--config` 临时覆盖。
+2. 项目内的 `.codex/config.toml`，离当前工作目录最近的文件优先。
+3. 通过 `--profile <name>` 选择的 `~/.codex/<name>.config.toml`。
+4. 用户级 `~/.codex/config.toml`。
+5. 工作区下发的云端默认配置。
+6. 系统配置，例如 Unix 上的 `/etc/codex/config.toml`。
+7. Codex 内置默认值。
+
+项目级配置不能覆盖所有机器级字段。例如 provider、通知、遥测和 profile 选择等设置应留在用户级配置中。受管理设备还可能通过 `requirements.toml` 限制可选值，这类组织策略不是用户配置可以绕过的。
 
 ## `.env` 和 `config.toml` 不要混用
 
-`config.toml` 保存 Codex 的持久配置，例如模型、沙盒、审批、profiles 和 MCP server。`~/.codex/.env` 更适合放 Desktop app 或 IDE extension 启动时需要读取的环境变量，例如 provider 需要的区域变量，或排障时临时验证过的代理变量。
+`config.toml` 保存 Codex 的持久配置，例如模型、沙盒、审批、profiles 和 MCP server。`~/.codex/.env` 用来补充 Desktop app 或 IDE extension 启动时必须读取、但没有从当前 shell 继承到的环境变量，例如 provider 明确要求的区域变量。
 
-OpenAI [Amazon Bedrock 官方文档](https://learn.chatgpt.com/docs/amazon-bedrock)提醒：Desktop app 和 VS Code extension 可能不会继承当前 shell 里的环境变量；如果这些入口需要某些变量，可以把值放进 `~/.codex/.env`，然后重启 app 或 extension。
+OpenAI [Amazon Bedrock provider 文档](https://developers.openai.com/codex/amazon-bedrock)提醒：Desktop app 和 VS Code extension 可能不会继承当前 shell 里的环境变量；如果这些入口需要某些变量，可以把值放进 `~/.codex/.env`，然后重启 app 或 extension。
 
 写入前先确认两件事：
 
 - 变量确实是当前入口需要的，不要把所有 shell 变量都复制进去。
 - 文件里可能包含 secret，截图、发 issue 或提交仓库前必须脱敏。
 
-例如代理排障时，不要先猜端口。先用系统代理设置和 `curl -x` 确认端口可用，再写：
+如果需要配置代理，不要直接照搬示例或猜测端口。先查看系统代理设置，并用 `curl -x` 验证代理地址是否可用；确认 Desktop app 或 IDE extension 确实需要这些变量后，再写入 `~/.codex/.env`：
 
 ```bash
 export HTTP_PROXY="http://127.0.0.1:<PORT>"
@@ -40,25 +62,24 @@ export HTTPS_PROXY="http://127.0.0.1:<PORT>"
 export NO_PROXY="localhost,127.0.0.1,::1,*.local"
 ```
 
-::: info 截图占位
-请补充本机 `~/.codex/config.toml` 文件位置截图，注意遮挡敏感路径和 token。建议文件：`docs/.vuepress/public/screenshots/config/02-config-location.png`。
-:::
 
 ## 最小配置示例
 
 下面是一个学习用示例，实际字段请以官方 config reference 和当前 CLI 版本为准：
 
 ```toml
-model = "gpt-5.1-codex-max"
+model = "gpt-6.1-sol" # 如果当前账号或工作区不可用，请改成你可以使用的模型
 approval_policy = "on-request"
 sandbox_mode = "workspace-write"
 ```
 
 这个示例表达三件事：
 
-- 默认允许在当前工作区写文件。
-- 高风险命令仍需要审批。
-- 额外的只读 profile 写成独立文件 `~/.codex/readonly.config.toml`，适合新仓库分析。不要再使用 `[profiles.*]`。
+- Codex 可以在当前工作区内读写文件。
+- 当操作需要突破沙盒限制，或 Rules、MCP、Skill 要求审批时，Codex 会向你请求确认。
+- `model` 字段可以省略，Codex 会改用当前账号或工作区的默认模型。
+
+`approval_policy` 决定 Codex 何时暂停并请求确认，`sandbox_mode` 则决定命令可以访问哪些文件和网络资源。设置为 `on-request`，只是允许 Codex 在需要时发起确认，并不代表所有高风险命令都会弹窗，也不会改变沙盒的权限边界。
 
 ## 常见配置项按用途理解
 
@@ -66,12 +87,15 @@ sandbox_mode = "workspace-write"
 | --- | --- | --- |
 | 模型 | 速度、成本、推理深度的取舍 | 用默认配置起步，复杂任务再临时调整 |
 | 沙盒 | Codex 能读写哪些位置 | 新手先只读或工作区写入 |
-| 审批 | 哪些命令需要你确认 | 涉及网络、删除、安装、发布时保留审批 |
-| profiles | 不同任务使用不同组合 | 准备 readonly、coding、review 三类 profile |
+| 审批 | 哪些审批请求可以交给你确认 | 交互式使用优先从 `on-request` 起步 |
+| 配置 profiles | 不同任务使用不同配置组合 | 为 readonly、coding、review 准备独立配置文件 |
+| 权限 profiles | 可复用的文件系统和网络边界 | 优先理解内置权限，再按需自定义 |
 | MCP | 接入外部工具和知识源 | 只接可信服务，明确权限范围 |
 | 环境 | 传递必要变量或隔离敏感变量 | 凭据用最小权限，避免写进教程截图 |
 
-## 推荐 profiles
+## 推荐配置 profiles
+
+配置 profile 用来保存一组可以重复使用的设置。从 Codex 0.134.0 开始，profile 不再写在 `config.toml` 的 `[profiles.<name>]` 中，顶层的 `profile = "<name>"` 也不再受支持。你需要为每个 profile 单独创建一个 TOML 文件，并在启动时通过 `--profile <name>` 选择。
 
 ### 只读学习
 
@@ -105,6 +129,10 @@ approval_policy = "on-request"
 
 任务示例：
 
+```bash
+codex --profile coding
+```
+
 ```text
 请修复这个失败测试。修改范围限制在 `src/parser` 和对应测试文件，修复后运行 `pnpm test parser`。
 ```
@@ -121,8 +149,49 @@ approval_policy = "on-request"
 
 任务示例：
 
+```bash
+codex --profile review
+```
+
 ```text
 请 review 当前 diff，优先指出 bug、回归风险和缺失测试。不要修改文件。
+```
+
+### 配置 profile 和权限 profile 不要混用
+
+前面示例中的 `readonly`、`coding` 和 `review` 都属于“配置 profile”。每个 profile 保存在独立的 TOML 文件中，可以分别设置模型、推理强度、审批策略和沙盒模式。
+
+除此之外，Codex 还提供“权限 profile”，专门用来管理文件系统和网络权限。你可以直接使用内置的 `:read-only`、`:workspace` 和 `:danger-full-access`，也可以在 `[permissions.<name>]` 中自定义权限，再通过 `default_permissions` 选用。
+
+需要注意的是，这两种 profile 用途不同：配置 profile 管理一整套运行设置，权限 profile 只管理权限边界。编写配置时，应把配置 profile 放在独立文件中，把自定义权限写在 `[permissions]` 下，不要再使用旧的 `[profiles.<name>]` 写法。
+
+## Web Search 和可选功能
+
+### 设置 Web Search
+
+Web Search 和命令行联网是两项独立的能力。要设置本地对话使用哪种搜索方式，可以在 `config.toml` 中加入：
+
+```toml
+web_search = "cached" # 也可以使用 indexed、live 或 disabled
+```
+
+`cached` 使用 OpenAI 维护的搜索索引，`live` 直接获取最新网页，`disabled` 则关闭 Web Search。命令行即使不能联网，也不代表 Web Search、MCP 或 apps 一定不可用，因为这些能力各有自己的权限和审批设置。
+
+### 开启或关闭可选功能
+
+可选或实验性功能通常配置在 `[features]` 下。例如：
+
+```toml
+[features]
+apps = true
+hooks = true
+memories = false
+```
+
+这些功能的名称、默认值和成熟度可能随版本变化，修改前应先查看最新的 config reference。如果只想临时启用某项功能，也可以运行：
+
+```bash
+codex --enable <feature_name>
 ```
 
 ## 配置变更的验证方法
@@ -139,10 +208,6 @@ approval_policy = "on-request"
 - 是否会在执行命令前解释意图。
 - 是否遵守只读或工作区写入边界。
 - 是否按预期触发审批。
-
-::: info 截图占位
-请补充切换 profile 后的状态截图。建议文件：`docs/.vuepress/public/screenshots/config/03-profile-status.png`。
-:::
 
 ## 切换 provider 后历史会话不可见怎么办
 
@@ -239,7 +304,7 @@ codex-provider restore <backup-dir>
 
 | 现象 | 检查 |
 | --- | --- |
-| 配置没生效 | 文件路径、TOML 语法、CLI 版本、启动时是否选择 profile |
+| 配置没生效 | 配置优先级、文件路径、TOML 语法、客户端版本、项目是否可信、启动时是否选择 profile |
 | Codex 权限超出预期 | 检查 `sandbox_mode` 和 `approval_policy` |
 | 某个命令一直被拒绝 | 检查沙盒限制、网络权限和组织策略 |
 | MCP 无法连接 | 检查服务命令、环境变量、端口、认证方式 |
@@ -249,12 +314,12 @@ codex-provider restore <backup-dir>
 
 ## 官方资料延伸
 
-- [Codex 配置基础](https://learn.chatgpt.com/docs/config-file/config-basic)
-- [Codex 高级配置](https://learn.chatgpt.com/docs/config-file/config-advanced)
-- [Codex 配置参考资料](https://learn.chatgpt.com/docs/config-file/config-reference)
-- [环境变量](https://learn.chatgpt.com/docs/config-file/environment-variables)
-- [Amazon Bedrock 官方文档](https://learn.chatgpt.com/docs/amazon-bedrock)
-- [openai/codex 配置文档](https://github.com/openai/codex/blob/main/docs/config.md)
+- [Config basic](https://developers.openai.com/codex/config-basic)
+- [Config advanced](https://developers.openai.com/codex/config-advanced)
+- [Config reference](https://developers.openai.com/codex/config-reference)
+- [Environment variables](https://developers.openai.com/codex/environment-variables)
+- [Use Codex with Amazon Bedrock](https://developers.openai.com/codex/amazon-bedrock)
+- [openai/codex config docs](https://github.com/openai/codex/blob/main/docs/config.md)
 
 ## 下一步
 

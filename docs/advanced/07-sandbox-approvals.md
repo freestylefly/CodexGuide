@@ -3,7 +3,7 @@ description: "Codex 沙盒与审批指南：面向新手解释为什么 Codex �
 ---
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-09-04。本文依据 [沙盒](https://learn.chatgpt.com/docs/sandboxing)、[智能体审批与安全](https://learn.chatgpt.com/docs/agent-approvals-security)、[权限](https://learn.chatgpt.com/docs/permissions)、[规则](https://learn.chatgpt.com/docs/agent-configuration/rules)、[Windows 沙盒](https://learn.chatgpt.com/docs/windows/windows-sandbox) 和 [自动审核](https://learn.chatgpt.com/docs/sandboxing/auto-review) 整理。
+官方资料最后核对日期：2026-10-12。本文依据 [Sandbox](https://learn.chatgpt.com/docs/sandboxing)、[Agent approvals & security](https://learn.chatgpt.com/docs/agent-approvals-security)、[Permissions](https://learn.chatgpt.com/docs/permissions)、[Rules](https://learn.chatgpt.com/docs/agent-configuration/rules)、[Windows sandbox](https://learn.chatgpt.com/docs/windows/windows-sandbox) 和 [Auto-review](https://learn.chatgpt.com/docs/sandboxing/auto-review) 整理。
 :::
 
 # 沙盒与审批
@@ -12,7 +12,7 @@ Codex 能读取代码、修改文件、执行命令。这些操作需要受控�
 
 沙盒和审批就是这套边界。
 
-对于绝大多数人而言，只需要把 `Auto-review` 模式打开就够了。本文章旨在让你更好地理解 Codex 的沙盒机制和审批策略，同时补充一些进阶用法。
+对于绝大多数人而言，使用默认的工作区沙盒和按请求审批就够了。如果希望保留沙盒边界，同时减少手动确认，可以打开 `Auto-review`；敏感项目或高风险操作则更适合保留用户审批。本文章旨在让你更好地理解 Codex 的沙盒机制和审批策略，同时补充一些进阶用法。
 
 当你在利用沙盒和权限机制来约束 Codex 行为的时候，你已经在实践 `Harness Engineering `，即“约束工程” 。
 
@@ -75,7 +75,7 @@ approvals_reviewer = "user"
 | 工作区写入 | `workspace-write` / `:workspace` | 可以在项目里读、写、运行常规命令 | 联网或写到项目外时触发审批 |
 | 完全访问 | `danger-full-access` / `:danger-full-access`| 没有沙盒限制，可以访问任何位置 | 取决于审批策略 |
 
-![Codex 配置中的沙盒设置选项](https://cdn.canghecode.com/codexguide/docs/images/codex-config-sandbox-settings-watermarked-small.png)
+![image.png](https://cdn.canghecode.com/yanyan/20261012100559050.png)
 
 **日常默认用工作区。** 它为 Codex 提供足够的操作空间完成普通开发任务，同时守住项目边界。
 
@@ -95,12 +95,13 @@ approvals_reviewer = "user"
 
 | 策略 | 触发条件 | 说明 |
 | --- | --- | --- |
-| `untrusted`（不可信） | 命令不属于已知安全的读取操作 | 只自动执行已知安全的读操作；可能修改状态、触发外部执行路径或危险 Git 操作的命令都需要确认 |
-| `on-failure`（失败时） | 命令执行失败时 | 先在当前权限下尝试执行；失败后再请求确认。这个选项在部分 App 配置界面中可见，但不是当前官方文档的默认推荐 |
+| `untrusted`（不可信） | 历史策略：命令不属于已知安全的读取操作 | **已不支持选用。** 旧配置中可能仍会看到该值；请迁移到 `on-request`、`never` 或 `granular` |
+| `on-failure`（失败时） | 历史策略：命令执行失败时 | **已弃用。** 交互运行请使用 `on-request`，非交互运行请使用 `never` |
 | `on-request`（按请求） | 操作越过沙盒边界 | 默认推荐。沙盒内自动执行，越界时请求确认 |
 | `never`（从不） | 不触发 | Codex 在既有权限内自行处理，不弹出审批 |
 
-![Codex 配置中的审批策略选项](https://cdn.canghecode.com/codexguide/docs/images/codex-config-approval-policy-watermarked-small.png)
+![image.png](https://cdn.canghecode.com/yanyan/20261012101335734.png)
+
 
 **`on-request`（按请求）是新手最友好的选择。** 沙盒内自动执行，越界时暂停并请求确认。不需要审批每一个文件修改，只需要在关键时刻把关。
 
@@ -108,7 +109,7 @@ approvals_reviewer = "user"
 
 ## Auto-review
 
-如果一个命令需要越过沙盒，那么 Codex 就会发起请求。请求除了用户来批准以外，也可以使用 `Auto-review` 模式自动批准。
+如果一个命令需要越过沙盒，那么 Codex 就会发起请求。请求除了交给用户审批，也可以使用 `Auto-review` 模式交给 reviewer agent 自动审查。
 
 Auto-review 相当于：当 Codex 越过沙盒边界时，不是直接呈现给你，而是先交给 reviewer agent 判断。常见的有：
 
@@ -119,7 +120,7 @@ Auto-review 相当于：当 Codex 越过沙盒边界时，不是直接呈现给�
 
 **沙盒内允许的操作，不会经过 Auto-review。** 所以它不会改变日常操作的沙盒边界。
 
-Auto-review 不会扩大沙盒边界。它不会扩展 Codex 的 workspace，不会自动给它网络权限，也不会让危险命令绕过沙盒。如果 reviewer agent 判断请求有风险，它会拒绝，Codex 需要选择更安全的替代方案，或者请求确认。
+Auto-review 不会扩大沙盒边界。它不会扩展 Codex 的 workspace，不会自动给它网络权限，也不会让危险命令绕过沙盒。如果 reviewer agent 拒绝请求，或审查过程失败、超时，该操作都不会执行。Codex 需要改用更安全的方法，或根据当前审批配置和产品界面决定下一步。
 
 底层配置：
 
@@ -149,7 +150,7 @@ approval_policy = "on-request"
 approvals_reviewer = "auto_review"
 ```
 
-更多阅读：[自动审核](https://learn.chatgpt.com/docs/sandboxing/auto-review)。
+更多阅读：[Agent approvals & security：Automatic approval reviews](https://developers.openai.com/codex/agent-approvals-security#run-without-approval-prompts)。
 
 ## 网络权限
 
@@ -175,7 +176,7 @@ approvals_reviewer = "auto_review"
 
 ## 进阶配置
 
-如果你发现 Codex 经常因为沙盒边界过窄而频繁触发审批，推荐使用 Auto-review ，让 Codex 帮你审批，从而减少手动确认次数。
+如果你发现 Codex 经常因为沙盒边界过窄而频繁触发审批，可以考虑使用 Auto-review，让 reviewer agent 处理符合条件的审批请求，从而减少手动确认次数。
 
 如果对项目安全边界要求很高，或者是处理一些敏感的操作，那么也有一些进阶配置可选：
 
@@ -183,7 +184,7 @@ approvals_reviewer = "auto_review"
 
 如果 Codex 需要同时修改两个项目目录，比如 `~/project-a` 和 `~/project-b`，你可以把第二个目录也加入可写范围。这是扩展 workspace，不是拆掉沙盒边界。
 
-旧版写法：在 `config.toml` 的 `sandbox_workspace_write.writable_roots` 里添加。  
+旧版写法：在 `config.toml` 的 `sandbox_workspace_write.writable_roots` 里添加。
 新版写法：在 `permissions.<name>.workspace_roots` 里添加。
 
 旧版 sandbox 写法适合还在使用 `sandbox_mode` 的配置：
@@ -222,7 +223,7 @@ enabled = false
 
 **2. 为常用越界命令设置规则（rules）**
 
-Rules 控制的是 Codex 需要在沙盒外运行命令时怎么处理。你可以在 `.rules` 文件里写 `prefix_rule`，把某类命令设为 `allow`、`prompt` 或 `forbidden`。规则里可以写 `match` 和 `not_match` 做验证，减少误匹配。
+Rules 控制的是 Codex 需要在沙盒外运行命令时怎么处理。你可以在用户层的 `~/.codex/rules/*.rules` 或项目层的 `<repo>/.codex/rules/*.rules` 里写 `prefix_rule`，把某类命令设为 `allow`、`prompt` 或 `forbidden`。项目层 `.codex` 只有在项目受信任时才会加载；修改规则后需要重启 Codex。规则里可以写 `match` 和 `not_match` 做验证，减少误匹配。
 
 **3. 自定义 permission profiles（beta）**
 
@@ -231,6 +232,9 @@ Rules 控制的是 Codex 需要在沙盒外运行命令时怎么处理。你可�
 ```toml
 default_permissions = "workspace-net"
 approval_policy = "on-request"
+
+[features]
+network_proxy = true
 
 [permissions.workspace-net]
 extends = ":workspace"
@@ -248,7 +252,7 @@ enabled = true
 "*.npmjs.org" = "allow"
 ```
 
-网络权限一旦开启，最好配合域名规则。`"*"` 也可以放行公共网络，但它的范围很大，不适合当默认示例。
+如果要限制命令只访问指定域名，需要同时开启网络权限和网络代理。`network.enabled = true` 允许命令联网，`features.network_proxy = true` 则让代理按照 `domains` 中的规则进行限制。如果只开启网络权限而没有开启代理，这些域名规则不会生效。`"*"` 可以放行所有公共网络，但授权范围过大，不适合作为默认配置。
 
 **4. 细粒度审批策略（granular，需手动配置）**
 
@@ -266,14 +270,14 @@ approval_policy = { granular = {
 
 这里的 `true` 表示该类请求保持交互审批；`false` 表示自动拒绝。它是 `on-request` 的进阶替代，不是 UI 选项。
 
-更多详情请阅读：[智能体审批与安全](https://learn.chatgpt.com/docs/agent-approvals-security#run-without-approval-prompts)。
+更多详情请阅读：[Agent approvals & security：granular approval policy](https://developers.openai.com/codex/agent-approvals-security#run-without-approval-prompts)。
 
 ## 平台差异
 
 不同系统的沙盒实现不同，但对你来说，用法是一样的：
 
 - **macOS**：使用系统自带的 Seatbelt 机制，无需额外配置。
-- **Windows**：原生 Windows 有两个版本。`elevated` 更强，使用独立低权限用户和防火墙；`unelevated` 是回退，使用当前用户的受限令牌。有些公司电脑的策略限制可能只能用 `unelevated`。IDE 里可以设置让 Codex 运行在 WSL2 里，这样用的是 Linux 的沙盒机制。
+- **Windows**：兼容设备上优先使用 `mxc`，它使用 Microsoft Execution Containers 提供原生进程隔离，无需创建额外用户或配置本地防火墙规则。MXC 不可用或被禁用时，`elevated` 是首选的旧版回退，使用独立低权限用户和防火墙；`unelevated` 是隔离更弱的第二回退，使用当前用户的受限令牌。公司电脑的策略限制可能只允许某些实现。在支持的设备上，可以用 `[features] prefer_mxc = true` 优先选择 MXC。IDE 里也可以设置让 Codex 运行在 WSL2 里，这样用的是 Linux 的沙盒机制。
 - **Linux / WSL2**：需要安装 `bubblewrap`。如果缺少它，Codex 可能会弹出警告或性能下降。WSL1 从 Codex 0.115 起不再支持。
 
 遇到报错时，记住两点：先检查 Codex 的权限模式设置，再查询对应平台的文档。无需记忆实现细节。

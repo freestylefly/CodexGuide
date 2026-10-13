@@ -3,7 +3,7 @@ description: "Codex Skills 和 Plugins 入门说明，介绍技能、插件、MC
 ---
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-09-04。本文参考 [Agent Skills 标准](https://agentskills.io/)、[Codex Skills 官方文档](https://learn.chatgpt.com/docs/build-skills)、[Codex Plugins 官方文档](https://learn.chatgpt.com/docs/plugins) 与 [构建 Plugins 官方文档](https://learn.chatgpt.com/docs/build-plugins)。如果你的界面与本文截图不完全一致，请优先以当前客户端和工作区可用功能为准。
+官方资料最后核对日期：2026-10-10。本文参考 [Agent Skills 标准](https://agentskills.io/)、[Codex Skills](https://developers.openai.com/codex/skills)、[Codex Plugins](https://developers.openai.com/codex/plugins) 与 [Package your plugin](https://developers.openai.com/plugins/build/plugins)。如果你的界面与本文截图不完全一致，请优先以当前客户端和工作区可用功能为准。
 :::
 
 # Skills 和 Plugins
@@ -15,17 +15,18 @@ Codex 里有两个经常一起出现、但含义不同的概念：Skills 和 Plu
 
 如果你在 App 中看到了和技能、插件相关的入口，可以先用这张图定位它们：
 
-![codex-skills-plugins-entry-page](https://cdn.canghecode.com/codexguide/docs/images/codex-skills-plugins-entry-page.png)
+![image.png](https://cdn.canghecode.com/yanyan/20261010154520657.png)
+
 
 ## 三个核心概念
 
 理解这三者最快的方式，是把 `AGENTS.md`、`Skill`、`Plugin` 放在一起看：
 
-| 概念 | 解决什么问题 | 更像什么 |
-|---|---|---|
+| 概念          | 解决什么问题            | 更像什么   |
+| ----------- | ----------------- | ------ |
 | `AGENTS.md` | 这个项目里所有任务都要遵守什么规则 | 项目工作守则 |
-| `Skill` | 某一类重复任务应该怎么做 | 专项操作手册 |
-| `Plugin` | 如何安装、分发和组合能力 | 能力安装包 |
+| `Skill`     | 某一类重复任务应该怎么做      | 专项操作手册 |
+| `Plugin`    | 如何安装、分发和组合能力      | 能力安装包  |
 
 `AGENTS.md` 像是项目里的通用工作规则，`Skill` 则是某一类任务的专项流程。写 PR Review、整理飞书文档、生成 PPT、修复 CI、做安全扫描，这些流程如果经常重复，就适合沉淀成 Skill。
 
@@ -62,10 +63,10 @@ doc-review/
 
 对于 `SKILL.md` ，标准里最重要的是 `name` 和 `description`：
 
-| 字段 | 是否必需 | 作用 |
-|---|---:|---|
-| `name` | 是 | Skill 的稳定名称，通常使用小写字母、数字和连字符 |
-| `description` | 是 | 告诉 agent 这个 Skill 做什么，以及什么时候应该用 |
+| 字段            | 是否必需 | 作用                              |
+| ------------- | ---: | ------------------------------- |
+| `name`        |    是 | Skill 的稳定名称，通常使用小写字母、数字和连字符     |
+| `description` |    是 | 告诉 agent 这个 Skill 做什么，以及什么时候应该用 |
 
 `name` 要和父目录名保持一致。例如目录叫 `pdf-processing/`，frontmatter 里的 `name` 也应该是 `pdf-processing`。
 
@@ -110,18 +111,18 @@ Agent Skills 标准还定义了这些可选字段：
 
 容易混淆的地方主要在于：
 
-| 主题 | Agent Skills 标准 | Codex 实现 |
-|---|---|---|
-| 基础结构 | `SKILL.md` 必需，`scripts/`、`references/`、`assets/` 可选 | 支持这套结构，并可额外使用 `agents/openai.yaml` |
-| 元数据 | `name`、`description` 必需；`license`、`compatibility`、`metadata`、`allowed-tools` 可选 | 读取 `name` 和 `description` 做技能列表与匹配；`agents/openai.yaml` 可补 UI、策略和工具依赖 |
-| 发现位置 | 标准只规定 Skill 自身结构，不规定某个客户端必须从哪里扫描 | Codex 会扫描仓库、用户、管理员和系统位置 |
-| 加载方式 | 推荐渐进式披露 | Codex 选中后再读完整 `SKILL.md` |
-| 分发方式 | 标准本身只描述 Skill 包 | Codex 推荐用 Plugin 分发可复用 Skills，或把 Skills 和 App / MCP / Hooks 一起打包 |
-| 隐式调用 | 标准鼓励写好 `description` 方便 agent 判断 | Codex 支持显式 `$skill` 和基于 `description` 的隐式调用（即AI自主判断是否使用），并可用 `agents/openai.yaml` 关闭隐式调用 |
+| 主题   | Agent Skills 标准                                                                 | Codex 实现                                                                                 |
+| ---- | ------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| 基础结构 | `SKILL.md` 必需，`scripts/`、`references/`、`assets/` 可选                             | 支持这套结构，并可额外使用 `agents/openai.yaml`                                                       |
+| 元数据  | `name`、`description` 必需；`license`、`compatibility`、`metadata`、`allowed-tools` 可选 | 读取 `name` 和 `description` 做技能列表与匹配；`agents/openai.yaml` 可补 UI、策略和工具依赖                    |
+| 发现位置 | 标准只规定 Skill 自身结构，不规定某个客户端必须从哪里扫描                                                | Codex 会扫描仓库、用户、管理员和系统位置                                                                  |
+| 加载方式 | 推荐渐进式披露                                                                         | Codex 选中后再读完整 `SKILL.md`                                                                 |
+| 分发方式 | 标准本身只描述 Skill 包                                                                 | Codex 推荐用 Plugin 分发可复用 Skills，或把 Skills 和 App / MCP / Hooks 一起打包                         |
+| 隐式调用 | 标准鼓励写好 `description` 方便 agent 判断                                                | Codex 支持显式 `$skill` 和基于 `description` 的隐式调用（即AI自主判断是否使用），并可用 `agents/openai.yaml` 关闭隐式调用 |
 
 所以写给 Codex 的 Skill，最好先按 Agent Skills 标准写通用结构，再按需加入 Codex 扩展。这样 Codex 能稳定识别，迁移到其他支持该标准的工具也更容易。
 
-![codex-skills-list](https://cdn.canghecode.com/codexguide/docs/images/codex-skills-list.png)
+![image.png](https://cdn.canghecode.com/yanyan/20261010155535148.png)
 
 ## Codex 如何使用 Skills
 
@@ -129,7 +130,7 @@ Agent Skills 标准还定义了这些可选字段：
 
 这样做的好处是，你可以安装很多 Skills，却不会让每个 Skill 的完整说明一开始就占满上下文预算。
 
-Codex 启用 Skill 的方式有两种：显式调用（在提示词里写 `$skill-name`，或用 `/` 打开 Skills 菜单选择）和隐式匹配（任务描述与某个 Skill 的 `description` 匹配时，Codex 自动选择）。
+Codex 启用 Skill 的方式有两种：显式调用（在提示词里写 `$skill-name`，或使用 `/skills` 打开 Skills 列表）和隐式匹配（任务描述与某个 Skill 的 `description` 匹配时，Codex 自动选择）。
 
 ![codex-skills-slash-command-list](https://cdn.canghecode.com/codexguide/docs/images/codex-skills-slash-command-list.png)
 
@@ -151,11 +152,11 @@ Codex 会从多个位置发现 Skills，主要分两类目录：`.agents` 更偏
 
 | 位置 | 怎么理解 |
 |---|---|
-| `$HOME/.codex/skills` | Codex 本地安装或历史版本常见的用户级 Skill 目录 |
-| `$REPO_ROOT/.codex/skills` | Codex 专属的项目级 Skill 目录；如果要跨 agent 共享，优先考虑 `.agents/skills` |
+| `$HOME/.codex/skills` | 某些历史版本或安装流程中可见的 Codex 本地目录；手动创作时优先使用 `$HOME/.agents/skills` |
+| `$REPO_ROOT/.codex/skills` | 某些历史版本中可见的 Codex 专属项目目录；仓库共享时优先使用 `.agents/skills` |
 | `$HOME/.codex/plugins/cache/.../skills` | 插件安装后由 Codex 管理的缓存目录，通常不建议手动编辑 |
 
-Codex 两者都会读取并加载到APP里。这两种存放方式是等价的。更加推荐 `.agent` 的方式，因为其他 Agent 也能发现。
+新建或手动维护 Skill 时，更推荐 `.agents/skills`，也方便其他支持该规范的 Agent 发现。
 
 如果多个 Skill 使用同一个 `name`，不要假设它们会自动合并。更稳的做法是给 Skill 起清楚的名字，必要时加团队或项目前缀（如 `acme-doc-review`），避免团队 Skill 和个人 Skill 重名。
 
@@ -163,7 +164,17 @@ Codex 两者都会读取并加载到APP里。这两种存放方式是等价的�
 
 除了手动放置，Codex 还内置了 `skill-installer`，可以利用这个辅助下载 Github 等可访问网站上的SKILLS。
 
-默认安装到 `~/.codex/skills`，安装后通常需要重启 Codex。哪些来源可用、能否访问私有仓库，会受 Codex 版本和工作区设置影响。
+具体安装位置由当前 Codex 和安装器管理。Codex 通常会自动检测新安装或修改的 Skill；如果没有出现，再重启 Codex。哪些来源可用、能否访问私有仓库，会受 Codex 版本和工作区设置影响。
+
+如果只想暂时停用某个本地 Skill，也可以在 `~/.codex/config.toml` 中添加：
+
+```toml
+[[skills.config]]
+path = "/path/to/skill/SKILL.md"
+enabled = false
+```
+
+修改这项配置后需要重启 Codex。
 
 ## 适用场景
 
@@ -189,7 +200,7 @@ Codex 两者都会读取并加载到APP里。这两种存放方式是等价的�
 
 ## 创建 Skill
 
-如果你想让 Codex 带着你创建或更新 Skill，可以调用内置的 `skill-creator`。它会围绕你的需求规划 Skill 的结构和内容。
+如果你想让 Codex 带着你创建或更新 Skill，可以调用内置的 `$skill-creator`。在 ChatGPT Work 中，对应的调用方式是 `@skill-creator`。它会围绕你的需求规划 Skill 的结构和内容。
 
 它通常提醒三个核心原则：
 
@@ -213,15 +224,45 @@ Codex 两者都会读取并加载到APP里。这两种存放方式是等价的�
 - Hooks：在生命周期事件里自动运行检查或补充上下文。
 - assets：图标、logo、截图等展示素材。
 
-![codex-plugins-at-command-list](https://cdn.canghecode.com/codexguide/docs/images/codex-plugins-at-command-list.png)
+![image.png](https://cdn.canghecode.com/yanyan/20261010161103498.png)
 
 安装或导入插件时，Codex 通常会要求你确认来源和能力范围：
 
-![codex-plugin-install-github-prompt](https://cdn.canghecode.com/codexguide/docs/images/codex-plugin-install-github-prompt.png)
+![image.png](https://cdn.canghecode.com/yanyan/20261010161341040.png)
+
 
 ## Plugin 目录结构
 
 一个典型 Plugin 的目录结构长这样：
+
+```text
+my-plugin/
+├── plugin.json
+├── mcp.json
+├── skills/
+│   └── my-skill/
+│       └── SKILL.md
+├── hooks/
+│   └── hooks.json
+└── assets/
+```
+
+其中根目录的 `plugin.json` 是可移植插件的必需入口，其他内容是否存在，取决于这个插件要打包什么能力。
+
+一个最小的 `plugin.json` 可以写成：
+
+```json
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "my-first-plugin",
+  "version": "1.0.0",
+  "description": "Reusable documentation workflows"
+}
+```
+
+可移植插件会自动发现根目录下的 `skills/`，因此不需要再在 manifest 里声明 `"skills": "./skills/"`。
+
+你也可能看到由 `$plugin-creator` 生成或旧版本使用的 Codex 兼容结构：
 
 ```text
 my-plugin/
@@ -237,9 +278,9 @@ my-plugin/
 └── assets/
 ```
 
-其中 `.codex-plugin/plugin.json` 是必需入口。其他内容是否存在，取决于这个插件要打包什么能力。
+这种结构仍然受支持，但 `.codex-plugin/plugin.json` 现在更适合作为兼容入口，而不是新插件的首选入口。
 
-一个最小的 `plugin.json` 可以只声明名称、版本、描述和 skills 路径：
+兼容格式的 `plugin.json` 可以声明名称、版本、描述和 skills 路径：
 
 ```json
 {
@@ -257,7 +298,11 @@ my-plugin/
 - `hooks`：指向 hook 配置
 - `interface`：控制插件在安装界面里的名称、描述、图标、截图和默认提示词
 
-路径通常从插件根目录开始，使用 `./` 开头。只有 `plugin.json` 放在 `.codex-plugin/` 里，`skills/`、`hooks/`、`assets/`、`.mcp.json`、`.app.json` 都放在插件根目录。
+配置中的文件路径都从插件根目录开始计算，并以 `./` 开头。使用新的可移植格式时，界面信息、Apps 映射和 Hooks 等 OpenAI 专属配置统一写在根目录 `plugin.json` 的 `extensions.com.openai` 中。
+
+使用旧的 Codex 兼容格式时，只有 `plugin.json` 放在 `.codex-plugin/` 目录里，Skills、Hooks 和其他资源仍然放在插件根目录。
+
+两种格式的 MCP 配置也不同：新格式使用根目录下的 `mcp.json`，并要求为每个 MCP server 声明 transport 类型；旧兼容格式则使用 `.mcp.json`。因此，迁移时不能只修改文件名，还需要按照新格式调整文件内容。
 
 ## 如何选择 Skill 和 Plugin
 

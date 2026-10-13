@@ -3,12 +3,12 @@ description: "AGENTS.md 项目规则指南，说明如何写入项目命令、�
 ---
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-06-19。`AGENTS.md` 机制请以 [Codex AGENTS.md 官方文档](https://learn.chatgpt.com/docs/agent-configuration/agents-md)、[AGENTS.md 标准网站](https://agents.md/) 和 [openai/codex 源代码仓库](https://github.com/openai/codex) 为准。
+官方资料最后核对日期：2026-10-10。`AGENTS.md` 机制请以 [Codex AGENTS.md 官方文档](https://learn.chatgpt.com/docs/agent-configuration/agents-md)、[AGENTS.md 标准网站](https://agents.md/) 和 [openai/codex GitHub repository](https://github.com/openai/codex) 为准。
 :::
 
 # AGENTS.md
 
-对于 Codex，每开启一个新的对话窗口，它都会进入一个全新的上下文。它不知道这个项目用什么命令、有哪些目录边界、哪些文件不能改，也不知道团队平时怎么验证结果。
+对于 Codex，每次开始新的运行时（在 TUI 中通常是每次启动新会话时），它都会重新构建工作上下文。它不知道这个项目用什么命令、有哪些目录边界、哪些文件不能改，也不知道团队平时怎么验证结果。
 
 `AGENTS.md` 正是为了解决这类问题而存在的项目级指令文件。它是一个简单、开放的 Markdown 约定，目标是给不同 coding agent 提供一个稳定、可预测的项目指令入口，把项目结构、开发命令、测试要求、代码风格和协作边界显式写下来，减少反复解释。
 
@@ -22,7 +22,7 @@ description: "AGENTS.md 项目规则指南，说明如何写入项目命令、�
 
 本质上就是一份普通的 Markdown 文件。
 
-另外需要注意，截至目前，Claude Code 并不遵守 `AGENTS.md` 约定，取而代之的是 `CLAUDE.md` 约定。
+另外需要注意，不同 coding agent 支持的项目指令文件可能不同。例如 Claude Code 通常使用 `CLAUDE.md`，具体行为应以对应产品的最新官方文档为准。
 
 ## 存放位置与读取机制
 
@@ -48,7 +48,7 @@ description: "AGENTS.md 项目规则指南，说明如何写入项目命令、�
 Codex 读取 `AGENTS.md` 遵循以下顺序：
 
 1. **先读取全局规则**：默认读取 `~/.codex/AGENTS.md`。如果同一位置存在 `AGENTS.override.md`，则优先读取它，适合临时覆盖全局规则。
-2. **然后读取项目规则**：进入项目后，Codex 通常会从 Git 根目录开始，一路走到当前工作目录。沿途每一层目录，它会尝试读取项目指令文件。
+2. **然后读取项目规则**：进入项目后，Codex 通常会从 Git 根目录开始，一路走到当前工作目录。沿途每一层目录，它会尝试读取项目指令文件。如果无法确定项目根目录，则只检查当前工作目录。
 
 项目指令文件的默认优先级是：
 
@@ -57,7 +57,7 @@ AGENTS.override.md
 AGENTS.md
 ```
 
-也就是说，同一目录里如果同时存在这两个文件，`AGENTS.override.md` 会覆盖 `AGENTS.md`。
+也就是说，同一目录里最多只会读取一个指令文件。如果同时存在这两个文件，Codex 会选择 `AGENTS.override.md`，不再读取同目录的 `AGENTS.md`。空文件会被跳过。
 
 Codex 会把读取到的指令从上到下合并。根目录的规则先出现，子目录的规则后出现。越靠近当前目录的规则越具体，因此也更适合写局部要求。
 
@@ -78,6 +78,29 @@ packages/
 **注意事项**：
 1. 如果你的项目已经有其他规则文件，可以通过 Codex 配置里的 `project_doc_fallback_filenames` 添加备用文件名。Codex 会在找不到 `AGENTS.override.md` 和 `AGENTS.md` 时，再尝试这些 fallback 文件。
 2. Codex 还会限制合并后的项目指令大小。官方默认值是 `project_doc_max_bytes = 32768`，也就是 32 KiB。规则文件太大时，后面的内容可能不会进入上下文，所以尽量保持 `AGENTS.md` 精简。
+
+### 验证与排查
+
+修改指令文件后，可以运行以下命令，让 Codex 概括当前已加载的指令：
+
+```bash
+codex --ask-for-approval never "Summarize the current instructions."
+```
+
+需要检查子目录规则时，可以指定工作目录：
+
+```bash
+codex --cd subdir --ask-for-approval never "Show which instruction files are active."
+```
+
+如果指令没有按预期生效，可以优先检查：
+
+- `codex status` 显示的 workspace root 是否正确。
+- Codex_Home 或上层目录中是否存在 `AGENTS.override.md`。
+- `CODEX_HOME` 是否指向了另一个配置目录。
+- 指令文件是否为空，或累计大小是否超过 `project_doc_max_bytes`。
+
+Codex 会在每次新运行或启动 TUI 会话时重新构建指令链，因此修改后重新启动即可，不需要手动清理缓存。
 
 ## 团队协作
 
@@ -186,6 +209,7 @@ git check-ignore -v AGENTS.local.md AGENTS.override.md
 - 确保没有跟其他规范文档的指令产生冲突。
 - 勤于更新。随着项目逐渐推进，里面的命令也需要与时俱进。
 - `AGENTS.md` 可以承担导航的作用。可以告诉 Codex 项目文档的阅读目录清单，而不是把文档写进 `AGENTS.md`里。
+- 如果使用 Codex 进行 GitHub Code Review，可以在距离目标代码最近的 `AGENTS.md` 中添加 `## Code Review Rules`。规则应说明需要标记的行为和安全替代方案，纯格式和 lint 检查尽量交给 CI。
 
 ## 下一步
 

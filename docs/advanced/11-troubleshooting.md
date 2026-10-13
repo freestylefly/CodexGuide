@@ -3,7 +3,7 @@ description: "Codex 排障手册，汇总登录、安装、权限、依赖、命
 ---
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-09-05。本文参考 [Codex 官方文档总览](https://learn.chatgpt.com/docs)、[Windows 沙盒](https://learn.chatgpt.com/docs/windows/windows-sandbox)、[openai/codex 官方仓库](https://github.com/openai/codex) 与 [智能体审批与安全](https://learn.chatgpt.com/docs/agent-approvals-security)。排障命令、路径和界面名称会随系统、客户端和 CLI 版本变化。
+官方资料最后核对日期：2026-10-12。本文参考 [ChatGPT 与 Codex 文档](https://learn.chatgpt.com/docs/)、[Windows sandbox](https://learn.chatgpt.com/docs/windows/windows-sandbox)、[Codex CLI 官方仓库](https://github.com/openai/codex) 与 [Agent approvals & security](https://learn.chatgpt.com/docs/agent-approvals-security)。排障命令、路径和界面名称会随系统、客户端和 CLI 版本变化。
 :::
 
 # 排障手册
@@ -65,7 +65,7 @@ description: "Codex 排障手册，汇总登录、安装、权限、依赖、命
 `Reconnecting` 不是一个具体根因。它可能是主连接、会话恢复、WebSocket / SSE 流、代理协议、MCP worker 或服务端临时问题。不要一开始就重装 Codex、覆盖 `config.toml`，或者直接换账号。
 
 ::: tip 最后核对
-官方资料和 GitHub issue 最后核对日期：2026-09-04。本文参考 [Codex 排障官方文档](https://learn.chatgpt.com/docs/reference/troubleshooting)、[环境变量](https://learn.chatgpt.com/docs/config-file/environment-variables)、[Amazon Bedrock 官方文档](https://learn.chatgpt.com/docs/amazon-bedrock)、[Codex MCP 官方文档](https://learn.chatgpt.com/docs/extend/mcp)，以及社区排障库 [Windows Codex Error Guide：网络、DNS、npm、代理](https://github.com/toby-bridges/community-codex-windows-troubleshooting/blob/main/WINDOWS-CODEX-ERROR-GUIDE.md)。
+官方资料和 GitHub issue 最后核对日期：2026-10-12。本节是结合 OpenAI [Troubleshooting](https://learn.chatgpt.com/docs/reference/troubleshooting)、[Environment variables](https://learn.chatgpt.com/docs/config-file/environment-variables)、[Model Context Protocol](https://learn.chatgpt.com/docs/extend/mcp?surface=cli) 与 [Codex CLI 官方仓库](https://github.com/openai/codex) 整理的排障顺序，不是官方对 `Reconnecting` 的固定分类。
 :::
 
 先按三层判断：
@@ -74,7 +74,7 @@ description: "Codex 排障手册，汇总登录、安装、权限、依赖、命
 | --- | --- | --- |
 | 主连接 | 新线程也一直 `Reconnecting` | 验证 Codex 进程能不能走到正确代理 |
 | 会话流 | 偶发 `stream disconnected before completion` | 看是否是旧会话、WebSocket/SSE 或服务端连接问题 |
-| 工具 worker | 主界面恢复，但 MCP、Browser、node_repl 仍失败 | 再查 `config.toml` 里的 MCP 环境变量 |
+| 工具 worker | 主界面恢复，但 MCP、Browser 或 Node REPL 仍失败 | 分别检查对应工具的连接、认证和运行环境 |
 
 如果你使用 macOS 代理：
 
@@ -85,7 +85,7 @@ launchctl getenv HTTPS_PROXY
 curl -sS --max-time 10 -x "http://127.0.0.1:<PORT>" "https://api.ipify.org?format=json"
 ```
 
-端口和协议都验证通过后，再把最小代理变量放进 `~/.codex/.env`，然后完全退出并重新打开 Codex Desktop：
+先检查系统代理或 PAC 是否把 Codex 请求导向了正确端口。当系统代理解析不可用，或者需要显式覆盖时，再把最小代理变量放进 `~/.codex/.env`，然后完全退出并重新打开 Codex Desktop：
 
 ```bash
 export HTTP_PROXY="http://127.0.0.1:<PORT>"
@@ -107,14 +107,16 @@ export NO_PROXY="localhost,127.0.0.1,::1,*.local"
 [Environment]::SetEnvironmentVariable("HTTPS_PROXY", "http://127.0.0.1:<PORT>", "User")
 ```
 
-如果主界面已经恢复，但 MCP 或 node_repl 仍然断，再检查 MCP server 是否需要单独配置环境变量：
+如果主界面已经恢复，但某个 STDIO MCP server 仍然断开，再检查它是否需要单独配置环境变量：
 
 ```toml
-[mcp_servers.node_repl.env]
+[mcp_servers.example_server.env]
 HTTP_PROXY = "http://127.0.0.1:<PORT>"
 HTTPS_PROXY = "http://127.0.0.1:<PORT>"
 NO_PROXY = "localhost,127.0.0.1,::1,*.local"
 ```
+
+这个配置只会传给对应的 STDIO MCP 进程，不代表内置 Browser、Node REPL 或插件 worker 也会继承相同变量。这些工具需要分别验证。
 
 日志位置：
 
@@ -125,7 +127,13 @@ NO_PROXY = "localhost,127.0.0.1,::1,*.local"
 
 ## Windows 桌面 App / CLI 专项排障
 
-如果问题发生在 Windows 桌面 App、Microsoft Store / winget 安装、Windows sandbox、Worktree、Browser / Computer Use 插件、WSL 混合路径或 PowerShell 环境，可以参考社区维护的 Windows 专项排障库：
+如果问题发生在 Windows 桌面 App、Microsoft Store / winget 安装、Windows sandbox、Worktree、Browser / Computer Use 插件、WSL 混合路径或 PowerShell 环境，优先查看官方资料：
+
+- [Windows desktop app](https://learn.chatgpt.com/docs/windows/windows-app)
+- [Windows sandbox](https://learn.chatgpt.com/docs/windows/windows-sandbox)
+- [WSL](https://learn.chatgpt.com/docs/windows/wsl)
+
+当前 Windows 原生沙盒包括推荐的 `mxc`，以及 `elevated` 和 `unelevated` 两种兼容实现。如果官方文档未覆盖具体报错，再参考社区维护的专项排障库：
 
 - [Community Codex Windows Troubleshooting](https://github.com/toby-bridges/community-codex-windows-troubleshooting)
 - [Windows Codex Error Guide](https://github.com/toby-bridges/community-codex-windows-troubleshooting/blob/main/WINDOWS-CODEX-ERROR-GUIDE.md)
@@ -139,13 +147,13 @@ NO_PROXY = "localhost,127.0.0.1,::1,*.local"
 
 - 修改过 `config.toml` 根级 `model_provider`。
 - 旧会话文件还在，但会话 metadata、SQLite 状态或项目路径缓存仍指向旧 provider。
-- CLI `/resume` 能看到旧会话，但 Codex Desktop 项目侧看不到，可能只是 Desktop 最近 50 条会话的首屏显示限制。
+- CLI `/resume` 能看到旧会话，但 Codex Desktop 项目侧看不到，可能是会话已归档、侧边栏加载或本地索引状态不一致。
 
 处理方式：
 
-- 先确认 `~/.codex/sessions` 或 `~/.codex/archived_sessions` 里是否还存在旧会话文件。
-- 如果只是 Desktop 项目侧不可见，先判断是否被最近 50 条显示限制挡住。
-- 如果确认是切换 provider 后 metadata 不一致，再参考 [config.toml 里的社区工具说明](../advanced/09-config-toml.md#切换-provider-后历史会话不可见怎么办)。
+- 先在 Desktop 的 Settings 中检查 Archived，再确认 `~/.codex/sessions` 或 `~/.codex/archived_sessions` 里是否还存在旧会话文件。
+- 使用 CLI `/resume` 的会话选择器，或运行 `codex resume --all` 搜索其他目录下的会话。
+- 如果能找到会话文件，但 Desktop 仍不显示，先把 provider、metadata 或索引不一致视为待验证原因，再参考 [config.toml 里的社区工具说明](../advanced/09-config-toml.md#切换-provider-后历史会话不可见怎么办)。
 - 使用第三方工具前先备份 `~/.codex`，不要把它当成官方认证或账号切换工具。
 
 ## 下一步
