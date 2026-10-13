@@ -1,6 +1,9 @@
 ---
+pageClass: cg-directory
 description: "CodexGuide 学习路线，围绕说清楚、执行、验证、交付的闭环展开，帮助中文读者找到适合自己的入口。"
 ---
+
+<SectionIntro section="guide" />
 
 ::: tip 最后核对
 官方资料最后核对日期：2026-09-02。本文用于规划 CodexGuide 阅读顺序。Codex 的产品入口、能力边界和账号可用性，请以 [Codex 官方文档总览](https://developers.openai.com/codex/)、[Codex App 官方文档](https://developers.openai.com/codex/app)、[Codex CLI 官方文档](https://developers.openai.com/codex/cli) 与 [Codex Cloud 官方文档](https://developers.openai.com/codex/cloud) 为准。

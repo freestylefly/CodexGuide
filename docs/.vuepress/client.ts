@@ -1,6 +1,14 @@
 import { inject } from "@vercel/analytics";
 import { defineClientConfig } from "vuepress/client";
 
+import SectionIntro from "./components/SectionIntro.vue";
+import CodexHome from "./components/CodexHome.vue";
+import "./styles/home.scss";
+import "./styles/creative-scenes.scss";
+import "./styles/workbench-motion.scss";
+import "./styles/interior.scss";
+import "./styles/community-story.scss";
+
 import PaidCommunity from "./components/PaidCommunity.vue";
 import PaidCommunityAdmin from "./components/PaidCommunityAdmin.vue";
 import PaidCommunityResult from "./components/PaidCommunityResult.vue";
@@ -50,6 +58,8 @@ if (typeof window !== "undefined") {
 
 export default defineClientConfig({
   enhance: ({ app }) => {
+    app.component("CodexHome", CodexHome);
+    app.component("SectionIntro", SectionIntro);
     app.component("PaidCommunity", PaidCommunity);
     app.component("PaidCommunityAdmin", PaidCommunityAdmin);
     app.component("PaidCommunityResult", PaidCommunityResult);
@@ -66,7 +76,9 @@ export default defineClientConfig({
         if (target?.closest(".vp-dropdown")) return;
 
         const button = target?.closest<HTMLButtonElement>(".vp-dropdown-title");
-        const link = button ? navbarDropdownLinks[button.getAttribute("aria-label") ?? ""] : null;
+        const link = button
+          ? navbarDropdownLinks[button.getAttribute("aria-label") ?? ""]
+          : null;
 
         if (link) window.location.assign(link);
       });

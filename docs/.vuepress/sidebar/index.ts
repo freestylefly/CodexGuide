@@ -5,6 +5,8 @@ export default sidebar({
     {
       text: "学习路线",
       icon: "map",
+      collapsible: true,
+      expanded: true,
       prefix: "/guide/",
       children: ["index.md"],
     },
@@ -14,6 +16,8 @@ export default sidebar({
     {
       text: "快速上手",
       icon: "rocket",
+      collapsible: true,
+      expanded: true,
       prefix: "/start/",
       children: [
         "00-index.md",
@@ -31,6 +35,8 @@ export default sidebar({
     {
       text: "给开发者",
       icon: "code",
+      collapsible: true,
+      expanded: true,
       prefix: "/start/",
       children: [
         "10-cli-installation.md",
@@ -46,6 +52,8 @@ export default sidebar({
     {
       text: "进阶教程",
       icon: "book",
+      collapsible: true,
+      expanded: true,
       prefix: "/advanced/",
       children: [
         "00-index.md",
@@ -68,6 +76,8 @@ export default sidebar({
     {
       text: "实战案例",
       icon: "lightbulb",
+      collapsible: true,
+      expanded: true,
       prefix: "/recipes/",
       children: [
         "00-index.md",
@@ -97,6 +107,8 @@ export default sidebar({
     {
       text: "参考手册",
       icon: "gear",
+      collapsible: true,
+      expanded: true,
       prefix: "/manual/",
       children: ["00-index.md", "01-codex-updates.md", "02-credits.md"],
     },
@@ -106,6 +118,8 @@ export default sidebar({
     {
       text: "社区共建",
       icon: "people",
+      collapsible: true,
+      expanded: true,
       prefix: "/community/",
       children: ["roadmap.md", "tutorials.md"],
     },
@@ -115,6 +129,8 @@ export default sidebar({
     {
       text: "赞助商",
       icon: "star",
+      collapsible: true,
+      expanded: true,
       prefix: "/sponsors/",
       children: ["00-index.md"],
     },
@@ -124,6 +140,8 @@ export default sidebar({
     {
       text: "CodexGuide",
       icon: "home",
+      collapsible: true,
+      expanded: true,
       children: [
         "/guide/",
         "/start/",

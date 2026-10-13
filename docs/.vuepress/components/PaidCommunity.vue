@@ -16,6 +16,47 @@ import {
   redirectToCommunityOrigin,
 } from "../community-runtime.js";
 
+const communityShell = ref<HTMLElement | null>(null);
+const showcaseOpen = ref(false);
+let disposeMotion: (() => void) | undefined;
+onMounted(() => {
+  const shell = communityShell.value;
+  if (!shell || props.direct) return;
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const scenes = Array.from(shell.querySelectorAll<HTMLElement>("[data-community-scene]"));
+  let frame = 0;
+  const update = () => {
+    frame = 0;
+    const height = window.innerHeight;
+    const values = scenes.map((scene) => {
+      const rect = scene.getBoundingClientRect();
+      return reduced.matches ? 1 : Math.max(0, Math.min(1, (height * .95 - rect.top) / (height * .7)));
+    });
+    scenes.forEach((scene, index) => scene.style.setProperty("--scene", String(values[index])));
+  };
+  const schedule = () => { if (!frame) frame = requestAnimationFrame(update); };
+  window.addEventListener("scroll", schedule, { passive: true });
+  window.addEventListener("resize", schedule);
+  reduced.addEventListener("change", schedule);
+  update();
+  disposeMotion = () => {
+    cancelAnimationFrame(frame);
+    window.removeEventListener("scroll", schedule);
+    window.removeEventListener("resize", schedule);
+    reduced.removeEventListener("change", schedule);
+  };
+});
+onBeforeUnmount(() => disposeMotion?.());
+let showcaseTimer: ReturnType<typeof setTimeout> | undefined;
+onMounted(() => {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    showcaseOpen.value = true;
+  } else {
+    showcaseTimer = setTimeout(() => { showcaseOpen.value = true; }, 450);
+  }
+});
+onBeforeUnmount(() => clearTimeout(showcaseTimer));
+
 type PageState =
   | "awaiting"
   | "checking"
@@ -109,6 +150,11 @@ const requestStatus = async (): Promise<CommunityStatus> => {
     cache: "no-store",
   });
   if (!response.ok) throw new Error(await responseError(response));
+  if (!response.headers.get("content-type")?.includes("application/json")) {
+    throw new Error(import.meta.env.DEV
+      ? "本地预览尚未连接支付服务，暂时无法查询入群资格。"
+      : "入群服务暂时不可用，请稍后重新检查。");
+  }
   return (await response.json()) as CommunityStatus;
 };
 
@@ -327,7 +373,11 @@ const retry = async (): Promise<void> => {
     await refreshStatus();
   } catch (error) {
     state.value = "error";
-    message.value = error instanceof Error ? error.message : "状态确认失败，请稍后重试。";
+    message.value = error instanceof SyntaxError
+      ? (import.meta.env.DEV
+        ? "本地预览尚未连接支付服务，暂时无法查询入群资格。"
+        : "入群服务暂时不可用，请稍后重新检查。")
+      : error instanceof Error ? error.message : "状态确认失败，请稍后重试。";
   }
 };
 
@@ -353,27 +403,30 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <main class="paid-community-shell" :class="{ 'is-direct': props.direct }">
+  <main ref="communityShell" class="paid-community-shell" :class="{ 'is-direct': props.direct }">
     <section v-if="!props.direct" class="paid-community-top">
       <div class="paid-community-top-inner">
         <div class="paid-community-hero">
-          <span class="paid-community-kicker">CodexGuide 目前已经有 6 个高质量交流群</span>
-          <h1>把真实项目带进群里，<br>把可执行的方法带回去</h1>
+          <span class="paid-community-kicker"><span aria-hidden="true">●</span> CODEXGUIDE / 一起动手的社区</span>
+          <div class="community-members-note">6 个高质量交流群 <span aria-hidden="true">↗</span></div>
+          <h1 class="community-editorial-title"><span>带着<span class="community-outline">真实项目</span>来，</span><span>带着<span class="community-title-highlight">可执行的方法</span>走。</span></h1>
           <p>和正在使用 Codex 的创作者、开发者与效率实践者，交流配置、任务设计、Skills、Plugins、自动化与排障经验。</p>
 
           <div class="paid-community-hero-features" aria-label="社群核心价值">
             <div>
               <span class="paid-community-feature-icon"><ChatBubbleLeftRightIcon aria-hidden="true" /></span>
-              <strong>真实问题讨论</strong>
+              <div><strong>真实问题，一起拆解</strong><small>带上上下文，交流具体做法</small></div>
             </div>
             <div>
               <span class="paid-community-feature-icon"><ClipboardDocumentCheckIcon aria-hidden="true" /></span>
-              <strong>智能体每日群聊精华</strong>
+              <div><strong>每日精华，随时回看</strong><small>智能体整理，找到值得复用的经验</small></div>
             </div>
           </div>
         </div>
 
-        <div class="paid-community-visual" aria-label="真实群聊与每日精华展示">
+        <div id="community-showcase" class="paid-community-visual" :class="{ 'is-expanded': showcaseOpen }" aria-label="真实群聊与每日精华展示">
+          <span class="community-book-spine" aria-hidden="true"></span>
+          <span class="community-showcase-label" aria-hidden="true">OPEN THE CONVERSATION ↙</span>
           <figure class="paid-community-phone is-discussion">
             <img
               src="/images/community-codex-troubleshooting-discussion.jpg"
@@ -400,12 +453,14 @@ onBeforeUnmount(() => {
 
     <section
       id="community-checkout"
+      data-community-scene
       class="paid-community-checkout"
       aria-labelledby="community-checkout-title"
     >
       <div class="paid-community-price">
         <div>
-          <span id="community-checkout-title">一次付费</span>
+          <span v-if="!props.direct" class="community-pass-label">COMMUNITY PASS</span>
+          <span id="community-checkout-title"><template v-if="props.direct">一次付费</template><template v-else><span class="community-pass-prefix">和用 Codex 的人</span><span class="community-pass-headline">一起进步</span></template></span>
           <small>入群资格长期有效</small>
         </div>
         <strong><small>¥</small>9.9</strong>
@@ -521,7 +576,8 @@ onBeforeUnmount(() => {
     </section>
 
     <template v-if="!props.direct">
-      <section class="paid-community-entry" aria-labelledby="community-entry-title">
+      <div class="community-story-ribbon" aria-hidden="true"><div><span>真实问题，一起拆解 ✦ 每日精华，随时回看 ✦ </span><span>真实问题，一起拆解 ✦ 每日精华，随时回看 ✦ </span></div></div>
+      <section data-community-scene class="paid-community-entry" aria-labelledby="community-entry-title">
         <div class="paid-community-entry-heading">
           <span aria-hidden="true"></span>
           <h2 id="community-entry-title">加入后，你会进入这样的交流</h2>
@@ -553,10 +609,10 @@ onBeforeUnmount(() => {
         </div>
       </section>
 
-      <section class="paid-community-section paid-community-proof" aria-labelledby="community-proof-title">
+      <section data-community-scene class="paid-community-section paid-community-proof" aria-labelledby="community-proof-title">
         <div class="paid-community-section-heading">
           <span>真实交流现场</span>
-          <h2 id="community-proof-title">遇到具体问题，群里有人一起拆解</h2>
+          <h2 id="community-proof-title"><span>遇到具体问题，</span><span>群里有人一起拆解</span></h2>
           <p>从额度重置、模型选择到异常反馈，大家会补充自己的使用情况，交流已经验证过的处理思路。</p>
         </div>
 
@@ -598,7 +654,7 @@ onBeforeUnmount(() => {
         </div>
       </section>
 
-      <section class="paid-community-section paid-community-digest" aria-labelledby="community-digest-title">
+      <section data-community-scene class="paid-community-section paid-community-digest" aria-labelledby="community-digest-title">
         <div class="paid-community-digest-copy">
           <span class="paid-community-digest-kicker">智能体每日群聊精华</span>
           <h2 id="community-digest-title">加入任一群，都能看见整个 Codex 社区当天在聊什么</h2>
@@ -656,10 +712,13 @@ onBeforeUnmount(() => {
         </div>
       </section>
 
-      <section class="paid-community-section paid-community-fit" aria-labelledby="community-fit-title">
+    </template>
+
+    <template v-if="!props.direct">
+      <section data-community-scene class="paid-community-section paid-community-fit" aria-labelledby="community-fit-title">
         <div class="paid-community-section-heading">
           <span>先判断是否适合</span>
-          <h2 id="community-fit-title">有真实场景的人，会获得更多价值</h2>
+          <h2 id="community-fit-title"><span>有真实场景的人，</span><span>会获得更多价值</span></h2>
         </div>
         <div class="paid-community-fit-grid">
           <article class="is-recommended">
@@ -705,6 +764,7 @@ onBeforeUnmount(() => {
           </ul>
         </details>
       </section>
+      <div class="community-endmark" aria-hidden="true"><span v-for="(letter, index) in 'CODEXGUIDE'" :key="index" class="community-mark-letter">{{ letter }}</span><span class="community-mark-arrow">↗</span></div>
     </template>
   </main>
 </template>

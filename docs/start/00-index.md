@@ -1,7 +1,10 @@
 ---
+pageClass: cg-directory
 description: "Codex 快速上手教程，从认识 Codex、安装账号、桌面 App、第一个任务到开发者入口，帮助初学者先跑通。"
 permalink: /start/
 ---
+
+<SectionIntro section="start" />
 
 ::: tip 最后核对
 官方资料最后核对日期：2026-09-02。本页是快速上手索引，Codex 的安装、账号、CLI、IDE、Cloud 与移动端入口请以 [Codex 官方文档总览](https://learn.chatgpt.com/docs)、[Codex 与 ChatGPT 套餐帮助中心](https://help.openai.com/en/articles/11369540-codex-in-chatgpt) 和 [Codex Cloud 官方文档](https://learn.chatgpt.com/docs/cloud) 为准。
