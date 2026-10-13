@@ -88,6 +88,7 @@ export default sidebar({
         "15-hatch-pet-photo.md",
         "16-android-remote-control.md",
         "17-desktop-pet.md",
+        "18-codex-profiles.md",
       ],
     },
   ],

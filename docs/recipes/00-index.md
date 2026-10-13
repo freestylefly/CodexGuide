@@ -1,5 +1,5 @@
 ---
-description: "Codex 实战案例库，收录 PPT、Draw.io、Playwright、Obsidian、临床文献综述、Hatch Pet、安卓手机远程操控、飞书、Figma、Notion、CI 和远程排障案例。"
+description: "Codex 实战案例库，收录 PPT、Draw.io、Playwright、Obsidian、临床文献综述、Hatch Pet、安卓手机远程操控、命名本地环境、飞书、Figma、Notion、CI 和远程排障案例。"
 permalink: /recipes/
 ---
 
@@ -9,7 +9,7 @@ permalink: /recipes/
 
 # 实战案例库
 
-这里收集可复现、可改写、可迁移到真实工作流里的 Codex 使用案例。当前版本已收录 17 个案例，覆盖 Skill、MCP、浏览器自动化、知识库、临床文献综述、移动端协同、个性化工作台、设计稿、团队协作、远程排障和 CI 自动修复。
+这里收集可复现、可改写、可迁移到真实工作流里的 Codex 使用案例。当前版本已收录 18 个案例，覆盖 Skill、MCP、浏览器自动化、知识库、临床文献综述、移动端协同、命名本地环境、个性化工作台、设计稿、团队协作、远程排障和 CI 自动修复。
 
 ## 当前案例概览
 
@@ -21,9 +21,10 @@ permalink: /recipes/
 | 移动协同与个性化工作台 | 安卓手机远程操控、Hatch Pet、桌面宠物 | 在手机端跟进桌面任务，并用自定义宠物和桌面状态反馈优化工作台体验 |
 | 浏览器与前端自动化 | Playwright MCP、Chrome 浏览器插件 | 让 Codex 操作网页、检查页面、执行浏览器任务 |
 | 设计与协作平台 | Figma MCP、飞书 CLI | 读取设计稿、处理飞书数据、连接团队工具 |
+| 本地环境与身份边界 | codex-profiles | 为 CLI 和命名 Desktop 窗口选择独立本地状态，并理解仍然共享的 OS 与服务端边界 |
 | 发布与工程运维 | DKFile、云服务器远程修 Bug、GitHub Actions CI 修复 | 从本地/远程环境到自动修复流程的完整闭环 |
 
-## 17 个案例清单
+## 18 个案例清单
 
 | 编号 | 案例 | 核心场景 | 推荐入口 | 验证重点 |
 | --- | --- | --- | --- | --- |
@@ -44,6 +45,7 @@ permalink: /recipes/
 | 15 | [Codex × Hatch Pet：用一张照片生成专属宠物](../recipes/15-hatch-pet-photo.md) | 生成并安装自定义桌面宠物 | 桌面 App / Hatch Pet | 素材质量、生成进度、宠物包路径 |
 | 16 | [Codex × 安卓手机：扫码连接，远程操控](../recipes/16-android-remote-control.md) | 手机端配对并管理桌面任务 | ChatGPT App / Desktop App | 账号一致、网络、防火墙、连接状态 |
 | 17 | [Codex × 桌面宠物：显示任务状态](../recipes/17-desktop-pet.md) | 用桌面宠物显示任务进度和完成状态 | 桌面 App | 宠物唤醒、任务状态、提醒反馈 |
+| 18 | [Codex × codex-profiles：分开个人与工作环境](../recipes/18-codex-profiles.md) | 为不同 Codex 场景选择独立本地状态 | CLI / macOS App | CODEX_HOME、命名窗口、账号与安全边界 |
 
 ## 怎么选择先看哪个
 
@@ -55,6 +57,7 @@ permalink: /recipes/
 - 想做医学科研资料整理：先看 [临床文献综述](../recipes/14-clinical-literature-review.md)，重点学习如何把事实、推断和安全边界分开。
 - 想优化桌面工作台体验：先看 [Hatch Pet](../recipes/15-hatch-pet-photo.md) 和 [桌面宠物](../recipes/17-desktop-pet.md)，了解如何生成自定义宠物并查看任务状态。
 - 想用手机跟进桌面任务：先看 [安卓手机远程操控](../recipes/16-android-remote-control.md)，重点检查账号、网络和授权状态。
+- 想分开个人与工作环境：先看 [codex-profiles](../recipes/18-codex-profiles.md)，重点理解本地状态、账号与操作系统边界。
 - 想做工程自动化：先看 [云服务器远程修 Bug](../recipes/11-remote-bug-fix.md)、[GitHub Actions CI 自动修复](../recipes/13-github-actions-ci-fix.md)。
 - 想理解浏览器控制能力：先看 [Playwright MCP](../recipes/03-playwright-mcp.md) 和 [Chrome 浏览器插件](../recipes/12-chrome-browser-plugin.md)。
 
@@ -62,7 +65,7 @@ permalink: /recipes/
 
 | 状态 | 案例 | 说明 |
 | --- | --- | --- |
-| 已形成完整流程 | PPT Skill、Playwright MCP、Obsidian、飞书 CLI、临床文献综述、Hatch Pet、桌面宠物、安卓手机远程操控、远程修 Bug、GitHub Actions CI 修复 | 有明确安装、使用步骤或完整操作链路 |
+| 已形成完整流程 | PPT Skill、Playwright MCP、Obsidian、飞书 CLI、临床文献综述、Hatch Pet、桌面宠物、安卓手机远程操控、codex-profiles、远程修 Bug、GitHub Actions CI 修复 | 有明确安装、使用步骤或完整操作链路 |
 | 偏工具接入教程 | Draw.io MCP、Figma MCP、Notion MCP、DKFile、Chrome 浏览器插件 | 重点在接入方式、典型任务和安全边界 |
 | 偏场景展示 | HyperFrames、LLM Wiki | 重点展示 Codex 与创作/知识库场景的组合方式 |
 
