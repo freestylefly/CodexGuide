@@ -3,7 +3,7 @@ description: "Codex 与 GitHub Actions 案例，说明 CI 失败后如何读取�
 ---
 
 ::: tip 最后核对
-公开资料最后核对日期：2026-06-29。本文参考 [GitHub Actions 文档](https://docs.github.com/actions)、[Codex CLI features](https://developers.openai.com/codex/cli/features) 与 [Codex Cloud docs](https://platform.openai.com/docs/codex)。CI 权限、token、分支保护和自动修复策略请以仓库当前配置为准。
+官方资料最后核对日期：2026-09-04。本文参考 [GitHub Actions 官方文档](https://docs.github.com/actions)、[Codex CLI 官方文档](https://learn.chatgpt.com/docs/codex/cli) 与 [Codex Cloud 官方文档](https://learn.chatgpt.com/docs/cloud)。CI 权限、token、分支保护和自动修复策略请以仓库当前配置为准。
 :::
 
 # Codex × GitHub Actions：CI 失败自动修复实测

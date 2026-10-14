@@ -3,7 +3,7 @@ description: "Codex 连接第三方 API 的入门说明，比较手动配置、C
 ---
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-05-29。本文参考 [OpenAI Codex config reference](https://developers.openai.com/codex/config-reference)。社区工具资料最后核对日期：2026-05-29，参考 [Codex++](https://github.com/BigPizzaV3/CodexPlusPlus)、[CCX](https://github.com/BenedictKing/ccx) 与 [CC Switch](https://github.com/farion1231/cc-switch)。
+官方资料最后核对日期：2026-09-02。本文参考 [OpenAI Codex 配置参考资料](https://developers.openai.com/codex/config-reference)。社区工具资料最后核对日期：2026-09-02，参考 [Codex++](https://github.com/BigPizzaV3/CodexPlusPlus)、[CCX](https://github.com/BenedictKing/ccx) 与 [CC Switch](https://github.com/farion1231/cc-switch)。
 :::
 
 # 连接第三方 API
@@ -163,7 +163,7 @@ requires_openai_auth = false
 
 [Codex++](https://github.com/BigPizzaV3/CodexPlusPlus) 是面向 Codex App 的外部增强 launcher 和管理工具。根据项目 README，它不修改 Codex App 原始安装文件，而是通过外部 launcher 启动 Codex，并使用 Chromium DevTools Protocol 注入增强脚本。
 
-![](https://cdn.canghecode.com/blog/20260529171743.png)
+![Codex++](../images/codexplusplus-overview.png)
 
 
 它更适合这些情况：
@@ -177,7 +177,7 @@ requires_openai_auth = false
 
 1. 打开 [Codex++ Releases](https://github.com/BigPizzaV3/CodexPlusPlus/releases)，下载与你系统匹配的安装包。
 
-![](https://cdn.canghecode.com/blog/20260529172239.png)
+![Codex++ 安装包下载列表](../images/codexplusplus-release-assets.png)
 
 会有 「Codex++ 管理工具」和 「Codex++ app」两个安装包。
 

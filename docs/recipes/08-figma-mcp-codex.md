@@ -3,7 +3,7 @@ description: "Codex 与 Figma MCP 案例，说明如何读取设计稿、理解�
 ---
 
 ::: tip 最后核对
-公开资料最后核对日期：2026-06-29。本文参考 [Model Context Protocol](https://modelcontextprotocol.io/) 与 [Figma](https://www.figma.com/)。Figma MCP、Dev Mode、授权入口和可读取的设计信息会随 Figma 与 Codex 客户端更新变化，请以当前产品界面为准。
+官方资料最后核对日期：2026-09-04。本文关于 MCP 机制参考 [Codex MCP 官方文档](https://learn.chatgpt.com/docs/extend/mcp)。设计稿请参考 [Figma 官方网站](https://www.figma.com/)。Figma MCP、Dev Mode、授权入口和可读取的设计信息会随 Figma 与 Codex 客户端更新变化，请以当前产品界面为准。
 :::
 
 # Codex × Figma MCP：让 AI 读懂你的设计稿

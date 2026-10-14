@@ -3,7 +3,7 @@ description: "Codex 与 Obsidian 案例，说明如何在本地知识库中生�
 ---
 
 ::: tip 最后核对
-资料最后核对日期：2026-06-29。本文参考 [Obsidian](https://obsidian.md/)、[Codex CLI features](https://developers.openai.com/codex/cli/features) 与 [OpenAI Images guide](https://platform.openai.com/docs/guides/images)。Obsidian 插件、图床工具和图像模型能力请以各自官方说明与当前客户端为准。
+官方资料最后核对日期：2026-09-04。本文参考 [Obsidian 官方网站](https://obsidian.md/)、[Codex CLI 官方文档](https://learn.chatgpt.com/docs/codex/cli) 与 [OpenAI 图像生成官方文档](https://developers.openai.com/api/docs/guides/image-generation)。Obsidian 插件、图床工具和图像模型能力请以各自官方说明与当前客户端为准。
 :::
 
 # Codex × Obsidian：在知识库中自动生成配图

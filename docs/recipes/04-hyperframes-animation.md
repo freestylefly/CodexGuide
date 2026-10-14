@@ -3,7 +3,7 @@ description: "Codex 与 HyperFrames 案例，说明如何用代码生成动画�
 ---
 
 ::: tip 最后核对
-资料最后核对日期：2026-06-29。本文涉及 Codex 插件、Skill 与代码化视频生成工作流；Codex 能力请以 [Codex Skills](https://developers.openai.com/codex/skills) 和 [Codex Plugins](https://developers.openai.com/codex/plugins) 为准，延伸参考 [Remotion](https://www.remotion.dev/) 与 [wshuyi/remotion-video-skill](https://github.com/wshuyi/remotion-video-skill)。
+官方资料最后核对日期：2026-09-04。本文涉及 Codex 插件、Skill 与代码化视频生成工作流；Codex 能力请以 [Codex Skills 官方文档](https://learn.chatgpt.com/docs/build-skills) 和 [Codex Plugins 官方文档](https://learn.chatgpt.com/docs/plugins) 为准，延伸参考 [Remotion 官方网站](https://www.remotion.dev/) 与社区仓库 [wshuyi/remotion-video-skill](https://github.com/wshuyi/remotion-video-skill)。
 :::
 
 # Codex × HyperFrames：用代码生成动画视频

@@ -166,7 +166,7 @@ The development server starts the VuePress documentation site. The production si
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=freestylefly/CodexGuide&type=Date)](https://www.star-history.com/#freestylefly/CodexGuide&Date)
+[![Star History Chart](https://star-history.dera.page/svg?repos=freestylefly/CodexGuide&type=Date)](https://star-history.dera.page/#freestylefly/CodexGuide&Date)
 
 ## Community
 
@@ -182,11 +182,12 @@ The CodexGuide WeChat community has a one-time CNY 9.9 entry fee. The small thre
 
 This repository prioritizes official sources and marks important pages with review dates where possible. The current structure references:
 
-- [OpenAI Codex product page](https://openai.com/codex/)
-- [Codex in ChatGPT Help Center](https://help.openai.com/en/articles/11369540-codex-in-chatgpt)
-- [OpenAI Codex CLI Getting Started](https://help.openai.com/en/articles/11096431-openai-codex-cli-getting-started)
-- [Codex cloud docs](https://platform.openai.com/docs/codex)
-- [openai/codex GitHub repository](https://github.com/openai/codex)
+- [Codex product overview](https://openai.com/codex/)
+- [Codex and ChatGPT plans](https://help.openai.com/en/articles/11369540-codex-in-chatgpt)
+- [Official Codex documentation](https://developers.openai.com/codex/)
+- [Official Codex CLI documentation](https://developers.openai.com/codex/cli/)
+- [Official Codex Cloud documentation](https://developers.openai.com/codex/cloud/)
+- [openai/codex source repository](https://github.com/openai/codex)
 
 ## Contributing
 

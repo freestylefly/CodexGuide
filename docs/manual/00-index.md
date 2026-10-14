@@ -1,7 +1,10 @@
 ---
+pageClass: cg-directory
 description: "Codex 参考手册，汇总 OpenAI 官方资料、Codex 更新记录、参考来源与致谢，帮助读者回到原始资料核对。"
 permalink: /manual/
 ---
+
+<SectionIntro section="manual" />
 
 ::: tip 最后核对
 官方资料最后核对日期：2026-10-12。本文汇总 OpenAI Codex 官方资料、GitHub 仓库和关键事实来源；涉及价格、计划、模型、可用地区、功能开关和账号权限时，请优先打开原文确认。
