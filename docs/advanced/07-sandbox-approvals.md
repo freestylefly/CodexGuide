@@ -274,6 +274,10 @@ approval_policy = { granular = {
 
 ## 平台差异
 
+如果还不了解不同系统在命令、路径和运行环境上的区别，可以先阅读 [macOS、Windows、Linux 与 WSL 使用区别](../start/15-platforms.md)。
+
+下面继续介绍各个平台使用的沙盒技术。
+
 不同系统的沙盒实现不同，但对你来说，用法是一样的：
 
 - **macOS**：使用系统自带的 Seatbelt 机制，无需额外配置。

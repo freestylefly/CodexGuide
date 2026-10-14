@@ -10,7 +10,7 @@ description: "Codex 入口地图，比较 CLI、桌面 App、Cloud、IDE、ChatG
 
 Codex 是 OpenAI 的编程 Agent，提供多种使用入口，涵盖 ChatGPT 桌面 App、CLI、Cloud 和 IDE。你也可以从 ChatGPT 网页端或移动端查看并继续 Cloud 任务。
 
-![Codex 使用入口地图](../images/codex-entry-map-illustrated.png)
+![Codex 使用入口地图](https://cdn.canghecode.com/codexguide/docs/.vuepress/public/images/codex-surfaces.svg?v=20260611)
 
 ## 入口对照表
 
@@ -48,6 +48,7 @@ Codex 是 OpenAI 的编程 Agent，提供多种使用入口，涵盖 ChatGPT 桌
 | Skills | 桌面 App / CLI / IDE | [技能与插件](/advanced/03-skills-plugins-mcp.md) |
 | Worktrees | 桌面 App | [桌面 App](../start/05-app-overview.md) |
 | Environments | Cloud / App | [Cloud / Web](../start/14-cloud.md) |
+| 系统与运行环境 | 桌面 App / CLI / IDE | [平台使用区别](./15-platforms.md) |
 | Sandbox 与 Approvals | 全部入口 | [沙盒与审批](/advanced/07-sandbox-approvals.md) |
 
 

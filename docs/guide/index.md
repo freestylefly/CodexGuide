@@ -1,12 +1,9 @@
 ---
-pageClass: cg-directory
 description: "CodexGuide 学习路线，围绕说清楚、执行、验证、交付的闭环展开，帮助中文读者找到适合自己的入口。"
 ---
 
-<SectionIntro section="guide" />
-
 ::: tip 最后核对
-官方资料最后核对日期：2026-09-02。本文用于规划 CodexGuide 阅读顺序。Codex 的产品入口、能力边界和账号可用性，请以 [Codex 官方文档总览](https://developers.openai.com/codex/)、[Codex App 官方文档](https://developers.openai.com/codex/app)、[Codex CLI 官方文档](https://developers.openai.com/codex/cli) 与 [Codex Cloud 官方文档](https://developers.openai.com/codex/cloud) 为准。
+官方资料最后核对日期：2026-06-29。本文用于规划 CodexGuide 阅读顺序，Codex 的入口、能力边界和账号可用性请以 [Codex 文档入口](https://developers.openai.com/codex/)、[Codex App docs](https://developers.openai.com/codex/app)、[Codex CLI features](https://developers.openai.com/codex/cli/features) 与 [Codex Cloud docs](https://platform.openai.com/docs/codex) 为准。
 :::
 
 # 学习路线
@@ -40,6 +37,7 @@ Codex 是 OpenAI 官方出品的智能体，能够读项目、写代码、运行
 - 入门 CLI 的选项和命令
 - 在 VS Code 中使用 Codex
 - 使用 Codex Cloud
+- 了解 macOS、Windows、Linux 与 WSL2 的使用区别
 
 ### **[进阶教程](/advanced/)** 
 
@@ -57,6 +55,8 @@ Codex 是 OpenAI 官方出品的智能体，能够读项目、写代码、运行
 - 管理线程、工作树和 subagent
 - 将 Codex 接入团队流程
 - 排查常见问题
+- 使用 [Codex Memories](../advanced/12-memories.md) 延续以前的工作经验
+- 使用 [Computer History](../advanced/13-computer-history.md) 找回最近的文件和工作进度
 
 ### **[实战案例](/recipes/)** 
 

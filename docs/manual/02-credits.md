@@ -27,7 +27,6 @@ description: "CodexGuide 参考来源与致谢，整理案例中涉及的第三�
 | [BigPizzaV3/CodexPlusPlus](https://github.com/BigPizzaV3/CodexPlusPlus) | BigPizzaV3 | 社区工具，用于 Codex 桌面 App 外部 launcher、中转注入和 provider 管理；最后核对日期：2026-05-29 | [连接第三方 API](../start/04-third-party-api.md) |
 | [BenedictKing/ccx](https://github.com/BenedictKing/ccx) | BenedictKing | 社区项目，提供 AI API 代理、协议转换、渠道编排和 Codex Responses 网关能力；最后核对日期：2026-05-29 | [连接第三方 API](../start/04-third-party-api.md) |
 | [farion1231/cc-switch](https://github.com/farion1231/cc-switch) | farion1231 | 社区工具，用于管理 Codex、Claude Code、Gemini CLI 等工具的供应商配置和一键切换；最后核对日期：2026-05-29 | [连接第三方 API](../start/04-third-party-api.md) |
-| [Ducksss/codex-profiles](https://github.com/Ducksss/codex-profiles) | Ducksss | 社区工具，为 Codex CLI 和命名 ChatGPT Desktop 窗口选择独立本地状态；最后核对日期：2026-07-13 | [18 Codex × codex-profiles](../recipes/18-codex-profiles.md) |
 
 ---
 

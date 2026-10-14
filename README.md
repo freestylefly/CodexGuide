@@ -135,6 +135,7 @@ CodexGuide 想做的不是命令速查表，而是一份面向真实任务的实
 | [手机端协同桌面任务](./docs/start/09-mobile-control.md) | 用 ChatGPT 手机 App 中的 Codex 入口跟进桌面任务 |
 | [CLI 安装与登录](./docs/start/10-cli-installation.md) | 在本地终端安装 Codex CLI 并完成登录 |
 | [第一次让 Codex 改代码](./docs/start/11-cli-first-run.md) | 用 CLI 进入真实仓库，完成一次可检查的代码任务 |
+| [平台使用区别](./docs/start/15-platforms.md) | 了解 macOS、Windows、Linux 与 WSL2 的命令、路径和运行环境差异 |
 | [进阶教程](./docs/advanced/00-index.md) | CLI、IDE、Cloud、权限、AGENTS.md、自动化和团队实践 |
 | [参考手册](./docs/manual/00-index.md) | OpenAI 官方资料、Codex 更新记录和参考来源 |
 | [AGENTS.md](./docs/advanced/02-agents-md.md) | 给 Codex 编写项目级规则和协作边界 |
@@ -200,7 +201,7 @@ pnpm build
 
 ## Star 趋势图
 
-[![Star History Chart](https://star-history.dera.page/svg?repos=freestylefly/CodexGuide&type=Date)](https://star-history.dera.page/#freestylefly/CodexGuide&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=freestylefly/CodexGuide&type=Date)](https://www.star-history.com/#freestylefly/CodexGuide&Date)
 
 ## 社区共建
 
@@ -214,12 +215,11 @@ pnpm build
 
 本仓库优先引用官方资料，并会在关键页面标注“最后核对日期”。当前骨架参考：
 
-- [Codex 产品介绍](https://openai.com/codex/)
-- [Codex 与 ChatGPT 套餐](https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan)
-- [Codex 官方文档](https://learn.chatgpt.com/docs)
-- [Codex CLI 官方文档](https://learn.chatgpt.com/docs/codex/cli)
-- [Codex Cloud 官方文档](https://learn.chatgpt.com/docs/cloud)
-- [openai/codex 源代码仓库](https://github.com/openai/codex)
+- [OpenAI Codex 产品页](https://openai.com/codex/)
+- [Codex in ChatGPT Help Center](https://help.openai.com/en/articles/11369540-codex-in-chatgpt)
+- [OpenAI Codex CLI Getting Started](https://help.openai.com/en/articles/11096431-openai-codex-cli-getting-started)
+- [Codex cloud docs](https://platform.openai.com/docs/codex)
+- [openai/codex GitHub repository](https://github.com/openai/codex)
 
 ## 参与贡献
 

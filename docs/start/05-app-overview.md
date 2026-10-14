@@ -203,6 +203,10 @@ MCP 服务器用于向 Codex 提供外部工具和上下文，例如文档、浏
 
 开启 Memories 后，Codex 还可以记住过去对话中的部分偏好和项目背景。你也可以选择是否允许它参考聊天记录、资料库文件和已连接的应用。
 
+Memories 与聊天记录、个人指令并不是一回事。具体的开启方法、聊天级控制和隐私说明，见 [Codex Memories：让 Codex 记住以前的工作](../advanced/12-memories.md)。
+
+如果使用 macOS，还可以通过 [Computer History](../advanced/13-computer-history.md) 把允许记录的应用和网站活动整理成时间线。
+
 ::: warning 不要保存敏感信息
 不要在个人指令或记忆中填写密码、密钥、身份证号码等敏感内容。
 :::
@@ -217,6 +221,8 @@ MCP 服务器用于向 Codex 提供外部工具和上下文，例如文档、浏
 - **Computer Use**：让 Codex 像人一样查看屏幕、点击按钮和输入内容。例如，可以让它打开一个应用并完成指定操作。
 
 在 macOS 上第一次使用 Computer Use 时，系统可能会询问是否允许屏幕录制和辅助功能。按照页面提示授权后，Codex 才能看到并操作其他应用。
+
+macOS 和 Windows 的 Computer Use 运行方式并不完全相同，具体区别见 [Computer Use 的工作方式不同](./15-platforms.md#computer-use-的工作方式不同)。
 
 ![image.png](https://cdn.canghecode.com/yanyan/20261012150446285.png)
 

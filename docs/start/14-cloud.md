@@ -195,4 +195,4 @@ Cloud 任务运行在云端，不能直接使用你电脑中的本地文件、�
 
 ## 下一步
 
-下一步：[理解费用与上下文](../advanced/01-cost-context.md)。
+下一步：[macOS、Windows、Linux 与 WSL 使用区别](./15-platforms.md)。
