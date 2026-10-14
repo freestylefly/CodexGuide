@@ -78,6 +78,10 @@ Codex 已包含在 ChatGPT Free、Go、Plus、Pro、Business、Edu 和 Enterpris
 
 登录成功后，尝试新建聊天、创建项目或打开本地文件夹。如果界面能正常加载并发送消息，说明安装成功。
 
+::: tip
+安装完成后，如果不清楚 Windows 原生模式、WSL2、Linux 命令和项目路径有什么区别，可以继续阅读 [macOS、Windows、Linux 与 WSL 使用区别](./15-platforms.md)。
+:::
+
 ## 下一步
 
 下一步：打开一个本地项目，向 Codex 发送第一条消息。如需了解不同套餐，可参考 [订阅 ChatGPT Plus / Pro](./03-account-plan.md)。

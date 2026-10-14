@@ -47,6 +47,7 @@ permalink: /start/
 3. [CLI 选项与命令](./12-cli-options.md)
 4. [在 VS Code 中使用 Codex](./13-ide-vscode.md)
 5. [使用 Codex Cloud](./14-cloud.md)
+6. [macOS、Windows、Linux 与 WSL 使用区别](./15-platforms.md)
 
 ## 学完能做到什么
 

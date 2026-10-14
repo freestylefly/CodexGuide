@@ -67,6 +67,8 @@ Windows 现在可以原生运行 Codex，不再必须依赖 WSL2。
 
 如果你的项目和开发工具原本就在 Linux 环境中，仍然可以按照 [官方 WSL 指南](https://learn.chatgpt.com/docs/windows/wsl)，选择在 WSL2 中安装和使用 Codex。需要注意的是，WSL1 已不再受支持。
 
+如果不确定应该选择 Windows 原生模式还是 WSL2，可以先阅读 [Windows 原生还是 WSL2](./15-platforms.md#windows-原生还是-wsl2)。
+
 检查版本：
 
 ```bash

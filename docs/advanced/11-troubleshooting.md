@@ -127,6 +127,8 @@ NO_PROXY = "localhost,127.0.0.1,::1,*.local"
 
 ## Windows 桌面 App / CLI 专项排障
 
+排查前，先确认 Codex Agent 运行在 Windows 原生环境还是 WSL2。判断方法见 [如何确认 Codex 实际运行在哪里](../start/15-platforms.md#如何确认-codex-实际运行在哪里)。
+
 如果问题发生在 Windows 桌面 App、Microsoft Store / winget 安装、Windows sandbox、Worktree、Browser / Computer Use 插件、WSL 混合路径或 PowerShell 环境，优先查看官方资料：
 
 - [Windows desktop app](https://learn.chatgpt.com/docs/windows/windows-app)
@@ -158,4 +160,4 @@ NO_PROXY = "localhost,127.0.0.1,::1,*.local"
 
 ## 下一步
 
-下一步：[实战案例库](../recipes/00-index.md)。
+下一步：[Codex Memories：让 Codex 记住以前的工作](./12-memories.md)。

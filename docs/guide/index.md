@@ -40,6 +40,7 @@ Codex 是 OpenAI 官方出品的智能体，能够读项目、写代码、运行
 - 入门 CLI 的选项和命令
 - 在 VS Code 中使用 Codex
 - 使用 Codex Cloud
+- 了解 macOS、Windows、Linux 与 WSL2 的使用区别
 
 ### **[进阶教程](/advanced/)** 
 
@@ -57,6 +58,8 @@ Codex 是 OpenAI 官方出品的智能体，能够读项目、写代码、运行
 - 管理线程、工作树和 subagent
 - 将 Codex 接入团队流程
 - 排查常见问题
+- 使用 [Codex Memories](../advanced/12-memories.md) 延续以前的工作经验
+- 使用 [Computer History](../advanced/13-computer-history.md) 找回最近的文件和工作进度
 
 ### **[实战案例](/recipes/)** 
 

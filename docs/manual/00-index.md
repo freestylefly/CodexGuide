@@ -38,6 +38,8 @@ permalink: /manual/
 - [Configuration reference](https://learn.chatgpt.com/docs/config-file/config-reference)：完整配置参考。
 - [Build skills](https://learn.chatgpt.com/docs/build-skills)：Skills 官方说明。
 - [Codex Cloud docs](https://learn.chatgpt.com/docs/cloud)：云端任务、环境、仓库连接和任务执行入口。
+- [Memories](https://learn.chatgpt.com/docs/customization/memories)：本地 Codex Memories 的开启方式、聊天级控制、存储位置和隐私说明。
+- [Computer History](https://learn.chatgpt.com/docs/customization/computer-history)：macOS 上的活动时间线、权限控制、本地存储和隐私说明。
 
 ## 开源仓库与相关文档
 

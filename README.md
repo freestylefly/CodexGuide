@@ -135,6 +135,7 @@ CodexGuide 想做的不是命令速查表，而是一份面向真实任务的实
 | [手机端协同桌面任务](./docs/start/09-mobile-control.md) | 用 ChatGPT 手机 App 中的 Codex 入口跟进桌面任务 |
 | [CLI 安装与登录](./docs/start/10-cli-installation.md) | 在本地终端安装 Codex CLI 并完成登录 |
 | [第一次让 Codex 改代码](./docs/start/11-cli-first-run.md) | 用 CLI 进入真实仓库，完成一次可检查的代码任务 |
+| [平台使用区别](./docs/start/15-platforms.md) | 了解 macOS、Windows、Linux 与 WSL2 的命令、路径和运行环境差异 |
 | [进阶教程](./docs/advanced/00-index.md) | CLI、IDE、Cloud、权限、AGENTS.md、自动化和团队实践 |
 | [参考手册](./docs/manual/00-index.md) | OpenAI 官方资料、Codex 更新记录和参考来源 |
 | [AGENTS.md](./docs/advanced/02-agents-md.md) | 给 Codex 编写项目级规则和协作边界 |

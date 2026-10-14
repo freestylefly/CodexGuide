@@ -30,6 +30,8 @@ permalink: /advanced/
 9. [配置文件 config.toml](./09-config-toml.md)
 10. [团队实践](./10-team-playbook.md)
 11. [排障手册](./11-troubleshooting.md)
+12. [Codex Memories：让 Codex 记住以前的工作](./12-memories.md)
+13. [Computer History：找回最近在电脑上做过的事](./13-computer-history.md)
 
 ## 按需求阅读
 
@@ -40,6 +42,8 @@ permalink: /advanced/
 - 想设置权限与安全边界：连续阅读[权限管理](./04-permissions-security.md)和[沙盒与审批](./07-sandbox-approvals.md)。
 - 想自动执行重复工作：阅读 [Scheduled tasks（计划任务）](./05-automation.md)和 [Hooks](./06-hooks.md)。
 - 想组织长期或并行任务：阅读[自动线程管理](./08-thread-management.md)。
+- 想让 Codex 在新聊天中继续使用以前的工作经验：阅读 [Codex Memories](./12-memories.md)。
+- 想找回最近看过的文件、网页或工作进度：阅读 [Computer History](./13-computer-history.md)。
 - 想在团队中推广 Codex：阅读[团队实践](./10-team-playbook.md)。
 
 ## 学完能做到什么
@@ -55,6 +59,8 @@ permalink: /advanced/
 - 了解配置文件 `config.toml`。了解核心字段的影响
 - 提供团队实践。让 Codex 进入生产环境开发的团队开发。
 - 提供排障手册。帮助你快速定位和解决问题。
+- 了解 Memories。让 Codex 在新的聊天中继续使用以前工作中整理出的有用信息。
+- 了解 Computer History。在 macOS 上查找、回顾和清理最近的电脑活动。
 
 ## 下一步
 
