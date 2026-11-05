@@ -22,6 +22,11 @@ permalink: /sponsors/
     <strong>APIMart</strong>
     <span>专注 AI 图片和视频生成的低价 API 平台，提供统一异步 API，支持按量付费且无月费。</span>
   </a>
+  <a class="sponsor-card" href="https://www.deepsiderapi.com/?utm_source=CodexGuide" target="_blank" rel="noopener noreferrer">
+    <img src="/assets/sponsors/deepsider-api.png" alt="Deepsider API" loading="lazy">
+    <strong>Deepsider API</strong>
+    <span>Deepsider API 提供了 GPT、Claude、Gemini、DeepSeek 等主流模型的 API 接入服务。非号池，非逆向，大厂官方渠道。支持按量计费与实时用量监控，方便为你的自动化工作流接入 AI。</span>
+  </a>
   <div class="sponsor-card">
     <a class="sponsor-primary-link" href="https://www.ai-member.icu?from=4068" target="_blank" rel="noopener noreferrer">
       <img src="/assets/sponsors/ai-member.jpg" alt="AI-MEMBER 会员代充" loading="lazy">
