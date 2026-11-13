@@ -3,7 +3,7 @@ description: "近期 Codex 更新中文摘要，依据 OpenAI 官方 ChatGPT & C
 ---
 
 ::: tip 最后核对
-官方资料最后核对日期：2026-10-12。本文依据 [OpenAI ChatGPT & Codex changelog](https://learn.chatgpt.com/docs/changelog) 整理，仅摘要其中与 Codex 直接相关的更新，不代表对合并更新流的逐项翻译；功能开放范围、账号计划、地区限制、模型可用性与版本号，请以官方原文为准。
+官方资料最后核对日期：2026-11-02。本文依据 [OpenAI ChatGPT & Codex changelog](https://learn.chatgpt.com/docs/changelog) 整理，仅摘要其中与 Codex 直接相关的更新，不代表对合并更新流的逐项翻译；功能开放范围、账号计划、地区限制、模型可用性与版本号，请以官方原文为准。
 :::
 
 # 近期Codex更新
@@ -37,6 +37,60 @@ description: "近期 Codex 更新中文摘要，依据 OpenAI 官方 ChatGPT & C
 <h2 id="october-2026">2026 年 10 月</h2>
 
 [官方原文：October 2026](https://learn.chatgpt.com/docs/changelog#october-2026)
+
+<article class="codex-update-entry">
+
+<p class="codex-update-date">2026-10-29</p>
+
+### Codex CLI <span class="codex-update-version">0.166.0</span>
+
+终端交互界面（TUI）支持用键盘选择对话记录，按词、行或页移动，并结合搜索和自定义快捷键操作。新增 `codex queue --resume`，可在排入消息后恢复尚未加载的 thread；`codex doctor --network-only` 则用于集中检查配置、连接和 WebSocket 问题。
+
+遇到安全拦截时，界面会给出更清楚的原因和可选择的更安全后续提示。本轮还修复了恢复或分叉 thread 时审批与权限设置的保留问题，并改进断线后的恢复。
+
+[官方原文：Codex CLI 0.166.0](https://github.com/openai/codex/releases/tag/rust-v0.166.0)（核对日期：2026-11-02）
+
+</article>
+
+<article class="codex-update-entry">
+
+<p class="codex-update-date">2026-10-27</p>
+
+### Codex CLI <span class="codex-update-version">0.165.0</span>
+
+新增内置 Google Cloud Vertex AI provider，可通过 `model_provider = "gcp"` 配置；模型目录加入 GPT-6.1 Terra。受支持的模型默认允许在对话中调整 reasoning effort（推理强度）。新建 profile 默认启用 memory v2，并支持将外部 agent 的记忆导入其中。
+
+会话选择器新增仓库过滤，agent command center 支持按目录分组，方便查找关联 worktree 中的会话。app-server API 还加入了实验性的 attached thread fork（附着式 thread 分叉），使用时需留意其实验状态。
+
+[官方原文：Codex CLI 0.165.0](https://github.com/openai/codex/releases/tag/rust-v0.165.0)（核对日期：2026-11-02）
+
+</article>
+
+<article class="codex-update-entry">
+
+<p class="codex-update-date">2026-10-26</p>
+
+### Work 与 Codex 新增 <span class="codex-update-version">GPT-6.1 Terra</span>
+
+GPT-6.1 Terra 在 ChatGPT Work 和 Codex 中推出，面向 Plus、Pro、Business、Enterprise 和 Edu 计划，适合图像理解、计算机操作和清晰直接的写作。发布时的官方说明明确：它不在 Chat 中提供，不支持 UAE inference residency（阿联酋推理驻留）；Enterprise 的访问还取决于 workspace 可用性和管理员配置。浏览器与计算机操作分别有各自的设置和访问要求。
+
+[官方原文：10 月 26—30 日更新](https://learn.chatgpt.com/docs/whats-new/october-26-30-2026) · [发布日期与说明：ChatGPT & Codex changelog](https://learn.chatgpt.com/docs/changelog#codex-2026-10-26-gpt-61-terra)（核对日期：2026-11-02）
+
+</article>
+
+<article class="codex-update-entry">
+
+<p class="codex-update-date">2026-10-23</p>
+
+### Codex CLI <span class="codex-update-version">0.164.0</span>
+
+新增十个编号的 `/presets` 槽位，可保存常用提示和斜杠命令；`/model` 与 `/permissions` 支持直接带参数设置模型、推理强度、速度和权限配置。在支持 Kitty 或 Sixel 图形的终端中，全屏对话记录可预览查看过或生成的图片。
+
+企业 MCP 连接支持符合条件的 Codex 账号授权或专用登录；受支持的远程 Bash 命令和 Zsh 快照会话会遮蔽凭据。Amazon Bedrock 设置向导默认开启。本轮也修复了会话恢复、上下文压缩、Windows 代理认证和排队提示等待权限选择等问题。
+
+[官方原文：Codex CLI 0.164.0](https://github.com/openai/codex/releases/tag/rust-v0.164.0)（核对日期：2026-11-02）
+
+</article>
 
 <article class="codex-update-entry">
 
@@ -78,7 +132,9 @@ GPT-6 Sol 与 GPT-6 Luna 开始在 Codex 和 ChatGPT Work 中推出：Sol 适合
 
 ### GPT-5.3-Codex-Spark 停止提供，GPT-5.5 公布退役计划
 
-GPT-5.3-Codex-Spark research preview 已从 ChatGPT desktop app、Codex CLI 和 IDE extension 中移除。官方同时宣布 GPT-5.5 将于 2026-10-14 从各计划的 ChatGPT、ChatGPT Work 和 Codex 中退役，但不影响 OpenAI API。仍在 workspace defaults、managed configuration、custom agent、scheduled task 或脚本中指定这些模型的用户需要迁移。
+GPT-5.3-Codex-Spark research preview 已从 ChatGPT desktop app、Codex CLI 和 IDE extension 中移除。GPT-5.5 已于 2026-10-14 12:00 PDT（19:00 UTC）起从各计划的 ChatGPT、ChatGPT Work 和使用 ChatGPT 登录的 Codex 中退役；OpenAI API 和使用 API key 认证的 Codex session 不受影响。仍在 workspace defaults、managed configuration、custom agent、scheduled task 或脚本中指定这些模型的用户，需要迁移到账号和客户端当前可选的模型。
+
+[官方原文：退役公告与迁移说明](https://learn.chatgpt.com/docs/changelog) · [现行退役范围与时间](https://learn.chatgpt.com/docs/pricing)（核对日期：2026-11-02）
 
 </article>
 
