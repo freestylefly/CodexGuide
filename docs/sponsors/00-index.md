@@ -18,13 +18,13 @@ permalink: /sponsors/
     <span>提供 ChatGPT、Claude 等 AI 订阅开通与充值服务，支持自助下单、快速到账与售后支持。</span>
   </a>
   <div class="sponsor-card">
-    <a class="sponsor-primary-link" href="https://apixo.ai/?utm_source=github&utm_medium=sponsorship&utm_campaign=github_readme&utm_content=freestylefly_codexguide" target="_blank" rel="noopener noreferrer">
-      <img src="/assets/sponsors/apixo.jpg" alt="APIXO" loading="lazy">
-      <strong>APIXO：一站式 AI 图片与视频创作平台</strong>
+    <a class="sponsor-primary-link" href="https://apixo.ai/zh?utm_source=github&amp;utm_medium=sponsorship&amp;utm_campaign=codex_guide&amp;utm_content=brand_mention" target="_blank" rel="noopener noreferrer">
+      <img src="/assets/sponsors/apixo-ai-stacked-on-black.png" alt="APIXO AI" width="90" height="90" loading="lazy">
+      <strong>APIXO AI：一站式 AI 视频制作与多模态创作平台</strong>
     </a>
-    <span>APIXO 汇集多款 AI 图片与视频模型，无需编程，打开网页即可创作；也支持通过 API 接入自己的应用与自动化工作流。<a href="https://apixo.ai/models/seedream-5-5?utm_source=github&utm_medium=sponsorship&utm_campaign=github_readme&utm_content=freestylefly" target="_blank" rel="noopener noreferrer">Seedream 5.5</a> 抢先体验，1K 文生图仅 $0.014/张起，享官价七折优惠。<b>优惠自动生效，无需优惠码，让更多创意轻松落地。</b></span>
-    <a class="sponsor-action-link" href="https://apixo.ai/?utm_source=github&utm_medium=sponsorship&utm_campaign=github_readme&utm_content=freestylefly_codexguide" target="_blank" rel="noopener noreferrer">探索 APIXO 模型与优惠</a>
-    <span>活动截至北京时间 2026 年 12 月 31 日 23:59。</span>
+    <span>全面支持 <a href="https://apixo.ai/zh/mcp?utm_source=github&amp;utm_medium=sponsorship&amp;utm_campaign=codex_guide&amp;utm_content=mcp_page" target="_blank" rel="noopener noreferrer"><b>MCP 协议一键接入</b></a>，快速集成 Seedream 5.5 旗舰生图与 Seedance 2.5 视频模型。</span>
+    <a class="sponsor-action-link" href="https://apixo.ai/zh/models/seedream-5-5?utm_source=github&amp;utm_medium=sponsorship&amp;utm_campaign=codex_guide&amp;utm_content=seedream_5_5" target="_blank" rel="noopener noreferrer">🔥 Seedream 5.5 文生图 API 官价七折，低至 $0.014/张起！</a>
+    <span>中国开发者免海外信用卡、支持银联即开即用，开发调试极速上手，注册即送免费体验额度。</span>
   </div>
   <a class="sponsor-card" href="https://apimart.ai/register?aff=oQgzUQ" target="_blank" rel="noopener noreferrer">
     <img src="https://raw.githubusercontent.com/freestylefly/awesome-gpt-image-2/main/data/images/sponsors/apimart.jpg" alt="APIMart" loading="lazy">
